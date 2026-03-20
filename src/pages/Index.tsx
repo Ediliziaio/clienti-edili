@@ -684,7 +684,7 @@ function CTABanner() {
               <img src={ctaAerial} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
             </span>{" "}
             impresa edile in un{" "}
-            <span className="text-primary italic">magnete</span>{" "}
+            <span className="text-gradient-lime">magnete</span>{" "}
             <span className="inline-flex items-center align-middle mx-2">
               <img src={ctaInline} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
             </span>{" "}
