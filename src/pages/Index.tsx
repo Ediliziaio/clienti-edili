@@ -397,9 +397,9 @@ function AboutSection() {
               <SectionLabel>Chi Siamo</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-8">
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-8 font-bold">
                 La tua visione, la nostra{" "}
-                <span className="text-primary italic">esperienza.</span>{" "}
+                <span className="text-gradient-lime">esperienza.</span>{" "}
                 Insieme costruiamo il tuo successo online.
               </h2>
             </FadeIn>
