@@ -218,9 +218,28 @@ function ScrollProgress() {
   return <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-[60]" style={{ scaleX }} />;
 }
 
+// ─── Top Offer Banner ─────────────────────────────────────────
+
+function TopBanner({ visible, onClose }: { visible: boolean; onClose: () => void }) {
+  if (!visible) return null;
+  return (
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-primary text-primary-foreground">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-3 h-10 relative">
+        <Gift size={16} className="shrink-0 hidden sm:block" />
+        <p className="text-xs sm:text-sm font-ui font-bold tracking-wide text-center">
+          Offerta: Se non sei soddisfatto del nostro servizio, il sito te lo lasciamo <span className="underline underline-offset-2">GRATIS</span>
+        </p>
+        <button onClick={onClose} className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 transition-opacity" aria-label="Chiudi">
+          <X size={16} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // ─── Navbar ───────────────────────────────────────────────────
 
-function Navbar() {
+function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
