@@ -994,7 +994,7 @@ function FinalCTA() {
           <SectionLabel>Inizia Oggi</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-8">
+          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] mb-8 font-bold">
             Collaboriamo<span className="text-primary">!</span>
           </h2>
         </FadeIn>
