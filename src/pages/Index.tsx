@@ -596,8 +596,8 @@ function ProcessSection() {
           <SectionLabel>Come Funziona</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Tre passi per il tuo <span className="text-primary italic">nuovo sito</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Tre passi per il tuo <span className="text-gradient-lime">nuovo sito</span>
           </h2>
         </FadeIn>
         <div className="grid md:grid-cols-3 gap-6">
