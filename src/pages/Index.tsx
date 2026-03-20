@@ -533,22 +533,22 @@ function ProjectsSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <ScaleIn key={i} delay={i * 0.15}>
+            <FadeIn key={i} delay={i * 0.15}>
               <div className="img-card group cursor-pointer h-[500px]">
-                <img src={p.image} alt={p.title} loading="lazy" />
+                <ParallaxImage src={p.image} alt={p.title} className="absolute inset-0 w-full h-full" speed={0.2} />
                 <div className="img-overlay" />
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end relative z-10">
                   <span className="font-ui text-xs tracking-wider uppercase text-primary mb-2">{p.category}</span>
                   <h3 className="font-display text-2xl text-foreground mb-2">{p.title}</h3>
                   <p className="text-foreground/60 text-sm opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                     {p.desc}
                   </p>
                 </div>
-                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-card/50 backdrop-blur-sm border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-card/50 backdrop-blur-sm border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 z-10">
                   <ArrowUpRight size={18} className="text-foreground group-hover:text-primary-foreground transition-colors" />
                 </div>
               </div>
-            </ScaleIn>
+            </FadeIn>
           ))}
         </div>
       </div>
