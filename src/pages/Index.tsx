@@ -38,9 +38,9 @@ const services = [
 ];
 
 const projects = [
-  { title: "Villa Moderna Toscana", category: "Residenziale", desc: "Sito web completo per costruttore di ville di lusso in Toscana.", image: project1 },
-  { title: "Residenze Milano Sud", category: "Complesso Residenziale", desc: "Landing page e strategia SEO per progetto immobiliare a Milano.", image: project2 },
-  { title: "Ristrutturazione D'Interni", category: "Interior Design", desc: "Portfolio online per impresa specializzata in ristrutturazioni di pregio.", image: project3 },
+  { title: "Sito Web Rossi Costruzioni", category: "Sito Web Completo", desc: "Sito moderno con portfolio lavori, galleria fotografica e form contatto integrato.", image: project1 },
+  { title: "Landing Page Edil Bianchi", category: "Lead Generation", desc: "Landing page ottimizzata per generare preventivi con SEO locale integrato.", image: project2 },
+  { title: "Portale Costruzioni Ferrari", category: "Portale Aziendale", desc: "Portale completo con galleria progetti, preventivi online e area clienti.", image: project3 },
 ];
 
 const blogPosts = [
