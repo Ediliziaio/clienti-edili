@@ -56,8 +56,8 @@
   }
 
   h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: -0.02em;
+    font-family: 'Sora', sans-serif;
+    letter-spacing: -0.03em;
   }
 
   h4, h5, h6 {
@@ -68,7 +68,7 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Sora', sans-serif;
   }
 
   .font-ui {

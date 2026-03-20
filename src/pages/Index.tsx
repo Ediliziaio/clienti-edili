@@ -38,9 +38,9 @@ const services = [
 ];
 
 const projects = [
-  { title: "Villa Moderna Toscana", category: "Residenziale", desc: "Sito web completo per costruttore di ville di lusso in Toscana.", image: project1 },
-  { title: "Residenze Milano Sud", category: "Complesso Residenziale", desc: "Landing page e strategia SEO per progetto immobiliare a Milano.", image: project2 },
-  { title: "Ristrutturazione D'Interni", category: "Interior Design", desc: "Portfolio online per impresa specializzata in ristrutturazioni di pregio.", image: project3 },
+  { title: "Sito Web Rossi Costruzioni", category: "Sito Web Completo", desc: "Sito moderno con portfolio lavori, galleria fotografica e form contatto integrato.", image: project1 },
+  { title: "Landing Page Edil Bianchi", category: "Lead Generation", desc: "Landing page ottimizzata per generare preventivi con SEO locale integrato.", image: project2 },
+  { title: "Portale Costruzioni Ferrari", category: "Portale Aziendale", desc: "Portale completo con galleria progetti, preventivi online e area clienti.", image: project3 },
 ];
 
 const blogPosts = [
@@ -273,9 +273,9 @@ function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05]">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] font-bold">
               Il sito che porta{" "}
-              <span className="text-primary italic">clienti</span>{" "}
+              <span className="text-gradient-lime">clienti</span>{" "}
               alla tua impresa.{" "}
               <span className="text-primary">In 48 ore.</span>
             </h1>
@@ -311,7 +311,7 @@ function Hero() {
               <div className="img-overlay" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="font-ui text-xs text-primary tracking-wider uppercase mb-1">Progetto Recente</p>
-                <p className="font-display text-xl text-foreground">Villa Moderna Toscana</p>
+                <p className="font-display text-xl text-foreground font-semibold">Sito Web Rossi Costruzioni</p>
               </div>
             </motion.div>
 
@@ -397,9 +397,9 @@ function AboutSection() {
               <SectionLabel>Chi Siamo</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-8">
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-8 font-bold">
                 La tua visione, la nostra{" "}
-                <span className="text-primary italic">esperienza.</span>{" "}
+                <span className="text-gradient-lime">esperienza.</span>{" "}
                 Insieme costruiamo il tuo successo online.
               </h2>
             </FadeIn>
@@ -415,8 +415,8 @@ function AboutSection() {
           <FadeIn delay={0.2}>
             <div className="grid grid-cols-2 gap-6">
               {stats.map((s, i) => (
-                <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors duration-300">
-                  <div className="font-display text-4xl sm:text-5xl text-primary mb-2">
+                <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500">
+                  <div className="font-display text-5xl sm:text-6xl text-primary mb-2 font-bold">
                     <AnimatedCounter value={s.value} suffix={s.suffix} />
                   </div>
                   <p className="text-muted-foreground text-sm">{s.label}</p>
@@ -440,9 +440,9 @@ function ServicesSection() {
           <SectionLabel>I Nostri Servizi</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-4 max-w-3xl">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-4 max-w-3xl font-bold">
             Tutto quello che ti serve per portare{" "}
-            <span className="text-primary italic">clienti</span> in cantiere
+            <span className="text-gradient-lime">clienti</span> in cantiere
           </h2>
         </FadeIn>
         <FadeIn delay={0.15}>
@@ -494,9 +494,9 @@ function ProjectsSection() {
               <SectionLabel>Progetti Recenti</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl">
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl font-bold">
                 I siti che abbiamo{" "}
-                <span className="text-primary italic">costruito</span>
+                <span className="text-gradient-lime">costruito</span>
               </h2>
             </FadeIn>
           </div>
@@ -540,14 +540,14 @@ function WhyUsSection() {
           <SectionLabel>Perché Noi</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Garanzie che nessun altro ti <span className="text-primary italic">offre</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Garanzie che nessun altro ti <span className="text-gradient-lime">offre</span>
           </h2>
         </FadeIn>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyUs.map((w, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/40 hover:glow-lime transition-all duration-500 group h-full">
+              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/40 hover:-translate-y-2 glow-lime transition-all duration-500 group h-full">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <w.icon size={26} className="text-primary" />
                 </div>
@@ -596,14 +596,14 @@ function ProcessSection() {
           <SectionLabel>Come Funziona</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Tre passi per il tuo <span className="text-primary italic">nuovo sito</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Tre passi per il tuo <span className="text-gradient-lime">nuovo sito</span>
           </h2>
         </FadeIn>
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((s, i) => (
             <FadeIn key={i} delay={i * 0.15}>
-              <div className="bg-card border border-border rounded-2xl p-10 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden h-full">
+              <div className="bg-card border border-border rounded-2xl p-10 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden h-full">
                 <span className="font-display text-8xl text-primary/10 absolute -top-4 -right-2 group-hover:text-primary/20 transition-colors">
                   {s.num}
                 </span>
@@ -633,14 +633,14 @@ function TestimonialsSection() {
           <SectionLabel>Recensioni</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Cosa dicono i nostri <span className="text-primary italic">clienti</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Cosa dicono i nostri <span className="text-gradient-lime">clienti</span>
           </h2>
         </FadeIn>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-500 group h-full flex flex-col">
+              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 group h-full flex flex-col">
                 <Quote size={32} className="text-primary/20 mb-4" />
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: r.rating }).map((_, j) => (
@@ -678,13 +678,13 @@ function CTABanner() {
     <section className="py-24 sm:py-32 border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] text-center">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] text-center font-bold">
             Trasformiamo la tua{" "}
             <span className="inline-flex items-center align-middle mx-2">
               <img src={ctaAerial} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
             </span>{" "}
             impresa edile in un{" "}
-            <span className="text-primary italic">magnete</span>{" "}
+            <span className="text-gradient-lime">magnete</span>{" "}
             <span className="inline-flex items-center align-middle mx-2">
               <img src={ctaInline} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
             </span>{" "}
@@ -711,8 +711,8 @@ function PricingSection() {
           <SectionLabel>L'Offerta</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Un investimento che si <span className="text-primary italic">ripaga</span> da solo
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Un investimento che si <span className="text-gradient-lime">ripaga</span> da solo
           </h2>
         </FadeIn>
         <FadeIn delay={0.2}>
@@ -769,8 +769,8 @@ function BlogSection() {
               <SectionLabel>Insights</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl">
-                Risorse per far crescere la tua <span className="text-primary italic">impresa</span>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl font-bold">
+                Risorse per far crescere la tua <span className="text-gradient-lime">impresa</span>
               </h2>
             </FadeIn>
           </div>
@@ -819,8 +819,8 @@ function FAQSection() {
               <SectionLabel>Domande Frequenti</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-6">
-                Hai qualche <span className="text-primary italic">domanda?</span>
+              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-6 font-bold">
+                Hai qualche <span className="text-gradient-lime">domanda?</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
@@ -891,8 +891,8 @@ function ContactSection() {
               <SectionLabel>Contattaci</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-8">
-                Pronto a portare <span className="text-primary italic">clienti</span> in cantiere?
+              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-8 font-bold">
+                Pronto a portare <span className="text-gradient-lime">clienti</span> in cantiere?
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
@@ -994,7 +994,7 @@ function FinalCTA() {
           <SectionLabel>Inizia Oggi</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-8">
+          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] mb-8 font-bold">
             Collaboriamo<span className="text-primary">!</span>
           </h2>
         </FadeIn>
