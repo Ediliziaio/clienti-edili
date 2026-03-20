@@ -4,7 +4,8 @@ import {
   Phone, Mail, MapPin, Check, Star, ArrowUpRight, ArrowRight,
   Shield, Clock, Zap, Menu, X, Send, User, Briefcase,
   MessageSquare, Globe, Search, Share2, BarChart3, FileText,
-  Plus, Minus, Quote, Users, Award, Headphones, Calendar
+  Plus, Minus, Quote, Users, Award, Headphones, Calendar,
+  TrendingUp, ThumbsDown, ThumbsUp, Instagram, Facebook, MessageCircle
 } from "lucide-react";
 
 // ─── Images ──────────────────────────────────────────────────
@@ -21,6 +22,8 @@ import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
+import beforeSite from "@/assets/before-site.jpg";
+import afterSite from "@/assets/after-site.jpg";
 
 // ─── Data ─────────────────────────────────────────────────────
 
@@ -292,6 +295,19 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
       </div>
 
+      {/* Social sidebar */}
+      <div className="hidden lg:flex flex-col gap-4 fixed left-6 top-1/2 -translate-y-1/2 z-40">
+        {[
+          { icon: Facebook, href: "#", label: "Facebook" },
+          { icon: Instagram, href: "#", label: "Instagram" },
+          { icon: MessageCircle, href: "https://wa.me/390212345678", label: "WhatsApp" },
+        ].map((s, i) => (
+          <a key={i} href={s.href} aria-label={s.label} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300">
+            <s.icon size={16} />
+          </a>
+        ))}
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center py-16 lg:py-0 relative z-10">
         {/* Left */}
         <div className="space-y-8">
@@ -556,6 +572,117 @@ function ProjectsSection() {
   );
 }
 
+// ─── Results Section (NEW) ────────────────────────────────────
+
+const results = [
+  { value: 340, suffix: "%", prefix: "+", label: "Aumento Traffico", desc: "Media di crescita del traffico organico per i nostri clienti nei primi 3 mesi." },
+  { value: 12, suffix: "", prefix: "", label: "Preventivi / Mese", desc: "Richieste di preventivo mensili medie generate dai siti che creiamo." },
+  { value: 180, suffix: "k", prefix: "€", label: "Fatturato Generato", desc: "Volume d'affari generato per i nostri clienti nell'ultimo anno." },
+];
+
+function ResultsSection() {
+  return (
+    <section className="py-24 sm:py-32 border-y border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
+          <SectionLabel>Risultati Concreti</SectionLabel>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Numeri che <span className="text-gradient-lime">parlano</span> da soli
+          </h2>
+        </FadeIn>
+        <div className="grid md:grid-cols-3 gap-8">
+          {results.map((r, i) => (
+            <FadeIn key={i} delay={i * 0.15}>
+              <div className="relative bg-card border border-border rounded-2xl p-10 hover:border-primary/40 transition-all duration-500 group overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="font-display text-6xl sm:text-7xl text-primary font-bold mb-4">
+                  <AnimatedCounter value={r.value} suffix={r.suffix} prefix={r.prefix} />
+                </div>
+                <h3 className="font-ui font-semibold text-lg mb-2">{r.label}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{r.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Before & After Section (NEW) ─────────────────────────────
+
+function BeforeAfterSection() {
+  return (
+    <section className="py-24 sm:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
+          <SectionLabel>Prima & Dopo</SectionLabel>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            La differenza è <span className="text-gradient-lime">evidente</span>
+          </h2>
+        </FadeIn>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Before */}
+          <FadeIn delay={0.1}>
+            <div className="bg-card border border-destructive/30 rounded-2xl overflow-hidden group">
+              <div className="relative h-[280px] overflow-hidden">
+                <img src={beforeSite} alt="Sito web vecchio e datato" className="w-full h-full object-cover opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-destructive/20 flex items-center justify-center">
+                    <ThumbsDown size={18} className="text-destructive" />
+                  </div>
+                  <span className="font-ui font-semibold text-destructive">Senza ClientiEdili</span>
+                </div>
+                <ul className="space-y-3">
+                  {["Sito datato o inesistente", "Zero richieste da Google", "Nessuna presenza su Maps", "Clienti solo dal passaparola"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-muted-foreground text-sm">
+                      <X size={14} className="text-destructive shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* After */}
+          <FadeIn delay={0.25}>
+            <div className="bg-card border border-primary/30 rounded-2xl overflow-hidden group glow-lime">
+              <div className="relative h-[280px] overflow-hidden">
+                <img src={afterSite} alt="Sito web moderno e professionale" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                    <ThumbsUp size={18} className="text-primary" />
+                  </div>
+                  <span className="font-ui font-semibold text-primary">Con ClientiEdili</span>
+                </div>
+                <ul className="space-y-3">
+                  {["Sito moderno e professionale", "10+ richieste al mese da Google", "Prima pagina su Google Maps", "Clienti nuovi ogni settimana"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-foreground/80 text-sm">
+                      <Check size={14} className="text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Why Choose Us ────────────────────────────────────────────
 
 function WhyUsSection() {
@@ -626,19 +753,35 @@ function ProcessSection() {
             Tre passi per il tuo <span className="text-gradient-lime">nuovo sito</span>
           </h2>
         </FadeIn>
-        <div className="grid md:grid-cols-3 gap-6">
+
+        {/* Timeline layout */}
+        <div className="relative max-w-3xl mx-auto">
+          {/* Vertical connector line */}
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-border hidden md:block" />
+
           {steps.map((s, i) => (
-            <FadeIn key={i} delay={i * 0.15}>
-              <div className="bg-card border border-border rounded-2xl p-10 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden h-full">
-                <span className="font-display text-8xl text-primary/10 absolute -top-4 -right-2 group-hover:text-primary/20 transition-colors">
+            <FadeIn key={i} delay={i * 0.2}>
+              <div className="relative flex gap-8 mb-12 last:mb-0">
+                {/* Timeline dot */}
+                <div className="hidden md:flex shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground font-display font-bold text-lg items-center justify-center relative z-10">
                   {s.num}
-                </span>
-                <div className="relative z-10">
-                  <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1.5 font-ui text-xs font-semibold mb-6">
-                    {s.time}
+                </div>
+
+                {/* Content card */}
+                <div className="flex-1 bg-card border border-border rounded-2xl p-8 hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden">
+                  <span className="font-display text-8xl text-primary/5 absolute -top-4 -right-2 group-hover:text-primary/10 transition-colors">
+                    {s.num}
+                  </span>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="md:hidden font-display text-sm font-bold text-primary">{s.num}</span>
+                      <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1.5 font-ui text-xs font-semibold">
+                        {s.time}
+                      </div>
+                    </div>
+                    <h3 className="font-display text-2xl mb-3">{s.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                   </div>
-                  <h3 className="font-display text-2xl mb-4">{s.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             </FadeIn>
@@ -743,6 +886,13 @@ function PricingSection() {
         </FadeIn>
         <FadeIn delay={0.2}>
           <div className="max-w-2xl mx-auto">
+            {/* Urgency Banner */}
+            <div className="animate-urgency-glow bg-primary/10 border border-primary/30 rounded-2xl p-4 mb-6 text-center">
+              <p className="font-ui font-semibold text-sm text-primary">
+                ⚡ Solo 5 posti disponibili a Marzo — <span className="underline">Prenota ora</span>
+              </p>
+            </div>
+
             <div className="bg-card border-2 border-primary rounded-3xl overflow-hidden glow-lime">
               <div className="bg-primary/10 p-8 text-center">
                 <span className="font-ui text-xs tracking-wider uppercase text-primary">Pacchetto Completo</span>
@@ -1043,6 +1193,7 @@ function FinalCTA() {
 // ─── Footer ───────────────────────────────────────────────────
 
 function Footer() {
+  const [email, setEmail] = useState("");
   return (
     <footer className="border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1054,9 +1205,37 @@ function Footer() {
               </div>
               <span className="font-ui font-bold text-lg">ClientiEdili</span>
             </div>
-            <p className="text-muted-foreground max-w-sm leading-relaxed">
+            <p className="text-muted-foreground max-w-sm leading-relaxed mb-6">
               Siti web professionali per imprese edili italiane. Più clienti, più lavoro, più crescita.
             </p>
+
+            {/* Google Reviews badge */}
+            <div className="inline-flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 mb-6">
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} size={14} className="text-primary fill-primary" />
+                ))}
+              </div>
+              <span className="text-sm text-foreground font-semibold">4.9/5</span>
+              <span className="text-xs text-muted-foreground">su Google Reviews</span>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <p className="font-ui text-xs uppercase tracking-wider text-muted-foreground mb-3">Newsletter</p>
+              <form onSubmit={(e) => { e.preventDefault(); setEmail(""); }} className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="La tua email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                />
+                <button type="submit" className="bg-primary text-primary-foreground rounded-lg px-4 py-2.5 font-ui text-sm font-semibold hover:bg-primary/90 transition-colors">
+                  Iscriviti
+                </button>
+              </form>
+            </div>
           </div>
 
           <div>
@@ -1076,6 +1255,19 @@ function Footer() {
               <li>info@clientiedili.it</li>
               <li>Milano, Italia</li>
             </ul>
+
+            {/* Social icons */}
+            <div className="flex gap-3 mt-6">
+              {[
+                { icon: Facebook, href: "#" },
+                { icon: Instagram, href: "#" },
+                { icon: MessageCircle, href: "https://wa.me/390212345678" },
+              ].map((s, i) => (
+                <a key={i} href={s.href} className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300">
+                  <s.icon size={14} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -1091,6 +1283,23 @@ function Footer() {
   );
 }
 
+// ─── Floating WhatsApp Button ─────────────────────────────────
+
+function FloatingWhatsApp() {
+  return (
+    <a
+      href="https://wa.me/390212345678"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contattaci su WhatsApp"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center animate-whatsapp-pulse transition-transform hover:scale-110"
+      style={{ backgroundColor: "hsl(142 70% 49%)" }}
+    >
+      <MessageCircle size={26} className="text-white" />
+    </a>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────
 
 export default function Index() {
@@ -1103,6 +1312,8 @@ export default function Index() {
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
+      <ResultsSection />
+      <BeforeAfterSection />
       <WhyUsSection />
       <DoubleMarquee />
       <ProcessSection />
@@ -1114,6 +1325,7 @@ export default function Index() {
       <ContactSection />
       <FinalCTA />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }

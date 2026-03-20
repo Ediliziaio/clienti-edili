@@ -179,6 +179,43 @@
   animation-play-state: paused;
 }
 
+/* WhatsApp pulse */
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 hsl(142 70% 49% / 0.5); }
+  50% { box-shadow: 0 0 0 14px hsl(142 70% 49% / 0); }
+}
+
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2s ease-in-out infinite;
+}
+
+/* Timeline connector */
+.timeline-connector {
+  @apply absolute top-0 bottom-0 w-px bg-border;
+  left: 24px;
+}
+
+.timeline-connector::after {
+  content: '';
+  @apply absolute top-0 left-0 w-full bg-primary;
+  height: 0%;
+  transition: height 1.5s ease-out;
+}
+
+.timeline-connector.active::after {
+  height: 100%;
+}
+
+/* Urgency glow */
+@keyframes urgency-glow {
+  0%, 100% { box-shadow: 0 0 20px -5px hsl(72 89% 60% / 0.3); }
+  50% { box-shadow: 0 0 30px -5px hsl(72 89% 60% / 0.5); }
+}
+
+.animate-urgency-glow {
+  animation: urgency-glow 2s ease-in-out infinite;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
