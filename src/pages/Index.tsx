@@ -440,9 +440,9 @@ function ServicesSection() {
           <SectionLabel>I Nostri Servizi</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-4 max-w-3xl">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-4 max-w-3xl font-bold">
             Tutto quello che ti serve per portare{" "}
-            <span className="text-primary italic">clienti</span> in cantiere
+            <span className="text-gradient-lime">clienti</span> in cantiere
           </h2>
         </FadeIn>
         <FadeIn delay={0.15}>
