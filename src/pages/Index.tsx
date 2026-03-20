@@ -603,7 +603,7 @@ function ProcessSection() {
         <div className="grid md:grid-cols-3 gap-6">
           {steps.map((s, i) => (
             <FadeIn key={i} delay={i * 0.15}>
-              <div className="bg-card border border-border rounded-2xl p-10 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden h-full">
+              <div className="bg-card border border-border rounded-2xl p-10 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden h-full">
                 <span className="font-display text-8xl text-primary/10 absolute -top-4 -right-2 group-hover:text-primary/20 transition-colors">
                   {s.num}
                 </span>
