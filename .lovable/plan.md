@@ -1,54 +1,70 @@
 
 
-# ClientiEdili — High-Conversion Landing Page
+# ClientiEdili v2 — Premium Dark Agency Redesign
 
-## What We're Building
+## Summary
 
-A single-page, dark-themed landing page in Italian for **ClientiEdili**, an agency that sells professional websites to Italian construction companies. The page features bold orange accents, scroll animations, testimonials, FAQ, pricing, and a contact form.
+Complete redesign of the landing page with a new visual identity inspired by premium dark agency aesthetics (Carino/Pemogan style). The orange accent is replaced with **lime green (#C8F53E)**, fonts change to **Playfair Display** (display headings) + **Syne** (UI/buttons) + **DM Sans** (body), and layouts become more asymmetric with sophisticated interactions.
 
-## Design Summary
+## Key Changes from Current Version
 
-- **Theme**: Dark background (#0D0D0D), orange accent (#F05A28), gold badges
-- **Fonts**: Bebas Neue (headings), DM Sans (body)
-- **Animations**: Framer Motion — scroll-triggered reveals, animated counters, staggered cards, scroll progress bar
-
-## Sections (in order)
-
-1. **Navbar** — Fixed, transparent → blurred on scroll, logo + CTA button
-2. **Hero** — Full-screen, headline "IL TUO SITO CHE PORTA CLIENTI IN CANTIERE. IN 48 ORE.", badge, checklist, CTA, floating labels, mock browser preview
-3. **Marquee Logos** — Scrolling ticker of client company names
-4. **Problem Section** — 3 pain-point cards with icons (XCircle, AlertTriangle, Building2)
-5. **Offer Section** — Pricing card (€1.400 → €1.000), feature checklist, bonus items, guarantees (Zero Anticipo, 48 Ore, Soddisfatto o Rimborsato)
-6. **Process Section** — 3 steps (call → preview in 24h → live in 48h)
-7. **Reviews Section** — Testimonial cards with star ratings, avatars, animated counters (127+ companies, 98% satisfaction, 48h delivery, €0 upfront)
-8. **FAQ Section** — Accordion with 6 Q&As
-9. **Final CTA** — Urgency section with two CTA buttons
-10. **Contact Form** — Glowing card with fields: name, phone, email, city, business type, description, submission confirmation
-11. **Footer** — Brand, legal links, copyright
+| Aspect | Current (v1) | New (v2) |
+|--------|-------------|----------|
+| Accent color | Orange #F05A28 | Lime #C8F53E |
+| Heading font | Bebas Neue | Playfair Display (display), Syne (UI) |
+| Layout style | Centered/symmetric | Asymmetric two-column, editorial |
+| Problem section | 3 icon cards | Narrative left column + numbered pain points right |
+| Hero | Badge + checklist + mock browser | "Il sito che porta clienti alla tua impresa. In 48 ore." + social proof cluster + stat badges |
+| Ticker | Company names | USP ticker ("Zero Anticipo ◆ Consegna 48 Ore ◆ ...") |
+| FAQ | Accordion (radix) | Custom AnimatePresence +/- toggle |
+| Reviews | Cards with avatars | Cards with "Verificato" badge, longer testimonials |
+| CTA Final | Urgency text | Two-column card with guarantees grid |
+| Contact | Glowing card | Two-column: info left + form right, sector dropdown |
 
 ## Technical Plan
 
-### Step 1: Setup dependencies and fonts
-- Add Google Fonts links to `index.html`
-- Install `framer-motion` (lucide-react already available)
+### Step 1: Update `index.html`
+- Replace Google Fonts link with Playfair Display + Syne + DM Sans
 
-### Step 2: Global CSS (`src/index.css`)
-- CSS custom properties for the full color palette
-- Base styles: dark background, typography, button styles, card styles, badges, FAQ, scroll bar, responsive breakpoints
+### Step 2: Rewrite `src/index.css`
+- New CSS variables: `--accent: #C8F53E`, `--accent2: #E8FF6B`, `--bg: #0A0A0A`, `--surface: #1C1C1C`, etc.
+- New utility classes: `.display` (Playfair), `.sans-heavy` (Syne), step numbers, stars, price styles
+- Updated glow effects using lime color
+- Ticker animation with hover-pause
 
-### Step 3: Single-page component (`src/pages/Index.tsx`)
-- All sections as sub-components in one file
-- Data arrays for reviews, FAQ, process steps, offer items, company logos
-- `AnimatedCounter` component using framer-motion's `useMotionValue`
-- `ScrollProgressBar` using `useScroll` + `useSpring`
-- Contact form with React state, simple validation, success state
-- All scroll-triggered animations via `useInView`
+### Step 3: Update `tailwind.config.ts`
+- Add Playfair Display + Syne to font families
+- Update accent/primary color mappings to lime
 
-### Step 4: Update `src/App.tsx`
-- Keep single route pointing to Index
+### Step 4: Completely rewrite `src/pages/Index.tsx`
+All sections rebuilt with new content and layout:
 
-## Notes
-- Phone number placeholder: `tel:+39XXXXXXXXXX`
-- Form is UI-only (no backend integration)
-- Fully responsive with mobile breakpoints
+1. **ScrollProgress** — lime accent bar
+2. **Navbar** — "CE" monogram + "ClientiEdili" text, nav links (Offerta, Come Funziona, Recensioni, FAQ), "Contattaci Gratis" CTA pill
+3. **Hero** — Asymmetric: left side has category label, large Playfair headline "Il sito che porta clienti alla tua impresa. In 48 ore.", subtitle, two CTA buttons; right side has avatar cluster with "+123" badge, star rating, quote, and stat counters (127+, 48h, €0)
+4. **Guarantees Bar** — 3-column grid: Zero anticipo, Consegna 48 ore, Soddisfatto o rimborsato
+5. **Ticker** — Scrolling USPs with ◆ separators, pauses on hover
+6. **Problem** — Two-column: left editorial text "Hai già bruciato soldi in un sito che non ha mai funzionato?"; right column with 3 numbered pain points (01, 02, 03)
+7. **Offer** — Two-column: left has pricing (€1.400 → €1.000), guarantees, CTA; right has included features checklist + bonus section
+8. **Process** — "3 passi. 48 ore. Nessun rischio." with numbered steps (01, 02, 03) as bordered rows with hover animation
+9. **Stats** — 4 animated counters (127+, 98%, 48h, 0€)
+10. **Reviews** — "Cosa dicono i tuoi colleghi imprenditori" with 6 testimonial cards, star ratings, verified badges
+11. **FAQ** — Two-column: left editorial text + "Hai altre domande?" CTA; right custom accordion with +/- icons and AnimatePresence
+12. **CTA Final** — Bordered card, two-column: left urgency text; right has two buttons + 4 guarantee items with icons
+13. **Contact** — Two-column: left info text with 3 trust signals; right form (nome, telefono, email, città, settore dropdown, note, submit) with animated success state
+14. **Footer** — CE monogram, tagline, legal links, copyright
+
+### New Data
+
+- **6 testimonials**: Marco Ricci, Giuseppe Ferri, Antonio Bianchi, Luca Gatti, Salvatore Greco, Roberto Conti — with company, city, longer Italian text
+- **5 FAQs**: Updated questions and answers from the doc
+- **3 process steps**: "Ci chiami — 5 minuti", "Vedi la bozza — 24h", "Vai live — 48h"
+- **8 included features** + **4 bonuses** (Google My Business, Facebook/Instagram, Analytics, PDF guide)
+- **Ticker items**: "Zero Anticipo ◆ Consegna 48 Ore ◆ Garanzia Soddisfatto o Rimborsato ◆ Google My Business Gratis ◆ Social Inclusi ◆ Solo Imprese Edili"
+
+## Files Modified
+- `index.html` — font links
+- `src/index.css` — complete rewrite of variables and utilities
+- `tailwind.config.ts` — font families and color updates
+- `src/pages/Index.tsx` — complete rewrite (~900 lines)
 
