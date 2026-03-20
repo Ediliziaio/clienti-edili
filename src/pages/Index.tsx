@@ -1414,6 +1414,7 @@ export default function Index() {
       <TestimonialsSection />
       <CTABanner />
       <PricingSection />
+      <GuaranteeSection />
       <BlogSection />
       <FAQSection />
       <ContactSection />
