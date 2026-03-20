@@ -22,6 +22,8 @@ import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 import heroBg from "@/assets/hero-bg.jpg";
+import beforeSite from "@/assets/before-site.jpg";
+import afterSite from "@/assets/after-site.jpg";
 
 // ─── Data ─────────────────────────────────────────────────────
 
