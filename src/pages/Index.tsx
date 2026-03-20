@@ -163,6 +163,33 @@ function ScaleIn({ children, className = "", delay = 0 }: { children: React.Reac
   );
 }
 
+function ParallaxImage({ src, alt, className = "", speed = 0.2 }: { src: string; alt: string; className?: string; speed?: number }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [speed * -100, speed * 100]);
+  return (
+    <div ref={ref} className={`overflow-hidden ${className}`}>
+      <motion.img src={src} alt={alt} loading="lazy" style={{ y }} className="w-full h-full object-cover scale-[1.2]" />
+    </div>
+  );
+}
+
+function ClipReveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ clipPath: "inset(100% 0 0 0)" }}
+      animate={isInView ? { clipPath: "inset(0% 0 0 0)" } : {}}
+      transition={{ duration: 0.9, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 function SectionLabel({ children }: { children: string }) {
   return <p className="section-label mb-6">( {children} )</p>;
 }
