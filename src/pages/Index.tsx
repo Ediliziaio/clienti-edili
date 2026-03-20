@@ -4,8 +4,23 @@ import {
   Phone, Mail, MapPin, Check, Star, ArrowUpRight, ArrowRight,
   Shield, Clock, Zap, Menu, X, Send, User, Briefcase,
   MessageSquare, Globe, Search, Share2, BarChart3, FileText,
-  Plus, Minus, Quote, Users, Award, Headphones
+  Plus, Minus, Quote, Users, Award, Headphones, Calendar
 } from "lucide-react";
+
+// ─── Images ──────────────────────────────────────────────────
+import serviceConstruction from "@/assets/service-construction.jpg";
+import serviceSeo from "@/assets/service-seo.jpg";
+import serviceGmb from "@/assets/service-gmb.jpg";
+import serviceSocial from "@/assets/service-social.jpg";
+import project1 from "@/assets/project-1.jpg";
+import project2 from "@/assets/project-2.jpg";
+import project3 from "@/assets/project-3.jpg";
+import ctaAerial from "@/assets/cta-aerial.jpg";
+import ctaInline from "@/assets/cta-inline.jpg";
+import blog1 from "@/assets/blog-1.jpg";
+import blog2 from "@/assets/blog-2.jpg";
+import blog3 from "@/assets/blog-3.jpg";
+import heroBg from "@/assets/hero-bg.jpg";
 
 // ─── Data ─────────────────────────────────────────────────────
 
@@ -16,10 +31,22 @@ const companies = [
 ];
 
 const services = [
-  { icon: Globe, title: "Sito Web Professionale", desc: "Design moderno e responsive, ottimizzato per convertire visitatori in clienti." },
-  { icon: Search, title: "SEO Locale", desc: "Posizionamento su Google per le ricerche nella tua zona. Più visibilità, più clienti." },
-  { icon: Share2, title: "Google My Business", desc: "Profilo ottimizzato per apparire nelle ricerche locali e su Google Maps." },
-  { icon: BarChart3, title: "Social Media", desc: "Pagine Facebook e Instagram configurate e collegate al tuo sito web." },
+  { icon: Globe, title: "Sito Web Professionale", desc: "Design moderno e responsive, ottimizzato per convertire visitatori in clienti.", image: serviceConstruction },
+  { icon: Search, title: "SEO Locale", desc: "Posizionamento su Google per le ricerche nella tua zona. Più visibilità, più clienti.", image: serviceSeo },
+  { icon: Share2, title: "Google My Business", desc: "Profilo ottimizzato per apparire nelle ricerche locali e su Google Maps.", image: serviceGmb },
+  { icon: BarChart3, title: "Social Media", desc: "Pagine Facebook e Instagram configurate e collegate al tuo sito web.", image: serviceSocial },
+];
+
+const projects = [
+  { title: "Villa Moderna Toscana", category: "Residenziale", desc: "Sito web completo per costruttore di ville di lusso in Toscana.", image: project1 },
+  { title: "Residenze Milano Sud", category: "Complesso Residenziale", desc: "Landing page e strategia SEO per progetto immobiliare a Milano.", image: project2 },
+  { title: "Ristrutturazione D'Interni", category: "Interior Design", desc: "Portfolio online per impresa specializzata in ristrutturazioni di pregio.", image: project3 },
+];
+
+const blogPosts = [
+  { title: "Come un sito web può raddoppiare i tuoi clienti in edilizia", date: "15 Mar 2026", image: blog1, category: "Marketing" },
+  { title: "5 errori che le imprese edili fanno online", date: "10 Mar 2026", image: blog2, category: "Strategia" },
+  { title: "SEO locale: la guida per imprese di costruzione", date: "5 Mar 2026", image: blog3, category: "SEO" },
 ];
 
 const whyUs = [
@@ -120,6 +147,22 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
   );
 }
 
+function ScaleIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.92 }}
+      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+      transition={{ duration: 0.7, delay, ease: "easeOut" }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 function SectionLabel({ children }: { children: string }) {
   return <p className="section-label mb-6">( {children} )</p>;
 }
@@ -158,15 +201,15 @@ function Navbar() {
 
   const links = [
     { label: "Servizi", href: "#servizi" },
-    { label: "Come Funziona", href: "#processo" },
+    { label: "Progetti", href: "#progetti" },
     { label: "Recensioni", href: "#recensioni" },
+    { label: "Blog", href: "#blog" },
     { label: "FAQ", href: "#faq" },
   ];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-        {/* Logo */}
         <a href="#" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
             CE
@@ -174,7 +217,6 @@ function Navbar() {
           <span className="font-ui font-bold text-lg tracking-wide text-foreground">ClientiEdili</span>
         </a>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((l) => (
             <a key={l.href} href={l.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
@@ -183,12 +225,10 @@ function Navbar() {
           ))}
         </div>
 
-        {/* Desktop CTA */}
         <div className="hidden md:block">
           <CarinoButton href="#contatti">Contattaci</CarinoButton>
         </div>
 
-        {/* Mobile toggle */}
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -218,9 +258,14 @@ function Navbar() {
 function Hero() {
   return (
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
+      {/* Background image with overlay */}
+      <div className="absolute inset-0 z-0">
+        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center py-16 lg:py-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center py-16 lg:py-0 relative z-10">
         {/* Left */}
         <div className="space-y-8">
           <FadeIn>
@@ -252,57 +297,61 @@ function Hero() {
           </FadeIn>
         </div>
 
-        {/* Right — Testimonial card + social proof */}
+        {/* Right — Testimonial card + floating image */}
         <FadeIn delay={0.3} className="hidden lg:block">
           <div className="relative">
-            {/* Main testimonial card */}
-            <div className="bg-card border border-border rounded-2xl p-8 relative">
-              <Quote size={48} className="text-primary/20 absolute top-4 right-4" />
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} size={16} className="text-primary fill-primary" />
-                ))}
-              </div>
-              <p className="text-foreground/90 text-lg leading-relaxed italic mb-6">
-                "In 2 giorni avevo il sito online. Il mese dopo ho ricevuto 12 richieste di preventivo."
-              </p>
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center">
-                  MR
-                </div>
-                <div>
-                  <p className="font-ui font-semibold">Marco Rossi</p>
-                  <p className="text-muted-foreground text-sm">Rossi Costruzioni, Milano</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Avatar cluster */}
+            {/* Project image card */}
             <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-8 -left-8 bg-card border border-border rounded-xl p-4 flex items-center gap-3"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="img-card aspect-[4/3] rounded-2xl overflow-hidden glow-lime"
             >
-              <div className="flex -space-x-2">
-                {["MR", "GB", "AF", "LC"].map((initials, i) => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-primary/20 text-primary text-xs font-bold flex items-center justify-center border-2 border-card">
-                    {initials}
-                  </div>
-                ))}
-              </div>
-              <div className="text-sm">
-                <span className="text-primary font-bold">+127</span>
-                <span className="text-muted-foreground ml-1">imprese</span>
+              <img src={project1} alt="Progetto villa moderna" className="w-full h-full object-cover" />
+              <div className="img-overlay" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="font-ui text-xs text-primary tracking-wider uppercase mb-1">Progetto Recente</p>
+                <p className="font-display text-xl text-foreground">Villa Moderna Toscana</p>
               </div>
             </motion.div>
 
-            {/* Stat badge */}
+            {/* Testimonial card floating */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -bottom-8 -left-8 bg-card border border-border rounded-xl p-5 max-w-[280px] backdrop-blur-lg"
+            >
+              <Quote size={24} className="text-primary/30 mb-2" />
+              <p className="text-foreground/80 text-sm leading-relaxed italic mb-3">
+                "In 2 giorni avevo il sito online. 12 richieste di preventivo il mese dopo."
+              </p>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center text-xs">
+                  MR
+                </div>
+                <div>
+                  <p className="font-ui font-semibold text-sm">Marco Rossi</p>
+                  <p className="text-muted-foreground text-xs">Milano</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Avatar cluster */}
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
               className="absolute -top-6 -right-6 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-ui font-bold text-sm"
             >
-              48h Consegna ⚡
+              <div className="flex items-center gap-2">
+                <div className="flex -space-x-1.5">
+                  {["MR", "GB", "AF"].map((initials, i) => (
+                    <div key={i} className="w-6 h-6 rounded-full bg-primary-foreground/20 text-[10px] font-bold flex items-center justify-center border border-primary">
+                      {initials}
+                    </div>
+                  ))}
+                </div>
+                <span>+127 imprese</span>
+              </div>
             </motion.div>
           </div>
         </FadeIn>
@@ -341,7 +390,7 @@ function ClientsTicker() {
 function AboutSection() {
   return (
     <section className="py-24 sm:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ maxWidth: "80rem", marginLeft: "auto", marginRight: "auto" }}>
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           <div>
             <FadeIn>
@@ -366,7 +415,7 @@ function AboutSection() {
           <FadeIn delay={0.2}>
             <div className="grid grid-cols-2 gap-6">
               {stats.map((s, i) => (
-                <div key={i} className="bg-card border border-border rounded-xl p-6">
+                <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors duration-300">
                   <div className="font-display text-4xl sm:text-5xl text-primary mb-2">
                     <AnimatedCounter value={s.value} suffix={s.suffix} />
                   </div>
@@ -381,36 +430,99 @@ function AboutSection() {
   );
 }
 
-// ─── Services ─────────────────────────────────────────────────
+// ─── Services with Images ─────────────────────────────────────
 
 function ServicesSection() {
   return (
-    <section id="servizi" className="py-24 sm:py-32 bg-secondary/30">
+    <section id="servizi" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionLabel>I Nostri Servizi</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-4 max-w-3xl">
             Tutto quello che ti serve per portare{" "}
-            <span className="text-primary italic">clienti</span> in cantiere.
+            <span className="text-primary italic">clienti</span> in cantiere
           </h2>
         </FadeIn>
+        <FadeIn delay={0.15}>
+          <p className="text-muted-foreground text-lg mb-16 max-w-xl">
+            Servizi completi di web marketing specifici per il settore edile.
+          </p>
+        </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
-            <FadeIn key={i} delay={i * 0.1}>
-              <div className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/40 transition-all duration-300 h-full">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <s.icon size={28} className="text-primary" />
+            <ScaleIn key={i} delay={i * 0.1}>
+              <div className="img-card group cursor-pointer h-[400px]">
+                <img src={s.image} alt={s.title} loading="lazy" />
+                <div className="img-overlay" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 rounded-full bg-primary/20 backdrop-blur-sm flex items-center justify-center">
+                      <s.icon size={22} className="text-primary" />
+                    </div>
+                    <span className="font-ui text-xs tracking-wider uppercase text-primary">Servizio {String(i + 1).padStart(2, "0")}</span>
+                  </div>
+                  <h3 className="font-display text-2xl sm:text-3xl text-foreground mb-2">{s.title}</h3>
+                  <p className="text-foreground/70 text-sm leading-relaxed max-w-sm opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                    {s.desc}
+                  </p>
                 </div>
-                <h3 className="font-display text-xl mb-3">{s.title}</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">{s.desc}</p>
-                <div className="mt-6 flex items-center gap-2 text-primary text-sm font-ui font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                  Scopri di più <ArrowRight size={14} />
+                {/* Hover arrow */}
+                <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-0 rotate-45 transition-all duration-500">
+                  <ArrowUpRight size={20} className="text-foreground" />
                 </div>
               </div>
+            </ScaleIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Projects Section (NEW) ──────────────────────────────────
+
+function ProjectsSection() {
+  return (
+    <section id="progetti" className="py-24 sm:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <FadeIn>
+              <SectionLabel>Progetti Recenti</SectionLabel>
             </FadeIn>
+            <FadeIn delay={0.1}>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl">
+                I siti che abbiamo{" "}
+                <span className="text-primary italic">costruito</span>
+              </h2>
+            </FadeIn>
+          </div>
+          <FadeIn delay={0.2}>
+            <CarinoButton href="#contatti" variant="outline">Vedi Tutti i Progetti</CarinoButton>
+          </FadeIn>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {projects.map((p, i) => (
+            <ScaleIn key={i} delay={i * 0.15}>
+              <div className="img-card group cursor-pointer h-[500px]">
+                <img src={p.image} alt={p.title} loading="lazy" />
+                <div className="img-overlay" />
+                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                  <span className="font-ui text-xs tracking-wider uppercase text-primary mb-2">{p.category}</span>
+                  <h3 className="font-display text-2xl text-foreground mb-2">{p.title}</h3>
+                  <p className="text-foreground/60 text-sm opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
+                    {p.desc}
+                  </p>
+                </div>
+                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-card/50 backdrop-blur-sm border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                  <ArrowUpRight size={18} className="text-foreground group-hover:text-primary-foreground transition-colors" />
+                </div>
+              </div>
+            </ScaleIn>
           ))}
         </div>
       </div>
@@ -424,25 +536,23 @@ function WhyUsSection() {
   return (
     <section className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <FadeIn><SectionLabel>Perché Noi</SectionLabel></FadeIn>
-          <FadeIn delay={0.1}>
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-3xl mx-auto">
-              Quattro motivi per scegliere{" "}
-              <span className="text-primary italic">ClientiEdili</span>
-            </h2>
-          </FadeIn>
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <FadeIn>
+          <SectionLabel>Perché Noi</SectionLabel>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
+            Garanzie che nessun altro ti <span className="text-primary italic">offre</span>
+          </h2>
+        </FadeIn>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyUs.map((w, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all group">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                  <w.icon size={24} className="text-primary" />
+              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/40 hover:glow-lime transition-all duration-500 group h-full">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <w.icon size={26} className="text-primary" />
                 </div>
-                <h3 className="font-display text-2xl mb-2">{w.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{w.desc}</p>
+                <h3 className="font-display text-xl mb-3">{w.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{w.desc}</p>
               </div>
             </FadeIn>
           ))}
@@ -452,24 +562,25 @@ function WhyUsSection() {
   );
 }
 
-// ─── Double Marquee ───────────────────────────────────────────
+// ─── Double Marquee Ticker ────────────────────────────────────
 
 function DoubleMarquee() {
+  const repeat = (text: string, count: number) => Array(count).fill(text).join(" ◆ ");
   return (
-    <section className="py-12 border-y border-border overflow-hidden space-y-4">
-      <div className="flex animate-ticker whitespace-nowrap">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <span key={i} className="mx-6 font-display text-5xl sm:text-6xl lg:text-7xl text-foreground/5 uppercase tracking-wide">
-            {tickerLine1} ◆
+    <section className="py-12 border-y border-border overflow-hidden">
+      <div className="mb-4">
+        <div className="flex animate-ticker whitespace-nowrap">
+          <span className="font-display text-5xl sm:text-7xl lg:text-8xl text-foreground/5 mx-4">
+            {repeat(tickerLine1, 6)}
           </span>
-        ))}
+        </div>
       </div>
-      <div className="flex animate-ticker-reverse whitespace-nowrap">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <span key={i} className="mx-6 font-ui text-lg sm:text-xl text-muted-foreground/20 uppercase tracking-[0.2em]">
-            {tickerLine2} ◆{" "}
+      <div>
+        <div className="flex animate-ticker-reverse whitespace-nowrap">
+          <span className="font-ui text-lg sm:text-xl text-muted-foreground/20 tracking-[0.2em] uppercase mx-4">
+            {repeat(tickerLine2, 4)}
           </span>
-        ))}
+        </div>
       </div>
     </section>
   );
@@ -486,24 +597,22 @@ function ProcessSection() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            3 passi. 48 ore.{" "}
-            <span className="text-primary italic">Nessun rischio.</span>
+            Tre passi per il tuo <span className="text-primary italic">nuovo sito</span>
           </h2>
         </FadeIn>
-
-        <div className="space-y-4">
+        <div className="grid md:grid-cols-3 gap-6">
           {steps.map((s, i) => (
             <FadeIn key={i} delay={i * 0.15}>
-              <div className="group border border-border rounded-2xl p-6 sm:p-8 hover:border-primary/30 transition-all flex flex-col sm:flex-row sm:items-center gap-6">
-                <span className="font-display text-5xl sm:text-6xl text-primary/20 group-hover:text-primary/40 transition-colors">
+              <div className="bg-card border border-border rounded-2xl p-10 hover:border-primary/30 transition-all duration-500 group relative overflow-hidden h-full">
+                <span className="font-display text-8xl text-primary/10 absolute -top-4 -right-2 group-hover:text-primary/20 transition-colors">
                   {s.num}
                 </span>
-                <div className="flex-1">
-                  <h3 className="font-display text-2xl sm:text-3xl mb-2">{s.title}</h3>
-                  <p className="text-muted-foreground max-w-xl">{s.desc}</p>
-                </div>
-                <div className="bg-primary/10 text-primary text-sm font-ui font-semibold px-4 py-2 rounded-full self-start sm:self-center">
-                  {s.time}
+                <div className="relative z-10">
+                  <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1.5 font-ui text-xs font-semibold mb-6">
+                    {s.time}
+                  </div>
+                  <h3 className="font-display text-2xl mb-4">{s.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             </FadeIn>
@@ -514,45 +623,44 @@ function ProcessSection() {
   );
 }
 
-// ─── Reviews ──────────────────────────────────────────────────
+// ─── Testimonials ─────────────────────────────────────────────
 
-function ReviewsSection() {
+function TestimonialsSection() {
   return (
-    <section id="recensioni" className="py-24 sm:py-32 bg-secondary/30">
+    <section id="recensioni" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionLabel>Recensioni</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Cosa dicono i tuoi{" "}
-            <span className="text-primary italic">colleghi</span> imprenditori.
+            Cosa dicono i nostri <span className="text-primary italic">clienti</span>
           </h2>
         </FadeIn>
-
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
-            <FadeIn key={i} delay={i * 0.08}>
-              <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 hover:border-primary/20 transition-colors h-full flex flex-col">
+            <FadeIn key={i} delay={i * 0.1}>
+              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-500 group h-full flex flex-col">
+                <Quote size={32} className="text-primary/20 mb-4" />
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: r.rating }).map((_, j) => (
                     <Star key={j} size={14} className="text-primary fill-primary" />
                   ))}
                 </div>
-                <p className="text-foreground/90 leading-relaxed italic flex-1 mb-6">"{r.text}"</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold text-xs flex items-center justify-center">
-                      {r.avatar}
-                    </div>
-                    <div>
-                      <p className="font-ui font-semibold text-sm">{r.name}</p>
-                      <p className="text-muted-foreground text-xs">{r.company}, {r.city}</p>
-                    </div>
+                <p className="text-foreground/80 leading-relaxed mb-6 flex-1 italic">"{r.text}"</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border">
+                  <div className="w-11 h-11 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center text-sm">
+                    {r.avatar}
                   </div>
-                  <span className="text-xs bg-primary/10 text-primary font-ui font-semibold px-2 py-1 rounded-full">
-                    Verificato ✓
-                  </span>
+                  <div>
+                    <p className="font-ui font-semibold text-sm">{r.name}</p>
+                    <p className="text-muted-foreground text-xs">{r.company}, {r.city}</p>
+                  </div>
+                  <div className="ml-auto">
+                    <span className="text-[10px] font-ui font-semibold bg-primary/10 text-primary px-2 py-1 rounded-full">
+                      ✓ Verificato
+                    </span>
+                  </div>
                 </div>
               </div>
             </FadeIn>
@@ -563,21 +671,28 @@ function ReviewsSection() {
   );
 }
 
-// ─── CTA Banner ───────────────────────────────────────────────
+// ─── CTA Banner with Inline Images ───────────────────────────
 
 function CTABanner() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-24 sm:py-32 border-y border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-7xl xl:text-8xl leading-[1.05] max-w-5xl mx-auto">
-            Trasformiamo la tua impresa edile in un{" "}
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] text-center">
+            Trasformiamo la tua{" "}
+            <span className="inline-flex items-center align-middle mx-2">
+              <img src={ctaAerial} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
+            </span>{" "}
+            impresa edile in un{" "}
             <span className="text-primary italic">magnete</span>{" "}
+            <span className="inline-flex items-center align-middle mx-2">
+              <img src={ctaInline} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
+            </span>{" "}
             per clienti
           </h2>
         </FadeIn>
         <FadeIn delay={0.2}>
-          <div className="mt-10">
+          <div className="flex justify-center mt-12">
             <CarinoButton href="#contatti">Inizia Ora</CarinoButton>
           </div>
         </FadeIn>
@@ -586,87 +701,105 @@ function CTABanner() {
   );
 }
 
-// ─── Offer / Pricing ──────────────────────────────────────────
+// ─── Pricing ──────────────────────────────────────────────────
 
-function OfferSection() {
+function PricingSection() {
   return (
-    <section id="offerta" className="py-24 sm:py-32 bg-secondary/30">
+    <section id="offerta" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionLabel>L'Offerta</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Tutto incluso.{" "}
-            <span className="text-primary italic">Un unico prezzo.</span>
+            Un investimento che si <span className="text-primary italic">ripaga</span> da solo
           </h2>
         </FadeIn>
-
-        <div className="grid lg:grid-cols-2 gap-10 items-start">
-          {/* Pricing Card */}
-          <FadeIn>
-            <div className="bg-card border border-primary/30 rounded-2xl p-8 sm:p-10 glow-lime relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-6 py-2 text-sm font-ui font-bold rounded-bl-xl">
-                -29%
-              </div>
-              <div className="mb-8">
-                <p className="text-muted-foreground line-through text-xl">€1.400</p>
-                <div className="flex items-end gap-2 mt-1">
+        <FadeIn delay={0.2}>
+          <div className="max-w-2xl mx-auto">
+            <div className="bg-card border-2 border-primary rounded-3xl overflow-hidden glow-lime">
+              <div className="bg-primary/10 p-8 text-center">
+                <span className="font-ui text-xs tracking-wider uppercase text-primary">Pacchetto Completo</span>
+                <div className="mt-4 flex items-baseline justify-center gap-3">
+                  <span className="text-muted-foreground line-through text-2xl">€1.400</span>
                   <span className="font-display text-6xl sm:text-7xl text-primary">€1.000</span>
-                  <span className="text-muted-foreground mb-2">tutto incluso</span>
                 </div>
+                <p className="text-muted-foreground mt-2 text-sm">Pagamento unico · Zero anticipo</p>
               </div>
-
-              <div className="space-y-4 mb-8">
+              <div className="p-8 space-y-4">
                 {offerFeatures.map((f, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <Check size={18} className="text-primary flex-shrink-0" />
+                    <Check size={18} className="text-primary shrink-0" />
                     <span className="text-foreground/90">{f}</span>
                   </div>
                 ))}
-              </div>
-
-              <a href="#contatti" className="btn-carino w-full justify-center">
-                Richiedi il Tuo Sito
-                <span className="arrow-circle"><ArrowUpRight size={18} /></span>
-              </a>
-            </div>
-          </FadeIn>
-
-          {/* Bonuses + Guarantees */}
-          <div className="space-y-6">
-            <FadeIn delay={0.1}>
-              <div className="bg-card border border-primary/20 rounded-2xl p-6 sm:p-8">
-                <div className="flex items-center gap-2 mb-6">
-                  <Star size={20} className="text-primary" />
-                  <h3 className="font-display text-2xl">Bonus Inclusi Gratis</h3>
-                </div>
-                <div className="space-y-4">
+                <div className="pt-6 border-t border-border mt-6">
+                  <p className="font-ui font-semibold text-sm text-primary mb-4">🎁 Bonus Inclusi (valore €500)</p>
                   {bonuses.map((b, i) => (
-                    <div key={i} className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Check size={16} className="text-primary" />
-                        <span>{b.title}</span>
+                    <div key={i} className="flex items-center justify-between py-2">
+                      <div className="flex items-center gap-2">
+                        <Check size={14} className="text-primary" />
+                        <span className="text-sm text-foreground/80">{b.title}</span>
                       </div>
-                      <span className="text-primary font-ui font-semibold text-sm">Valore {b.value}</span>
+                      <span className="text-xs text-muted-foreground line-through">{b.value}</span>
                     </div>
                   ))}
                 </div>
+                <div className="pt-6 flex justify-center">
+                  <CarinoButton href="#contatti">Parliamone Subito</CarinoButton>
+                </div>
               </div>
-            </FadeIn>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
 
-            <FadeIn delay={0.2}>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {whyUs.slice(0, 3).map((g, i) => (
-                  <div key={i} className="bg-card border border-border rounded-xl p-5 text-center">
-                    <g.icon size={24} className="text-primary mx-auto mb-3" />
-                    <h4 className="font-ui font-semibold text-sm mb-1">{g.title}</h4>
-                    <p className="text-muted-foreground text-xs">{g.desc}</p>
-                  </div>
-                ))}
-              </div>
+// ─── Blog Section (NEW) ──────────────────────────────────────
+
+function BlogSection() {
+  return (
+    <section id="blog" className="py-24 sm:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          <div>
+            <FadeIn>
+              <SectionLabel>Insights</SectionLabel>
+            </FadeIn>
+            <FadeIn delay={0.1}>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl">
+                Risorse per far crescere la tua <span className="text-primary italic">impresa</span>
+              </h2>
             </FadeIn>
           </div>
+          <FadeIn delay={0.2}>
+            <CarinoButton href="#" variant="outline">Tutti gli Articoli</CarinoButton>
+          </FadeIn>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {blogPosts.map((post, i) => (
+            <ScaleIn key={i} delay={i * 0.15}>
+              <div className="group cursor-pointer">
+                <div className="img-card aspect-[4/3] mb-5">
+                  <img src={post.image} alt={post.title} loading="lazy" />
+                  <div className="absolute inset-0 bg-background/0 group-hover:bg-background/20 transition-colors duration-500" />
+                </div>
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="font-ui text-xs tracking-wider uppercase text-primary">{post.category}</span>
+                  <span className="text-muted-foreground text-xs">·</span>
+                  <span className="text-muted-foreground text-xs flex items-center gap-1">
+                    <Calendar size={12} /> {post.date}
+                  </span>
+                </div>
+                <h3 className="font-display text-xl group-hover:text-primary transition-colors duration-300 leading-snug">
+                  {post.title}
+                </h3>
+              </div>
+            </ScaleIn>
+          ))}
         </div>
       </div>
     </section>
@@ -676,57 +809,55 @@ function OfferSection() {
 // ─── FAQ ──────────────────────────────────────────────────────
 
 function FAQSection() {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   return (
     <section id="faq" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16">
-          {/* Left */}
           <div>
             <FadeIn>
               <SectionLabel>Domande Frequenti</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
               <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-6">
-                Hai qualche{" "}
-                <span className="text-primary italic">domanda?</span>
+                Hai qualche <span className="text-primary italic">domanda?</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                Ecco le risposte alle domande più comuni dei nostri clienti. Se non trovi quello che cerchi, contattaci!
+                Ecco le risposte alle domande più frequenti. Non trovi quello che cerchi? Contattaci direttamente.
               </p>
-              <CarinoButton href="#contatti">Hai Altre Domande?</CarinoButton>
+              <CarinoButton href="#contatti" variant="outline">Contattaci</CarinoButton>
             </FadeIn>
           </div>
 
-          {/* Right — Custom accordion */}
           <div className="space-y-3">
-            {faqs.map((f, i) => (
+            {faqs.map((faq, i) => (
               <FadeIn key={i} delay={i * 0.08}>
-                <div className="border border-border rounded-xl overflow-hidden">
+                <div
+                  className={`border rounded-xl transition-all duration-300 overflow-hidden ${openIndex === i ? "border-primary/40 bg-card" : "border-border hover:border-primary/20"}`}
+                >
                   <button
-                    onClick={() => setOpenIdx(openIdx === i ? null : i)}
-                    className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-secondary/30 transition-colors"
+                    className="w-full text-left px-6 py-5 flex items-center justify-between gap-4"
+                    onClick={() => setOpenIndex(openIndex === i ? null : i)}
                   >
-                    <span className="font-ui font-semibold pr-4">{f.q}</span>
-                    <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center flex-shrink-0">
-                      {openIdx === i ? <Minus size={14} /> : <Plus size={14} />}
+                    <span className="font-ui font-semibold text-sm sm:text-base">{faq.q}</span>
+                    <div className={`w-8 h-8 rounded-full border border-border flex items-center justify-center shrink-0 transition-all duration-300 ${openIndex === i ? "bg-primary border-primary rotate-180" : ""}`}>
+                      {openIndex === i ?
+                        <Minus size={14} className="text-primary-foreground" /> :
+                        <Plus size={14} className="text-muted-foreground" />
+                      }
                     </div>
                   </button>
                   <AnimatePresence>
-                    {openIdx === i && (
+                    {openIndex === i && (
                       <motion.div
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
+                        transition={{ duration: 0.3 }}
                       >
-                        <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-muted-foreground leading-relaxed">
-                          {f.a}
-                        </div>
+                        <p className="px-6 pb-5 text-muted-foreground leading-relaxed">{faq.a}</p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -740,155 +871,112 @@ function FAQSection() {
   );
 }
 
-// ─── Contact Form ─────────────────────────────────────────────
+// ─── Contact ──────────────────────────────────────────────────
 
-function ContactForm() {
-  const [form, setForm] = useState({ name: "", phone: "", email: "", city: "", sector: "", message: "" });
+function ContactSection() {
+  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!form.name || !form.phone) return;
     setSubmitted(true);
   };
 
-  const sectors = [
-    "Ristrutturazioni", "Costruzioni Nuove", "Impianti Elettrici", "Impianti Idraulici",
-    "Coperture e Tetti", "Pavimentazioni", "Cartongesso", "Pitture e Decorazioni",
-    "Infissi e Serramenti", "Piscine", "Giardinaggio", "Altro"
-  ];
-
-  if (submitted) {
-    return (
-      <section id="contatti" className="py-24 sm:py-32">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="bg-card border border-primary/30 rounded-2xl p-10 sm:p-14 text-center glow-lime">
-              <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
-                <Check size={40} className="text-primary" />
-              </div>
-              <h2 className="font-display text-4xl sm:text-5xl mb-4">Richiesta Inviata!</h2>
-              <p className="text-muted-foreground text-lg">
-                Ti contatteremo entro 2 ore lavorative per fissare la chiamata conoscitiva gratuita.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section id="contatti" className="py-24 sm:py-32 bg-secondary/30">
+    <section id="contatti" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16">
-          {/* Left info */}
+        <div className="grid lg:grid-cols-2 gap-16">
           <div>
             <FadeIn>
               <SectionLabel>Contattaci</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-6">
-                Pronto a portare{" "}
-                <span className="text-primary italic">clienti</span>{" "}
-                in cantiere?
+              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-8">
+                Pronto a portare <span className="text-primary italic">clienti</span> in cantiere?
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-                Compila il modulo e ti contatteremo entro 2 ore lavorative. Nessun impegno, nessun costo per la consulenza iniziale.
+                Compila il form o contattaci direttamente. Ti rispondiamo entro 2 ore lavorative.
               </p>
-
-              <div className="space-y-6">
-                {[
-                  { icon: Shield, text: "Zero anticipo — paghi solo a sito approvato" },
-                  { icon: Clock, text: "Consegna garantita in 48 ore" },
-                  { icon: Zap, text: "Soddisfatto o rimborsato al 100%" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <item.icon size={18} className="text-primary" />
-                    </div>
-                    <span className="text-foreground/80">{item.text}</span>
-                  </div>
-                ))}
-              </div>
             </FadeIn>
+
+            <div className="space-y-6">
+              {[
+                { icon: Phone, label: "+39 02 1234 5678" },
+                { icon: Mail, label: "info@clientiedili.it" },
+                { icon: MapPin, label: "Milano, Italia" },
+              ].map((c, i) => (
+                <FadeIn key={i} delay={0.3 + i * 0.1}>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <c.icon size={20} className="text-primary" />
+                    </div>
+                    <span className="text-foreground">{c.label}</span>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
           </div>
 
-          {/* Right form */}
           <FadeIn delay={0.2}>
-            <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-6 sm:p-8 space-y-5">
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block font-ui">Nome e Cognome *</label>
-                  <div className="relative">
-                    <User size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-                      placeholder="Mario Rossi" />
-                  </div>
+            {submitted ? (
+              <div className="bg-card border border-primary/40 rounded-2xl p-10 text-center glow-lime flex flex-col items-center justify-center h-full">
+                <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6">
+                  <Check size={28} className="text-primary" />
                 </div>
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block font-ui">Telefono *</label>
-                  <div className="relative">
-                    <Phone size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input type="tel" required value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                      className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-                      placeholder="+39 333 123 4567" />
-                  </div>
-                </div>
+                <h3 className="font-display text-2xl mb-4">Messaggio Inviato!</h3>
+                <p className="text-muted-foreground">Ti ricontattiamo entro 2 ore lavorative.</p>
               </div>
-
-              <div className="grid sm:grid-cols-2 gap-5">
-                <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block font-ui">Email</label>
-                  <div className="relative">
-                    <Mail size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-                      placeholder="mario@email.com" />
+            ) : (
+              <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-8 space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Nome *</label>
+                    <input
+                      required
+                      type="text"
+                      className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Email *</label>
+                    <input
+                      required
+                      type="email"
+                      className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    />
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm text-muted-foreground mb-1.5 block font-ui">Città</label>
-                  <div className="relative">
-                    <MapPin size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                    <input type="text" value={form.city} onChange={(e) => setForm({ ...form, city: e.target.value })}
-                      className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-                      placeholder="Milano" />
-                  </div>
+                  <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Telefono</label>
+                  <input
+                    type="tel"
+                    className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  />
                 </div>
-              </div>
-
-              <div>
-                <label className="text-sm text-muted-foreground mb-1.5 block font-ui">Settore</label>
-                <div className="relative">
-                  <Briefcase size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                  <select value={form.sector} onChange={(e) => setForm({ ...form, sector: e.target.value })}
-                    className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition appearance-none">
-                    <option value="">Seleziona il tuo settore...</option>
-                    {sectors.map((s) => <option key={s} value={s}>{s}</option>)}
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="text-sm text-muted-foreground mb-1.5 block font-ui">Note</label>
-                <div className="relative">
-                  <MessageSquare size={16} className="absolute left-3 top-3.5 text-muted-foreground" />
-                  <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
+                <div>
+                  <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Messaggio *</label>
+                  <textarea
+                    required
                     rows={4}
-                    className="w-full bg-secondary border border-border rounded-lg pl-10 pr-4 py-3 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none"
-                    placeholder="Raccontaci del tuo progetto..." />
+                    className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  />
                 </div>
-              </div>
-
-              <button type="submit" className="btn-carino w-full justify-center">
-                Invia Richiesta Gratuita
-                <span className="arrow-circle"><Send size={16} /></span>
-              </button>
-            </form>
+                <button type="submit" className="btn-carino w-full justify-center">
+                  Invia Messaggio
+                  <span className="arrow-circle"><Send size={16} /></span>
+                </button>
+              </form>
+            )}
           </FadeIn>
         </div>
       </div>
@@ -900,23 +988,25 @@ function ContactForm() {
 
 function FinalCTA() {
   return (
-    <section className="py-24 sm:py-32 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[120px]" />
-      </div>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+    <section className="py-24 sm:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <FadeIn>
-          <SectionLabel>Collaboriamo</SectionLabel>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mt-6 mb-8">
-            Pronto a far crescere la tua{" "}
-            <span className="text-primary italic">impresa?</span>
+          <SectionLabel>Inizia Oggi</SectionLabel>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-8">
+            Collaboriamo<span className="text-primary">!</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-10">
-            Non perdere altri clienti. Ogni giorno senza un sito professionale è un giorno in cui i tuoi concorrenti ti superano.
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-10">
+            Il tuo prossimo cliente sta cercando su Google un'impresa come la tua. Fatti trovare.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <CarinoButton href="#contatti">Richiedi il Tuo Sito</CarinoButton>
-            <CarinoButton href="tel:+39XXXXXXXXXX" variant="outline">Chiamaci</CarinoButton>
+        </FadeIn>
+        <FadeIn delay={0.3}>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <CarinoButton href="#contatti">Parliamone Subito</CarinoButton>
+            <CarinoButton href="tel:+390212345678" variant="outline">Chiama Ora</CarinoButton>
           </div>
         </FadeIn>
       </div>
@@ -930,36 +1020,52 @@ function Footer() {
   return (
     <footer className="border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
-              CE
+        <div className="grid md:grid-cols-4 gap-10 mb-12">
+          <div className="md:col-span-2">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
+                CE
+              </div>
+              <span className="font-ui font-bold text-lg">ClientiEdili</span>
             </div>
-            <span className="font-ui font-bold text-lg">ClientiEdili</span>
+            <p className="text-muted-foreground max-w-sm leading-relaxed">
+              Siti web professionali per imprese edili italiane. Più clienti, più lavoro, più crescita.
+            </p>
           </div>
 
-          <p className="text-muted-foreground text-sm text-center">
-            Siti web professionali per imprese edili italiane.
-          </p>
+          <div>
+            <h4 className="font-ui font-semibold mb-4 text-sm">Link Utili</h4>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li><a href="#servizi" className="hover:text-foreground transition-colors">Servizi</a></li>
+              <li><a href="#progetti" className="hover:text-foreground transition-colors">Progetti</a></li>
+              <li><a href="#recensioni" className="hover:text-foreground transition-colors">Recensioni</a></li>
+              <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
+            </ul>
+          </div>
 
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Cookie</a>
-            <a href="#" className="hover:text-foreground transition-colors">Termini</a>
+          <div>
+            <h4 className="font-ui font-semibold mb-4 text-sm">Contatti</h4>
+            <ul className="space-y-2 text-muted-foreground text-sm">
+              <li>+39 02 1234 5678</li>
+              <li>info@clientiedili.it</li>
+              <li>Milano, Italia</li>
+            </ul>
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-border text-center">
-          <p className="text-muted-foreground text-xs">
-            © {new Date().getFullYear()} ClientiEdili. Tutti i diritti riservati. P.IVA XXXXXXXXXXX
-          </p>
+        <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-muted-foreground text-sm">© 2026 ClientiEdili. Tutti i diritti riservati.</p>
+          <div className="flex gap-6 text-muted-foreground text-sm">
+            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-foreground transition-colors">Cookie Policy</a>
+          </div>
         </div>
       </div>
     </footer>
   );
 }
 
-// ─── Main Page ────────────────────────────────────────────────
+// ─── Page ─────────────────────────────────────────────────────
 
 export default function Index() {
   return (
@@ -970,14 +1076,16 @@ export default function Index() {
       <ClientsTicker />
       <AboutSection />
       <ServicesSection />
+      <ProjectsSection />
       <WhyUsSection />
       <DoubleMarquee />
       <ProcessSection />
-      <ReviewsSection />
+      <TestimonialsSection />
       <CTABanner />
-      <OfferSection />
+      <PricingSection />
+      <BlogSection />
       <FAQSection />
-      <ContactForm />
+      <ContactSection />
       <FinalCTA />
       <Footer />
     </div>
