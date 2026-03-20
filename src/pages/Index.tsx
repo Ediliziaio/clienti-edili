@@ -287,7 +287,7 @@ function Hero() {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <ParallaxImage src={heroBg} alt="" className="absolute inset-0 w-full h-full" speed={0.1} />
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
       </div>
