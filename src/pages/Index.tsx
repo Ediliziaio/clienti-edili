@@ -1323,10 +1323,13 @@ function FloatingWhatsApp() {
 // ─── Page ─────────────────────────────────────────────────────
 
 export default function Index() {
+  const [bannerVisible, setBannerVisible] = useState(true);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <TopBanner visible={bannerVisible} onClose={() => setBannerVisible(false)} />
       <ScrollProgress />
-      <Navbar />
+      <Navbar bannerVisible={bannerVisible} />
       <Hero />
       <ClientsTicker />
       <AboutSection />
