@@ -1312,6 +1312,8 @@ export default function Index() {
       <AboutSection />
       <ServicesSection />
       <ProjectsSection />
+      <ResultsSection />
+      <BeforeAfterSection />
       <WhyUsSection />
       <DoubleMarquee />
       <ProcessSection />
@@ -1323,6 +1325,7 @@ export default function Index() {
       <ContactSection />
       <FinalCTA />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
