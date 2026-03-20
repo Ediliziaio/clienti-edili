@@ -886,6 +886,13 @@ function PricingSection() {
         </FadeIn>
         <FadeIn delay={0.2}>
           <div className="max-w-2xl mx-auto">
+            {/* Urgency Banner */}
+            <div className="animate-urgency-glow bg-primary/10 border border-primary/30 rounded-2xl p-4 mb-6 text-center">
+              <p className="font-ui font-semibold text-sm text-primary">
+                ⚡ Solo 5 posti disponibili a Marzo — <span className="underline">Prenota ora</span>
+              </p>
+            </div>
+
             <div className="bg-card border-2 border-primary rounded-3xl overflow-hidden glow-lime">
               <div className="bg-primary/10 p-8 text-center">
                 <span className="font-ui text-xs tracking-wider uppercase text-primary">Pacchetto Completo</span>
