@@ -547,7 +547,7 @@ function WhyUsSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {whyUs.map((w, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/40 hover:glow-lime transition-all duration-500 group h-full">
+              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/40 hover:-translate-y-2 glow-lime transition-all duration-500 group h-full">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <w.icon size={26} className="text-primary" />
                 </div>
