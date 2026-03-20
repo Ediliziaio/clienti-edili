@@ -711,8 +711,8 @@ function PricingSection() {
           <SectionLabel>L'Offerta</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Un investimento che si <span className="text-primary italic">ripaga</span> da solo
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Un investimento che si <span className="text-gradient-lime">ripaga</span> da solo
           </h2>
         </FadeIn>
         <FadeIn delay={0.2}>
