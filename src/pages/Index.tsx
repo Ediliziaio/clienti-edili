@@ -953,6 +953,77 @@ function PricingSection() {
   );
 }
 
+// ─── Guarantee Section ────────────────────────────────────────
+
+function GuaranteeSection() {
+  return (
+    <section className="py-24 sm:py-32 bg-card/50">
+      <div className="container max-w-4xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.7 }}
+          className="relative rounded-3xl border border-primary/30 bg-card p-10 sm:p-16 text-center glow-lime-lg"
+        >
+          {/* Badge */}
+          <div className="absolute -top-5 left-1/2 -translate-x-1/2">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 font-ui text-xs font-bold uppercase tracking-widest text-primary-foreground">
+              <Award size={16} /> Garanzia 100%
+            </span>
+          </div>
+
+          {/* Icon */}
+          <div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-full bg-primary/15 animate-urgency-glow">
+            <Shield size={48} className="text-primary" />
+          </div>
+
+          {/* Title */}
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
+            Se non sei soddisfatto,{" "}
+            <br className="hidden sm:block" />
+            il sito è <span className="text-gradient-lime">GRATIS</span>
+          </h2>
+
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto mb-12">
+            Crediamo così tanto nel nostro lavoro che ci mettiamo la faccia. Se il risultato non ti convince, non paghi nulla e il sito resta tuo. Zero rischi, zero sorprese.
+          </p>
+
+          {/* 3 Points */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
+            {[
+              { icon: Shield, label: "Zero rischio", desc: "Non paghi se non sei soddisfatto" },
+              { icon: Check, label: "Nessun vincolo", desc: "Libertà totale, nessun contratto lungo" },
+              { icon: Users, label: "Trasparenza totale", desc: "Comunicazione chiara in ogni fase" },
+            ].map((item, i) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 + i * 0.15, duration: 0.5 }}
+                className="flex flex-col items-center gap-3"
+              >
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+                  <item.icon size={24} className="text-primary" />
+                </div>
+                <span className="font-ui font-semibold text-foreground">{item.label}</span>
+                <span className="text-sm text-muted-foreground">{item.desc}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <a href="#contatti" className="btn-carino">
+            Inizia Senza Rischi
+            <span className="arrow-circle"><ArrowUpRight size={18} /></span>
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Blog Section (NEW) ──────────────────────────────────────
 
 function BlogSection() {
