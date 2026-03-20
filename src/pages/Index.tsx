@@ -678,7 +678,7 @@ function CTABanner() {
     <section className="py-24 sm:py-32 border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] text-center">
+          <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] text-center font-bold">
             Trasformiamo la tua{" "}
             <span className="inline-flex items-center align-middle mx-2">
               <img src={ctaAerial} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
