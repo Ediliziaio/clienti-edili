@@ -329,9 +329,6 @@ function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center py-16 lg:py-0 relative z-10">
         {/* Left */}
         <div className="space-y-8">
-          <FadeIn>
-            <SectionLabel>Agenzia Web per Imprese Edili</SectionLabel>
-          </FadeIn>
 
           <FadeIn delay={0.1}>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] font-bold">
