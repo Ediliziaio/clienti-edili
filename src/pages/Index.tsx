@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import {
   Phone, Mail, MapPin, Check, Star, ArrowUpRight, ArrowRight,
@@ -260,11 +261,8 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   return (
     <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 ${bannerVisible ? "top-10" : "top-0"} ${scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-        <a href="#" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
-            CE
-          </div>
-          <span className="font-ui font-bold text-lg tracking-wide text-foreground">ClientiEdili</span>
+        <a href="#" className="flex items-center">
+          <img src={clientiEdiliLogo} alt="ClientiEdili" className="h-10" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -331,9 +329,6 @@ function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center py-16 lg:py-0 relative z-10">
         {/* Left */}
         <div className="space-y-8">
-          <FadeIn>
-            <SectionLabel>Agenzia Web per Imprese Edili</SectionLabel>
-          </FadeIn>
 
           <FadeIn delay={0.1}>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] font-bold">
@@ -1290,11 +1285,8 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
-                CE
-              </div>
-              <span className="font-ui font-bold text-lg">ClientiEdili</span>
+            <div className="flex items-center mb-4">
+              <img src={clientiEdiliLogo} alt="ClientiEdili" className="h-10" />
             </div>
             <p className="text-muted-foreground max-w-sm leading-relaxed mb-6">
               Siti web professionali per imprese edili italiane. Più clienti, più lavoro, più crescita.
