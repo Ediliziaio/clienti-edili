@@ -494,9 +494,9 @@ function ProjectsSection() {
               <SectionLabel>Progetti Recenti</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl">
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl font-bold">
                 I siti che abbiamo{" "}
-                <span className="text-primary italic">costruito</span>
+                <span className="text-gradient-lime">costruito</span>
               </h2>
             </FadeIn>
           </div>
