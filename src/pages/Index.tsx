@@ -415,7 +415,7 @@ function AboutSection() {
           <FadeIn delay={0.2}>
             <div className="grid grid-cols-2 gap-6">
               {stats.map((s, i) => (
-                <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-colors duration-300">
+                <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500">
                   <div className="font-display text-4xl sm:text-5xl text-primary mb-2">
                     <AnimatedCounter value={s.value} suffix={s.suffix} />
                   </div>
