@@ -891,8 +891,8 @@ function ContactSection() {
               <SectionLabel>Contattaci</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-8">
-                Pronto a portare <span className="text-primary italic">clienti</span> in cantiere?
+              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-8 font-bold">
+                Pronto a portare <span className="text-gradient-lime">clienti</span> in cantiere?
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
