@@ -753,19 +753,35 @@ function ProcessSection() {
             Tre passi per il tuo <span className="text-gradient-lime">nuovo sito</span>
           </h2>
         </FadeIn>
-        <div className="grid md:grid-cols-3 gap-6">
+
+        {/* Timeline layout */}
+        <div className="relative max-w-3xl mx-auto">
+          {/* Vertical connector line */}
+          <div className="absolute left-6 top-0 bottom-0 w-px bg-border hidden md:block" />
+
           {steps.map((s, i) => (
-            <FadeIn key={i} delay={i * 0.15}>
-              <div className="bg-card border border-border rounded-2xl p-10 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 group relative overflow-hidden h-full">
-                <span className="font-display text-8xl text-primary/10 absolute -top-4 -right-2 group-hover:text-primary/20 transition-colors">
+            <FadeIn key={i} delay={i * 0.2}>
+              <div className="relative flex gap-8 mb-12 last:mb-0">
+                {/* Timeline dot */}
+                <div className="hidden md:flex shrink-0 w-12 h-12 rounded-full bg-primary text-primary-foreground font-display font-bold text-lg items-center justify-center relative z-10">
                   {s.num}
-                </span>
-                <div className="relative z-10">
-                  <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1.5 font-ui text-xs font-semibold mb-6">
-                    {s.time}
+                </div>
+
+                {/* Content card */}
+                <div className="flex-1 bg-card border border-border rounded-2xl p-8 hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden">
+                  <span className="font-display text-8xl text-primary/5 absolute -top-4 -right-2 group-hover:text-primary/10 transition-colors">
+                    {s.num}
+                  </span>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="md:hidden font-display text-sm font-bold text-primary">{s.num}</span>
+                      <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1.5 font-ui text-xs font-semibold">
+                        {s.time}
+                      </div>
+                    </div>
+                    <h3 className="font-display text-2xl mb-3">{s.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                   </div>
-                  <h3 className="font-display text-2xl mb-4">{s.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             </FadeIn>
