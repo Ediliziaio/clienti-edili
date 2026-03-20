@@ -5,7 +5,8 @@ import {
   Shield, Clock, Zap, Menu, X, Send, User, Briefcase,
   MessageSquare, Globe, Search, Share2, BarChart3, FileText,
   Plus, Minus, Quote, Users, Award, Headphones, Calendar,
-  TrendingUp, ThumbsDown, ThumbsUp, Instagram, Facebook, MessageCircle
+  TrendingUp, ThumbsDown, ThumbsUp, Instagram, Facebook, MessageCircle,
+  Gift
 } from "lucide-react";
 
 // ─── Images ──────────────────────────────────────────────────
@@ -217,9 +218,28 @@ function ScrollProgress() {
   return <motion.div className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-[60]" style={{ scaleX }} />;
 }
 
+// ─── Top Offer Banner ─────────────────────────────────────────
+
+function TopBanner({ visible, onClose }: { visible: boolean; onClose: () => void }) {
+  if (!visible) return null;
+  return (
+    <div className="fixed top-0 left-0 right-0 z-[60] bg-primary text-primary-foreground">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center gap-3 h-10 relative">
+        <Gift size={16} className="shrink-0 hidden sm:block" />
+        <p className="text-xs sm:text-sm font-ui font-bold tracking-wide text-center">
+          Offerta: Se non sei soddisfatto del nostro servizio, il sito te lo lasciamo <span className="underline underline-offset-2">GRATIS</span>
+        </p>
+        <button onClick={onClose} className="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-70 transition-opacity" aria-label="Chiudi">
+          <X size={16} />
+        </button>
+      </div>
+    </div>
+  );
+}
+
 // ─── Navbar ───────────────────────────────────────────────────
 
-function Navbar() {
+function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -238,7 +258,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
+    <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 ${bannerVisible ? "top-10" : "top-0"} ${scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         <a href="#" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
@@ -287,7 +307,7 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-28 overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <ParallaxImage src={heroBg} alt="" className="absolute inset-0 w-full h-full" speed={0.1} />
@@ -1303,10 +1323,13 @@ function FloatingWhatsApp() {
 // ─── Page ─────────────────────────────────────────────────────
 
 export default function Index() {
+  const [bannerVisible, setBannerVisible] = useState(true);
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <TopBanner visible={bannerVisible} onClose={() => setBannerVisible(false)} />
       <ScrollProgress />
-      <Navbar />
+      <Navbar bannerVisible={bannerVisible} />
       <Hero />
       <ClientsTicker />
       <AboutSection />
