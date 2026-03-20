@@ -5,7 +5,8 @@ import {
   Shield, Clock, Zap, Menu, X, Send, User, Briefcase,
   MessageSquare, Globe, Search, Share2, BarChart3, FileText,
   Plus, Minus, Quote, Users, Award, Headphones, Calendar,
-  TrendingUp, ThumbsDown, ThumbsUp, Instagram, Facebook, MessageCircle
+  TrendingUp, ThumbsDown, ThumbsUp, Instagram, Facebook, MessageCircle,
+  Gift
 } from "lucide-react";
 
 // ─── Images ──────────────────────────────────────────────────
