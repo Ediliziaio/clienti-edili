@@ -540,8 +540,8 @@ function WhyUsSection() {
           <SectionLabel>Perché Noi</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Garanzie che nessun altro ti <span className="text-primary italic">offre</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Garanzie che nessun altro ti <span className="text-gradient-lime">offre</span>
           </h2>
         </FadeIn>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
