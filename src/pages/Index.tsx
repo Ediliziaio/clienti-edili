@@ -4,7 +4,8 @@ import {
   Phone, Mail, MapPin, Check, Star, ArrowUpRight, ArrowRight,
   Shield, Clock, Zap, Menu, X, Send, User, Briefcase,
   MessageSquare, Globe, Search, Share2, BarChart3, FileText,
-  Plus, Minus, Quote, Users, Award, Headphones, Calendar
+  Plus, Minus, Quote, Users, Award, Headphones, Calendar,
+  TrendingUp, ThumbsDown, ThumbsUp, Instagram, Facebook, MessageCircle
 } from "lucide-react";
 
 // ─── Images ──────────────────────────────────────────────────
