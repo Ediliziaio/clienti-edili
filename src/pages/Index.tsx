@@ -640,7 +640,7 @@ function TestimonialsSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.map((r, i) => (
             <FadeIn key={i} delay={i * 0.1}>
-              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 transition-all duration-500 group h-full flex flex-col">
+              <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 group h-full flex flex-col">
                 <Quote size={32} className="text-primary/20 mb-4" />
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: r.rating }).map((_, j) => (
