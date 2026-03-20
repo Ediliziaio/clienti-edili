@@ -1193,6 +1193,7 @@ function FinalCTA() {
 // ─── Footer ───────────────────────────────────────────────────
 
 function Footer() {
+  const [email, setEmail] = useState("");
   return (
     <footer className="border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1204,9 +1205,37 @@ function Footer() {
               </div>
               <span className="font-ui font-bold text-lg">ClientiEdili</span>
             </div>
-            <p className="text-muted-foreground max-w-sm leading-relaxed">
+            <p className="text-muted-foreground max-w-sm leading-relaxed mb-6">
               Siti web professionali per imprese edili italiane. Più clienti, più lavoro, più crescita.
             </p>
+
+            {/* Google Reviews badge */}
+            <div className="inline-flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 mb-6">
+              <div className="flex gap-0.5">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} size={14} className="text-primary fill-primary" />
+                ))}
+              </div>
+              <span className="text-sm text-foreground font-semibold">4.9/5</span>
+              <span className="text-xs text-muted-foreground">su Google Reviews</span>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <p className="font-ui text-xs uppercase tracking-wider text-muted-foreground mb-3">Newsletter</p>
+              <form onSubmit={(e) => { e.preventDefault(); setEmail(""); }} className="flex gap-2">
+                <input
+                  type="email"
+                  placeholder="La tua email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                />
+                <button type="submit" className="bg-primary text-primary-foreground rounded-lg px-4 py-2.5 font-ui text-sm font-semibold hover:bg-primary/90 transition-colors">
+                  Iscriviti
+                </button>
+              </form>
+            </div>
           </div>
 
           <div>
@@ -1226,6 +1255,19 @@ function Footer() {
               <li>info@clientiedili.it</li>
               <li>Milano, Italia</li>
             </ul>
+
+            {/* Social icons */}
+            <div className="flex gap-3 mt-6">
+              {[
+                { icon: Facebook, href: "#" },
+                { icon: Instagram, href: "#" },
+                { icon: MessageCircle, href: "https://wa.me/390212345678" },
+              ].map((s, i) => (
+                <a key={i} href={s.href} className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300">
+                  <s.icon size={14} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -1238,6 +1280,23 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+// ─── Floating WhatsApp Button ─────────────────────────────────
+
+function FloatingWhatsApp() {
+  return (
+    <a
+      href="https://wa.me/390212345678"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contattaci su WhatsApp"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center animate-whatsapp-pulse transition-transform hover:scale-110"
+      style={{ backgroundColor: "hsl(142 70% 49%)" }}
+    >
+      <MessageCircle size={26} className="text-white" />
+    </a>
   );
 }
 
