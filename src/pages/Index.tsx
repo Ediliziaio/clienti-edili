@@ -769,8 +769,8 @@ function BlogSection() {
               <SectionLabel>Insights</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl">
-                Risorse per far crescere la tua <span className="text-primary italic">impresa</span>
+              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] max-w-2xl font-bold">
+                Risorse per far crescere la tua <span className="text-gradient-lime">impresa</span>
               </h2>
             </FadeIn>
           </div>
