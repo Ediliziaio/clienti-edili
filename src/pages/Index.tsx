@@ -633,8 +633,8 @@ function TestimonialsSection() {
           <SectionLabel>Recensioni</SectionLabel>
         </FadeIn>
         <FadeIn delay={0.1}>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl">
-            Cosa dicono i nostri <span className="text-primary italic">clienti</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Cosa dicono i nostri <span className="text-gradient-lime">clienti</span>
           </h2>
         </FadeIn>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
