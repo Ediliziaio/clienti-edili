@@ -1285,11 +1285,8 @@ function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
-                CE
-              </div>
-              <span className="font-ui font-bold text-lg">ClientiEdili</span>
+            <div className="flex items-center mb-4">
+              <img src={clientiEdiliLogo} alt="ClientiEdili" className="h-10" />
             </div>
             <p className="text-muted-foreground max-w-sm leading-relaxed mb-6">
               Siti web professionali per imprese edili italiane. Più clienti, più lavoro, più crescita.
