@@ -416,7 +416,7 @@ function AboutSection() {
             <div className="grid grid-cols-2 gap-6">
               {stats.map((s, i) => (
                 <div key={i} className="bg-card border border-border rounded-xl p-6 hover:border-primary/30 hover:-translate-y-2 transition-all duration-500">
-                  <div className="font-display text-4xl sm:text-5xl text-primary mb-2">
+                  <div className="font-display text-5xl sm:text-6xl text-primary mb-2 font-bold">
                     <AnimatedCounter value={s.value} suffix={s.suffix} />
                   </div>
                   <p className="text-muted-foreground text-sm">{s.label}</p>
