@@ -480,7 +480,7 @@ function ServicesSection() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
-            <ScaleIn key={i} delay={i * 0.1}>
+            <ClipReveal key={i} delay={i * 0.12}>
               <div className="img-card group cursor-pointer h-[400px]">
                 <img src={s.image} alt={s.title} loading="lazy" />
                 <div className="img-overlay" />
@@ -496,12 +496,11 @@ function ServicesSection() {
                     {s.desc}
                   </p>
                 </div>
-                {/* Hover arrow */}
                 <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-0 rotate-45 transition-all duration-500">
                   <ArrowUpRight size={20} className="text-foreground" />
                 </div>
               </div>
-            </ScaleIn>
+            </ClipReveal>
           ))}
         </div>
       </div>
