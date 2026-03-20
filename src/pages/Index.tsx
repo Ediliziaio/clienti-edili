@@ -307,7 +307,7 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
 
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-28 overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <ParallaxImage src={heroBg} alt="" className="absolute inset-0 w-full h-full" speed={0.1} />
