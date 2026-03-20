@@ -258,7 +258,7 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
+    <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 ${bannerVisible ? "top-10" : "top-0"} ${scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         <a href="#" className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full border-2 border-primary flex items-center justify-center font-display text-primary text-sm font-bold">
