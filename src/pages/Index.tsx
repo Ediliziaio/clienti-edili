@@ -246,7 +246,7 @@ function Hero() {
                 <div className="flex gap-1.5">
                   <div className="w-3 h-3 rounded-full bg-destructive/60" />
                   <div className="w-3 h-3 rounded-full bg-accent/60" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/60" />
+                  <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(142 71% 45% / 0.6)" }} />
                 </div>
                 <div className="flex-1 mx-4">
                   <div className="bg-muted rounded-md px-3 py-1 text-xs text-muted-foreground">
