@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "serif"],
+        display: ["Sora", "sans-serif"],
         ui: ["Syne", "sans-serif"],
         body: ["Plus Jakarta Sans", "sans-serif"],
       },
