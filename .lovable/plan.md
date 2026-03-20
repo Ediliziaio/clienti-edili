@@ -1,27 +1,32 @@
 
 
-# Add Top Offer Banner
+# Sezione Garanzia "Soddisfatto o Gratis"
 
-## What
-Add a sticky/fixed top banner above the navbar with the guarantee message: **"Offerta: Se non sei soddisfatto del nostro servizio, il sito te lo lasciamo GRATIS"**
+## Cosa
+Aggiungere una sezione dedicata alla garanzia tra `PricingSection` e `BlogSection` — una sezione visiva e impattante che comunica: **"Se non sei soddisfatto del nostro servizio, il sito te lo lasciamo GRATIS"**.
 
-## How
+## Design
+- Layout centrato con icona `Shield` grande e animata (glow lime)
+- Titolo grande con "GRATIS" evidenziato in gradient lime
+- 3 punti garanzia sotto (icone + testo): "Zero rischio", "Nessun vincolo", "Trasparenza totale"
+- Card con bordo primary e sfondo scuro, effetto `glow-lime-lg`
+- Badge/sigillo visivo tipo "Garanzia 100%"
+
+## Come
 
 ### File: `src/pages/Index.tsx`
+1. Creare componente `GuaranteeSection` (~50 righe) dopo `PricingSection`
+2. Inserirlo nel render di `Index` tra `<PricingSection />` e `<BlogSection />`
 
-1. **Create `TopBanner` component** — A full-width bar with dark/accent background, the offer text centered, and a close (X) button. Uses `useState` to allow dismissal. Styled with lime/primary accent color to stand out.
+### Struttura componente:
+- Sezione con `py-24` e sfondo `bg-card/50`
+- Card centrale con bordo primary, glow e padding generoso
+- Icona Shield grande (64px) con cerchio lime dietro
+- Titolo: "Se non sei soddisfatto, il sito è **GRATIS**"
+- Sottotitolo esplicativo
+- 3 mini-punti garanzia in riga con icone
+- CTA button "Inizia Senza Rischi"
 
-2. **Update `Navbar`** — Add a `top` offset (`top-10` or similar) when banner is visible so the fixed navbar sits below the banner. Pass banner visibility state via context or lift state to `Index`.
-
-3. **Update `Index` render** — Add `<TopBanner />` as the first element, above `<ScrollProgress />`. Add `pt` offset to the hero when banner is visible.
-
-### Design
-- Full-width bar, `fixed top-0 z-[60]` (above navbar z-50)
-- Background: primary/lime gradient or solid primary with dark text
-- Bold text with icon (e.g. Shield or Gift icon)
-- Dismissable with X button (persists in session via state)
-- Navbar shifts down when banner is visible
-
-### Files Modified
-- `src/pages/Index.tsx` — New `TopBanner` component, state management in `Index`, offset adjustments for Navbar and Hero
+### File modificato
+- `src/pages/Index.tsx`
 
