@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Bebas Neue", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+        ui: ["Syne", "sans-serif"],
         body: ["DM Sans", "sans-serif"],
       },
       colors: {
