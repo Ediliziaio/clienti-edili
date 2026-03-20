@@ -572,6 +572,117 @@ function ProjectsSection() {
   );
 }
 
+// ─── Results Section (NEW) ────────────────────────────────────
+
+const results = [
+  { value: 340, suffix: "%", prefix: "+", label: "Aumento Traffico", desc: "Media di crescita del traffico organico per i nostri clienti nei primi 3 mesi." },
+  { value: 12, suffix: "", prefix: "", label: "Preventivi / Mese", desc: "Richieste di preventivo mensili medie generate dai siti che creiamo." },
+  { value: 180, suffix: "k", prefix: "€", label: "Fatturato Generato", desc: "Volume d'affari generato per i nostri clienti nell'ultimo anno." },
+];
+
+function ResultsSection() {
+  return (
+    <section className="py-24 sm:py-32 border-y border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
+          <SectionLabel>Risultati Concreti</SectionLabel>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            Numeri che <span className="text-gradient-lime">parlano</span> da soli
+          </h2>
+        </FadeIn>
+        <div className="grid md:grid-cols-3 gap-8">
+          {results.map((r, i) => (
+            <FadeIn key={i} delay={i * 0.15}>
+              <div className="relative bg-card border border-border rounded-2xl p-10 hover:border-primary/40 transition-all duration-500 group overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="font-display text-6xl sm:text-7xl text-primary font-bold mb-4">
+                  <AnimatedCounter value={r.value} suffix={r.suffix} prefix={r.prefix} />
+                </div>
+                <h3 className="font-ui font-semibold text-lg mb-2">{r.label}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">{r.desc}</p>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── Before & After Section (NEW) ─────────────────────────────
+
+function BeforeAfterSection() {
+  return (
+    <section className="py-24 sm:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <FadeIn>
+          <SectionLabel>Prima & Dopo</SectionLabel>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-16 max-w-3xl font-bold">
+            La differenza è <span className="text-gradient-lime">evidente</span>
+          </h2>
+        </FadeIn>
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Before */}
+          <FadeIn delay={0.1}>
+            <div className="bg-card border border-destructive/30 rounded-2xl overflow-hidden group">
+              <div className="relative h-[280px] overflow-hidden">
+                <img src={beforeSite} alt="Sito web vecchio e datato" className="w-full h-full object-cover opacity-70" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-destructive/20 flex items-center justify-center">
+                    <ThumbsDown size={18} className="text-destructive" />
+                  </div>
+                  <span className="font-ui font-semibold text-destructive">Senza ClientiEdili</span>
+                </div>
+                <ul className="space-y-3">
+                  {["Sito datato o inesistente", "Zero richieste da Google", "Nessuna presenza su Maps", "Clienti solo dal passaparola"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-muted-foreground text-sm">
+                      <X size={14} className="text-destructive shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* After */}
+          <FadeIn delay={0.25}>
+            <div className="bg-card border border-primary/30 rounded-2xl overflow-hidden group glow-lime">
+              <div className="relative h-[280px] overflow-hidden">
+                <img src={afterSite} alt="Sito web moderno e professionale" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent" />
+              </div>
+              <div className="p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
+                    <ThumbsUp size={18} className="text-primary" />
+                  </div>
+                  <span className="font-ui font-semibold text-primary">Con ClientiEdili</span>
+                </div>
+                <ul className="space-y-3">
+                  {["Sito moderno e professionale", "10+ richieste al mese da Google", "Prima pagina su Google Maps", "Clienti nuovi ogni settimana"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-foreground/80 text-sm">
+                      <Check size={14} className="text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Why Choose Us ────────────────────────────────────────────
 
 function WhyUsSection() {
