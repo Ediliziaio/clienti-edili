@@ -819,8 +819,8 @@ function FAQSection() {
               <SectionLabel>Domande Frequenti</SectionLabel>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-6">
-                Hai qualche <span className="text-primary italic">domanda?</span>
+              <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] mb-6 font-bold">
+                Hai qualche <span className="text-gradient-lime">domanda?</span>
               </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
