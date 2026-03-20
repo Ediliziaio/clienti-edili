@@ -1,32 +1,17 @@
 
 
-# Sezione Garanzia "Soddisfatto o Gratis"
+# Sostituire logo e rimuovere label Hero
 
 ## Cosa
-Aggiungere una sezione dedicata alla garanzia tra `PricingSection` e `BlogSection` — una sezione visiva e impattante che comunica: **"Se non sei soddisfatto del nostro servizio, il sito te lo lasciamo GRATIS"**.
+1. Copiare il logo uploadato (`clientiedili_dark.png`) in `src/assets/`
+2. Sostituire il logo testuale "CE" + "ClientiEdili" sia nel **Navbar** (riga ~263-267) che nel **Footer** (riga ~1293-1297) con un tag `<img>` che usa il nuovo logo
+3. Rimuovere la riga `<SectionLabel>Agenzia Web per Imprese Edili</SectionLabel>` dall'Hero (riga ~334-336)
 
-## Design
-- Layout centrato con icona `Shield` grande e animata (glow lime)
-- Titolo grande con "GRATIS" evidenziato in gradient lime
-- 3 punti garanzia sotto (icone + testo): "Zero rischio", "Nessun vincolo", "Trasparenza totale"
-- Card con bordo primary e sfondo scuro, effetto `glow-lime-lg`
-- Badge/sigillo visivo tipo "Garanzia 100%"
-
-## Come
-
-### File: `src/pages/Index.tsx`
-1. Creare componente `GuaranteeSection` (~50 righe) dopo `PricingSection`
-2. Inserirlo nel render di `Index` tra `<PricingSection />` e `<BlogSection />`
-
-### Struttura componente:
-- Sezione con `py-24` e sfondo `bg-card/50`
-- Card centrale con bordo primary, glow e padding generoso
-- Icona Shield grande (64px) con cerchio lime dietro
-- Titolo: "Se non sei soddisfatto, il sito è **GRATIS**"
-- Sottotitolo esplicativo
-- 3 mini-punti garanzia in riga con icone
-- CTA button "Inizia Senza Rischi"
-
-### File modificato
-- `src/pages/Index.tsx`
+## File modificati
+- `src/assets/clientiedili_dark.png` (nuovo — copia da upload)
+- `src/pages/Index.tsx`:
+  - Import del logo da `@/assets/clientiedili_dark.png`
+  - **Navbar** (righe 263-268): sostituire div cerchio + span con `<img src={logo} alt="ClientiEdili" className="h-10" />`
+  - **Footer** (righe 1293-1298): stessa sostituzione
+  - **Hero** (righe 334-336): rimuovere il `FadeIn` con `SectionLabel`
 
