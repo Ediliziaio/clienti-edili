@@ -1,17 +1,14 @@
 
 
-# Sostituire logo e rimuovere label Hero
+# Sostituire il logo con la nuova immagine
 
 ## Cosa
-1. Copiare il logo uploadato (`clientiedili_dark.png`) in `src/assets/`
-2. Sostituire il logo testuale "CE" + "ClientiEdili" sia nel **Navbar** (riga ~263-267) che nel **Footer** (riga ~1293-1297) con un tag `<img>` che usa il nuovo logo
-3. Rimuovere la riga `<SectionLabel>Agenzia Web per Imprese Edili</SectionLabel>` dall'Hero (riga ~334-336)
+Copiare il nuovo logo uploadato (`clientiedili_dark_1.png`) sovrascrivendo `src/assets/clientiedili_dark.png`. L'import e i riferimenti nel codice rimangono invariati.
+
+## Come
+1. Copiare `user-uploads://clientiedili_dark_1.png` → `src/assets/clientiedili_dark.png` (sovrascrittura)
+2. Nessuna modifica al codice necessaria — l'import esistente punta già a quel file
 
 ## File modificati
-- `src/assets/clientiedili_dark.png` (nuovo — copia da upload)
-- `src/pages/Index.tsx`:
-  - Import del logo da `@/assets/clientiedili_dark.png`
-  - **Navbar** (righe 263-268): sostituire div cerchio + span con `<img src={logo} alt="ClientiEdili" className="h-10" />`
-  - **Footer** (righe 1293-1298): stessa sostituzione
-  - **Hero** (righe 334-336): rimuovere il `FadeIn` con `SectionLabel`
+- `src/assets/clientiedili_dark.png` (sovrascrittura con nuova immagine)
 
