@@ -146,6 +146,10 @@
   .clip-reveal {
     clip-path: inset(0 0 0 0);
   }
+
+  .parallax-layer {
+    will-change: transform;
+  }
 }
 
 /* Ticker */

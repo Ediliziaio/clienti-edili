@@ -163,6 +163,33 @@ function ScaleIn({ children, className = "", delay = 0 }: { children: React.Reac
   );
 }
 
+function ParallaxImage({ src, alt, className = "", speed = 0.2 }: { src: string; alt: string; className?: string; speed?: number }) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const y = useTransform(scrollYProgress, [0, 1], [speed * -100, speed * 100]);
+  return (
+    <div ref={ref} className={`overflow-hidden ${className}`}>
+      <motion.img src={src} alt={alt} loading="lazy" style={{ y }} className="w-full h-full object-cover scale-[1.2]" />
+    </div>
+  );
+}
+
+function ClipReveal({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ clipPath: "inset(100% 0 0 0)" }}
+      animate={isInView ? { clipPath: "inset(0% 0 0 0)" } : {}}
+      transition={{ duration: 0.9, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 function SectionLabel({ children }: { children: string }) {
   return <p className="section-label mb-6">( {children} )</p>;
 }
@@ -260,7 +287,7 @@ function Hero() {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="" className="w-full h-full object-cover" />
+        <ParallaxImage src={heroBg} alt="" className="absolute inset-0 w-full h-full" speed={0.1} />
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
       </div>
@@ -453,7 +480,7 @@ function ServicesSection() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
-            <ScaleIn key={i} delay={i * 0.1}>
+            <ClipReveal key={i} delay={i * 0.12}>
               <div className="img-card group cursor-pointer h-[400px]">
                 <img src={s.image} alt={s.title} loading="lazy" />
                 <div className="img-overlay" />
@@ -469,12 +496,11 @@ function ServicesSection() {
                     {s.desc}
                   </p>
                 </div>
-                {/* Hover arrow */}
                 <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-0 rotate-45 transition-all duration-500">
                   <ArrowUpRight size={20} className="text-foreground" />
                 </div>
               </div>
-            </ScaleIn>
+            </ClipReveal>
           ))}
         </div>
       </div>
@@ -507,22 +533,22 @@ function ProjectsSection() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <ScaleIn key={i} delay={i * 0.15}>
+            <FadeIn key={i} delay={i * 0.15}>
               <div className="img-card group cursor-pointer h-[500px]">
-                <img src={p.image} alt={p.title} loading="lazy" />
+                <ParallaxImage src={p.image} alt={p.title} className="absolute inset-0 w-full h-full" speed={0.2} />
                 <div className="img-overlay" />
-                <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                <div className="absolute inset-0 p-8 flex flex-col justify-end relative z-10">
                   <span className="font-ui text-xs tracking-wider uppercase text-primary mb-2">{p.category}</span>
                   <h3 className="font-display text-2xl text-foreground mb-2">{p.title}</h3>
                   <p className="text-foreground/60 text-sm opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                     {p.desc}
                   </p>
                 </div>
-                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-card/50 backdrop-blur-sm border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500">
+                <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-card/50 backdrop-blur-sm border border-border flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-all duration-500 z-10">
                   <ArrowUpRight size={18} className="text-foreground group-hover:text-primary-foreground transition-colors" />
                 </div>
               </div>
-            </ScaleIn>
+            </FadeIn>
           ))}
         </div>
       </div>
