@@ -311,7 +311,7 @@ function Hero() {
               <div className="img-overlay" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="font-ui text-xs text-primary tracking-wider uppercase mb-1">Progetto Recente</p>
-                <p className="font-display text-xl text-foreground">Villa Moderna Toscana</p>
+                <p className="font-display text-xl text-foreground font-semibold">Sito Web Rossi Costruzioni</p>
               </div>
             </motion.div>
 
