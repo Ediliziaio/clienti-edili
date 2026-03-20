@@ -16,7 +16,7 @@ export default {
       fontFamily: {
         display: ["Playfair Display", "serif"],
         ui: ["Syne", "sans-serif"],
-        body: ["DM Sans", "sans-serif"],
+        body: ["Plus Jakarta Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
