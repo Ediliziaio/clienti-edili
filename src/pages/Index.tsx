@@ -273,9 +273,9 @@ function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05]">
+            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] font-bold">
               Il sito che porta{" "}
-              <span className="text-primary italic">clienti</span>{" "}
+              <span className="text-gradient-lime">clienti</span>{" "}
               alla tua impresa.{" "}
               <span className="text-primary">In 48 ore.</span>
             </h1>
