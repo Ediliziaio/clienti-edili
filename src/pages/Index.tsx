@@ -267,11 +267,17 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.isRoute ? (
+              <Link key={l.href} to={l.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
+                {l.label}
+              </Link>
+            ) : (
+              <a key={l.href} href={l.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
+                {l.label}
+              </a>
+            )
+          )}
         </div>
 
         <div className="hidden md:block">
