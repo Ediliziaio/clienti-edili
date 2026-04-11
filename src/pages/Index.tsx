@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import ClientLogo, { clientLogos } from "@/components/ClientLogos";
 import { Link } from "react-router-dom";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
