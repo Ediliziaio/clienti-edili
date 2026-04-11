@@ -320,7 +320,7 @@ function Hero() {
     <section className="relative min-h-screen flex items-center pt-28 overflow-hidden">
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
-        <ParallaxImage src={heroBg} alt="" className="absolute inset-0 w-full h-full" speed={0.1} />
+        <ParallaxImage src={heroBg} alt="Cantiere edile italiano con impresa al lavoro" className="absolute inset-0 w-full h-full" speed={0.1} />
         <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
       </div>
@@ -873,12 +873,12 @@ function CTABanner() {
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] text-center font-bold">
             Trasformiamo la tua{" "}
             <span className="inline-flex items-center align-middle mx-2">
-              <img src={ctaAerial} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
+              <img src={ctaAerial} alt="Vista aerea di un cantiere edile" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
             </span>{" "}
             impresa edile in un{" "}
             <span className="text-gradient-lime">magnete</span>{" "}
             <span className="inline-flex items-center align-middle mx-2">
-              <img src={ctaInline} alt="" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
+              <img src={ctaInline} alt="Imprenditore edile soddisfatto con il suo sito web" className="w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full object-cover inline-block border-2 border-primary" />
             </span>{" "}
             per clienti
           </h2>

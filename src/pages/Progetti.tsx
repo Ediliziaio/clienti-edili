@@ -133,6 +133,35 @@ export default function Progetti() {
         </div>
       </section>
 
+      {/* Internal Links */}
+      <section className="py-16 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="font-display text-3xl font-bold mb-8 text-center">Approfondisci</h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <FadeIn delay={0.1}>
+              <Link to="/servizi" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">I Nostri Servizi</h3>
+                <p className="text-muted-foreground text-sm">Siti web, SEO locale, Google My Business e social media per imprese edili.</p>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <Link to="/blog" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">Blog Marketing Edile</h3>
+                <p className="text-muted-foreground text-sm">Strategie e consigli per il marketing digitale nel settore edile.</p>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Link to="/chi-siamo" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">Il Team ClientiEdili</h3>
+                <p className="text-muted-foreground text-sm">Scopri chi siamo e perché oltre 127 imprese edili si affidano a noi.</p>
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -143,7 +172,7 @@ export default function Progetti() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-10">
-              Contattaci per una consulenza gratuita e scopri come possiamo trasformare la presenza online della tua impresa.
+              Contattaci per una consulenza gratuita e scopri come ClientiEdili può trasformare la presenza online della tua impresa edile.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>

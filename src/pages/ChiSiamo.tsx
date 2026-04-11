@@ -226,6 +226,35 @@ export default function ChiSiamo() {
         </div>
       </section>
 
+      {/* ─── Internal Links ─────────────────────────────── */}
+      <section className="py-16 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="font-display text-3xl font-bold mb-8 text-center">Esplora</h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <FadeIn delay={0.1}>
+              <Link to="/servizi" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">I Nostri Servizi</h3>
+                <p className="text-muted-foreground text-sm">Siti web in 48 ore, SEO locale, Google My Business e social media marketing per imprese edili.</p>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <Link to="/progetti" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">Progetti Realizzati</h3>
+                <p className="text-muted-foreground text-sm">Guarda i siti web che ClientiEdili ha creato per imprese edili in tutta Italia.</p>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Link to="/blog" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">Blog Marketing Edile</h3>
+                <p className="text-muted-foreground text-sm">Guide, strategie e consigli per far crescere la tua impresa edile online.</p>
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ──────────────────────────────────────────── */}
       <section className="py-20 border-t border-border">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -234,7 +263,7 @@ export default function ChiSiamo() {
               Pronto a Far Crescere la Tua Impresa Edile?
             </h2>
             <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto leading-relaxed">
-              Parliamo del tuo progetto. Ti mostreremo come il marketing digitale può portarti più clienti e più lavoro.
+              Parliamo del tuo progetto. ClientiEdili ti mostrerà come il marketing digitale può portarti più clienti e più lavoro.
             </p>
             <Link to="/#contatti" className="btn-carino inline-flex">
               Contattaci Ora

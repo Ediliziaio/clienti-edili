@@ -209,6 +209,35 @@ export default function Servizi() {
         </div>
       </section>
 
+      {/* Internal Links */}
+      <section className="py-16 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="font-display text-3xl font-bold mb-8 text-center">Scopri di più</h2>
+          </FadeIn>
+          <div className="grid sm:grid-cols-3 gap-6">
+            <FadeIn delay={0.1}>
+              <Link to="/progetti" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">I Nostri Progetti</h3>
+                <p className="text-muted-foreground text-sm">Guarda i siti web che abbiamo realizzato per imprese edili in tutta Italia.</p>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <Link to="/blog" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">Blog Marketing Edile</h3>
+                <p className="text-muted-foreground text-sm">Guide e strategie per portare più clienti alla tua impresa edile.</p>
+              </Link>
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <Link to="/chi-siamo" className="block bg-card border border-border rounded-xl p-6 hover:border-primary/30 transition-all">
+                <h3 className="font-display text-lg font-bold mb-2">Chi Siamo</h3>
+                <p className="text-muted-foreground text-sm">Il team di ClientiEdili: specialisti in marketing digitale per il settore edile dal 2019.</p>
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-24 border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
