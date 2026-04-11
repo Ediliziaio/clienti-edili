@@ -95,18 +95,18 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
 
       {mobileOpen && (
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border px-4 pb-6 pt-2 flex flex-col gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="md:hidden fixed inset-0 top-[calc(var(--nav-top,0px)+5rem)] bg-[#0a0a0a] px-6 pt-8 pb-6 flex flex-col gap-6 z-40"
         >
           {links.map((l) =>
             l.href.startsWith("/#") ? (
-              <a key={l.href} href={l.href} onClick={() => handleClick(l.href)} className="text-muted-foreground hover:text-foreground py-2 font-ui">{l.label}</a>
+              <a key={l.href} href={l.href} onClick={() => handleClick(l.href)} className="text-foreground text-lg font-ui border-b border-border pb-4">{l.label}</a>
             ) : (
-              <Link key={l.href} to={l.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground py-2 font-ui">{l.label}</Link>
+              <Link key={l.href} to={l.href} onClick={() => setMobileOpen(false)} className="text-foreground text-lg font-ui border-b border-border pb-4">{l.label}</Link>
             )
           )}
-          <Link to="/#contatti" onClick={() => setMobileOpen(false)} className="btn-carino text-center justify-center mt-2">
+          <Link to="/contatti" onClick={() => setMobileOpen(false)} className="btn-carino text-center justify-center mt-4">
             Contattaci
             <span className="arrow-circle"><ArrowUpRight size={18} /></span>
           </Link>

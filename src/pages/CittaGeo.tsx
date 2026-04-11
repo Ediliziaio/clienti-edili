@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useParams, Navigate, Link } from "react-router-dom";
+import { Navigate, Link, useLocation } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { ArrowUpRight, Check, Star, MapPin, Phone, Clock, Shield } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -96,7 +96,8 @@ const features = [
 const projectImages = [project1, project2, project3];
 
 export default function CittaGeo() {
-  const { citta } = useParams<{ citta: string }>();
+  const location = useLocation();
+  const citta = location.pathname.replace("/siti-web-edili-", "");
   const city = cities.find((c) => c.slug === citta);
 
   useEffect(() => {

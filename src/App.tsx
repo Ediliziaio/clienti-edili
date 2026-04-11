@@ -35,7 +35,11 @@ const App = () => (
             <Route path="/chi-siamo" element={<ChiSiamo />} />
             <Route path="/contatti" element={<Contatti />} />
             <Route path="/servizi/:servizio" element={<ServizioDettaglio />} />
-            <Route path="/siti-web-edili-:citta" element={<CittaGeo />} />
+            <Route path="/siti-web-edili-milano" element={<CittaGeo />} />
+            <Route path="/siti-web-edili-roma" element={<CittaGeo />} />
+            <Route path="/siti-web-edili-torino" element={<CittaGeo />} />
+            <Route path="/siti-web-edili-napoli" element={<CittaGeo />} />
+            <Route path="/siti-web-edili-bologna" element={<CittaGeo />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
