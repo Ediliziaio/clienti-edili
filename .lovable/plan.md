@@ -1,33 +1,30 @@
 
 
-# Aggiungere loghi animati generati con AI al ticker clienti
+# Migliorare i loghi del ticker clienti
 
 ## Cosa
-Sostituire il ticker testuale dei clienti con un ticker di loghi SVG generati. Creerò ~8 loghi finti di imprese edili in formato SVG inline direttamente nel codice, con il classico effetto marquee scorrevole.
+Sostituire i loghi SVG attuali (icone generiche e grossolane) con loghi SVG molto più dettagliati e realistici, in stile professionale da vera azienda edile. Ogni logo avrà un design unico con tipografia stilizzata e icone più raffinate.
 
 ## Come
 
-### 1. Generare i loghi SVG
-Creerò 8 loghi SVG inline stilizzati per le aziende fittizie già presenti (Rossi Costruzioni, Edil Bianchi, ecc.). Ogni logo sarà un componente SVG semplice ma professionale — icona geometrica (casa, gru, mattone, elmetto) + nome azienda — in stile monocromatico (grigio/muted) per integrarsi col design dark.
+### Riscrittura completa di `src/components/ClientLogos.tsx`
 
-### 2. Aggiornare il ClientsTicker
-Modificare la sezione `ClientsTicker` in `src/pages/Index.tsx` (righe 434-454):
-- Sostituire le `<span>` testuali con i componenti logo SVG
-- Ogni logo avrà dimensione ~120x50px con icona + testo
-- Mantenere l'animazione `animate-ticker` esistente
-- I loghi saranno semitrasparenti (`opacity-30`) come il testo attuale, con hover che li rende più visibili
+Creerò 8 loghi SVG completamente nuovi, ciascuno con:
+- **Icona dettagliata** con linee più sottili, proporzioni migliori e dettagli architettonici realistici
+- **Tipografia integrata nell'SVG** — il nome sarà parte del logo stesso (testo SVG con font-weight e letter-spacing diversi per ogni brand)
+- **Stili diversificati**: alcuni con icona sopra il testo, altri con icona a sinistra, altri solo tipografici con un elemento decorativo
+- **Dimensione maggiore** (circa 160x50px) per un impatto visivo migliore
 
-### 3. Componente loghi
-Creare un array di componenti SVG inline in `src/pages/Index.tsx` (o file separato `src/components/ClientLogos.tsx`) con loghi stilizzati per:
-- Rossi Costruzioni (icona casa)
-- Edil Bianchi (icona mattoni)
-- Muratori Uniti (icona cazzuola)
-- Costruzioni Ferrari (icona gru)
-- Impresa Colombo (icona elmetto)
-- Edilizia Moretti (icona edificio)
-- Fratelli Ricci (icona chiave inglese)
-- Cantieri Lombardi (icona cantiere)
+Loghi previsti:
+1. **Rossi Costruzioni** — Casa stilizzata con tetto a triangolo netto + nome in caps spaziato
+2. **Edil Bianchi** — Tre mattoni sovrapposti sfalsati + scritta serif elegante
+3. **Muratori Uniti** — Cazzuola e livella incrociati + testo bold condensed
+4. **Costruzioni Ferrari** — Gru con braccio angolato + nome in maiuscolo sottile
+5. **Impresa Colombo** — Elmetto di sicurezza dettagliato con visiera + testo sotto
+6. **Edilizia Moretti** — Skyline stilizzato di 3 edifici di altezze diverse + scritta
+7. **Fratelli Ricci** — Chiave inglese e martello incrociati a X + nome serif
+8. **Cantieri Lombardi** — Triangolo/segnale cantiere con righe diagonali + testo
 
 ## File modificati
-- `src/pages/Index.tsx` — Aggiornare `ClientsTicker` con loghi SVG inline al posto del testo
+- `src/components/ClientLogos.tsx` — Riscrittura completa con loghi SVG più professionali e realistici
 
