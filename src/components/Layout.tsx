@@ -47,7 +47,7 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   const links = [
     { label: "Servizi", href: "/servizi" },
     { label: "Progetti", href: "/progetti" },
-    { label: "Recensioni", href: "/#recensioni" },
+    { label: "Chi Siamo", href: "/chi-siamo" },
     { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/#faq" },
   ];
@@ -161,6 +161,7 @@ function LayoutFooter() {
             <ul className="space-y-2 text-muted-foreground text-sm">
               <li><Link to="/servizi" className="hover:text-foreground transition-colors">Servizi</Link></li>
               <li><Link to="/progetti" className="hover:text-foreground transition-colors">Progetti</Link></li>
+              <li><Link to="/chi-siamo" className="hover:text-foreground transition-colors">Chi Siamo</Link></li>
               <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
               <li><a href="/#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
             </ul>
