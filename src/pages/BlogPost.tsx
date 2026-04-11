@@ -1,13 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import { ArrowLeft, ArrowRight, Clock, Calendar, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, Calendar, User, List, ChevronDown } from "lucide-react";
 import Layout from "@/components/Layout";
 import { blogPosts } from "@/data/blogPosts";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
 
+// ─── FadeIn ──────────────────────────────────────────────────
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
@@ -20,6 +21,29 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
 
 const blogImages = [blog1, blog2, blog3, blog1, blog2];
 
+// ─── Extract TOC from markdown ───────────────────────────────
+interface TocItem { id: string; text: string; level: number }
+
+function extractToc(content: string): TocItem[] {
+  const items: TocItem[] = [];
+  content.split("\n").forEach((line) => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("### ")) {
+      const text = trimmed.slice(4);
+      items.push({ id: slugify(text), text, level: 3 });
+    } else if (trimmed.startsWith("## ")) {
+      const text = trimmed.slice(3);
+      items.push({ id: slugify(text), text, level: 2 });
+    }
+  });
+  return items;
+}
+
+function slugify(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9àèéìòù]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+// ─── Render markdown ─────────────────────────────────────────
 function renderMarkdown(content: string) {
   const lines = content.split("\n");
   const elements: React.ReactNode[] = [];
@@ -43,22 +67,16 @@ function renderMarkdown(content: string) {
 
   lines.forEach((line, i) => {
     const trimmed = line.trim();
-    if (!trimmed) {
-      flushList();
-      return;
-    }
-
-    if (trimmed.startsWith("- ")) {
-      listItems.push(trimmed.slice(2));
-      return;
-    }
-
+    if (!trimmed) { flushList(); return; }
+    if (trimmed.startsWith("- ")) { listItems.push(trimmed.slice(2)); return; }
     flushList();
 
     if (trimmed.startsWith("### ")) {
-      elements.push(<h3 key={i} className="font-display text-2xl font-bold mt-12 mb-4">{trimmed.slice(4)}</h3>);
+      const text = trimmed.slice(4);
+      elements.push(<h3 key={i} id={slugify(text)} className="font-display text-2xl font-bold mt-12 mb-4 scroll-mt-32">{text}</h3>);
     } else if (trimmed.startsWith("## ")) {
-      elements.push(<h2 key={i} className="font-display text-3xl sm:text-4xl font-bold mt-16 mb-6">{trimmed.slice(3)}</h2>);
+      const text = trimmed.slice(3);
+      elements.push(<h2 key={i} id={slugify(text)} className="font-display text-3xl sm:text-4xl font-bold mt-16 mb-6 scroll-mt-32">{text}</h2>);
     } else {
       elements.push(
         <p key={i} className="text-foreground/80 text-lg leading-relaxed my-4" dangerouslySetInnerHTML={{
@@ -67,15 +85,107 @@ function renderMarkdown(content: string) {
       );
     }
   });
-
   flushList();
   return elements;
 }
 
+// ─── TOC Sidebar ─────────────────────────────────────────────
+function TocSidebar({ items, activeId }: { items: TocItem[]; activeId: string }) {
+  return (
+    <nav className="space-y-1">
+      <p className="font-ui text-xs tracking-[0.15em] uppercase text-muted-foreground mb-3 flex items-center gap-2">
+        <List size={14} /> Indice
+      </p>
+      {items.map((item) => (
+        <a
+          key={item.id}
+          href={`#${item.id}`}
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className={`block text-sm py-1 transition-colors duration-200 ${
+            item.level === 3 ? "pl-4" : ""
+          } ${
+            activeId === item.id
+              ? "text-primary font-semibold border-l-2 border-primary pl-3"
+              : "text-muted-foreground hover:text-foreground border-l-2 border-transparent pl-3"
+          }`}
+        >
+          {item.text}
+        </a>
+      ))}
+    </nav>
+  );
+}
+
+// ─── Mobile TOC ──────────────────────────────────────────────
+function MobileToc({ items }: { items: TocItem[] }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="lg:hidden mb-8 bg-card border border-border rounded-xl overflow-hidden">
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between px-4 py-3 font-ui text-sm font-semibold"
+      >
+        <span className="flex items-center gap-2"><List size={16} /> Indice dei Contenuti</span>
+        <ChevronDown size={16} className={`transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="px-4 pb-4 space-y-1">
+          {items.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className={`block text-sm py-1 text-muted-foreground hover:text-foreground ${item.level === 3 ? "pl-4" : ""}`}
+            >
+              {item.text}
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ─── useActiveHeading ────────────────────────────────────────
+function useActiveHeading(ids: string[]) {
+  const [activeId, setActiveId] = useState("");
+
+  useEffect(() => {
+    if (ids.length === 0) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          setActiveId(visible[0].target.id);
+        }
+      },
+      { rootMargin: "-100px 0px -60% 0px", threshold: 0 }
+    );
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [ids]);
+
+  return activeId;
+}
+
+// ─── BlogPost ────────────────────────────────────────────────
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>();
-  const postIndex = blogPosts.findIndex(p => p.slug === slug);
+  const postIndex = blogPosts.findIndex((p) => p.slug === slug);
   const post = blogPosts[postIndex];
+
+  const tocItems = post ? extractToc(post.content) : [];
+  const activeId = useActiveHeading(tocItems.map((t) => t.id));
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -93,81 +203,90 @@ export default function BlogPost() {
   return (
     <Layout>
       {/* Back link */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <Link to="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-ui text-sm">
-          <ArrowLeft size={16} />
-          Torna al Blog
+          <ArrowLeft size={16} /> Torna al Blog
         </Link>
       </div>
 
       {/* Article Header */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <div className="flex items-center gap-3 mb-6">
+          <div className="max-w-4xl">
             <span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-ui text-xs font-semibold tracking-wider uppercase">
               {post.category}
             </span>
-          </div>
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-bold mb-8">{post.title}</h1>
-          <div className="flex flex-wrap items-center gap-6 text-muted-foreground text-sm border-b border-border pb-8 mb-12">
-            <div className="flex items-center gap-2">
-              <User size={16} />
-              <span>Team ClientiEdili</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Calendar size={16} />
-              <span>{post.date}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <Clock size={16} />
-              <span>{post.readTime} di lettura</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.1] font-bold mt-6 mb-8">{post.title}</h1>
+            <div className="flex flex-wrap items-center gap-6 text-muted-foreground text-sm border-b border-border pb-8 mb-8">
+              <div className="flex items-center gap-2"><User size={16} /><span>Team ClientiEdili</span></div>
+              <div className="flex items-center gap-2"><Calendar size={16} /><span>{post.date}</span></div>
+              <div className="flex items-center gap-2"><Clock size={16} /><span>{post.readTime} di lettura</span></div>
             </div>
           </div>
         </FadeIn>
+      </div>
 
-        {/* Article Hero Image */}
-        <FadeIn delay={0.1}>
-          <div className="aspect-[16/9] rounded-2xl overflow-hidden mb-12">
+      {/* Full-width Hero Image */}
+      <FadeIn delay={0.1}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+          <div className="aspect-[21/9] rounded-2xl overflow-hidden relative">
             <img src={blogImages[postIndex]} alt={post.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
           </div>
-        </FadeIn>
+        </div>
+      </FadeIn>
 
-        {/* Content */}
-        <FadeIn delay={0.2}>
-          <div className="prose-custom">
-            {renderMarkdown(post.content)}
-          </div>
-        </FadeIn>
+      {/* Two-column layout */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex gap-12">
+          {/* Main Content */}
+          <article className="flex-1 min-w-0 max-w-4xl">
+            <MobileToc items={tocItems} />
 
-        {/* Author */}
-        <FadeIn>
-          <div className="border-t border-b border-border py-8 my-16">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center text-lg">CE</div>
-              <div>
-                <p className="font-display font-bold text-lg">Team ClientiEdili</p>
-                <p className="text-muted-foreground text-sm">Specialisti in marketing digitale per imprese edili italiane.</p>
+            <FadeIn delay={0.2}>
+              <div className="prose-custom">
+                {renderMarkdown(post.content)}
               </div>
-            </div>
-          </div>
-        </FadeIn>
+            </FadeIn>
 
-        {/* CTA */}
-        <FadeIn>
-          <div className="bg-card border border-border rounded-2xl p-8 sm:p-12 text-center my-16">
-            <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4">
-              Vuoi portare più clienti alla tua impresa edile?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-              Contattaci per una consulenza gratuita. Ti mostreremo come il marketing digitale può trasformare la tua attività.
-            </p>
-            <Link to="/#contatti" className="btn-carino inline-flex">
-              Parliamone Subito
-              <span className="arrow-circle"><ArrowRight size={18} /></span>
-            </Link>
-          </div>
-        </FadeIn>
-      </article>
+            {/* Author */}
+            <FadeIn>
+              <div className="border-t border-b border-border py-8 my-16">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center text-lg">CE</div>
+                  <div>
+                    <p className="font-display font-bold text-lg">Team ClientiEdili</p>
+                    <p className="text-muted-foreground text-sm">Specialisti in marketing digitale per imprese edili italiane.</p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* CTA */}
+            <FadeIn>
+              <div className="bg-card border border-border rounded-2xl p-8 sm:p-12 text-center my-16">
+                <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4">
+                  Vuoi portare più clienti alla tua impresa edile?
+                </h3>
+                <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
+                  Contattaci per una consulenza gratuita. Ti mostreremo come il marketing digitale può trasformare la tua attività.
+                </p>
+                <Link to="/#contatti" className="btn-carino inline-flex">
+                  Parliamone Subito
+                  <span className="arrow-circle"><ArrowRight size={18} /></span>
+                </Link>
+              </div>
+            </FadeIn>
+          </article>
+
+          {/* Sidebar TOC (desktop) */}
+          <aside className="hidden lg:block w-64 shrink-0">
+            <div className="sticky top-32">
+              <TocSidebar items={tocItems} activeId={activeId} />
+            </div>
+          </aside>
+        </div>
+      </div>
 
       {/* Related Posts */}
       <section className="py-20 border-t border-border mt-16">
