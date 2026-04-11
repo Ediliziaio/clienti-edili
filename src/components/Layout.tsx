@@ -178,7 +178,7 @@ function LayoutFooter() {
               {[
                 { icon: Facebook, href: "#" },
                 { icon: Instagram, href: "#" },
-                { icon: MessageCircle, href: "https://wa.me/390212345678" },
+                { icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=393501782744&text&type=phone_number&app_absent=0" },
               ].map((s, i) => (
                 <a key={i} href={s.href} className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300">
                   <s.icon size={14} />
@@ -210,7 +210,7 @@ function LayoutFooter() {
 function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/390212345678"
+      href="https://api.whatsapp.com/send/?phone=393501782744&text&type=phone_number&app_absent=0"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contattaci su WhatsApp"

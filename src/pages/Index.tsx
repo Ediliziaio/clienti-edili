@@ -326,19 +326,6 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/60 to-background" />
       </div>
 
-      {/* Social sidebar */}
-      <div className="hidden lg:flex flex-col gap-4 fixed left-6 top-1/2 -translate-y-1/2 z-40">
-        {[
-          { icon: Facebook, href: "#", label: "Facebook" },
-          { icon: Instagram, href: "#", label: "Instagram" },
-          { icon: MessageCircle, href: "https://wa.me/390212345678", label: "WhatsApp" },
-        ].map((s, i) => (
-          <a key={i} href={s.href} aria-label={s.label} className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300">
-            <s.icon size={16} />
-          </a>
-        ))}
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center py-16 lg:py-0 relative z-10">
         {/* Left */}
         <div className="space-y-8">
@@ -1354,7 +1341,7 @@ function Footer() {
               {[
                 { icon: Facebook, href: "#" },
                 { icon: Instagram, href: "#" },
-                { icon: MessageCircle, href: "https://wa.me/390212345678" },
+                { icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=393501782744&text&type=phone_number&app_absent=0" },
               ].map((s, i) => (
                 <a key={i} href={s.href} className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300">
                   <s.icon size={14} />
@@ -1387,7 +1374,7 @@ function Footer() {
 function FloatingWhatsApp() {
   return (
     <a
-      href="https://wa.me/390212345678"
+      href="https://api.whatsapp.com/send/?phone=393501782744&text&type=phone_number&app_absent=0"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contattaci su WhatsApp"
