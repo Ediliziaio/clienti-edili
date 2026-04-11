@@ -445,7 +445,7 @@ function ClientsTicker() {
       <div className="overflow-hidden">
         <div className="flex animate-ticker">
           {[...clientLogos, ...clientLogos].map((logo, i) => (
-            <ClientLogo key={i} icon={logo.icon} name={logo.name} />
+            <ClientLogo key={i}><logo.component /></ClientLogo>
           ))}
         </div>
       </div>
