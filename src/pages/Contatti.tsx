@@ -49,7 +49,7 @@ export default function Contatti() {
   return (
     <Layout>
       <SeoHead
-        title="Contatta ClientiEdili | Consulenza Gratuita per Imprese Edili"
+        title="Contatti ClientiEdili | Consulenza Gratuita Edili"
         description="Contatta ClientiEdili per una consulenza gratuita. Siti web per imprese edili in 48 ore, zero anticipo. Chiamaci o compila il form."
         canonical="https://clientiedili.com/contatti"
         jsonLd={contattiJsonLd}

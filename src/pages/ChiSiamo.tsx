@@ -91,8 +91,8 @@ export default function ChiSiamo() {
   return (
     <Layout>
       <SeoHead
-        title="Chi Siamo — ClientiEdili | Agenzia Marketing per Imprese Edili dal 2019"
-        description="ClientiEdili è il team di professionisti del marketing digitale dedicato alle imprese edili italiane. Dal 2019, oltre 200 clienti soddisfatti e 350+ progetti completati."
+        title="Chi Siamo | ClientiEdili — Agenzia Marketing Edile"
+        description="ClientiEdili: team di marketing digitale per imprese edili italiane dal 2019. Oltre 200 clienti soddisfatti e 350+ progetti completati."
         canonical="https://clientiedili.com/chi-siamo"
         jsonLd={chiSiamoJsonLd}
       />

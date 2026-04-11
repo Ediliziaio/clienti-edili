@@ -264,8 +264,8 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   return (
     <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 ${bannerVisible ? "top-10" : "top-0"} ${scrolled ? "bg-background/90 backdrop-blur-lg border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-        <a href="#" className="flex items-center">
-          <img src={clientiEdiliLogo} alt="ClientiEdili" className="h-10" />
+        <a href="/" className="flex items-center">
+          <img src={clientiEdiliLogo} alt="ClientiEdili - Agenzia Marketing Digitale per Imprese Edili" className="h-10" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -1046,7 +1046,7 @@ function BlogSection() {
             </FadeIn>
           </div>
           <FadeIn delay={0.2}>
-            <CarinoButton href="#" variant="outline">Tutti gli Articoli</CarinoButton>
+            <CarinoButton href="/blog" variant="outline">Tutti gli Articoli</CarinoButton>
           </FadeIn>
         </div>
 
@@ -1367,8 +1367,8 @@ function Footer() {
         <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">© 2026 ClientiEdili. Tutti i diritti riservati.</p>
           <div className="flex gap-6 text-muted-foreground text-sm">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Cookie Policy</a>
+            <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+            <a href="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</a>
           </div>
         </div>
       </div>
@@ -1410,7 +1410,7 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SeoHead
-        title="ClientiEdili — Siti Web per Imprese Edili | Consegna in 48 Ore"
+        title="ClientiEdili | Siti Web per Imprese Edili in 48h"
         description="ClientiEdili crea siti web per imprese edili italiane. Consegna in 48 ore, zero anticipo, soddisfatti o rimborsati. 127+ imprese servite."
         canonical="https://clientiedili.com/"
         jsonLd={homeJsonLd}

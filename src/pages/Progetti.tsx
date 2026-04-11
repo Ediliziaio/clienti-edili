@@ -57,8 +57,8 @@ export default function Progetti() {
   return (
     <Layout>
       <SeoHead
-        title="Progetti e Siti Web Realizzati per Imprese Edili | ClientiEdili"
-        description="Portfolio di siti web e campagne marketing per imprese edili italiane. Oltre 127 progetti completati con risultati misurabili: +200% richieste di preventivo."
+        title="Progetti Siti Web per Imprese Edili | ClientiEdili"
+        description="Portfolio siti web e campagne marketing per imprese edili. 127+ progetti completati con risultati misurabili: +200% richieste di preventivo."
         canonical="https://clientiedili.com/progetti"
         jsonLd={progettiJsonLd}
       />

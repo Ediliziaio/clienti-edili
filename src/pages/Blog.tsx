@@ -45,8 +45,8 @@ export default function Blog() {
   return (
     <Layout>
       <SeoHead
-        title="Blog Marketing Edile | Strategie e Guide per Imprese di Costruzione"
-        description="Guide approfondite, strategie testate e consigli pratici di marketing digitale per imprese edili italiane. SEO locale, siti web, Google My Business e social media."
+        title="Blog Marketing Edile | Guide per Imprese Edili"
+        description="Guide e strategie di marketing digitale per imprese edili italiane. SEO locale, siti web, Google My Business e social media per il settore edile."
         canonical="https://clientiedili.com/blog"
         jsonLd={blogJsonLd}
       />

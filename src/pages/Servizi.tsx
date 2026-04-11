@@ -123,7 +123,7 @@ export default function Servizi() {
     <Layout>
       <SeoHead
         title="Servizi Marketing Digitale per Imprese Edili | ClientiEdili"
-        description="Siti web professionali, SEO locale, Google My Business e social media per imprese edili italiane. Zero anticipo, consegna in 48 ore, garanzia soddisfatti o rimborsati."
+        description="Siti web, SEO locale, Google My Business e social media per imprese edili. Zero anticipo, consegna in 48 ore, soddisfatti o rimborsati."
         canonical="https://clientiedili.com/servizi"
         jsonLd={serviziJsonLd}
       />

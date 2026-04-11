@@ -132,7 +132,7 @@ export default function CittaGeo() {
     <Layout>
       <SeoHead
         title={`Siti Web per Imprese Edili a ${city.name} | ClientiEdili`}
-        description={`ClientiEdili crea siti web professionali per imprese edili a ${city.name}. Consegna in 48 ore, zero anticipo. Posizionamento su Google per "${city.localKeyword}".`}
+        description={`ClientiEdili crea siti web per imprese edili a ${city.name}. Consegna in 48 ore, zero anticipo. Primi su Google per "${city.localKeyword}".`}
         canonical={`https://clientiedili.com/siti-web-edili-${city.slug}`}
         jsonLd={jsonLd}
       />
