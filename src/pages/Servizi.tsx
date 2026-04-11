@@ -35,9 +35,8 @@ const services = [
       "Galleria lavori fotografica",
       "Form contatto integrato",
       "Caricamento ultra-veloce",
-      "Certificato SSL e hosting inclusi",
-      "Dominio personalizzato per 1 anno",
       "Manutenzione e aggiornamenti inclusi",
+      "30 giorni di assistenza post-consegna",
     ],
   },
   {

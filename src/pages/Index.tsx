@@ -93,8 +93,7 @@ const offerFeatures = [
   "Galleria lavori fotografica",
   "Form contatto integrato",
   "Velocità di caricamento ottimale",
-  "Dominio e hosting per 1 anno",
-  "Certificato SSL incluso",
+  "Assistenza post-consegna 30 giorni",
 ];
 
 const bonuses = [
@@ -105,7 +104,7 @@ const bonuses = [
 ];
 
 const faqs = [
-  { q: "Quanto costa il sito web?", a: "Il prezzo è di €1.000 (invece di €1.400) tutto incluso. Dominio, hosting, SSL, design, copywriting e ottimizzazione SEO. Nessun costo nascosto." },
+  { q: "Quanto costa il sito web?", a: "Il prezzo è di €1.000 (invece di €1.400) tutto incluso. Realizzazione sito completa: design, copywriting e ottimizzazione SEO. Nessun costo nascosto." },
   { q: "Devo pagare un anticipo?", a: "No, zero anticipo. Paghi solo dopo aver visto e approvato il sito completato. Se non ti piace, non paghi nulla." },
   { q: "In quanto tempo sarà pronto?", a: "Il sito viene consegnato in 48 ore lavorative dalla chiamata conoscitiva. Riceverai un'anteprima entro le prime 24 ore." },
   { q: "Il sito sarà visibile su Google?", a: "Assolutamente sì. Ogni sito viene ottimizzato SEO per posizionarsi nelle ricerche locali della tua zona." },

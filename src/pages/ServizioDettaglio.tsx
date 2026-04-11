@@ -55,7 +55,7 @@ const services: ServiceData[] = [
     howItWorks: [
       { step: "01", title: "Chiamata Conoscitiva", desc: "15 minuti per capire la tua impresa, i servizi che offri e i tuoi obiettivi. ClientiEdili analizza il tuo mercato locale e i tuoi competitor." },
       { step: "02", title: "Anteprima in 24 Ore", desc: "Ricevi la prima bozza del tuo sito web entro 24 ore. Puoi richiedere modifiche illimitate fino a quando il risultato non ti soddisfa al 100%." },
-      { step: "03", title: "Online in 48 Ore", desc: "Il tuo sito web viene pubblicato, ottimizzato per Google e pronto a ricevere clienti. Inclusi dominio, hosting e certificato SSL per 1 anno." },
+      { step: "03", title: "Online in 48 Ore", desc: "Il tuo sito web viene pubblicato, ottimizzato per Google e pronto a ricevere clienti. Realizzazione completa con assistenza 30 giorni inclusa." },
     ],
     features: [
       "Design personalizzato e moderno per il settore edile",
@@ -63,8 +63,6 @@ const services: ServiceData[] = [
       "Galleria lavori fotografica con before/after",
       "Form contatto integrato con notifiche email",
       "Caricamento ultra-veloce (< 3 secondi)",
-      "Certificato SSL e hosting premium inclusi",
-      "Dominio personalizzato per 1 anno",
       "Ottimizzazione SEO on-page inclusa",
       "Integrazione Google Analytics",
       "30 giorni di assistenza post-consegna",
@@ -76,7 +74,7 @@ const services: ServiceData[] = [
       { value: "98%", label: "Clienti soddisfatti" },
     ],
     faqs: [
-      { q: "Quanto costa un sito web per impresa edile?", a: "Il prezzo del pacchetto completo ClientiEdili è di €1.000 (invece di €1.400), tutto incluso: dominio, hosting, SSL, design personalizzato, copywriting, ottimizzazione SEO e 30 giorni di assistenza. Nessun costo nascosto." },
+      { q: "Quanto costa un sito web per impresa edile?", a: "Il prezzo del pacchetto completo ClientiEdili è di €1.000 (invece di €1.400), tutto incluso: realizzazione sito completa, design personalizzato, copywriting, ottimizzazione SEO e 30 giorni di assistenza. Nessun costo nascosto." },
       { q: "Il sito funziona su smartphone?", a: "Assolutamente sì. Ogni sito ClientiEdili è progettato mobile-first, il che significa che funziona perfettamente su smartphone, tablet e desktop. Questo è fondamentale perché oltre il 65% delle ricerche avviene da mobile." },
       { q: "Posso aggiornare il sito da solo?", a: "Sì, ogni sito viene consegnato con un pannello di gestione semplice e intuitivo. Puoi aggiungere foto, modificare testi e gestire i contenuti senza conoscenze tecniche." },
       { q: "Il sito include l'ottimizzazione SEO?", a: "Sì, ogni sito ClientiEdili include l'ottimizzazione SEO on-page: meta tag, title, description, heading structure, alt text immagini, sitemap XML e velocità di caricamento ottimizzata." },

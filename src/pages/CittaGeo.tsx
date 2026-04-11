@@ -89,7 +89,6 @@ const features = [
   "Galleria lavori fotografica",
   "Form contatto integrato",
   "Profilo Google My Business ottimizzato",
-  "Certificato SSL e hosting inclusi",
   "30 giorni di assistenza post-consegna",
 ];
 
