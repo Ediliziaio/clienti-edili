@@ -1344,9 +1344,9 @@ function Footer() {
           <div>
             <h4 className="font-ui font-semibold mb-4 text-sm">Contatti</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
-              <li>+39 02 1234 5678</li>
-              <li>info@clientiedili.it</li>
-              <li>Milano, Italia</li>
+              <li><a href="mailto:Amministrazione@domusgroupitalia.it" className="hover:text-foreground transition-colors">Amministrazione@domusgroupitalia.it</a></li>
+              <li><a href="mailto:domusgroupsrl@legalmail.it" className="hover:text-foreground transition-colors">PEC: domusgroupsrl@legalmail.it</a></li>
+              <li>Via Aurelio Saffi 29, 20123 Milano</li>
             </ul>
 
             {/* Social icons */}
@@ -1364,11 +1364,17 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">© 2026 ClientiEdili. Tutti i diritti riservati.</p>
-          <div className="flex gap-6 text-muted-foreground text-sm">
-            <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</a>
+        <div className="border-t border-border pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4">
+            <p className="text-muted-foreground text-sm">© 2026 ClientiEdili. Tutti i diritti riservati.</p>
+            <div className="flex gap-6 text-muted-foreground text-sm">
+              <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
+              <a href="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</a>
+            </div>
+          </div>
+          <div className="text-muted-foreground/60 text-xs text-center leading-relaxed">
+            <p>Domus Group S.r.l. — Sede Legale: Via Aurelio Saffi 29, CAP 20123 Milano — P.IVA: 13132010961</p>
+            <p>Capitale Sociale: 20.000,00€ — SDI: USAL8PV — PEC: domusgroupsrl@legalmail.it</p>
           </div>
         </div>
       </div>
