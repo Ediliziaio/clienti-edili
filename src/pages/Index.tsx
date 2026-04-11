@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import {
@@ -251,11 +252,11 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   }, []);
 
   const links = [
-    { label: "Servizi", href: "#servizi" },
-    { label: "Progetti", href: "#progetti" },
-    { label: "Recensioni", href: "#recensioni" },
-    { label: "Blog", href: "#blog" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Servizi", href: "/servizi", isRoute: true },
+    { label: "Progetti", href: "/progetti", isRoute: true },
+    { label: "Recensioni", href: "#recensioni", isRoute: false },
+    { label: "Blog", href: "/blog", isRoute: true },
+    { label: "FAQ", href: "#faq", isRoute: false },
   ];
 
   return (
@@ -266,11 +267,17 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.isRoute ? (
+              <Link key={l.href} to={l.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
+                {l.label}
+              </Link>
+            ) : (
+              <a key={l.href} href={l.href} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
+                {l.label}
+              </a>
+            )
+          )}
         </div>
 
         <div className="hidden md:block">
@@ -288,9 +295,13 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden bg-background/95 backdrop-blur-lg border-b border-border px-4 pb-6 pt-2 flex flex-col gap-4"
         >
-          {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground py-2 font-ui">{l.label}</a>
-          ))}
+          {links.map((l) =>
+            l.isRoute ? (
+              <Link key={l.href} to={l.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground py-2 font-ui">{l.label}</Link>
+            ) : (
+              <a key={l.href} href={l.href} onClick={() => setMobileOpen(false)} className="text-muted-foreground hover:text-foreground py-2 font-ui">{l.label}</a>
+            )
+          )}
           <a href="#contatti" onClick={() => setMobileOpen(false)} className="btn-carino text-center justify-center mt-2">
             Contattaci
             <span className="arrow-circle"><ArrowUpRight size={18} /></span>
@@ -1324,9 +1335,10 @@ function Footer() {
           <div>
             <h4 className="font-ui font-semibold mb-4 text-sm">Link Utili</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
-              <li><a href="#servizi" className="hover:text-foreground transition-colors">Servizi</a></li>
-              <li><a href="#progetti" className="hover:text-foreground transition-colors">Progetti</a></li>
+              <li><Link to="/servizi" className="hover:text-foreground transition-colors">Servizi</Link></li>
+              <li><Link to="/progetti" className="hover:text-foreground transition-colors">Progetti</Link></li>
               <li><a href="#recensioni" className="hover:text-foreground transition-colors">Recensioni</a></li>
+              <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
               <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
             </ul>
           </div>
