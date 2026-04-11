@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import ClientLogo, { clientLogos } from "@/components/ClientLogos";
 import { Link } from "react-router-dom";
+import SeoHead from "@/components/SeoHead";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import {
@@ -1397,8 +1398,23 @@ function FloatingWhatsApp() {
 export default function Index() {
   const [bannerVisible, setBannerVisible] = useState(true);
 
+  const homeJsonLd = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clientiedili.com/" },
+      ],
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <SeoHead
+        title="ClientiEdili — Siti Web per Imprese Edili | Consegna in 48 Ore"
+        description="ClientiEdili crea siti web per imprese edili italiane. Consegna in 48 ore, zero anticipo, soddisfatti o rimborsati. 127+ imprese servite."
+        canonical="https://clientiedili.com/"
+        jsonLd={homeJsonLd}
+      />
       <TopBanner visible={bannerVisible} onClose={() => setBannerVisible(false)} />
       <ScrollProgress />
       <Navbar bannerVisible={bannerVisible} />
