@@ -53,10 +53,10 @@ const values = [
 ];
 
 const team = [
-  { initials: "MR", name: "Marco Rossi", role: "Fondatore & CEO", bio: "15 anni di esperienza nel marketing digitale. Ha lavorato con oltre 200 imprese edili in tutta Italia." },
-  { initials: "LB", name: "Laura Bianchi", role: "Head of Design", bio: "Specializzata in UI/UX per il settore costruzioni. Crea siti che convertono visitatori in clienti." },
-  { initials: "AG", name: "Andrea Galli", role: "SEO Specialist", bio: "Esperto di posizionamento locale. Ha portato decine di imprese in prima pagina su Google." },
-  { initials: "SF", name: "Sara Ferrari", role: "Social Media Manager", bio: "Crea contenuti che raccontano il valore delle imprese edili su Facebook e Instagram." },
+  { initials: "FA", name: "Florin Andriciuc", role: "Fondatore & CEO", bio: "15 anni di esperienza nel marketing digitale. Ha lavorato con oltre 200 imprese edili in tutta Italia." },
+  { initials: "EV", name: "Elena Venturi", role: "Head of Design", bio: "Specializzata in UI/UX per il settore costruzioni. Crea siti che convertono visitatori in clienti." },
+  { initials: "SP", name: "Simone Parisi", role: "SEO Specialist", bio: "Esperto di posizionamento locale. Ha portato decine di imprese in prima pagina su Google." },
+  { initials: "CM", name: "Chiara Magnani", role: "Social Media Manager", bio: "Crea contenuti che raccontano il valore delle imprese edili su Facebook e Instagram." },
 ];
 
 const stats = [

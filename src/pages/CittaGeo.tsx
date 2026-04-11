@@ -38,7 +38,7 @@ const cities: CityData[] = [
     whyDigital: "Milano è il mercato edile più competitivo d'Italia. Ogni giorno migliaia di persone cercano su Google 'impresa edile Milano', 'ristrutturazione appartamento Milano' o 'impresa di costruzioni Milano'. Senza un sito web professionale e ottimizzato per la SEO locale, la tua impresa è invisibile a questi potenziali clienti. ClientiEdili ti posiziona in prima pagina su Google per le ricerche nella zona di Milano e hinterland.",
     localKeyword: "impresa edile Milano",
     projects: 30,
-    testimonial: { name: "Marco Rossi", company: "Rossi Costruzioni", text: "In 2 giorni avevo il sito online. Il mese dopo ho ricevuto 12 richieste di preventivo da clienti nella zona di Milano." },
+    testimonial: { name: "Davide Marchetti", company: "Marchetti Costruzioni", text: "In 2 giorni avevo il sito online. Il mese dopo ho ricevuto 12 richieste di preventivo da clienti nella zona di Milano." },
   },
   {
     slug: "roma",
@@ -48,7 +48,7 @@ const cities: CityData[] = [
     whyDigital: "Roma è un mercato enorme per l'edilizia: ristrutturazioni di appartamenti, manutenzioni condominiali, restauri e nuove costruzioni. Ogni mese migliaia di romani cercano 'impresa edile Roma', 'ristrutturazione Roma' o 'ditta edile zona Roma'. ClientiEdili posiziona la tua impresa davanti a questi clienti, con un sito web che converte visitatori in richieste di preventivo.",
     localKeyword: "impresa edile Roma",
     projects: 25,
-    testimonial: { name: "Giuseppe Bianchi", company: "Edil Bianchi", text: "Finalmente un'agenzia che capisce le esigenze di chi lavora nei cantieri romani. Professionalità e risultati concreti." },
+    testimonial: { name: "Fabio Pellegrini", company: "Edil Pellegrini", text: "Finalmente un'agenzia che capisce le esigenze di chi lavora nei cantieri romani. Professionalità e risultati concreti." },
   },
   {
     slug: "torino",
@@ -58,7 +58,7 @@ const cities: CityData[] = [
     whyDigital: "Il settore edile torinese è in forte crescita grazie alle ristrutturazioni e ai bonus edilizi. Chi cerca 'impresa edile Torino' o 'ristrutturazione casa Torino' su Google trova solo le imprese con un sito web ottimizzato. ClientiEdili ti porta in prima pagina su Google per le ricerche locali di Torino e provincia.",
     localKeyword: "impresa edile Torino",
     projects: 15,
-    testimonial: { name: "Luca Colombo", company: "Impresa Colombo", text: "Zero anticipo e risultato eccellente. Primo su Google per 'impresa edile Torino' in 4 mesi." },
+    testimonial: { name: "Alessio Damiani", company: "Impresa Damiani", text: "Zero anticipo e risultato eccellente. Primo su Google per 'impresa edile Torino' in 4 mesi." },
   },
   {
     slug: "napoli",
@@ -68,7 +68,7 @@ const cities: CityData[] = [
     whyDigital: "Napoli e la Campania rappresentano uno dei mercati edili più dinamici del Sud Italia. Migliaia di persone cercano ogni mese 'impresa edile Napoli', 'ditta ristrutturazioni Napoli' o 'impresa costruzioni Campania'. ClientiEdili ti rende visibile a tutti questi potenziali clienti con un sito web professionale e ottimizzato per la SEO locale.",
     localKeyword: "impresa edile Napoli",
     projects: 20,
-    testimonial: { name: "Antonio Ferrari", company: "Costruzioni Ferrari", text: "Il sito ha dato una svolta alla mia attività. Ora i clienti mi trovano su Google e mi chiamano ogni settimana." },
+    testimonial: { name: "Stefano Cattaneo", company: "Cattaneo Edilizia", text: "Il sito ha dato una svolta alla mia attività. Ora i clienti mi trovano su Google e mi chiamano ogni settimana." },
   },
   {
     slug: "bologna",
@@ -78,7 +78,7 @@ const cities: CityData[] = [
     whyDigital: "Bologna e l'Emilia-Romagna hanno un mercato edile vivace, con forte domanda di ristrutturazioni e nuove costruzioni. Chi cerca 'impresa edile Bologna' o 'ristrutturazione Bologna' su Google troverà solo chi ha investito nella propria presenza online. ClientiEdili ti porta davanti a questi clienti con un sito che funziona davvero.",
     localKeyword: "impresa edile Bologna",
     projects: 12,
-    testimonial: { name: "Roberto Conti", company: "Edil Pro Bologna", text: "Con il nuovo sito ricevo 3-4 richieste di preventivo a settimana. Un investimento che si è ripagato nel primo mese." },
+    testimonial: { name: "Matteo Sartori", company: "Sartori Edil Service", text: "Con il nuovo sito ricevo 3-4 richieste di preventivo a settimana. Un investimento che si è ripagato nel primo mese." },
   },
 ];
 

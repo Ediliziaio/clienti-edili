@@ -19,12 +19,12 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
 }
 
 const allProjects = [
-  { title: "Sito Web Rossi Costruzioni", category: "Sito Web Completo", desc: "Sito moderno con portfolio lavori, galleria fotografica e form contatto integrato. Aumento del 200% delle richieste di preventivo nel primo mese.", image: project1 },
-  { title: "Landing Page Edil Bianchi", category: "Lead Generation", desc: "Landing page ottimizzata per generare preventivi con SEO locale integrato. 15 nuovi contatti nel primo mese online.", image: project2 },
-  { title: "Portale Costruzioni Ferrari", category: "Portale Aziendale", desc: "Portale completo con galleria progetti, preventivi online e area clienti. Presenza digitale completa e professionale.", image: project3 },
-  { title: "Sito Impresa Colombo", category: "Sito Web Completo", desc: "Sito web responsive con focus sulla SEO locale per Torino e provincia. Primo su Google per 'impresa edile Torino' in 4 mesi.", image: project1 },
+  { title: "Sito Web Marchetti Costruzioni", category: "Sito Web Completo", desc: "Sito moderno con portfolio lavori, galleria fotografica e form contatto integrato. Aumento del 200% delle richieste di preventivo nel primo mese.", image: project1 },
+  { title: "Landing Page Edil Pellegrini", category: "Lead Generation", desc: "Landing page ottimizzata per generare preventivi con SEO locale integrato. 15 nuovi contatti nel primo mese online.", image: project2 },
+  { title: "Portale Cattaneo Edilizia", category: "Portale Aziendale", desc: "Portale completo con galleria progetti, preventivi online e area clienti. Presenza digitale completa e professionale.", image: project3 },
+  { title: "Sito Impresa Damiani", category: "Sito Web Completo", desc: "Sito web responsive con focus sulla SEO locale per Torino e provincia. Primo su Google per 'impresa edile Torino' in 4 mesi.", image: project1 },
   { title: "E-commerce Edil Service Roma", category: "E-commerce", desc: "Piattaforma e-commerce per la vendita di materiali edili con catalogo prodotti, carrello e gestione ordini.", image: project2 },
-  { title: "Sito Fratelli Ricci", category: "Sito Web Completo", desc: "Sito vetrina elegante per impresa specializzata in restauri storici. Design premium con galleria interattiva dei progetti.", image: project3 },
+  { title: "Sito Fratelli Tomasini", category: "Sito Web Completo", desc: "Sito vetrina elegante per impresa specializzata in restauri storici. Design premium con galleria interattiva dei progetti.", image: project3 },
 ];
 
 const categories = ["Tutti", "Sito Web Completo", "Lead Generation", "Portale Aziendale", "E-commerce"];

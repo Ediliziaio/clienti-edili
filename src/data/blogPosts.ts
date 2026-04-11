@@ -280,7 +280,7 @@ Puoi aggiungere fino a 9 categorie secondarie. Aggiungile tutte le pertinenti: "
 
 Hai 750 caratteri per descrivere la tua attività. Usali tutti. Includi la tua specializzazione, la zona di servizio, i tuoi punti di forza e le keyword principali.
 
-Esempio: "Rossi Costruzioni è un'impresa edile a Milano specializzata in ristrutturazioni di appartamenti, ville e uffici. Operiamo in tutta la provincia di Milano, Monza e Brianza. Da 15 anni offriamo servizi di muratura, rifacimento bagni, ristrutturazione completa, cappotto termico e costruzioni ex novo. Preventivi gratuiti in 24 ore."
+Esempio: "Marchetti Costruzioni è un'impresa edile a Milano specializzata in ristrutturazioni di appartamenti, ville e uffici. Operiamo in tutta la provincia di Milano, Monza e Brianza. Da 15 anni offriamo servizi di muratura, rifacimento bagni, ristrutturazione completa, cappotto termico e costruzioni ex novo. Preventivi gratuiti in 24 ore."
 
 ### 3. Carica Almeno 30 Foto Professionali
 

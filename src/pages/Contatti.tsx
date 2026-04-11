@@ -139,11 +139,11 @@ export default function Contatti() {
                     <div className="grid sm:grid-cols-2 gap-5">
                       <div>
                         <label className="text-xs font-ui uppercase tracking-wider text-muted-foreground mb-1.5 block">Nome e Cognome *</label>
-                        <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Mario Rossi" />
+                        <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Il tuo nome" />
                       </div>
                       <div>
                         <label className="text-xs font-ui uppercase tracking-wider text-muted-foreground mb-1.5 block">Nome Impresa</label>
-                        <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Rossi Costruzioni" />
+                        <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="La tua impresa" />
                       </div>
                     </div>
                     <div className="grid sm:grid-cols-2 gap-5">

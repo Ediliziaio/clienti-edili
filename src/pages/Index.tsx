@@ -33,9 +33,9 @@ import afterSite from "@/assets/after-site.jpg";
 // ─── Data ─────────────────────────────────────────────────────
 
 const companies = [
-  "Rossi Costruzioni", "Edil Bianchi", "Muratori Uniti", "Costruzioni Ferrari",
-  "Impresa Colombo", "Edilizia Moretti", "Fratelli Ricci", "Cantieri Lombardi",
-  "Edil Service Roma", "Costruzioni Napoli", "Impresa Greco", "Edil Pro Milano"
+  "Marchetti Costruzioni", "Edil Pellegrini", "Muratori Associati", "Cattaneo Edilizia",
+  "Impresa Damiani", "Edilizia Zanetti", "Fratelli Tomasini", "Cantieri Pietrasanta",
+  "Edil Service Roma", "Costruzioni Napoli", "Ferrante Edilizia", "Sartori Edil Service"
 ];
 
 const services = [
@@ -46,9 +46,9 @@ const services = [
 ];
 
 const projects = [
-  { title: "Sito Web Rossi Costruzioni", category: "Sito Web Completo", desc: "Sito moderno con portfolio lavori, galleria fotografica e form contatto integrato.", image: project1 },
-  { title: "Landing Page Edil Bianchi", category: "Lead Generation", desc: "Landing page ottimizzata per generare preventivi con SEO locale integrato.", image: project2 },
-  { title: "Portale Costruzioni Ferrari", category: "Portale Aziendale", desc: "Portale completo con galleria progetti, preventivi online e area clienti.", image: project3 },
+  { title: "Sito Web Marchetti Costruzioni", category: "Sito Web Completo", desc: "Sito moderno con portfolio lavori, galleria fotografica e form contatto integrato.", image: project1 },
+  { title: "Landing Page Edil Pellegrini", category: "Lead Generation", desc: "Landing page ottimizzata per generare preventivi con SEO locale integrato.", image: project2 },
+  { title: "Portale Cattaneo Edilizia", category: "Portale Aziendale", desc: "Portale completo con galleria progetti, preventivi online e area clienti.", image: project3 },
 ];
 
 const blogPosts = [
@@ -71,12 +71,12 @@ const steps = [
 ];
 
 const reviews = [
-  { name: "Marco Rossi", company: "Rossi Costruzioni", city: "Milano", text: "In 2 giorni avevo il sito online. Il mese dopo ho ricevuto 12 richieste di preventivo. Mai visto nulla di simile.", rating: 5, avatar: "MR" },
-  { name: "Giuseppe Bianchi", company: "Edil Bianchi", city: "Roma", text: "Finalmente un'agenzia che capisce le esigenze di chi lavora in cantiere. Professionali, veloci e il risultato è eccezionale.", rating: 5, avatar: "GB" },
-  { name: "Antonio Ferrari", company: "Costruzioni Ferrari", city: "Napoli", text: "Il sito ha dato una svolta alla mia attività. Ora i clienti mi trovano su Google e mi chiamano ogni settimana.", rating: 5, avatar: "AF" },
-  { name: "Luca Colombo", company: "Impresa Colombo", city: "Torino", text: "Zero anticipo e risultato eccellente. Lo consiglio a tutti i colleghi del settore edile.", rating: 5, avatar: "LC" },
-  { name: "Salvatore Greco", company: "Impresa Greco", city: "Palermo", text: "Pensavo fosse impossibile avere un sito professionale in 48 ore. Mi sbagliavo. Lavoro impeccabile.", rating: 5, avatar: "SG" },
-  { name: "Roberto Conti", company: "Edil Pro Milano", city: "Milano", text: "Il mio vecchio sito non portava nessun cliente. Con il nuovo sito ricevo 3-4 richieste a settimana.", rating: 5, avatar: "RC" },
+  { name: "Davide Marchetti", company: "Marchetti Costruzioni", city: "Milano", text: "In 2 giorni avevo il sito online. Il mese dopo ho ricevuto 12 richieste di preventivo. Mai visto nulla di simile.", rating: 5, avatar: "DM" },
+  { name: "Fabio Pellegrini", company: "Edil Pellegrini", city: "Roma", text: "Finalmente un'agenzia che capisce le esigenze di chi lavora in cantiere. Professionali, veloci e il risultato è eccezionale.", rating: 5, avatar: "FP" },
+  { name: "Stefano Cattaneo", company: "Cattaneo Edilizia", city: "Napoli", text: "Il sito ha dato una svolta alla mia attività. Ora i clienti mi trovano su Google e mi chiamano ogni settimana.", rating: 5, avatar: "SC" },
+  { name: "Alessio Damiani", company: "Impresa Damiani", city: "Torino", text: "Zero anticipo e risultato eccellente. Lo consiglio a tutti i colleghi del settore edile.", rating: 5, avatar: "AD" },
+  { name: "Vincenzo Ferrante", company: "Ferrante Edilizia", city: "Palermo", text: "Pensavo fosse impossibile avere un sito professionale in 48 ore. Mi sbagliavo. Lavoro impeccabile.", rating: 5, avatar: "VF" },
+  { name: "Matteo Sartori", company: "Sartori Edil Service", city: "Milano", text: "Il mio vecchio sito non portava nessun cliente. Con il nuovo sito ricevo 3-4 richieste a settimana.", rating: 5, avatar: "MS" },
 ];
 
 const stats = [
@@ -368,7 +368,7 @@ function Hero() {
               <div className="img-overlay" />
               <div className="absolute bottom-6 left-6 right-6">
                 <p className="font-ui text-xs text-primary tracking-wider uppercase mb-1">Progetto Recente</p>
-                <p className="font-display text-xl text-foreground font-semibold">Sito Web Rossi Costruzioni</p>
+                <p className="font-display text-xl text-foreground font-semibold">Sito Web Marchetti Costruzioni</p>
               </div>
             </motion.div>
 
@@ -384,10 +384,10 @@ function Hero() {
               </p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-primary/20 text-primary font-bold flex items-center justify-center text-xs">
-                  MR
+                  DM
                 </div>
                 <div>
-                  <p className="font-ui font-semibold text-sm">Marco Rossi</p>
+                  <p className="font-ui font-semibold text-sm">Davide Marchetti</p>
                   <p className="text-muted-foreground text-xs">Milano</p>
                 </div>
               </div>
