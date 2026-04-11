@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import {
@@ -251,11 +252,11 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
   }, []);
 
   const links = [
-    { label: "Servizi", href: "#servizi" },
-    { label: "Progetti", href: "#progetti" },
-    { label: "Recensioni", href: "#recensioni" },
-    { label: "Blog", href: "#blog" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Servizi", href: "/servizi", isRoute: true },
+    { label: "Progetti", href: "/progetti", isRoute: true },
+    { label: "Recensioni", href: "#recensioni", isRoute: false },
+    { label: "Blog", href: "/blog", isRoute: true },
+    { label: "FAQ", href: "#faq", isRoute: false },
   ];
 
   return (
