@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import SeoHead from "@/components/SeoHead";
 import project1 from "@/assets/project-1.jpg";
 import project2 from "@/assets/project-2.jpg";
 import project3 from "@/assets/project-3.jpg";
@@ -28,18 +29,39 @@ const allProjects = [
 
 const categories = ["Tutti", "Sito Web Completo", "Lead Generation", "Portale Aziendale", "E-commerce"];
 
+const progettiJsonLd = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clientiedili.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Progetti", "item": "https://clientiedili.com/progetti" },
+    ],
+  },
+  {
+    "@type": "CollectionPage",
+    "name": "Progetti e Siti Web Realizzati per Imprese Edili",
+    "description": "Portfolio di siti web e progetti di marketing digitale realizzati per imprese edili italiane. Risultati misurabili: +200% richieste di preventivo.",
+    "url": "https://clientiedili.com/progetti",
+  },
+];
+
 export default function Progetti() {
   const [filter, setFilter] = useState("Tutti");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Progetti Realizzati | ClientiEdili";
   }, []);
 
   const filtered = filter === "Tutti" ? allProjects : allProjects.filter(p => p.category === filter);
 
   return (
     <Layout>
+      <SeoHead
+        title="Progetti e Siti Web Realizzati per Imprese Edili | ClientiEdili"
+        description="Portfolio di siti web e campagne marketing per imprese edili italiane. Oltre 127 progetti completati con risultati misurabili: +200% richieste di preventivo."
+        canonical="https://clientiedili.com/progetti"
+        jsonLd={progettiJsonLd}
+      />
       {/* Hero */}
       <section className="pb-16 pt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

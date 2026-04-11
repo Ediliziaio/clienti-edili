@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
+import SeoHead from "@/components/SeoHead";
 import { blogPosts } from "@/data/blogPosts";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
@@ -20,14 +21,35 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
 
 const blogImages = [blog1, blog2, blog3, blog1, blog2];
 
+const blogJsonLd = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clientiedili.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://clientiedili.com/blog" },
+    ],
+  },
+  {
+    "@type": "CollectionPage",
+    "name": "Blog Marketing Edile — Strategie per Imprese di Costruzione",
+    "description": "Guide, strategie e consigli di marketing digitale per imprese edili italiane. SEO, siti web, Google My Business e social media per il settore edile.",
+    "url": "https://clientiedili.com/blog",
+  },
+];
+
 export default function Blog() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Blog Marketing Edile | ClientiEdili";
   }, []);
 
   return (
     <Layout>
+      <SeoHead
+        title="Blog Marketing Edile | Strategie e Guide per Imprese di Costruzione"
+        description="Guide approfondite, strategie testate e consigli pratici di marketing digitale per imprese edili italiane. SEO locale, siti web, Google My Business e social media."
+        canonical="https://clientiedili.com/blog"
+        jsonLd={blogJsonLd}
+      />
       {/* Hero */}
       <section className="pb-16 pt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

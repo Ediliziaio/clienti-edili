@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight, Clock, Calendar, User, List, ChevronDown } from "lucide-react";
 import Layout from "@/components/Layout";
+import SeoHead from "@/components/SeoHead";
 import { blogPosts } from "@/data/blogPosts";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
@@ -189,19 +190,49 @@ export default function BlogPost() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (post) {
-      document.title = post.metaTitle;
-      const metaDesc = document.querySelector('meta[name="description"]');
-      if (metaDesc) metaDesc.setAttribute("content", post.metaDescription);
-    }
   }, [post]);
 
   if (!post) return <Navigate to="/blog" replace />;
+
+  const articleJsonLd = [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clientiedili.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://clientiedili.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://clientiedili.com/blog/${post.slug}` },
+      ],
+    },
+    {
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.metaDescription,
+      "url": `https://clientiedili.com/blog/${post.slug}`,
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "author": {
+        "@type": "Organization",
+        "name": "ClientiEdili",
+        "url": "https://clientiedili.com",
+      },
+      "publisher": { "@id": "https://clientiedili.com/#organization" },
+      "mainEntityOfPage": `https://clientiedili.com/blog/${post.slug}`,
+      "articleSection": post.category,
+      "inLanguage": "it-IT",
+    },
+  ];
 
   const relatedPosts = blogPosts.filter((_, i) => i !== postIndex).slice(0, 3);
 
   return (
     <Layout>
+      <SeoHead
+        title={post.metaTitle}
+        description={post.metaDescription}
+        canonical={`https://clientiedili.com/blog/${post.slug}`}
+        ogType="article"
+        jsonLd={articleJsonLd}
+      />
       {/* Back link */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <Link to="/blog" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-ui text-sm">

@@ -7,6 +7,7 @@ import {
   Shield, Clock, Zap, Headphones
 } from "lucide-react";
 import Layout from "@/components/Layout";
+import SeoHead from "@/components/SeoHead";
 import serviceConstruction from "@/assets/service-construction.jpg";
 import serviceSeo from "@/assets/service-seo.jpg";
 import serviceGmb from "@/assets/service-gmb.jpg";
@@ -26,7 +27,7 @@ const services = [
   {
     icon: Globe,
     title: "Sito Web Professionale",
-    desc: "Un sito web moderno, veloce e responsive che trasmette professionalità e converte i visitatori in clienti. Ogni sito è progettato su misura per la tua impresa edile.",
+    desc: "ClientiEdili crea siti web moderni, veloci e responsive per imprese edili italiane. Ogni sito è progettato su misura per trasmettere professionalità e convertire visitatori in richieste di preventivo. Consegna in 48 ore, zero anticipo.",
     image: serviceConstruction,
     features: [
       "Design personalizzato e moderno",
@@ -42,7 +43,7 @@ const services = [
   {
     icon: Search,
     title: "SEO Locale",
-    desc: "Posizionamento strategico su Google per le ricerche nella tua zona. Quando qualcuno cerca 'impresa edile + la tua città', sarai tu il primo risultato.",
+    desc: "ClientiEdili offre servizi di SEO locale per imprese edili: quando qualcuno cerca 'impresa edile + la tua città' su Google, la tua azienda apparirà tra i primi risultati. Analisi keyword, ottimizzazione on-page e monitoraggio mensile inclusi.",
     image: serviceSeo,
     features: [
       "Analisi keyword del settore edile",
@@ -58,7 +59,7 @@ const services = [
   {
     icon: Share2,
     title: "Google My Business",
-    desc: "Profilo Google ottimizzato per apparire nel Local Pack — i 3 risultati in cima a Google con la mappa. Più visibilità, più chiamate, più clienti.",
+    desc: "ClientiEdili ottimizza il profilo Google My Business della tua impresa edile per apparire nel Local Pack — i 3 risultati con mappa in cima a Google. Include creazione profilo, strategia recensioni e post settimanali.",
     image: serviceGmb,
     features: [
       "Creazione e verifica profilo",
@@ -74,7 +75,7 @@ const services = [
   {
     icon: BarChart3,
     title: "Social Media Marketing",
-    desc: "Pagine Facebook e Instagram professionali, con contenuti che mostrano i tuoi lavori e costruiscono fiducia con i potenziali clienti.",
+    desc: "ClientiEdili gestisce i social media della tua impresa edile: pagine Facebook e Instagram professionali con piano editoriale, contenuti foto e video dei tuoi lavori, e campagne pubblicitarie mirate per generare contatti.",
     image: serviceSocial,
     features: [
       "Setup pagine Facebook e Instagram",
@@ -96,14 +97,36 @@ const whyUs = [
   { icon: Headphones, title: "Supporto Dedicato", desc: "Assistenza continua anche dopo la consegna." },
 ];
 
+const serviziJsonLd = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clientiedili.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://clientiedili.com/servizi" },
+    ],
+  },
+  {
+    "@type": "WebPage",
+    "name": "Servizi di Marketing Digitale per Imprese Edili",
+    "description": "ClientiEdili offre siti web professionali, SEO locale, Google My Business e social media marketing per imprese edili italiane. Zero anticipo, consegna in 48 ore.",
+    "url": "https://clientiedili.com/servizi",
+    "isPartOf": { "@id": "https://clientiedili.com/#website" },
+  },
+];
+
 export default function Servizi() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Servizi per Imprese Edili | ClientiEdili";
   }, []);
 
   return (
     <Layout>
+      <SeoHead
+        title="Servizi Marketing Digitale per Imprese Edili | ClientiEdili"
+        description="Siti web professionali, SEO locale, Google My Business e social media per imprese edili italiane. Zero anticipo, consegna in 48 ore, garanzia soddisfatti o rimborsati."
+        canonical="https://clientiedili.com/servizi"
+        jsonLd={serviziJsonLd}
+      />
       {/* Hero */}
       <section className="pb-20 pt-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

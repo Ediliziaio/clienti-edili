@@ -128,7 +128,7 @@ function LayoutFooter() {
               <img src={clientiEdiliLogo} alt="ClientiEdili" className="h-10" />
             </div>
             <p className="text-muted-foreground max-w-sm leading-relaxed mb-6">
-              Siti web professionali per imprese edili italiane. Più clienti, più lavoro, più crescita.
+              ClientiEdili è l'agenzia di marketing digitale specializzata in siti web per imprese edili italiane. Consegna in 48 ore, zero anticipo, garanzia soddisfatti o rimborsati.
             </p>
             <div className="inline-flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 mb-6">
               <div className="flex gap-0.5">

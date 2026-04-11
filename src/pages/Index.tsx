@@ -354,7 +354,7 @@ function Hero() {
           <FadeIn delay={0.2}>
             <div className="border-l-2 border-primary pl-5">
               <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">
-                Creiamo siti web professionali per imprese edili italiane. Zero anticipo, consegna in 48 ore, garanzia soddisfatti o rimborsati.
+                ClientiEdili crea siti web professionali per imprese edili italiane. Zero anticipo, consegna in 48 ore, garanzia soddisfatti o rimborsati. Oltre 127 imprese servite con un tasso di soddisfazione del 98%.
               </p>
             </div>
           </FadeIn>
@@ -473,9 +473,7 @@ function AboutSection() {
             </FadeIn>
             <FadeIn delay={0.2}>
               <p className="text-muted-foreground text-lg leading-relaxed max-w-xl">
-                Siamo specializzati nella creazione di siti web per imprese edili italiane.
-                Conosciamo il tuo settore, i tuoi clienti e le sfide che affronti ogni giorno.
-                La nostra missione è semplice: portarti più clienti con un sito che funziona davvero.
+                ClientiEdili è l'unica agenzia di marketing digitale in Italia dedicata esclusivamente alle imprese edili. Dal 2019 aiutiamo imprese di costruzione, ristrutturazione e serramentisti a trovare nuovi clienti online con siti web professionali, SEO locale e gestione Google My Business. Oltre 127 imprese servite in tutta Italia.
               </p>
             </FadeIn>
           </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, useInView, useMotionValue, useTransform, animate } from "framer-motion";
 import { ArrowRight, Eye, Target, Lightbulb, Heart, Users, Award, Briefcase, Calendar } from "lucide-react";
 import Layout from "@/components/Layout";
+import SeoHead from "@/components/SeoHead";
 
 // ─── FadeIn ──────────────────────────────────────────────────
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -65,16 +66,36 @@ const stats = [
   { value: 95, suffix: "%", label: "Tasso di Rinnovo", icon: Briefcase },
 ];
 
+const chiSiamoJsonLd = [
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clientiedili.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Chi Siamo", "item": "https://clientiedili.com/chi-siamo" },
+    ],
+  },
+  {
+    "@type": "AboutPage",
+    "name": "Chi Siamo — Il Team ClientiEdili",
+    "description": "ClientiEdili è un team di professionisti del marketing digitale dedicato esclusivamente alle imprese edili italiane dal 2019. Oltre 200 clienti soddisfatti.",
+    "url": "https://clientiedili.com/chi-siamo",
+    "mainEntity": { "@id": "https://clientiedili.com/#organization" },
+  },
+];
+
 export default function ChiSiamo() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = "Chi Siamo — ClientiEdili | Marketing Digitale per Imprese Edili";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Scopri il team di ClientiEdili: professionisti del marketing digitale dedicati a far crescere le imprese edili italiane dal 2019.");
   }, []);
 
   return (
     <Layout>
+      <SeoHead
+        title="Chi Siamo — ClientiEdili | Agenzia Marketing per Imprese Edili dal 2019"
+        description="ClientiEdili è il team di professionisti del marketing digitale dedicato alle imprese edili italiane. Dal 2019, oltre 200 clienti soddisfatti e 350+ progetti completati."
+        canonical="https://clientiedili.com/chi-siamo"
+        jsonLd={chiSiamoJsonLd}
+      />
       {/* ─── Hero ─────────────────────────────────────────── */}
       <section className="py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
