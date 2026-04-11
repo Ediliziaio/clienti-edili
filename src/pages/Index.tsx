@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import ClientLogo, { clientLogos } from "@/components/ClientLogos";
 import { Link } from "react-router-dom";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
@@ -442,11 +443,9 @@ function ClientsTicker() {
         </div>
       </FadeIn>
       <div className="overflow-hidden">
-        <div className="flex animate-ticker whitespace-nowrap">
-          {[...companies, ...companies].map((name, i) => (
-            <span key={i} className="mx-8 text-muted-foreground/30 font-ui text-xl tracking-widest uppercase">
-              {name}
-            </span>
+        <div className="flex animate-ticker">
+          {[...clientLogos, ...clientLogos].map((logo, i) => (
+            <ClientLogo key={i} icon={logo.icon} name={logo.name} />
           ))}
         </div>
       </div>
