@@ -9,6 +9,8 @@ import Progetti from "./pages/Progetti.tsx";
 import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import ChiSiamo from "./pages/ChiSiamo.tsx";
+import Contatti from "./pages/Contatti.tsx";
+import CittaGeo from "./pages/CittaGeo.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/chi-siamo" element={<ChiSiamo />} />
+          <Route path="/contatti" element={<Contatti />} />
+          <Route path="/siti-web-edili-:citta" element={<CittaGeo />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -42,10 +42,25 @@ ClientiEdili è l'unica agenzia in Italia specializzata esclusivamente nel marke
 2. Anteprima in 24 ore: prima bozza del sito con modifiche illimitate
 3. Online in 48 ore: sito pubblicato, ottimizzato per Google e pronto a ricevere clienti
 
+## Aree geografiche servite
+
+ClientiEdili opera in tutta Italia, con focus su:
+- Milano e Lombardia (30+ imprese edili servite)
+- Roma e Lazio (25+ imprese edili servite)
+- Napoli e Campania (20+ imprese edili servite)
+- Torino e Piemonte (15+ imprese edili servite)
+- Bologna e Emilia-Romagna (12+ imprese edili servite)
+
 ## Contatti e risorse
 
 - Sito web: https://clientiedili.com
+- Contatti: https://clientiedili.com/contatti
 - Servizi: https://clientiedili.com/servizi
 - Progetti: https://clientiedili.com/progetti
 - Blog: https://clientiedili.com/blog
 - Chi siamo: https://clientiedili.com/chi-siamo
+- Siti web edili Milano: https://clientiedili.com/siti-web-edili-milano
+- Siti web edili Roma: https://clientiedili.com/siti-web-edili-roma
+- Siti web edili Torino: https://clientiedili.com/siti-web-edili-torino
+- Siti web edili Napoli: https://clientiedili.com/siti-web-edili-napoli
+- Siti web edili Bologna: https://clientiedili.com/siti-web-edili-bologna

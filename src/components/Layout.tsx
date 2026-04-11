@@ -82,7 +82,7 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
         </div>
 
         <div className="hidden md:block">
-          <Link to="/#contatti" className="btn-carino">
+          <Link to="/contatti" className="btn-carino">
             Contattaci
             <span className="arrow-circle"><ArrowUpRight size={18} /></span>
           </Link>
