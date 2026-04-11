@@ -1162,7 +1162,7 @@ function ContactSection() {
             <div className="space-y-6">
               {[
                 { icon: Phone, label: "+39 350 178 2744" },
-                { icon: Mail, label: "Amministrazione@domusgroupitalia.it" },
+                { icon: Mail, label: "info@clientiedili.com" },
                 { icon: MapPin, label: "Via Aurelio Saffi 29, 20123 Milano" },
               ].map((c, i) => (
                 <FadeIn key={i} delay={0.3 + i * 0.1}>
@@ -1331,7 +1331,7 @@ function Footer() {
           <div>
             <h4 className="font-ui font-semibold mb-4 text-sm">Contatti</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
-              <li><a href="mailto:Amministrazione@domusgroupitalia.it" className="hover:text-foreground transition-colors">Amministrazione@domusgroupitalia.it</a></li>
+              <li><a href="mailto:info@clientiedili.com" className="hover:text-foreground transition-colors">info@clientiedili.com</a></li>
               <li><a href="mailto:domusgroupsrl@legalmail.it" className="hover:text-foreground transition-colors">PEC: domusgroupsrl@legalmail.it</a></li>
               <li>Via Aurelio Saffi 29, 20123 Milano</li>
             </ul>

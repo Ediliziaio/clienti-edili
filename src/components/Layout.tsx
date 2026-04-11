@@ -170,7 +170,7 @@ function LayoutFooter() {
           <div>
             <h4 className="font-ui font-semibold mb-4 text-sm">Contatti</h4>
             <ul className="space-y-2 text-muted-foreground text-sm">
-              <li><a href="mailto:Amministrazione@domusgroupitalia.it" className="hover:text-foreground transition-colors">Amministrazione@domusgroupitalia.it</a></li>
+              <li><a href="mailto:info@clientiedili.com" className="hover:text-foreground transition-colors">info@clientiedili.com</a></li>
               <li><a href="mailto:domusgroupsrl@legalmail.it" className="hover:text-foreground transition-colors">PEC: domusgroupsrl@legalmail.it</a></li>
               <li>Via Aurelio Saffi 29, 20123 Milano</li>
             </ul>

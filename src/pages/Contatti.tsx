@@ -93,7 +93,7 @@ export default function Contatti() {
                   {[
                     { icon: Phone, label: "Telefono", value: "+39 350 178 2744", href: "tel:+393501782744" },
                     { icon: MessageCircle, label: "WhatsApp", value: "+39 350 178 2744", href: "https://api.whatsapp.com/send/?phone=393501782744&text&type=phone_number&app_absent=0" },
-                    { icon: Mail, label: "Email", value: "Amministrazione@domusgroupitalia.it", href: "mailto:Amministrazione@domusgroupitalia.it" },
+                    { icon: Mail, label: "Email", value: "info@clientiedili.com", href: "mailto:info@clientiedili.com" },
                     { icon: MapPin, label: "Sede", value: "Via Aurelio Saffi 29, 20123 Milano", href: undefined },
                     { icon: Clock, label: "Orari", value: "Lun-Ven 9:00-18:00", href: undefined },
                   ].map((item, i) => (
