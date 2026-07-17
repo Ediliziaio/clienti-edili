@@ -4,10 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
-import { blogPosts } from "@/data/blogPosts";
-import blog1 from "@/assets/blog-1.jpg";
-import blog2 from "@/assets/blog-2.jpg";
-import blog3 from "@/assets/blog-3.jpg";
+import { blogPostsSorted } from "@/data/blogPosts";
+import { coverSrc, onCoverError } from "@/lib/blogCover";
 
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
@@ -18,8 +16,6 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
     </motion.div>
   );
 }
-
-const blogImages = [blog1, blog2, blog3, blog1, blog2];
 
 const blogJsonLd = [
   {
@@ -75,13 +71,14 @@ export default function Blog() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, i) => (
+            {blogPostsSorted.map((post, i) => (
               <FadeIn key={post.slug} delay={i * 0.1}>
                 <Link to={`/blog/${post.slug}`} className="group block">
                   <div className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">
                     <div className="aspect-[16/10] overflow-hidden">
                       <img
-                        src={blogImages[i]}
+                        src={coverSrc(post.slug)}
+                        onError={(e) => onCoverError(e, post.slug)}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         loading="lazy"

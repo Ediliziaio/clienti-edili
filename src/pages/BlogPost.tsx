@@ -4,10 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight, Clock, Calendar, User, List, ChevronDown } from "lucide-react";
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
-import { blogPosts } from "@/data/blogPosts";
-import blog1 from "@/assets/blog-1.jpg";
-import blog2 from "@/assets/blog-2.jpg";
-import blog3 from "@/assets/blog-3.jpg";
+import { blogPosts, blogPostsSorted } from "@/data/blogPosts";
+import { coverSrc, onCoverError } from "@/lib/blogCover";
 
 // ─── FadeIn ──────────────────────────────────────────────────
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -20,7 +18,6 @@ function FadeIn({ children, className = "", delay = 0 }: { children: React.React
   );
 }
 
-const blogImages = [blog1, blog2, blog3, blog1, blog2];
 
 // ─── Extract TOC from markdown ───────────────────────────────
 interface TocItem { id: string; text: string; level: number }
@@ -248,7 +245,7 @@ export default function BlogPost() {
     },
   ];
 
-  const relatedPosts = blogPosts.filter((_, i) => i !== postIndex).slice(0, 3);
+  const relatedPosts = blogPostsSorted.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
     <Layout>
@@ -287,7 +284,7 @@ export default function BlogPost() {
       <FadeIn delay={0.1}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <div className="aspect-[21/9] rounded-2xl overflow-hidden relative">
-            <img src={blogImages[postIndex]} alt={post.title} className="w-full h-full object-cover" />
+            <img src={coverSrc(post.slug)} onError={(e) => onCoverError(e, post.slug)} alt={post.title} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
           </div>
         </div>
@@ -353,13 +350,12 @@ export default function BlogPost() {
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-8">
             {relatedPosts.map((rp, i) => {
-              const rpIndex = blogPosts.indexOf(rp);
               return (
                 <FadeIn key={rp.slug} delay={i * 0.1}>
                   <Link to={`/blog/${rp.slug}`} className="group block">
                     <div className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 hover:-translate-y-2 transition-all duration-500">
                       <div className="aspect-[16/10] overflow-hidden">
-                        <img src={blogImages[rpIndex]} alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                        <img src={coverSrc(rp.slug)} onError={(e) => onCoverError(e, rp.slug)} alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                       </div>
                       <div className="p-5">
                         <span className="text-primary font-ui text-xs tracking-wider uppercase">{rp.category}</span>

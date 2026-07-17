@@ -2267,3 +2267,19 @@ Digitalizzare la tua impresa edile è la scelta che ti restituisce tempo, contro
 E quando vuoi che a quell'impresa più organizzata arrivino anche più clienti, ci siamo noi: vai su clientiedili.com/contatti per la tua analisi gratuita. Creiamo il tuo Sito Web Professionale in 48 ore con SEO Locale, Google My Business e Social Media Marketing, zero anticipo e garanzia soddisfatti o rimborsati. Impresa digitale dentro, visibile fuori: è la formula che fa crescere le imprese edili.`,
 },
 ];
+
+// ─── Ordinamento per data (dal più recente al meno recente) ──
+const MESI_ABBR: Record<string, number> = {
+  Gen: 0, Feb: 1, Mar: 2, Apr: 3, Mag: 4, Giu: 5,
+  Lug: 6, Ago: 7, Set: 8, Ott: 9, Nov: 10, Dic: 11,
+};
+
+export function parseItalianDate(d: string): number {
+  const [day, mon, year] = d.split(" ");
+  return new Date(Number(year), MESI_ABBR[mon] ?? 0, Number(day)).getTime();
+}
+
+// Articoli ordinati dal più recente al meno recente (usato nel blog e nei correlati).
+export const blogPostsSorted: BlogPost[] = [...blogPosts].sort(
+  (a, b) => parseItalianDate(b.date) - parseItalianDate(a.date),
+);
