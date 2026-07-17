@@ -1,9 +1,10 @@
-import { useState, useEffect, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle, ArrowUpRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
+import ContactFormEmbed from "@/components/ContactFormEmbed";
 
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const ref = useRef(null);
@@ -33,20 +34,9 @@ const contattiJsonLd = [
 ];
 
 export default function Contatti() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
-  const [sent, setSent] = useState(false);
-  const navigate = useNavigate();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", phone: "", company: "", message: "" });
-    navigate("/grazie");
-  };
 
   return (
     <Layout>
@@ -126,49 +116,11 @@ export default function Contatti() {
             <FadeIn delay={0.2}>
               <div className="bg-card border border-border rounded-2xl p-8 sm:p-10">
                 <h2 className="font-display text-2xl font-bold mb-2">Richiedi Consulenza Gratuita</h2>
-                <p className="text-muted-foreground text-sm mb-8">Compila il form e ti ricontatteremo entro 2 ore.</p>
+                <p className="text-muted-foreground text-sm mb-8">Compila il form e ti ricontatteremo nelle prossime ore.</p>
 
-                {sent ? (
-                  <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4">
-                      <Send size={24} className="text-primary" />
-                    </div>
-                    <h3 className="font-display text-2xl font-bold mb-2">Messaggio Inviato!</h3>
-                    <p className="text-muted-foreground">Ti ricontatteremo entro 2 ore lavorative.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="space-y-5">
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="text-xs font-ui uppercase tracking-wider text-muted-foreground mb-1.5 block">Nome e Cognome *</label>
-                        <input type="text" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Il tuo nome" />
-                      </div>
-                      <div>
-                        <label className="text-xs font-ui uppercase tracking-wider text-muted-foreground mb-1.5 block">Nome Impresa</label>
-                        <input type="text" value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="La tua impresa" />
-                      </div>
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-5">
-                      <div>
-                        <label className="text-xs font-ui uppercase tracking-wider text-muted-foreground mb-1.5 block">Email *</label>
-                        <input type="email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="info@tuaimpresa.it" />
-                      </div>
-                      <div>
-                        <label className="text-xs font-ui uppercase tracking-wider text-muted-foreground mb-1.5 block">Telefono</label>
-                        <input type="tel" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+39 333 1234567" />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-xs font-ui uppercase tracking-wider text-muted-foreground mb-1.5 block">Come possiamo aiutarti? *</label>
-                      <textarea required rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Raccontaci la tua impresa edile e cosa stai cercando..." />
-                    </div>
-                    <button type="submit" className="btn-carino w-full justify-center">
-                      Invia Richiesta
-                      <span className="arrow-circle"><ArrowUpRight size={18} /></span>
-                    </button>
-                    <p className="text-xs text-muted-foreground text-center">Nessun impegno. Consulenza gratuita.</p>
-                  </form>
-                )}
+                <ContactFormEmbed />
+
+                <p className="text-xs text-muted-foreground text-center mt-4">Nessun impegno. Consulenza gratuita.</p>
               </div>
             </FadeIn>
           </div>

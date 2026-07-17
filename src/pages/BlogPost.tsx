@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
 import { blogPosts, blogPostsSorted, toISODate } from "@/data/blogPosts";
 import { coverSrc, onCoverError } from "@/lib/blogCover";
+import ContactFormEmbed from "@/components/ContactFormEmbed";
 
 // ─── FadeIn ──────────────────────────────────────────────────
 function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -317,19 +318,16 @@ export default function BlogPost() {
               </div>
             </FadeIn>
 
-            {/* CTA */}
+            {/* CTA + Form richiesta contatto */}
             <FadeIn>
-              <div className="bg-card border border-border rounded-2xl p-8 sm:p-12 text-center my-16">
+              <div id="richiedi-informazioni" className="bg-card border border-border rounded-2xl p-6 sm:p-10 text-center my-16 scroll-mt-32">
                 <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4">
                   Vuoi portare più clienti alla tua impresa edile?
                 </h3>
-                <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                  Contattaci per una consulenza gratuita. Ti mostreremo come il marketing digitale può trasformare la tua attività.
+                <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
+                  Richiedi una consulenza gratuita: ti ricontattiamo nelle prossime ore. Ti mostreremo come il marketing digitale può trasformare la tua attività.
                 </p>
-                <Link to="/#contatti" className="btn-carino inline-flex">
-                  Parliamone Subito
-                  <span className="arrow-circle"><ArrowRight size={18} /></span>
-                </Link>
+                <ContactFormEmbed />
               </div>
             </FadeIn>
           </article>

@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import ClientLogo, { clientLogos } from "@/components/ClientLogos";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SeoHead from "@/components/SeoHead";
+import ContactFormEmbed from "@/components/ContactFormEmbed";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
 import {
@@ -1158,16 +1159,6 @@ function FAQSection() {
 // ─── Contact ──────────────────────────────────────────────────
 
 function ContactSection() {
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
-  const navigate = useNavigate();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    navigate("/grazie");
-  };
-
   return (
     <section id="contatti" className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1206,63 +1197,9 @@ function ContactSection() {
           </div>
 
           <FadeIn delay={0.2}>
-            {submitted ? (
-              <div className="bg-card border border-primary/40 rounded-2xl p-10 text-center glow-lime flex flex-col items-center justify-center h-full">
-                <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mb-6">
-                  <Check size={28} className="text-primary" />
-                </div>
-                <h3 className="font-display text-2xl mb-4">Messaggio Inviato!</h3>
-                <p className="text-muted-foreground">Ti ricontattiamo entro 2 ore lavorative.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="bg-card border border-border rounded-2xl p-8 space-y-5">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Nome *</label>
-                    <input
-                      required
-                      type="text"
-                      className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Email *</label>
-                    <input
-                      required
-                      type="email"
-                      className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Telefono</label>
-                  <input
-                    type="tel"
-                    className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  />
-                </div>
-                <div>
-                  <label className="block font-ui text-xs uppercase tracking-wider text-muted-foreground mb-2">Messaggio *</label>
-                  <textarea
-                    required
-                    rows={4}
-                    className="w-full bg-background border border-border rounded-lg px-4 py-3 text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  />
-                </div>
-                <button type="submit" className="btn-carino w-full justify-center">
-                  Invia Messaggio
-                  <span className="arrow-circle"><Send size={16} /></span>
-                </button>
-              </form>
-            )}
+            <div className="bg-card border border-border rounded-2xl p-6 sm:p-8">
+              <ContactFormEmbed />
+            </div>
           </FadeIn>
         </div>
       </div>
