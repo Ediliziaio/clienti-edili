@@ -2279,6 +2279,14 @@ export function parseItalianDate(d: string): number {
   return new Date(Number(year), MESI_ABBR[mon] ?? 0, Number(day)).getTime();
 }
 
+// Converte "15 Mar 2026" in "2026-03-15" (ISO 8601, richiesto dagli schema.org).
+export function toISODate(d: string): string {
+  const [day, mon, year] = d.split(" ");
+  const mm = String((MESI_ABBR[mon] ?? 0) + 1).padStart(2, "0");
+  const dd = String(Number(day)).padStart(2, "0");
+  return `${year}-${mm}-${dd}`;
+}
+
 // Articoli ordinati dal più recente al meno recente (usato nel blog e nei correlati).
 export const blogPostsSorted: BlogPost[] = [...blogPosts].sort(
   (a, b) => parseItalianDate(b.date) - parseItalianDate(a.date),

@@ -4,7 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight, Clock, Calendar, User, List, ChevronDown } from "lucide-react";
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
-import { blogPosts, blogPostsSorted } from "@/data/blogPosts";
+import { blogPosts, blogPostsSorted, toISODate } from "@/data/blogPosts";
 import { coverSrc, onCoverError } from "@/lib/blogCover";
 
 // ─── FadeIn ──────────────────────────────────────────────────
@@ -231,12 +231,13 @@ export default function BlogPost() {
       "headline": post.title,
       "description": post.metaDescription,
       "url": `https://clientiedili.com/blog/${post.slug}`,
-      "datePublished": post.date,
-      "dateModified": post.date,
+      "image": "https://clientiedili.com/og-image.jpg",
+      "datePublished": toISODate(post.date),
+      "dateModified": toISODate(post.date),
       "author": {
         "@type": "Organization",
         "name": "ClientiEdili",
-        "url": "https://clientiedili.com",
+        "url": "https://clientiedili.com/",
       },
       "publisher": { "@id": "https://clientiedili.com/#organization" },
       "mainEntityOfPage": `https://clientiedili.com/blog/${post.slug}`,
