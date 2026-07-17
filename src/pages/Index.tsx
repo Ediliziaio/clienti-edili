@@ -30,6 +30,37 @@ import heroBg from "@/assets/hero-bg.jpg";
 import beforeSite from "@/assets/before-site.jpg";
 import afterSite from "@/assets/after-site.jpg";
 
+// ─── Scarsità dinamica ────────────────────────────────────────
+// Il banner mostra il mese corrente e un numero di posti che
+// decresce col passare dei mesi: da 10 (Gennaio) fino a 1
+// (Ottobre-Dicembre), poi riparte da 10 a Gennaio.
+const MESI_IT = [
+  "Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno",
+  "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre",
+];
+
+function getScarcita(now = new Date()) {
+  const mese = MESI_IT[now.getMonth()];
+  const posti = Math.max(1, 10 - now.getMonth()); // Gen=10, Feb=9, ... Ott/Nov/Dic=1
+  return { mese, posti };
+}
+
+// Banner urgenza: valore calcolato in build (SSR) e ri-sincronizzato
+// lato client, così è sempre coerente col mese reale di chi visita.
+function UrgencyBanner() {
+  const [s, setS] = useState(getScarcita);
+  useEffect(() => {
+    setS(getScarcita());
+  }, []);
+  return (
+    <div className="animate-urgency-glow bg-primary/10 border border-primary/30 rounded-2xl p-4 mb-6 text-center">
+      <p className="font-ui font-semibold text-sm text-primary" suppressHydrationWarning>
+        ⚡ Solo {s.posti} {s.posti === 1 ? "posto disponibile" : "posti disponibili"} a {s.mese} — <span className="underline">Prenota ora</span>
+      </p>
+    </div>
+  );
+}
+
 // ─── Data ─────────────────────────────────────────────────────
 
 const companies = [
@@ -896,12 +927,8 @@ function PricingSection() {
         </FadeIn>
         <FadeIn delay={0.2}>
           <div className="max-w-2xl mx-auto">
-            {/* Urgency Banner */}
-            <div className="animate-urgency-glow bg-primary/10 border border-primary/30 rounded-2xl p-4 mb-6 text-center">
-              <p className="font-ui font-semibold text-sm text-primary">
-                ⚡ Solo 5 posti disponibili a Marzo — <span className="underline">Prenota ora</span>
-              </p>
-            </div>
+            {/* Urgency Banner — mese e numero posti dinamici (10→1 nel corso dell'anno) */}
+            <UrgencyBanner />
 
             <div className="bg-card border-2 border-primary rounded-3xl overflow-hidden glow-lime">
               <div className="bg-primary/10 p-8 text-center">
