@@ -1397,6 +1397,45 @@ export default function Index() {
         { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://clientiedili.com/" },
       ],
     },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://clientiedili.com/#service",
+      "name": "ClientiEdili",
+      "image": "https://clientiedili.com/og-image.jpg",
+      "url": "https://clientiedili.com/",
+      "priceRange": "€€",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Milano",
+        "addressCountry": "IT",
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "45.4642",
+        "longitude": "9.1900",
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servizi Marketing Digitale per Imprese Edili",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sito Web Professionale per Imprese Edili", "description": "Sito web moderno e responsive, consegna in 48 ore, ottimizzato per Google. Include design personalizzato, copywriting, ottimizzazione SEO e 30 giorni di assistenza." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Locale per Imprese Edili", "description": "Posizionamento su Google per le ricerche nella tua zona. Analisi keyword, ottimizzazione on-page, link building e monitoraggio mensile." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google My Business per Edilizia", "description": "Profilo Google ottimizzato per apparire nel Local Pack. Creazione, verifica, strategia recensioni e post settimanali." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing per Imprese Edili", "description": "Gestione pagine Facebook e Instagram, piano editoriale, contenuti foto e video, campagne pubblicitarie mirate." } },
+        ],
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://clientiedili.com/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Quanto costa un sito web per impresa edile?", "acceptedAnswer": { "@type": "Answer", "text": "Il prezzo è di €1.000 (invece di €1.400) tutto incluso: design personalizzato, copywriting, ottimizzazione SEO e 30 giorni di assistenza. Nessun costo nascosto." } },
+        { "@type": "Question", "name": "Devo pagare un anticipo per il sito web?", "acceptedAnswer": { "@type": "Answer", "text": "No, zero anticipo. Paghi solo dopo aver visto e approvato il sito completato. Se non ti piace, non paghi nulla." } },
+        { "@type": "Question", "name": "In quanto tempo sarà pronto il sito web?", "acceptedAnswer": { "@type": "Answer", "text": "Il sito viene consegnato in 48 ore lavorative dalla chiamata conoscitiva. Riceverai un'anteprima entro le prime 24 ore." } },
+        { "@type": "Question", "name": "Il sito sarà visibile su Google?", "acceptedAnswer": { "@type": "Answer", "text": "Assolutamente sì. Ogni sito viene ottimizzato SEO per posizionarsi nelle ricerche locali della tua zona." } },
+        { "@type": "Question", "name": "Cosa succede se non mi piace il sito?", "acceptedAnswer": { "@type": "Answer", "text": "Garanzia soddisfatti o rimborsati. Se il risultato non ti convince, ti restituiamo l'intero importo senza domande." } },
+      ],
+    },
   ];
 
   return (

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Head } from "vite-react-ssg";
 
 interface SeoHeadProps {
   title: string;
@@ -9,6 +9,15 @@ interface SeoHeadProps {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
+const OG_IMAGE_ALT = "ClientiEdili - Siti Web per Imprese Edili Italiane";
+
+/**
+ * Head per-pagina, gestito da react-helmet-async (via vite-react-ssg).
+ * A differenza della versione precedente basata su useEffect, questi tag
+ * vengono renderizzati nell'HTML statico durante il prerender (SSG),
+ * così SEO, social crawler e crawler AI (che non eseguono JS) leggono
+ * title/description/canonical/OG e JSON-LD unici per ogni rotta.
+ */
 export default function SeoHead({
   title,
   description,
@@ -17,65 +26,46 @@ export default function SeoHead({
   ogType = "website",
   jsonLd,
 }: SeoHeadProps) {
-  useEffect(() => {
-    document.title = title;
+  const jsonLdString = jsonLd
+    ? JSON.stringify(
+        Array.isArray(jsonLd)
+          ? { "@context": "https://schema.org", "@graph": jsonLd }
+          : { "@context": "https://schema.org", ...jsonLd },
+      )
+    : null;
 
-    const setMeta = (attr: string, key: string, content: string) => {
-      let el = document.querySelector(`meta[${attr}="${key}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute(attr, key);
-        document.head.appendChild(el);
-      }
-      el.setAttribute("content", content);
-    };
+  return (
+    <Head>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta
+        name="robots"
+        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+      />
+      <link rel="canonical" href={canonical} />
+      <link rel="alternate" hrefLang="it" href={canonical} />
 
-    setMeta("name", "description", description);
-    setMeta("name", "robots", "index, follow, max-image-preview:large, max-snippet:-1");
+      {/* Open Graph */}
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:site_name" content="ClientiEdili" />
+      <meta property="og:locale" content="it_IT" />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={OG_IMAGE_ALT} />
 
-    // Open Graph
-    setMeta("property", "og:title", title);
-    setMeta("property", "og:description", description);
-    setMeta("property", "og:type", ogType);
-    setMeta("property", "og:url", canonical);
-    setMeta("property", "og:image", ogImage);
-    setMeta("property", "og:locale", "it_IT");
-    setMeta("property", "og:site_name", "ClientiEdili");
+      {/* Twitter Card */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={ogImage} />
 
-    // Twitter
-    setMeta("name", "twitter:card", "summary_large_image");
-    setMeta("name", "twitter:title", title);
-    setMeta("name", "twitter:description", description);
-    setMeta("name", "twitter:image", ogImage);
-
-    // Canonical
-    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!link) {
-      link = document.createElement("link");
-      link.setAttribute("rel", "canonical");
-      document.head.appendChild(link);
-    }
-    link.setAttribute("href", canonical);
-
-    // JSON-LD
-    const existingScript = document.querySelector('script[data-seo-head="true"]');
-    if (existingScript) existingScript.remove();
-
-    if (jsonLd) {
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.setAttribute("data-seo-head", "true");
-      script.textContent = JSON.stringify(
-        Array.isArray(jsonLd) ? { "@context": "https://schema.org", "@graph": jsonLd } : { "@context": "https://schema.org", ...jsonLd }
-      );
-      document.head.appendChild(script);
-    }
-
-    return () => {
-      const script = document.querySelector('script[data-seo-head="true"]');
-      if (script) script.remove();
-    };
-  }, [title, description, canonical, ogImage, ogType, jsonLd]);
-
-  return null;
+      {jsonLdString && (
+        <script type="application/ld+json">{jsonLdString}</script>
+      )}
+    </Head>
+  );
 }

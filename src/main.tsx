@@ -1,5 +1,7 @@
-import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
+import { ViteReactSSG } from "vite-react-ssg";
+import { routes } from "./App.tsx";
 import "./index.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Entry unificato SSG + client: durante il build vite-react-ssg pre-renderizza
+// ogni rotta in HTML statico; nel browser idrata la stessa app.
+export const createRoot = ViteReactSSG({ routes });

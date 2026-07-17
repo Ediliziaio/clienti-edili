@@ -44,6 +44,23 @@ function slugify(text: string) {
   return text.toLowerCase().replace(/[^a-z0-9àèéìòù]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
+// ─── Inline markdown → HTML (immagini, link, grassetto) ──────
+// Ordine: immagini prima dei link (la sintassi immagine contiene []()),
+// poi i link, infine il grassetto. I link esterni si aprono in nuova scheda.
+function inlineHtml(text: string) {
+  return text
+    .replace(
+      /!\[([^\]]*)\]\(([^)]+)\)/g,
+      '<img src="$2" alt="$1" loading="lazy" class="inline-block align-middle max-w-full h-auto" />'
+    )
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label: string, url: string) => {
+      const external = /^https?:\/\//.test(url);
+      const attrs = external ? ' target="_blank" rel="noopener"' : "";
+      return `<a href="${url}"${attrs} class="text-primary font-semibold underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors">${label}</a>`;
+    })
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>');
+}
+
 // ─── Render markdown ─────────────────────────────────────────
 function renderMarkdown(content: string) {
   const lines = content.split("\n");
@@ -57,7 +74,7 @@ function renderMarkdown(content: string) {
           {listItems.map((item, i) => (
             <li key={i} className="flex items-start gap-2 text-foreground/80 leading-relaxed">
               <span className="text-primary mt-1.5 shrink-0">•</span>
-              <span dangerouslySetInnerHTML={{ __html: item.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>') }} />
+              <span dangerouslySetInnerHTML={{ __html: inlineHtml(item) }} />
             </li>
           ))}
         </ul>
@@ -72,6 +89,17 @@ function renderMarkdown(content: string) {
     if (trimmed.startsWith("- ")) { listItems.push(trimmed.slice(2)); return; }
     flushList();
 
+    // Immagine su riga dedicata (es. logo) → blocco centrato
+    const imgOnly = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (imgOnly) {
+      elements.push(
+        <div key={i} className="my-10 flex justify-center">
+          <img src={imgOnly[2]} alt={imgOnly[1]} loading="lazy" className="w-full max-w-sm h-auto" />
+        </div>
+      );
+      return;
+    }
+
     if (trimmed.startsWith("### ")) {
       const text = trimmed.slice(4);
       elements.push(<h3 key={i} id={slugify(text)} className="font-display text-2xl font-bold mt-12 mb-4 scroll-mt-32">{text}</h3>);
@@ -80,9 +108,7 @@ function renderMarkdown(content: string) {
       elements.push(<h2 key={i} id={slugify(text)} className="font-display text-3xl sm:text-4xl font-bold mt-16 mb-6 scroll-mt-32">{text}</h2>);
     } else {
       elements.push(
-        <p key={i} className="text-foreground/80 text-lg leading-relaxed my-4" dangerouslySetInnerHTML={{
-          __html: trimmed.replace(/\*\*(.*?)\*\*/g, '<strong class="text-foreground">$1</strong>')
-        }} />
+        <p key={i} className="text-foreground/80 text-lg leading-relaxed my-4" dangerouslySetInnerHTML={{ __html: inlineHtml(trimmed) }} />
       );
     }
   });
