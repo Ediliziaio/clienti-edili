@@ -14,6 +14,7 @@ import ChiSiamo from "./pages/ChiSiamo.tsx";
 import Contatti from "./pages/Contatti.tsx";
 import CittaGeo from "./pages/CittaGeo.tsx";
 import ServizioDettaglio from "./pages/ServizioDettaglio.tsx";
+import Grazie from "./pages/Grazie.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import { blogPosts } from "./data/blogPosts";
 
@@ -55,6 +56,7 @@ export const routes: RouteRecord[] = [
       },
       { path: "chi-siamo", element: <ChiSiamo /> },
       { path: "contatti", element: <Contatti /> },
+      { path: "grazie", element: <Grazie /> },
       {
         path: "servizi/:servizio",
         element: <ServizioDettaglio />,

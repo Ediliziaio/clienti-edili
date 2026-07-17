@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { Phone, Mail, MapPin, Clock, Send, MessageCircle, ArrowUpRight } from "lucide-react";
 import Layout from "@/components/Layout";
@@ -35,6 +35,7 @@ const contattiJsonLd = [
 export default function Contatti() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
   const [sent, setSent] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,6 +45,7 @@ export default function Contatti() {
     e.preventDefault();
     setSent(true);
     setForm({ name: "", email: "", phone: "", company: "", message: "" });
+    navigate("/grazie");
   };
 
   return (

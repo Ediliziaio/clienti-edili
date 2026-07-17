@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import ClientLogo, { clientLogos } from "@/components/ClientLogos";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SeoHead from "@/components/SeoHead";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
@@ -1160,10 +1160,12 @@ function FAQSection() {
 function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    navigate("/grazie");
   };
 
   return (

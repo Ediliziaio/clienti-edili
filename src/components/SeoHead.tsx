@@ -7,6 +7,8 @@ interface SeoHeadProps {
   ogImage?: string;
   ogType?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Pagine che non devono essere indicizzate (es. ringraziamento post-form). */
+  noindex?: boolean;
 }
 
 const OG_IMAGE_ALT = "ClientiEdili - Siti Web per Imprese Edili Italiane";
@@ -25,6 +27,7 @@ export default function SeoHead({
   ogImage = "https://clientiedili.com/og-image.jpg",
   ogType = "website",
   jsonLd,
+  noindex = false,
 }: SeoHeadProps) {
   const jsonLdString = jsonLd
     ? JSON.stringify(
@@ -40,7 +43,11 @@ export default function SeoHead({
       <meta name="description" content={description} />
       <meta
         name="robots"
-        content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        content={
+          noindex
+            ? "noindex, nofollow"
+            : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        }
       />
       <link rel="canonical" href={canonical} />
       <link rel="alternate" hrefLang="it" href={canonical} />
