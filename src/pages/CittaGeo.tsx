@@ -27,6 +27,10 @@ interface CityData {
   localKeyword: string;
   projects: number;
   testimonial: { name: string; company: string; text: string };
+  zones: string;
+  marketContext: string;
+  searchTerms: string[];
+  faqs: { q: string; a: string }[];
 }
 
 const cities: CityData[] = [
@@ -39,6 +43,14 @@ const cities: CityData[] = [
     localKeyword: "impresa edile Milano",
     projects: 30,
     testimonial: { name: "Davide Marchetti", company: "Marchetti Costruzioni", text: "In 2 giorni avevo il sito online. Il mese dopo ho ricevuto 12 richieste di preventivo da clienti nella zona di Milano." },
+    zones: "Lavoriamo con imprese edili di tutta Milano città — dal Centro a Isola, Porta Romana, Navigli, Città Studi, Bicocca, Lambrate, Bovisa e Corvetto — e dell'intero hinterland milanese: Sesto San Giovanni, Cinisello Balsamo, Cologno Monzese, Rho, Monza, San Donato Milanese, Segrate, Corsico, Rozzano e Legnano. Ogni sito web è ottimizzato per le ricerche della zona specifica in cui opera la tua impresa.",
+    marketContext: "Milano è il mercato edile più competitivo e redditizio d'Italia: ristrutturazioni di appartamenti, riqualificazioni energetiche di condomini, restyling di uffici e spazi commerciali. La domanda è altissima, ma lo è anche la concorrenza — decine di imprese edili si contendono lo stesso cliente milanese. In questo contesto chi non compare nella prima pagina di Google, di fatto, non esiste per il cliente. Un milanese che deve ristrutturare casa apre Google, confronta 3-4 imprese e sceglie quella che trasmette più professionalità online. In una città dove un singolo intervento vale in media decine di migliaia di euro, anche una sola richiesta di preventivo in più ripaga ampiamente il sito web.",
+    searchTerms: ["ristrutturazione appartamento Milano", "impresa edile Sesto San Giovanni", "ristrutturazione bagno Milano", "impresa di costruzioni Monza", "riqualificazione energetica condominio Milano", "ristrutturazione ufficio Milano"],
+    faqs: [
+      { q: "Quanto conta la SEO locale per un'impresa edile a Milano?", a: "A Milano la SEO locale è decisiva: il mercato è saturo di imprese e il cliente sceglie tra le prime che trova su Google. Posizionarsi per 'impresa edile Milano' e per le ricerche di quartiere (es. 'ristrutturazione Navigli') significa intercettare clienti pronti a chiedere un preventivo, prima che lo facciano i concorrenti." },
+      { q: "In quali zone di Milano seguite le imprese edili?", a: "Seguiamo imprese edili in tutta Milano e nell'hinterland: Sesto San Giovanni, Cinisello Balsamo, Cologno Monzese, Rho, Monza, San Donato, Segrate, Corsico e Rozzano. Il sito viene ottimizzato per la zona precisa in cui lavori, così ricevi richieste dai clienti più vicini al tuo raggio d'azione." },
+      { q: "Quanto costa il sito web per un'impresa edile a Milano?", a: "Il pacchetto completo costa 1.000€ (invece di 1.400€), tutto incluso: design, copywriting, ottimizzazione SEO locale per Milano e 30 giorni di assistenza. Zero anticipo: paghi solo a sito approvato, con garanzia soddisfatti o rimborsati." },
+    ],
   },
   {
     slug: "roma",
@@ -49,6 +61,14 @@ const cities: CityData[] = [
     localKeyword: "impresa edile Roma",
     projects: 25,
     testimonial: { name: "Fabio Pellegrini", company: "Edil Pellegrini", text: "Finalmente un'agenzia che capisce le esigenze di chi lavora nei cantieri romani. Professionalità e risultati concreti." },
+    zones: "Serviamo imprese edili in tutta Roma — Prati, Trastevere, EUR, Parioli, Monteverde, Tuscolano, Montesacro, Ostiense, San Giovanni e Ostia — e nei comuni del Lazio: Fiumicino, Guidonia Montecelio, Tivoli, Pomezia, Frascati, Ciampino, Anzio e Nettuno. Il sito viene costruito per farti trovare dai clienti del tuo quadrante e della tua provincia.",
+    marketContext: "Roma è un mercato edile enorme e frammentato: ristrutturazioni di appartamenti, manutenzioni condominiali, restauri di palazzi storici nel centro e nuove costruzioni in periferia e nell'hinterland. La domanda è costante tutto l'anno, ma il cliente romano è diffidente e prima di affidare un lavoro controlla online chi ha di fronte. Un'impresa senza sito, o con un sito vecchio, perde credibilità in partenza. In una città grande come Roma, dove i quartieri funzionano quasi come città a sé, farsi trovare per le ricerche locali del proprio zona è ciò che riempie l'agenda dei sopralluoghi.",
+    searchTerms: ["impresa edile Roma", "ristrutturazione appartamento Roma", "impresa edile Roma Est", "ristrutturazione casa Ostia", "manutenzione condominio Roma", "ditta edile Roma Nord"],
+    faqs: [
+      { q: "Come faccio a farmi trovare come impresa edile a Roma?", a: "A Roma serve un sito web professionale ottimizzato per la SEO locale e un profilo Google My Business curato. Insieme ti fanno comparire quando un romano cerca 'impresa edile Roma' o 'ristrutturazione' nel suo quartiere. ClientiEdili costruisce entrambe le cose e le ottimizza per il tuo quadrante di riferimento." },
+      { q: "Lavorate anche con imprese fuori dal centro di Roma?", a: "Sì. Seguiamo imprese edili in tutta l'area romana e nei comuni del Lazio — da Fiumicino a Guidonia, da Tivoli a Pomezia e Frascati. Ottimizziamo il sito per la zona in cui operi, così ricevi richieste dai clienti realmente raggiungibili dai tuoi cantieri." },
+      { q: "Quanto tempo serve per avere il sito online a Roma?", a: "48 ore lavorative dalla chiamata conoscitiva, con un'anteprima entro le prime 24 ore. In pochi giorni la tua impresa edile romana è online, ottimizzata per Google e pronta a ricevere richieste di preventivo." },
+    ],
   },
   {
     slug: "torino",
@@ -59,6 +79,14 @@ const cities: CityData[] = [
     localKeyword: "impresa edile Torino",
     projects: 15,
     testimonial: { name: "Alessio Damiani", company: "Impresa Damiani", text: "Zero anticipo e risultato eccellente. Primo su Google per 'impresa edile Torino' in 4 mesi." },
+    zones: "Seguiamo imprese edili in tutta Torino — Crocetta, San Salvario, Vanchiglia, Mirafiori, Santa Rita, Lingotto, Barriera di Milano e Aurora — e nella cintura torinese: Moncalieri, Rivoli, Collegno, Nichelino, Settimo Torinese, Grugliasco, Chieri e Venaria Reale. Il sito è ottimizzato per intercettare i clienti della tua zona di lavoro.",
+    marketContext: "Il mercato edile torinese è in ripresa, spinto da ristrutturazioni, bonus edilizi e dalla riqualificazione di edifici ex-industriali e sottotetti tipici della città. Torino è una piazza più contenuta rispetto a Milano, ma proprio per questo chi presidia bene Google conquista una fetta importante di clienti locali. Molte imprese edili torinesi lavorano ancora solo con il passaparola: chi affianca al passaparola un sito web professionale e la SEO locale si trova con un flusso costante di richieste di preventivo, anche nei mesi più lenti.",
+    searchTerms: ["impresa edile Torino", "ristrutturazione casa Torino", "ristrutturazione mansarda Torino", "impresa edile Moncalieri", "riqualificazione energetica Torino", "ristrutturazione appartamento Torino"],
+    faqs: [
+      { q: "Conviene investire in un sito web per un'impresa edile a Torino?", a: "Sì: a Torino molte imprese vivono ancora di solo passaparola e lasciano scoperto Google. Chi presidia le ricerche locali ('impresa edile Torino', 'ristrutturazione casa Torino') intercetta clienti che altrimenti andrebbero ai pochi concorrenti già online. Con un investimento contenuto ottieni un vantaggio competitivo reale." },
+      { q: "Ottimizzate il sito anche per la provincia di Torino?", a: "Sì. Lavoriamo con imprese edili di Torino città e della cintura — Moncalieri, Rivoli, Collegno, Nichelino, Settimo Torinese, Grugliasco e Chieri. Il sito viene ottimizzato per i comuni in cui operi, così le richieste arrivano dai clienti più vicini ai tuoi cantieri." },
+      { q: "In quanto tempo posso posizionarmi su Google a Torino?", a: "Il sito è online in 48 ore. Per il posizionamento SEO locale i primi risultati arrivano di norma nell'arco di alcuni mesi: diversi nostri clienti torinesi sono arrivati in prima pagina per 'impresa edile Torino' in circa 4 mesi di lavoro costante." },
+    ],
   },
   {
     slug: "napoli",
@@ -69,6 +97,14 @@ const cities: CityData[] = [
     localKeyword: "impresa edile Napoli",
     projects: 20,
     testimonial: { name: "Stefano Cattaneo", company: "Cattaneo Edilizia", text: "Il sito ha dato una svolta alla mia attività. Ora i clienti mi trovano su Google e mi chiamano ogni settimana." },
+    zones: "Lavoriamo con imprese edili in tutta Napoli — Vomero, Posillipo, Chiaia, Fuorigrotta, Arenella, Bagnoli e Soccavo — e nella provincia campana: Pozzuoli, Giugliano in Campania, Casoria, Portici, Ercolano, Torre del Greco, Aversa e Marano. Ogni sito è ottimizzato per la zona in cui la tua impresa opera davvero.",
+    marketContext: "Napoli e la Campania sono tra i mercati edili più dinamici del Sud Italia: ristrutturazioni di appartamenti, consolidamenti strutturali, risanamento dell'umidità e restauro di palazzi storici sono richieste ricorrenti in una città dal patrimonio immobiliare antico. La concorrenza è numerosa ma spesso poco presente online, e questa è una grande opportunità: l'impresa edile napoletana che investe in un sito professionale e nella SEO locale si distingue subito e conquista fiducia. Il cliente campano si fida di chi mostra lavori concreti e recensioni reali — esattamente ciò che un buon sito web mette in evidenza.",
+    searchTerms: ["impresa edile Napoli", "ristrutturazione appartamento Napoli", "impresa edile Vomero", "risanamento umidità Napoli", "ristrutturazione casa Pozzuoli", "ditta ristrutturazioni Napoli"],
+    faqs: [
+      { q: "Perché un'impresa edile a Napoli dovrebbe avere un sito web?", a: "A Napoli molte imprese edili non sono ancora presenti online in modo professionale: chi lo fa si distingue immediatamente e conquista la fiducia del cliente. Un sito con lavori, recensioni e form di contatto ti fa trovare quando i napoletani cercano 'impresa edile Napoli' o 'ristrutturazione' nel loro quartiere." },
+      { q: "Seguite imprese edili anche in provincia di Napoli?", a: "Sì. Lavoriamo con imprese di Napoli città e della provincia — Pozzuoli, Giugliano, Casoria, Portici, Ercolano, Torre del Greco e Aversa. Il sito viene ottimizzato per i comuni in cui operi, così ricevi richieste dai clienti più vicini ai tuoi cantieri." },
+      { q: "Il sito include le foto dei miei lavori a Napoli?", a: "Sì: la galleria lavori è inclusa nel pacchetto. Le foto dei tuoi cantieri napoletani, ben presentate, sono lo strumento più efficace per convincere un nuovo cliente. Bastano le foto scattate con il telefono, alla grafica e all'ottimizzazione pensiamo noi." },
+    ],
   },
   {
     slug: "bologna",
@@ -79,6 +115,14 @@ const cities: CityData[] = [
     localKeyword: "impresa edile Bologna",
     projects: 12,
     testimonial: { name: "Matteo Sartori", company: "Sartori Edil Service", text: "Con il nuovo sito ricevo 3-4 richieste di preventivo a settimana. Un investimento che si è ripagato nel primo mese." },
+    zones: "Seguiamo imprese edili in tutta Bologna — Centro, Bolognina, San Donato, Santo Stefano, Saragozza, Navile, Murri e Corticella — e nella provincia: Casalecchio di Reno, San Lazzaro di Savena, Imola, Castel Maggiore, Zola Predosa e Castenaso, fino alle vicine Modena e Ferrara. Il sito è ottimizzato per i clienti della tua area.",
+    marketContext: "Bologna e l'Emilia-Romagna hanno un mercato edile solido e con forte domanda: ristrutturazioni di appartamenti, efficientamento energetico, recupero di sottotetti e il caratteristico restauro dei portici e degli edifici del centro storico. Il cliente emiliano è concreto e informato: confronta più imprese, legge le recensioni e sceglie chi comunica in modo chiaro e professionale. Un'impresa edile bolognese con un sito web ben fatto e una buona SEO locale parte avvantaggiata, perché intercetta la domanda proprio nel momento in cui il cliente cerca su Google e prima che si rivolga alla concorrenza.",
+    searchTerms: ["impresa edile Bologna", "ristrutturazione appartamento Bologna", "efficientamento energetico Bologna", "impresa edile Casalecchio", "ristrutturazione casa Bologna", "ristrutturazione bagno Bologna"],
+    faqs: [
+      { q: "Un sito web aiuta davvero un'impresa edile a Bologna a trovare clienti?", a: "Sì: a Bologna il cliente è informato e confronta più imprese online prima di scegliere. Un sito professionale con lavori, recensioni e form di contatto, ottimizzato per 'impresa edile Bologna', ti fa comparire e ti fa scegliere. Diversi nostri clienti bolognesi ricevono 3-4 richieste di preventivo a settimana." },
+      { q: "Lavorate con imprese in provincia di Bologna e in Emilia?", a: "Sì. Seguiamo imprese edili di Bologna città e della provincia — Casalecchio, San Lazzaro, Imola, Castel Maggiore, Zola Predosa — oltre alle vicine Modena e Ferrara. Ottimizziamo il sito per l'area in cui operi, così le richieste arrivano dai clienti raggiungibili." },
+      { q: "Cosa è incluso nel sito per un'impresa edile bolognese?", a: "Design personalizzato, copywriting, galleria lavori, form di contatto, ottimizzazione SEO locale per Bologna, profilo Google My Business e 30 giorni di assistenza — tutto a 1.000€ (invece di 1.400€), zero anticipo e garanzia soddisfatti o rimborsati." },
+    ],
   },
 ];
 
@@ -125,6 +169,14 @@ export default function CittaGeo() {
         containedInPlace: { "@type": "AdministrativeArea", name: city.region },
       },
       serviceType: "Web Design e SEO Locale per Imprese Edili",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: city.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
     },
   ];
 
@@ -215,6 +267,45 @@ export default function CittaGeo() {
         </div>
       </section>
 
+      {/* Mercato locale + Zone servite */}
+      <section className="py-20 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
+          <FadeIn>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold mb-6">Il mercato edile a {city.name}</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">{city.marketContext}</p>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <div className="bg-card border border-border rounded-2xl p-8">
+              <h3 className="font-display text-xl font-bold mb-4 flex items-center gap-2">
+                <MapPin size={18} className="text-primary shrink-0" /> Zone servite a {city.name}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">{city.zones}</p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Ricerche locali */}
+      <section className="py-16 border-t border-border">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="font-display text-2xl sm:text-3xl font-bold mb-4">Cosa cercano i tuoi clienti a {city.name}</h2>
+            <p className="text-muted-foreground mb-8 max-w-2xl">
+              Ottimizziamo il tuo sito web per le ricerche che ogni giorno i clienti fanno su Google nella zona di {city.name}:
+            </p>
+          </FadeIn>
+          <div className="flex flex-wrap gap-3">
+            {city.searchTerms.map((t, i) => (
+              <FadeIn key={i} delay={i * 0.04}>
+                <span className="inline-flex items-center bg-card border border-border rounded-full px-5 py-2.5 text-sm text-foreground/80">
+                  {t}
+                </span>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonial */}
       <section className="py-20 border-t border-border bg-card/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -274,6 +365,27 @@ export default function CittaGeo() {
                   <g.icon size={28} className="text-primary mx-auto mb-4" />
                   <h3 className="font-display text-lg font-bold mb-2">{g.title}</h3>
                   <p className="text-muted-foreground text-sm">{g.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ locali */}
+      <section className="py-20 border-t border-border">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold mb-10 text-center">
+              Domande frequenti — Imprese edili a {city.name}
+            </h2>
+          </FadeIn>
+          <div className="space-y-4">
+            {city.faqs.map((f, i) => (
+              <FadeIn key={i} delay={i * 0.05}>
+                <div className="bg-card border border-border rounded-xl p-6">
+                  <h3 className="font-display text-lg font-bold mb-2">{f.q}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{f.a}</p>
                 </div>
               </FadeIn>
             ))}

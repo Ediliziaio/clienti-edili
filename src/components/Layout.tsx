@@ -188,6 +188,18 @@ function LayoutFooter() {
           </div>
         </div>
 
+        {/* Siti web per città — SEO locale */}
+        <div className="border-t border-border pt-8 mb-8">
+          <h4 className="font-ui font-semibold mb-4 text-sm">Siti web per imprese edili per città</h4>
+          <div className="flex flex-wrap gap-x-6 gap-y-2 text-muted-foreground text-sm">
+            <Link to="/siti-web-edili-milano" className="hover:text-foreground transition-colors">Imprese Edili Milano</Link>
+            <Link to="/siti-web-edili-roma" className="hover:text-foreground transition-colors">Imprese Edili Roma</Link>
+            <Link to="/siti-web-edili-torino" className="hover:text-foreground transition-colors">Imprese Edili Torino</Link>
+            <Link to="/siti-web-edili-napoli" className="hover:text-foreground transition-colors">Imprese Edili Napoli</Link>
+            <Link to="/siti-web-edili-bologna" className="hover:text-foreground transition-colors">Imprese Edili Bologna</Link>
+          </div>
+        </div>
+
         <div className="border-t border-border pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4">
             <p className="text-muted-foreground text-sm">© 2026 ClientiEdili. Tutti i diritti riservati.</p>
