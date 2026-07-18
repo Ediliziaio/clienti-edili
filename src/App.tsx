@@ -4,6 +4,7 @@ import type { RouteRecord } from "vite-react-ssg";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import GtmRouteTracker from "@/components/GtmRouteTracker";
 
 import Index from "./pages/Index.tsx";
 import Servizi from "./pages/Servizi.tsx";
@@ -32,6 +33,7 @@ function RootLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <GtmRouteTracker />
         <Toaster />
         <Sonner />
         <Outlet />
