@@ -26,10 +26,11 @@ export default function MetaPixelTracker() {
     if (typeof window === "undefined" || typeof window.fbq !== "function") return;
 
     if (firstRender.current) {
-      // il PageView iniziale l'ha già inviato il codice base nell'HTML
+      // PageView e PV_Clientiedili iniziali li ha già inviati il codice base nell'HTML
       firstRender.current = false;
     } else {
       window.fbq("track", "PageView");
+      window.fbq("trackCustom", "PV_Clientiedili");
     }
 
     if (location.pathname === "/grazie") {
