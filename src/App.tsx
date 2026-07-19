@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import GtmRouteTracker from "@/components/GtmRouteTracker";
+import MetaPixelTracker from "@/components/MetaPixelTracker";
 
 import Index from "./pages/Index.tsx";
 import Servizi from "./pages/Servizi.tsx";
@@ -34,6 +35,7 @@ function RootLayout() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <GtmRouteTracker />
+        <MetaPixelTracker />
         <Toaster />
         <Sonner />
         <Outlet />
