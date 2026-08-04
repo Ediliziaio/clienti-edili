@@ -64,6 +64,39 @@ function renderMarkdown(content: string) {
   const lines = content.split("\n");
   const elements: React.ReactNode[] = [];
   let listItems: string[] = [];
+  let tableRows: string[][] = [];
+
+  const flushTable = () => {
+    if (tableRows.length === 0) return;
+    const [head, ...body] = tableRows;
+    elements.push(
+      <div key={`tbl-${elements.length}`} className="my-8 overflow-x-auto">
+        <table className="w-full text-left border-collapse text-[15px]">
+          <thead>
+            <tr className="border-b border-border">
+              {head.map((c, i) => (
+                <th key={i} className="py-3 pr-6 font-ui font-semibold text-foreground align-bottom">
+                  <span dangerouslySetInnerHTML={{ __html: inlineHtml(c) }} />
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {body.map((row, r) => (
+              <tr key={r} className="border-b border-border/50 align-top">
+                {row.map((c, i) => (
+                  <td key={i} className="py-3 pr-6 text-foreground/80 leading-relaxed">
+                    <span dangerouslySetInnerHTML={{ __html: inlineHtml(c) }} />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
+    tableRows = [];
+  };
 
   const flushList = () => {
     if (listItems.length > 0) {
@@ -83,7 +116,18 @@ function renderMarkdown(content: string) {
 
   lines.forEach((line, i) => {
     const trimmed = line.trim();
-    if (!trimmed) { flushList(); return; }
+    if (!trimmed) { flushList(); flushTable(); return; }
+
+    // Tabella markdown: righe che iniziano e finiscono con "|".
+    // La riga di separazione (|---|---|) viene scartata.
+    if (trimmed.startsWith("|") && trimmed.endsWith("|")) {
+      flushList();
+      const cells = trimmed.slice(1, -1).split("|").map((c) => c.trim());
+      if (!cells.every((c) => /^:?-{2,}:?$/.test(c))) tableRows.push(cells);
+      return;
+    }
+    flushTable();
+
     if (trimmed.startsWith("- ")) { listItems.push(trimmed.slice(2)); return; }
     flushList();
 
@@ -111,6 +155,7 @@ function renderMarkdown(content: string) {
     }
   });
   flushList();
+  flushTable();
   return elements;
 }
 
@@ -245,6 +290,18 @@ export default function BlogPost() {
       "articleSection": post.category,
       "inLanguage": "it-IT",
     },
+    ...(post.faqs?.length
+      ? [
+          {
+            "@type": "FAQPage",
+            "mainEntity": post.faqs.map((f) => ({
+              "@type": "Question",
+              "name": f.q,
+              "acceptedAnswer": { "@type": "Answer", "text": f.a },
+            })),
+          },
+        ]
+      : []),
   ];
 
   const relatedPosts = blogPostsSorted.filter((p) => p.slug !== slug).slice(0, 3);
@@ -304,6 +361,28 @@ export default function BlogPost() {
                 {renderMarkdown(post.content)}
               </div>
             </FadeIn>
+
+            {/* Domande frequenti — alimentano anche il FAQPage JSON-LD */}
+            {post.faqs && post.faqs.length > 0 && (
+              <FadeIn delay={0.1}>
+                <section className="mt-16">
+                  <h2
+                    id="domande-frequenti"
+                    className="font-display text-3xl sm:text-4xl font-bold mb-8 scroll-mt-32"
+                  >
+                    Domande frequenti
+                  </h2>
+                  <div className="space-y-4">
+                    {post.faqs.map((faq, i) => (
+                      <div key={i} className="bg-card border border-border rounded-xl p-6">
+                        <h3 className="font-display text-lg font-bold mb-3">{faq.q}</h3>
+                        <p className="text-foreground/80 leading-relaxed">{faq.a}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              </FadeIn>
+            )}
 
             {/* Author */}
             <FadeIn>

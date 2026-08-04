@@ -8,6 +8,12 @@ export interface BlogPost {
   readTime: string;
   excerpt: string;
   content: string;
+  /**
+   * Domande frequenti in coda all'articolo. Alimentano anche il FAQPage
+   * JSON-LD: sono il modo più diretto per ottenere i rich result a fisarmonica
+   * nei risultati di Google.
+   */
+  faqs?: { q: string; a: string }[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -2349,6 +2355,77 @@ Sì, e va trattato con un sito diverso da quello per il privato. Imprese edili, 
 
 Se lavori anche su questo mercato, il sito deve avere una sezione dedicata che parli quella lingua. Mescolare i due messaggi indebolisce entrambi: il privato si spaventa davanti a un linguaggio tecnico, il professionista non si fida di un sito che parla solo di "casa più bella e calda".
 
+## Quanto costa davvero acquisire un cliente come serramentista?
+
+Dipende dal canale, e la differenza tra i canali è enorme. Vale la pena metterli in fila, perché la maggior parte dei serramentisti non ha mai fatto questo conto.
+
+| Canale | Costo per contatto | Esclusiva | Cosa resta quando smetti |
+|---|---|---|---|
+| Lead comprati da portali | Alto, e cresce | No: venduto a 3-5 aziende | Niente |
+| Volantini e pubblicità locale | Medio, difficile da misurare | Sì | Niente |
+| Google Ads su parole strette | Medio | Sì | Niente |
+| Profilo Google curato | Quasi zero | Sì | Il profilo e le recensioni |
+| Posizionamento organico | Quasi zero dopo l'avvio | Sì | Le pagine posizionate |
+
+La colonna che quasi nessuno guarda è l'ultima. Un contatto comprato costa una volta e sparisce; una pagina posizionata su "sostituzione infissi" più il nome del tuo comune continua a portare richieste per anni, e il costo per contatto tende a zero man mano che il traffico cresce.
+
+Questo non significa che la pubblicità a pagamento sia inutile: significa che ha senso come acceleratore su un canale che stai già costruendo, non come unica fonte.
+
+## Quali materiali conviene mettere in evidenza sul sito?
+
+Quelli che tratti davvero, spiegati per quando conviene ciascuno. È un contenuto che intercetta le ricerche informative e che ti posiziona come consulente, non come venditore.
+
+| Materiale | Punto di forza | Quando conviene proporlo |
+|---|---|---|
+| PVC | Miglior rapporto isolamento/prezzo, manutenzione minima | Ristrutturazioni residenziali, sostituzione su misura standard |
+| Alluminio a taglio termico | Sezioni sottili, ampie vetrate, durata | Superfici grandi, immobili moderni, committenti attenti all'estetica |
+| Legno | Estetica e comfort, ottimo isolamento naturale | Immobili storici, contesti vincolati, clienti che cercano il materiale nobile |
+| Legno-alluminio | Legno dentro, alluminio fuori: durata senza manutenzione | Ville e immobili di pregio, esposizioni difficili |
+
+Il punto non è dire che uno è meglio degli altri. È mostrare che sai scegliere in base alla situazione — perché è esattamente quello che il cliente non sa fare e per cui ti sta cercando.
+
+## Come si scrive una pagina che porta preventivi?
+
+Rispondendo, nell'ordine, alle domande che il cliente ha in testa: cosa fate esattamente, come si svolge il lavoro, quanto costa più o meno, quanto dura, cosa succede se qualcosa va storto.
+
+### La struttura che funziona
+
+Apri dicendo cosa fai e dove. Non "azienda leader dal 1985", ma "sostituzione e posa di serramenti a [città] e provincia". Chi è arrivato da una ricerca deve capire in tre secondi di essere nel posto giusto.
+
+Poi le pose fatte, con foto vere. Poi come si svolge il lavoro, giorno per giorno: sopralluogo, misure, ordine, posa, rifiniture. Il cliente ha paura del disordine e dell'imprevisto: raccontargli la sequenza lo tranquillizza più di qualsiasi garanzia scritta.
+
+Poi la questione economica. Non serve un listino, serve un ordine di grandezza e soprattutto cosa comprende il prezzo: smontaggio del vecchio, smaltimento, rifinitura del vano, davanzali, zanzariere. È la parte dove i preventivi differiscono davvero, ed è quella su cui il cliente si sente più fregato.
+
+Infine il modo di contattarti, ripetuto più volte lungo la pagina. Chi si convince a metà lettura non deve tornare in cima per trovare il numero.
+
+### Gli errori che costano richieste
+
+Parlare solo di prodotto e mai di posa: il cliente compra la finestra montata bene, non il profilo.
+
+Usare le foto del catalogo del produttore: le riconosce, e gli dicono che non hai lavori tuoi da mostrare.
+
+Nascondere la zona di attività: chi cerca vuole sapere se arrivi da lui, e se non lo trova scritto passa oltre.
+
+Non avere il numero cliccabile da smartphone: la maggior parte delle visite arriva da telefono, e ogni passaggio in più perde persone.
+
+## Come si costruisce un flusso costante di recensioni?
+
+Chiedendole sistematicamente a fine posa, con un messaggio breve e il link diretto. È l'attività con il miglior rapporto tra sforzo e ritorno di tutto il settore.
+
+Le recensioni fanno due cose insieme. Pesano sul posizionamento nel Local Pack — Google privilegia i profili con recensioni recenti e continue — e sono la prima cosa che legge chi ti sta valutando. Un serramentista con quindici recensioni di cui tre nell'ultimo mese batte uno con quaranta recensioni ferme a due anni fa.
+
+Il momento giusto è quando il cliente vede le finestre montate e pulite e sta pensando che ha fatto bene. Un messaggio WhatsApp con il link ci mette trenta secondi ed è il modo con la percentuale di risposta più alta.
+
+Vale la pena rispondere a tutte, comprese le negative. Una risposta pacata a una critica dimostra come ti comporti quando qualcosa va storto — che è la cosa che il cliente sta davvero cercando di capire.
+
+## Serramentisti e ricerche stagionali: come sfruttarle
+
+Il settore ha picchi prevedibili e chi li anticipa raccoglie molto più degli altri.
+
+I mesi che precedono l'inverno concentrano le ricerche legate agli spifferi e alla bolletta del riscaldamento. La primavera porta le ristrutturazioni programmate. E ogni volta che cambia la normativa sulle detrazioni fiscali si apre una finestra di poche settimane in cui le ricerche si moltiplicano.
+
+La regola pratica è sempre la stessa: le pagine vanno pronte prima. Scrivere la pagina sulle detrazioni mentre l'onda è in corso significa arrivare quando è già passata, perché il posizionamento richiede settimane e la finestra dura giorni.
+
 ## Quanto tempo serve per vedere risultati?
 
 Il sito è online in 48 ore e inizia subito a convertire chi ti cerca per nome o ti trova dalla scheda Google. Il posizionamento sulle ricerche di zona richiede in genere dai tre ai cinque mesi nei comuni minori, dai cinque agli otto nei capoluoghi dove la concorrenza è più alta.
@@ -2362,6 +2439,13 @@ Se vuoi smettere di essere confrontato solo sul prezzo, l'ordine delle cose è q
 Noi in ClientiEdili costruiamo esattamente questo per i serramentisti: sito professionale consegnato in 48 ore a 1.000 euro invece di 1.400, zero anticipo — paghi solo a lavoro approvato — con garanzia soddisfatti o rimborsati. Se vuoi anche la gestione continuativa di Google My Business e dei social, con post e recensioni curati ogni mese, il servizio costa 497 euro al mese senza vincolo di durata.
 
 Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante persone cercano infissi nella tua zona ogni mese e quanto è forte la concorrenza, prima che tu spenda un euro.`,
+  faqs: [
+    { q: "Come si trovano clienti come serramentista?", a: "Intercettando le ricerche di chi sta già valutando di cambiare gli infissi nella tua zona — \"sostituzione infissi\" e \"preventivo serramenti\" seguiti dal nome della città — e presidiando anche le ricerche informative della fase di studio, come il confronto tra PVC, alluminio e legno. Servono un sito con le pose reali e un profilo Google curato che ti porti nel Local Pack." },
+    { q: "Quanto costa acquisire un cliente come serramentista?", a: "Dipende dal canale. I lead comprati da portali hanno un costo alto per contatto, non sono esclusivi e si azzerano quando smetti di pagare. Un profilo Google curato e le pagine posizionate hanno un costo per contatto che tende a zero e continuano a portare richieste anche dopo, perché restano tuoi." },
+    { q: "Il sito serve anche se lavoro con imprese e costruttori?", a: "Sì, ma va scritto diversamente. Il committente professionale valuta capacità produttiva, tempi di consegna, marchi trattati e commesse simili già eseguite. Conviene una sezione dedicata: mescolare il messaggio per il privato con quello per il professionista indebolisce entrambi." },
+    { q: "Conviene puntare sulle ricerche legate ai bonus fiscali?", a: "Sì, ma preparandosi prima. Quando cambia la normativa sulle detrazioni le ricerche si moltiplicano per poche settimane: chi ha già la pagina posizionata raccoglie, chi comincia a scriverla in quel momento arriva quando l'onda è passata." },
+    { q: "Quanto tempo serve per posizionarsi?", a: "Il sito è online in 48 ore e converte subito chi ti cerca per nome o dal profilo Google. Il posizionamento sulle ricerche di zona richiede in genere dai tre ai cinque mesi nei comuni minori e dai cinque agli otto nei capoluoghi. Il profilo Google può invece muoversi nel Local Pack in poche settimane." },
+  ],
 },
 {
   slug: "come-trovare-clienti-fotovoltaico",
@@ -2370,7 +2454,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante 
   metaDescription: "Come trovare clienti per impianti fotovoltaici senza comprare lead rivenduti a cinque installatori: costruire un canale che porta richieste esclusive.",
   date: "24 Lug 2026",
   category: "Lead Generation",
-  readTime: "13 min",
+  readTime: "12 min",
   excerpt: "I lead comprati ti mettono in gara con altri quattro installatori sullo stesso cliente. Ecco come costruire un canale che porta richieste solo tue.",
   content: `Come trovare clienti per il fotovoltaico è il problema che ogni installatore affronta appena finisce la fase in cui il telefono squillava da solo. Il settore è cresciuto tanto e in fretta, poi si è riempito: oggi in ogni provincia ci sono decine di aziende che offrono lo stesso impianto, e la domanda si è spostata da "chi me lo fa" a "chi me lo fa meglio e a quanto".
 
@@ -2432,6 +2516,75 @@ Meno ricerche, ma commesse enormemente più grandi. Un capannone con una copertu
 
 C'è poi una combinazione particolarmente redditizia: la sostituzione di coperture in cemento-amianto con contestuale installazione dell'impianto. Sono lavori ad alto valore su cui pochissimi si posizionano.
 
+## Lead comprati o canale proprio: il confronto in numeri
+
+Il modo più chiaro per decidere è mettere i due modelli uno accanto all'altro.
+
+| | Lead comprati | Canale proprio |
+|---|---|---|
+| Prime richieste | Subito, entro giorni | Dopo 3-6 mesi |
+| Esclusiva del contatto | No, venduto a 3-5 installatori | Sì, solo tuo |
+| Posizione in trattativa | Gara al ribasso | Il cliente ha scelto te |
+| Costo nel tempo | Cresce con la concorrenza | Scende man mano che il traffico sale |
+| Quando smetti di pagare | Le richieste si azzerano | Continuano ad arrivare |
+| Cosa possiedi | Niente | Sito, posizioni, profilo, recensioni |
+
+Non è un confronto tra buono e cattivo: è un confronto tra affittare e costruire. Chi ha bisogno di volume immediato fa bene a usare i lead, ma se non costruisce nel frattempo si ritrova tra due anni nella stessa posizione, solo con costi più alti.
+
+## Quali ricerche fotovoltaiche valgono di più?
+
+Non tutte le ricerche hanno lo stesso valore, e capire la differenza è ciò che separa una strategia che porta preventivi da una che porta visite inutili.
+
+| Tipo di ricerca | Esempio | Intenzione | Concorrenza |
+|---|---|---|---|
+| Informativa | "come funziona il fotovoltaico" | Bassa: studia | Alta |
+| Valutativa | "conviene il fotovoltaico con accumulo" | Media: sta decidendo | Media |
+| Commerciale locale | "impianto fotovoltaico [città]" | Alta: cerca chi glielo fa | Media |
+| Transazionale | "preventivo fotovoltaico [città]" | Altissima | Media |
+| Post-vendita | "sostituzione inverter [città]" | Alta, ricorrente | Bassissima |
+
+L'ultima riga è quella che quasi nessuno presidia. Manutenzione, pulizia moduli, sostituzione inverter e revamping sono interventi a buon margine, con concorrenza online quasi nulla, e generano clienti che restano per anni. È il segmento con il miglior ritorno rispetto allo sforzo.
+
+## Cosa deve contenere il portfolio di un installatore
+
+I dati, non gli aggettivi. È la differenza più importante tra un sito che convince e uno che sembra una brochure.
+
+### Cosa mettere per ogni impianto
+
+Potenza installata, tipo di moduli e inverter, presenza o meno di accumulo e con quale capacità, comune dell'installazione, mese di entrata in produzione e — quando ce l'hai — la produzione annua reale. Una scheda così vale più di dieci pagine di presentazione aziendale.
+
+Il motivo è semplice: il cliente non sa valutare un modulo, ma capisce benissimo "impianto da 6 kW con accumulo da 10 kWh, in produzione da aprile 2024, 7.400 kWh il primo anno". Quel dato risponde alla domanda che ha davvero in testa, cioè quanto produrrà il suo.
+
+### Le foto che servono
+
+Il tetto finito, ma anche il quadro elettrico, l'inverter montato, il passaggio dei cavi. Sono i dettagli che distinguono un lavoro fatto a regola d'arte da uno fatto in fretta, e il cliente attento li nota. Chi mostra solo il tetto da lontano sta nascondendo il resto, e chi cerca lo percepisce.
+
+## Come si risponde all'obiezione sul prezzo
+
+Non abbassandolo, ma spostando il confronto su quello che il preventivo comprende davvero.
+
+Nel fotovoltaico due preventivi con la stessa potenza possono differire di migliaia di euro per ragioni legittime: qualità dei moduli e dell'inverter, tipo di struttura di fissaggio, dimensionamento dei cavi, gestione delle pratiche di connessione, durata e copertura reale della garanzia, tempi di intervento in assistenza.
+
+Una pagina che spiega queste differenze fa un lavoro doppio. Aiuta il cliente a valutare — cosa che nessun concorrente sta facendo — e contemporaneamente prepara il terreno perché il tuo preventivo più alto sembri giustificato invece che caro. È il contenuto con il ritorno più diretto sul margine che puoi scrivere.
+
+## Il fotovoltaico industriale merita una pagina a parte?
+
+Sì, e trattarlo insieme al residenziale è uno degli errori più costosi.
+
+Il committente industriale non è una famiglia: è un responsabile tecnico o un titolare che valuta il rientro dell'investimento sul conto economico dell'azienda. Cerca cose diverse — potenze installate su capannoni, gestione della connessione in media tensione, esperienza con coperture industriali, tempi che non fermino la produzione — e si spaventa se trova un sito che parla di bolletta di casa.
+
+C'è poi una combinazione particolarmente redditizia che quasi nessuno presidia: la sostituzione di coperture in cemento-amianto con contestuale installazione dell'impianto. Sono commesse molto grandi, con committenti che hanno un obbligo normativo da risolvere e cercano chi sa fare entrambe le cose.
+
+## Da lead comprati a canale proprio: come si passa senza perdere fatturato
+
+Non tagliando di colpo. La transizione che funziona ha tre fasi.
+
+Nella prima continui a comprare lead come sempre, mentre metti online il sito e sistemi il profilo Google. Non cambia nulla nei numeri, ma cominci a costruire.
+
+Nella seconda, dopo due o tre mesi, il profilo Google inizia a portare le prime chiamate e le prime pagine si muovono. Riduci il budget dei lead della quota che il canale organico sta già coprendo.
+
+Nella terza, dopo sei-otto mesi, l'organico regge la base delle richieste e i lead comprati restano solo come acceleratore nei mesi lenti — o spariscono del tutto. L'obiettivo non è smettere di investire: è smettere di dipendere.
+
 ## Quanto tempo serve per posizionarsi?
 
 Sulle ricerche del tuo comune e dei comuni limitrofi i primi risultati arrivano in genere in tre o quattro mesi. Sulle ricerche di capoluogo, dove la concorrenza è più alta, servono dai cinque agli otto mesi di lavoro costante.
@@ -2447,6 +2600,13 @@ L'ordine che funziona è questo: sistema il profilo Google My Business e cominci
 In ClientiEdili costruiamo esattamente questo per gli installatori: sito professionale in 48 ore a 1.000 euro invece di 1.400, zero anticipo — paghi solo a lavoro approvato — con garanzia soddisfatti o rimborsati. La gestione continuativa di Google My Business e social, con pubblicazioni e recensioni curate ogni mese, costa 497 euro al mese senza vincolo di durata.
 
 Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante persone cercano un impianto fotovoltaico nella tua zona ogni mese e quanto è forte la concorrenza, prima di spendere un euro.`,
+  faqs: [
+    { q: "Conviene comprare lead fotovoltaici?", a: "I lead comprati arrivano subito ma vengono venduti in parallelo ad altri quattro o cinque installatori, ti mettono in gara sul prezzo e si azzerano quando smetti di pagare. Hanno senso se serve volume immediato, ma solo mentre costruisci un canale proprio: altrimenti tra due anni sei nella stessa posizione con costi più alti." },
+    { q: "Quali ricerche fotovoltaiche portano più clienti?", a: "Quelle commerciali locali e transazionali — \"impianto fotovoltaico\" o \"preventivo fotovoltaico\" più il nome della città. C'è poi una fascia molto redditizia e quasi ignorata: manutenzione, pulizia moduli, sostituzione inverter e revamping, che hanno concorrenza online bassissima e generano clienti ricorrenti." },
+    { q: "Cosa deve mostrare il sito di un installatore fotovoltaico?", a: "Dati verificabili, non aggettivi: potenza installata, tipo di moduli e inverter, presenza di accumulo, comune, mese di entrata in produzione e produzione annua reale. Il cliente non sa valutare un modulo, ma capisce benissimo quanti kWh ha prodotto un impianto simile al suo." },
+    { q: "Meglio puntare sul residenziale o sull'industriale?", a: "Sono due mercati con ricerche e committenti diversi e vanno presidiati con pagine separate. Il residenziale ha volumi alti e decisione rapida; l'industriale ha meno ricerche ma commesse molto più grandi e un committente tecnico che valuta referenze e capacità." },
+    { q: "Come si passa dai lead comprati a un canale proprio?", a: "Gradualmente, in tre fasi: si continua a comprare mentre si mette online il sito e si sistema il profilo Google; dopo due o tre mesi si riduce il budget della quota che l'organico già copre; dopo sei-otto mesi l'organico regge la base e i lead restano solo come acceleratore." },
+  ],
 },
 {
   slug: "local-pack-google-imprese-edili",
@@ -2529,6 +2689,66 @@ Le due cose si rinforzano. Un sito con pagine dedicate ai singoli servizi e alle
 
 Per i lavori d'urgenza — una caldaia guasta, un'infiltrazione, un blackout — il profilo è quasi tutto, perché la decisione si prende in due minuti. Per i lavori programmati — una ristrutturazione, un impianto fotovoltaico, un cappotto — il cliente approfondisce, e lì il sito fa la differenza.
 
+## Local Pack e risultati organici: che differenza c'è?
+
+Sono due blocchi distinti nella stessa pagina di Google, con regole diverse.
+
+| | Local Pack | Risultati organici |
+|---|---|---|
+| Cosa mostra | 3 aziende con mappa, recensioni e telefono | Elenco di pagine web |
+| Da cosa dipende | Profilo Google, recensioni, distanza | Contenuto e autorevolezza del sito |
+| Dove appare | In cima, sopra l'organico | Sotto il Local Pack |
+| Quanto tempo per entrarci | Settimane | Mesi |
+| Cosa porta | Chiamate dirette | Visite al sito |
+
+La conseguenza pratica è che si lavora su entrambi ma si parte dal Local Pack, perché costa meno tempo e porta chiamate prima. Il sito serve a reggere la posizione nel lungo periodo e a convincere chi ha bisogno di approfondire.
+
+## Quali errori tengono un'impresa fuori dal Local Pack?
+
+Sono quasi sempre gli stessi cinque, e sono tutti risolvibili in un pomeriggio.
+
+| Errore | Perché ti penalizza | Come si risolve |
+|---|---|---|
+| Categoria generica | Google non capisce cosa fai | Categoria specifica + secondarie |
+| Servizi non compilati | Non compari per le ricerche di servizio | Elenco voce per voce |
+| Zero foto o foto vecchie | Meno visualizzazioni e meno fiducia | Foto reali, aggiornate |
+| Recensioni ferme | Segnale di azienda inattiva | 2-3 nuove al mese |
+| Dati diversi tra sito e profilo | Google si fida meno dei tuoi dati | Nome, indirizzo e telefono identici ovunque |
+
+L'ultimo punto ha un nome tecnico — coerenza NAP, da name-address-phone — ed è quello che più spesso passa inosservato. Un numero scritto in due modi diversi tra sito, profilo e pagina Facebook indebolisce tutto il resto del lavoro.
+
+## Ogni quanto pubblicare sul profilo Google?
+
+Una volta a settimana è la frequenza che dà risultati senza diventare un peso. Sotto le due volte al mese l'effetto si perde, sopra le due a settimana il ritorno aggiuntivo è marginale.
+
+Il contenuto non deve essere elaborato. La foto di un cantiere scattata col telefono, due righe che dicono cosa si sta facendo e in che zona, e basta. Google legge quel testo, il profilo risulta attivo, e chi ci arriva vede un'azienda che lavora adesso.
+
+Vale la pena variare il tipo di post: un lavoro in corso, un lavoro finito, una risposta a una domanda frequente, un aggiornamento su un servizio. La varietà tiene alto l'interesse di chi visita il profilo più di una volta.
+
+## Il Local Pack funziona uguale per tutti i mestieri?
+
+No, e capire come cambia aiuta a decidere dove concentrare lo sforzo.
+
+Per i lavori d'urgenza — idraulici, elettricisti, riparazioni tetto, sblocco caldaie — il Local Pack è quasi tutto. La decisione si prende in due minuti, il cliente chiama dal blocco con la mappa e non apre nemmeno il sito. Qui il profilo vale più di ogni altra cosa.
+
+Per i lavori programmati — ristrutturazioni, cappotto, fotovoltaico, serramenti — il Local Pack porta il primo contatto, ma il cliente poi approfondisce: visita il sito, guarda i lavori, legge le risposte alle sue domande. Qui i due canali si dividono il merito.
+
+Per il lavoro condominiale e industriale il peso si sposta ancora di più sul sito, perché chi decide deve poter mostrare qualcosa ad altri — un'assemblea, una direzione — e ha bisogno di materiale da consultare.
+
+## Quanto contano le foto sul profilo?
+
+Molto più di quanto sembri, ed è la leva più sottovalutata. I profili con foto reali e aggiornate ricevono nettamente più visualizzazioni, più clic verso il sito e più richieste di indicazioni stradali rispetto a quelli con una sola immagine del logo.
+
+Le foto utili sono quelle dei lavori: prima e dopo, cantieri in corso, dettagli delle finiture. Vale anche la pena caricare foto del mezzo aziendale e della squadra, perché mettono una faccia dietro il numero di telefono — e nell'edilizia la fiducia si costruisce così.
+
+Come per i post, contano l'aggiornamento e la continuità: caricare venti foto una volta e poi sparire vale meno che caricarne due al mese per un anno.
+
+## Come si misura se il Local Pack sta funzionando?
+
+Il profilo Google fornisce dati diretti, e sono quelli da guardare: quante volte sei apparso nelle ricerche, quante persone hanno cliccato sul sito, quante hanno chiesto le indicazioni stradali e — il dato più importante — quante hanno chiamato direttamente dal profilo.
+
+Le chiamate dal profilo sono la metrica che conta davvero, perché sono richieste vere che non passano da nessun'altra parte e che senza il profilo non avresti mai ricevuto. Se crescono mese su mese, il lavoro sta funzionando; se sono ferme, c'è qualcosa nel profilo che non va.
+
 ## In quanto tempo si vedono i risultati?
 
 Un profilo sistemato bene può muoversi nel Local Pack nel giro di poche settimane, molto più in fretta di quanto serva al posizionamento organico. È il motivo per cui, quando un'impresa parte da zero, conviene cominciare da lì.
@@ -2542,6 +2762,13 @@ Rivendica il profilo se non lo hai ancora fatto, completa categoria, servizi e z
 Se non hai tempo di seguirlo, in ClientiEdili lo facciamo noi: gestione del profilo Google My Business, post settimanali, dodici pubblicazioni al mese tra Facebook e Instagram, strategia recensioni e report mensile su chiamate e contatti, a 497 euro al mese senza vincolo di durata. Tu ci mandi le foto dal cantiere su WhatsApp, al resto pensiamo noi.
 
 Vai su clientiedili.com/contatti e chiedi l'analisi gratuita del tuo profilo: ti diciamo cosa manca e quanto stai perdendo rispetto a chi oggi ti sta davanti nel Local Pack.`,
+  faqs: [
+    { q: "Cos'è il Local Pack di Google?", a: "È il blocco con la mappa e tre aziende che Google mostra in cima ai risultati per le ricerche locali. Ha le recensioni e il pulsante per chiamare, occupa quasi tutto lo schermo di uno smartphone e raccoglie la maggior parte delle chiamate: chi è quarto, per gran parte delle persone, non esiste." },
+    { q: "Come si entra nel Local Pack?", a: "Google usa rilevanza, distanza e prominenza. Sulla rilevanza si agisce con categoria specifica, servizi compilati voce per voce e zone servite; sulla prominenza con recensioni recenti e continue, foto aggiornate e post regolari. La distanza non si può cambiare, ma si può definire bene l'area di lavoro." },
+    { q: "Quante recensioni servono per posizionarsi?", a: "Non esiste una soglia: conta più la continuità del totale. Un'impresa con quindici recensioni di cui tre nell'ultimo mese batte una con quaranta ferme a due anni fa. L'obiettivo pratico più utile sono due o tre recensioni nuove al mese, sempre." },
+    { q: "Ogni quanto pubblicare sul profilo Google?", a: "Una volta a settimana è la frequenza che dà risultati senza diventare un peso. Sotto le due volte al mese l'effetto si perde. Non serve nulla di elaborato: la foto di un cantiere scattata col telefono e due righe su cosa si sta facendo e dove." },
+    { q: "Conta di più il profilo Google o il sito?", a: "Dipende dal lavoro. Per le urgenze — idraulico, elettricista, riparazione tetto — il profilo è quasi tutto, perché si decide in due minuti. Per i lavori programmati il profilo porta il primo contatto ma il sito convince, perché il cliente approfondisce prima di scegliere." },
+  ],
 },
 {
   slug: "trovare-clienti-cappotto-termico",
@@ -2550,7 +2777,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita del tuo profilo: ti
   metaDescription: "Come trovare clienti per il cappotto termico ora che gli incentivi si sono ridotti: intercettare la domanda vera di riqualificazione energetica.",
   date: "30 Lug 2026",
   category: "Lead Generation",
-  readTime: "12 min",
+  readTime: "11 min",
   excerpt: "Chi è cresciuto con i bonus ha visto il telefono spegnersi da un giorno all'altro. La domanda però è rimasta: cambia solo chi la intercetta.",
   content: `Trovare clienti per il cappotto termico è diventato un problema serio per molte imprese che negli anni dei grandi incentivi non avevano mai dovuto cercarli. Il lavoro arrivava da general contractor, da segnalazioni, da un'onda che sembrava non finire mai. Poi la misura è cambiata, l'onda si è ritirata, e chi non aveva costruito un canale proprio si è ritrovato con squadre attrezzate e nessuna commessa.
 
@@ -2622,6 +2849,75 @@ Molte imprese di cappotto lavorano in subappalto per pochi general contractor. V
 
 Costruire un canale proprio non significa abbandonare quel lavoro. Significa aggiungere una fonte di commesse che non dipende dalle decisioni di qualcun altro. E c'è un effetto secondario utile: anche i general contractor selezionano i subappaltatori guardando online chi ha fatto lavori simili, quindi un sito ben fatto rafforza pure quel canale.
 
+## Privato o condominio: due clienti, due percorsi
+
+Trattarli allo stesso modo è l'errore che costa più commesse. Ecco in cosa differiscono davvero.
+
+| | Privato (villetta) | Condominio |
+|---|---|---|
+| Chi decide | Il proprietario, in giorni | L'assemblea, in mesi |
+| Chi ti cerca | Direttamente il committente | L'amministratore |
+| Cosa lo preoccupa | Costo, durata cantiere, ponteggio | Rischio, gestione residenti, contestazioni |
+| Cosa lo convince | Foto di case simili alla sua | Referenze condominiali documentate |
+| Valore commessa | Medio | Alto |
+| Concorrenza online | Media | Molto bassa |
+
+L'ultima riga è la ragione per cui vale la pena costruire una sezione dedicata agli amministratori: è il committente con il valore più alto e quello a cui quasi nessuna impresa parla direttamente online.
+
+## Quali sistemi di cappotto spiegare sul sito
+
+Quelli che posi davvero, con l'indicazione onesta di quando conviene ciascuno. È il contenuto che ti fa percepire come tecnico e non come venditore.
+
+| Sistema | Punto di forza | Quando conviene |
+|---|---|---|
+| EPS (polistirene) | Rapporto prestazioni/prezzo migliore | Interventi standard, budget contenuto |
+| Grafite | Isola di più a parità di spessore | Dove lo spessore è vincolato |
+| Lana di roccia | Incombustibile, ottimo acustico | Edifici alti, requisiti antincendio |
+| Fibra di legno | Gestisce bene l'umidità, traspirante | Murature storiche, edifici in legno |
+| Sughero | Naturale, durevole, buona inerzia | Bioedilizia, committenti attenti ai materiali |
+
+Un'impresa che spiega quando serve la lana di roccia invece dell'EPS — e perché in certi edifici non è una scelta ma un obbligo — comunica competenza in modo molto più efficace di qualsiasi slogan sulla qualità.
+
+## Le domande a cui il tuo sito deve rispondere
+
+Sono sempre le stesse, e il committente le cerca online prima di chiamare. Rispondere significa arrivare al sopralluogo con metà del lavoro di persuasione già fatto.
+
+### Quanto dura il cantiere?
+
+È la prima preoccupazione, soprattutto in condominio. Dichiarare tempi reali per tipologia di intervento — una villetta, una palazzina, un condominio da venti unità — è un'informazione che nessun concorrente scrive.
+
+### Quanto resta su il ponteggio?
+
+Nei condomini è la fonte principale di lamentele. Spiegare come organizzi le fasi per ridurre i tempi di occupazione è un argomento di vendita diretto verso l'amministratore.
+
+### Si può stare in casa durante i lavori?
+
+Per il cappotto esterno sì, e dirlo esplicitamente toglie un'ansia enorme. Le eccezioni — balconi, sostituzione infissi contestuale — vanno spiegate.
+
+### Quanto si risparmia davvero?
+
+Il committente vuole capire in quanto rientra. Non servono promesse: servono esempi reali di edifici su cui hai lavorato, con il salto di classe energetica ottenuto.
+
+### Cosa succede alle finestre e ai davanzali?
+
+Il raccordo tra cappotto e serramenti è il punto in cui i lavori fatti male si vedono dopo due inverni. Mostrare come lo risolvi distingue immediatamente chi sa lavorare.
+
+## La direttiva europea sulle case green cambia il mercato?
+
+Sì, e sta già generando ricerche nuove che quasi nessuno presidia.
+
+Le persone hanno iniziato a chiedersi cosa comporterà per il proprio immobile: se sarà obbligatorio intervenire, entro quando, quanto costerà, cosa succede se non si fa. Sono ricerche informative con volumi in crescita e una caratteristica preziosa: chi le fa oggi diventa un committente nei prossimi due o tre anni.
+
+Costruire adesso le pagine che rispondono a quelle domande significa presidiare una domanda che maturerà in seguito, con una concorrenza che al momento è quasi assente. È l'investimento con l'orizzonte più lungo ma anche con la posizione più difendibile.
+
+## Come si esce dalla dipendenza dal general contractor
+
+Aggiungendo un canale, non sostituendone uno. Chi lavora quasi solo in subappalto ha un problema di concentrazione del rischio: pochi committenti decidono il tuo fatturato.
+
+Il percorso pratico è graduale. Si comincia mettendo online i lavori fatti — anche quelli eseguiti in subappalto, se puoi mostrarli — e sistemando il profilo Google. Poi si costruisce la sezione per gli amministratori di condominio, che è il committente diretto più accessibile. Infine si presidiano le ricerche del privato, che hanno volumi maggiori ma commesse più piccole.
+
+C'è un effetto collaterale utile: anche i general contractor scelgono i subappaltatori guardando online chi ha fatto lavori simili. Un sito ben fatto non ti allontana da quel canale, lo rafforza.
+
 ## In quanto tempo si vedono i risultati
 
 Sulle ricerche del tuo comune e dei comuni limitrofi in genere servono dai tre ai cinque mesi. Sulle ricerche di capoluogo, dai sei ai nove. Il sito però è online in 48 ore e converte subito chi ti cerca per nome, e il profilo Google può muoversi nel Local Pack in poche settimane.
@@ -2633,6 +2929,13 @@ Sistema il profilo Google e chiedi recensioni ai committenti dei lavori conclusi
 In ClientiEdili facciamo questo per le imprese di cappotto ed efficientamento: sito professionale in 48 ore a 1.000 euro invece di 1.400, zero anticipo — paghi solo a lavoro approvato — con garanzia soddisfatti o rimborsati. La gestione continuativa di Google My Business e social costa 497 euro al mese, senza vincolo di durata.
 
 Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante persone cercano il cappotto termico nella tua provincia e quanto è forte oggi la concorrenza, che è più bassa di quanto pensi.`,
+  faqs: [
+    { q: "La domanda di cappotto termico è finita con i bonus?", a: "No: è strutturale. Gran parte del patrimonio edilizio italiano è in classe energetica bassa, il costo dell'energia resta alto e la direttiva europea sull'efficienza degli edifici spinge verso riqualificazioni che dureranno anni. È cambiato il cliente, che ora paga una quota reale e quindi confronta e vuole capire." },
+    { q: "Come si intercettano gli amministratori di condominio?", a: "Con una sezione del sito dedicata a loro. L'amministratore deve difendere la scelta in assemblea, quindi cerca referenze condominiali documentate: quanti condomini, di che dimensione, con quali tempi, come è stato gestito il ponteggio e la comunicazione con i residenti." },
+    { q: "Quali informazioni convincono chi deve fare il cappotto?", a: "Quelle sulla gestione del cantiere, più che sui materiali: quanto dura, quanto resta su il ponteggio, se si può stare in casa, cosa succede ai balconi e ai davanzali, come si raccorda il cappotto con i serramenti. Sono le domande che il committente si fa e che quasi nessuna impresa affronta online." },
+    { q: "Conviene ancora posizionarsi su \"cappotto termico\"?", a: "Sì, e più di due anni fa. Molte imprese nate sull'onda degli incentivi si sono fermate o hanno chiuso, quindi la concorrenza sulle ricerche è più bassa oggi di quando tutti facevano cappotto. Posizionarsi adesso costa meno fatica." },
+    { q: "Serve un sito se lavoro in subappalto per general contractor?", a: "Sì, per due motivi. Dipendere da pochi committenti concentra il rischio, e un canale proprio lo riduce. Inoltre anche i general contractor selezionano i subappaltatori guardando online chi ha già fatto lavori simili: un sito ben fatto rafforza pure quel canale." },
+  ],
 },
 {
   slug: "quanto-costa-google-ads-impresa-edile",
@@ -2641,7 +2944,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante 
   metaDescription: "Quanto costa Google Ads per un'impresa edile: costo per clic reali, budget minimi sensati e i due errori che bruciano il budget senza portare richieste.",
   date: "01 Ago 2026",
   category: "Marketing Digitale",
-  readTime: "12 min",
+  readTime: "11 min",
   excerpt: "Le campagne portano clic dal primo giorno, anche a chi ha una pagina che non converte. Ecco i numeri reali e come capire se nel tuo caso conviene.",
   content: `Quanto costa Google Ads per un'impresa edile è una domanda a cui nessuno risponde volentieri con numeri, perché la risposta onesta è "dipende" — e dipende da variabili che si possono però misurare prima di spendere. Vediamole, con l'obiettivo di capire se nel tuo caso le campagne convengono o se i tuoi soldi rendono di più altrove.
 
@@ -2703,6 +3006,70 @@ Il posizionamento organico parte più lentamente — mesi, non giorni — ma cos
 
 Nella maggior parte dei casi, per un'impresa edile, l'ordine giusto è: prima il sito e le pagine che convertono, poi l'organico, e le campagne come acceleratore su periodi o servizi specifici. Fare il contrario — spendere in campagne senza un sito che converte — è il modo più rapido per concludere che il marketing non funziona.
 
+## Quanto costa un clic nell'edilizia: gli ordini di grandezza
+
+Il costo varia molto, ma segue una logica prevedibile che si può usare per decidere dove puntare.
+
+| Tipo di parola | Esempio | Costo relativo | Qualità del contatto |
+|---|---|---|---|
+| Generica nazionale | "ristrutturazioni" | Molto alto | Bassa |
+| Generica in capoluogo | "impresa edile Milano" | Alto | Media |
+| Servizio + capoluogo | "rifacimento bagno Milano" | Medio | Alta |
+| Servizio + comune minore | "rifacimento bagno Corsico" | Basso | Alta |
+| Urgenza + zona | "riparazione tetto [comune]" | Basso-medio | Altissima |
+
+La regola che ne esce è netta: più la parola è specifica e locale, meno costa e meglio converte. È il contrario di quello che fa istintivamente chi imposta la prima campagna, che punta sulle parole con più volume.
+
+## Google Ads, SEO o profilo Google: cosa scegliere
+
+Non sono alternative, sono strumenti con tempi e funzioni diverse.
+
+| | Google Ads | Profilo Google | SEO organica |
+|---|---|---|---|
+| Prime richieste | Giorni | Settimane | Mesi |
+| Costo per contatto | Costante | Quasi zero | Scende nel tempo |
+| Si ferma se smetti | Sì, subito | No | No |
+| Serve budget continuo | Sì | No | No |
+| Cosa costruisce | Niente | Reputazione locale | Posizioni durature |
+
+L'ordine sensato per un'impresa edile che parte da zero è: prima il sito con le pagine di servizio, poi il profilo Google, poi l'organico. Le campagne entrano dopo, quando c'è già una pagina che converte su cui mandare il traffico — altrimenti stai pagando per portare persone su una porta chiusa.
+
+## Come si calcola se una campagna sta andando bene
+
+Servono quattro numeri, e quasi nessuno li mette insieme.
+
+Il costo per clic ti dice quanto paghi ogni visita. Il tasso di conversione della pagina — quante visite diventano richieste — ti dice quanto ti costa un contatto. Il tasso di chiusura ti dice quante richieste diventano lavori. Il valore medio del lavoro chiude il conto.
+
+Il numero finale è il costo di acquisizione di un cliente, ed è l'unico che conta. Una campagna con clic cari ma pagina che converte bene può rendere molto più di una con clic economici e pagina che non converte.
+
+Il punto debole di quasi tutte le campagne edili non è il primo numero, è il secondo. È lì che si perde il denaro, ed è anche l'unico su cui puoi intervenire direttamente.
+
+## Le campagne funzionano meglio in alcuni periodi?
+
+Sì, e sfruttare la stagionalità cambia molto il rendimento.
+
+Le urgenze seguono il meteo: dopo grandinate e piogge intense le ricerche di riparazione esplodono per pochi giorni. Sono finestre brevissime in cui una campagna già attiva rende moltissimo e una da attivare arriva tardi.
+
+I lavori programmati si concentrano prima dell'estate e prima dell'inverno, quando le famiglie decidono di intervenire in vista della stagione. Le ricerche legate al risparmio energetico salgono con le bollette e con ogni novità sugli incentivi.
+
+Una campagna sempre accesa allo stesso budget spreca nei mesi piatti e resta sotto-dimensionata nei picchi. Modularla sui periodi è uno dei modi più semplici per migliorare il rendimento senza spendere di più.
+
+## Perché la velocità di risposta cambia i conti
+
+Perché chi manda una richiesta ne manda in genere tre, e la prima azienda che richiama parte con un vantaggio che le altre difficilmente colmano.
+
+Nell'edilizia questo effetto è amplificato: il committente che ha deciso di intervenire vuole andare avanti, e chi risponde in fretta trasmette esattamente l'affidabilità che sta cercando. Richiamare dopo due giorni significa trovare un cliente che ha già fissato due sopralluoghi con altri.
+
+È l'aspetto meno tecnico e più decisivo di tutta la questione. Puoi ottimizzare la campagna quanto vuoi, ma se le richieste restano ferme in casella mezza giornata stai buttando parte del budget.
+
+## Il tracciamento delle conversioni non è opzionale
+
+Senza tracciamento non sai quali parole portano richieste e quali bruciano soldi, quindi non puoi ottimizzare niente: stai spendendo alla cieca.
+
+Configurarlo significa registrare ogni invio del modulo, ogni clic sul numero di telefono, ogni apertura di WhatsApp, e collegarli alla ricerca da cui è arrivata la persona. Da lì si vede quali parole meritano più budget e quali vanno spente.
+
+È la prima cosa da mettere a posto, prima ancora di attivare qualsiasi campagna. Una campagna senza tracciamento produce solo un'opinione su cosa ha funzionato; con il tracciamento produce dati.
+
 ## Come capire se nel tuo caso conviene
 
 Prima di attivare qualsiasi campagna servono tre numeri: quante persone cercano i tuoi servizi nella tua zona ogni mese, quanto costa mediamente un clic su quelle ricerche, e quanto vale mediamente un tuo lavoro.
@@ -2716,6 +3083,13 @@ In ClientiEdili partiamo dall'altra estremità: costruiamo il sito e le pagine d
 Sulle campagne ragioniamo dopo l'analisi. Se nel tuo mercato non convengono, te lo diciamo invece di venderti un budget.
 
 Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diamo i volumi di ricerca reali della tua zona e i costi per clic effettivi delle tue parole, prima che tu spenda un euro.`,
+  faqs: [
+    { q: "Quanto costa Google Ads per un'impresa edile?", a: "Il costo per clic varia molto: le parole generiche nei capoluoghi sono le più care e portano contatti poco qualificati, quelle specifiche nei comuni minori costano una frazione e convertono meglio. Il numero che conta però non è il costo per clic, è il costo di acquisizione di un cliente — e quello dipende soprattutto dalla pagina di atterraggio." },
+    { q: "Perché la mia campagna non ha portato richieste?", a: "Quasi sempre per due motivi: parole troppo generiche e traffico mandato sulla home invece che su una pagina dedicata al servizio cercato. Chi cerca \"rifacimento bagno\" deve atterrare su una pagina di rifacimenti bagno, con foto e un modo immediato per chiedere il sopralluogo." },
+    { q: "Meglio Google Ads o SEO per un'impresa edile?", a: "Fanno cose diverse. Le campagne portano richieste subito e si fermano quando smetti di pagare; l'organico parte in mesi ma costruisce un canale che resta. L'ordine che funziona è: prima il sito e le pagine che convertono, poi il profilo Google e l'organico, le campagne come acceleratore." },
+    { q: "Quanto budget serve per partire?", a: "Un budget che permetta di raccogliere abbastanza richieste da valutare quante ne chiudi. Con due richieste al mese non si conclude nulla; con quindici si comincia a vedere il tasso reale. La cifra dipende dal costo per clic della tua zona, ed è il dato da misurare prima di partire." },
+    { q: "Il tracciamento delle conversioni è indispensabile?", a: "Sì. Senza tracciamento non sai quali parole portano richieste e quali bruciano budget, quindi non puoi ottimizzare nulla. Va configurato prima di attivare qualsiasi campagna: senza, ottieni solo un'opinione su cosa ha funzionato; con, ottieni dati." },
+  ],
 },
 {
   slug: "trovare-clienti-rifacimento-tetti",
@@ -2798,6 +3172,76 @@ La concorrenza digitale tra imprese di coperture è tra le più basse dell'inter
 
 Questo significa due cose. La prima è che posizionarsi costa meno fatica che in altri settori: le ricerche sono contese da poche aziende. La seconda è che il vantaggio, una volta preso, è difficile da attaccare, perché la maggior parte dei concorrenti non si muoverà comunque.
 
+## I tre tipi di lavoro sul tetto e come si vincono
+
+Ogni tipo ha una dinamica diversa, e usare lo stesso approccio per tutti significa perdere su tutti.
+
+| | Urgenza | Rifacimento programmato | Efficientamento |
+|---|---|---|---|
+| Esempio | Infiltrazione, danno da grandine | Manto a fine vita, guaina | Isolamento sottotetto, copertura ventilata |
+| Tempo di decisione | Ore | Settimane | Mesi |
+| Cosa vince | Profilo Google, telefono visibile | Sito, foto lavori, garanzie | Contenuti tecnici, calcolo del risparmio |
+| Concorrenza | Media | Media | Bassissima |
+| Valore commessa | Basso-medio | Alto | Alto |
+
+La riga più interessante è l'ultima colonna: l'efficientamento della copertura ha valore alto e concorrenza quasi nulla, perché quasi nessuna impresa di coperture ha capito che è diventato un mercato a sé.
+
+## Cosa cerca chi ha un'infiltrazione, parola per parola
+
+Le ricerche d'urgenza hanno una forma riconoscibile, e presidiarle è un lavoro molto concreto.
+
+Chi ha appena visto la macchia cerca il sintomo: "macchia umidità soffitto", "infiltrazione acqua dal tetto", "gocciola dal soffitto". Chi ha già capito che serve un intervento cerca la soluzione: "riparazione tetto [comune]", "impresa coperture [zona]", "pronto intervento tetto".
+
+La differenza pratica è che le prime vanno intercettate con contenuti che spiegano il problema, le seconde con il profilo Google e le pagine di servizio. Entrambe portano lo stesso cliente, solo in due momenti diversi dello stesso pomeriggio.
+
+## Come si spiega un preventivo che il cliente non può verificare
+
+Rendendo visibile quello che normalmente resta nascosto: il metodo.
+
+### Mostrare l'ispezione
+
+Il cliente non sa che l'acqua entra spesso in un punto lontano da dove appare la macchia. Spiegarlo, e mostrare come si individua davvero il punto d'ingresso, fa due cose: dimostra competenza e gli dà uno strumento per capire se chi lo sta valutando è serio o sta tirando a indovinare.
+
+### Distinguere riparazione e rifacimento
+
+È l'ambiguità su cui si costruiscono le diffidenze del settore. Spiegare quando una riparazione ha senso e quando è denaro buttato perché il manto è comunque a fine vita, con esempi concreti, è il contenuto più onesto e più convincente che puoi mettere online.
+
+### Dichiarare le garanzie
+
+Che guaina si usa, quanti anni di garanzia, cosa copre e cosa no. È un'informazione che quasi nessuno scrive e che tutti vorrebbero: metterla nero su bianco è un vantaggio quasi gratuito.
+
+## Il lavoro in quota come argomento di vendita
+
+La sicurezza spaventa i committenti, soprattutto quelli condominiali, ed è anche il terreno su cui si distinguono le imprese strutturate.
+
+Mostrare come organizzi il ponteggio, quali dispositivi di ancoraggio usi, se hai personale formato per i lavori su fune e come gestisci gli accessi in cantiere non è burocrazia: per un amministratore è la differenza tra un'impresa da mettere in lista e una da scartare. Un incidente su un cantiere condominiale è il suo incubo, e sceglie di conseguenza.
+
+Il lavoro su fune merita una menzione a parte. Nei centri storici e sugli edifici dove il ponteggio è impossibile o antieconomico, saperlo fare è una competenza rara che il cliente cerca esplicitamente — e che quasi nessuno comunica online.
+
+## L'efficientamento della copertura: il mercato che nessuno presidia
+
+È il segmento con il miglior rapporto tra sforzo e ritorno oggi disponibile per un'impresa di coperture.
+
+Isolamento del sottotetto, coperture ventilate, coibentazione del pacchetto di copertura, integrazione con l'impianto fotovoltaico: sono interventi spinti dal costo dell'energia e dalle normative sull'efficienza degli edifici. Il valore per commessa è alto perché si somma al rifacimento del manto, e il cliente conosce l'argomento poco o niente.
+
+Questo significa che chi scrive contenuti chiari su come funziona un tetto ventilato, quanto si risparmia isolando il sottotetto e in quanto tempo rientra la spesa, si trova praticamente solo nei risultati di ricerca. È una posizione che oggi si conquista con poche pagine ben fatte.
+
+## Come prepararsi ai picchi meteo
+
+I picchi non si possono prevedere nel giorno, ma si possono prevedere nella stagione — e la preparazione va fatta prima.
+
+Concretamente significa avere già pronte, in un periodo tranquillo, la pagina sulle riparazioni urgenti, il profilo Google completo con recensioni recenti, il numero cliccabile ben visibile e gli orari aggiornati. Quando arriva la grandinata quelle cose devono esserci già: la finestra dura pochi giorni e non c'è tempo di costruire nulla.
+
+Vale la pena anche predisporre in anticipo un messaggio o un post da pubblicare subito dopo un evento meteo, con l'indicazione delle zone in cui si interviene. Chi comunica per primo raccoglie le chiamate di chi sta cercando in quel momento.
+
+## Il condominio: la commessa più grande e meno contesa
+
+L'amministratore che deve far rifare la copertura di un condominio non sceglie a caso: deve portare la proposta in assemblea e difenderla davanti a condòmini che contestano.
+
+Quello che cerca online è documentazione: quanti condomini hai seguito, di quale dimensione, con quali tempi, come hai gestito il ponteggio e la comunicazione con i residenti, se ci sono stati imprevisti e come li hai risolti. Un'impresa che mostra tre referenze condominiali raccontate per intero entra nella rosa; una che ha solo foto di villette resta fuori, per quanto brava sia.
+
+È la fascia con il valore per commessa più alto del settore e con la concorrenza online più bassa, perché richiede di scrivere contenuti che quasi nessuno ha voglia di scrivere.
+
 ## Da dove partire
 
 Rivendica e completa il profilo Google, con categoria corretta, servizi, zone e foto delle coperture rifatte. Comincia a chiedere una recensione alla fine di ogni intervento. Metti online un sito con la galleria dei lavori, le pagine per infiltrazioni, rifacimento, lattoneria e sottotetto, e una sezione dedicata ai condomini. Assicurati che il numero di telefono sia cliccabile e sempre visibile: qui si decide in due minuti.
@@ -2805,6 +3249,13 @@ Rivendica e completa il profilo Google, con categoria corretta, servizi, zone e 
 In ClientiEdili costruiamo questo per le imprese di coperture: sito professionale in 48 ore a 1.000 euro invece di 1.400, zero anticipo — paghi solo a lavoro approvato — con garanzia soddisfatti o rimborsati. La gestione continuativa del profilo Google e dei social, con post e recensioni curati ogni mese, costa 497 euro al mese senza vincolo di durata.
 
 Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante persone cercano interventi sul tetto nella tua zona e quanto è forte la concorrenza, che in questo settore è più bassa di quanto immagini.`,
+  faqs: [
+    { q: "Come si trovano clienti per il rifacimento tetti?", a: "Presidiando tre famiglie di ricerche diverse: le urgenze (\"infiltrazione tetto\" più il comune), che si vincono con il profilo Google e il numero cliccabile; i lavori programmati (\"rifacimento copertura\"), che si vincono con il sito; e l'efficientamento (\"isolamento sottotetto\"), che ha valore alto e quasi nessuna concorrenza." },
+    { q: "Cosa convince un cliente che non può salire sul tetto?", a: "La trasparenza sul metodo. Spiegare come si individua davvero il punto di un'infiltrazione, quando una riparazione ha senso e quando è denaro buttato, che guaina si usa e cosa copre la garanzia. Sono informazioni che quasi nessuno scrive e che rispondono esattamente al sospetto del cliente." },
+    { q: "Come ci si prepara ai picchi dopo una grandinata?", a: "Prima, in un periodo tranquillo. Dopo un evento meteo le ricerche durano pochi giorni e non c'è tempo di costruire nulla: servono profilo Google completo con recensioni recenti, pagina sulle riparazioni urgenti e numero cliccabile già pronti." },
+    { q: "L'isolamento del sottotetto è un mercato interessante?", a: "È il segmento con il miglior rapporto tra sforzo e ritorno per un'impresa di coperture. Ha valore per commessa alto perché si somma al rifacimento del manto, è spinto dal costo dell'energia, e la concorrenza online è quasi nulla perché quasi nessuno ha capito che è un mercato a sé." },
+    { q: "Come si entra nella rosa per i lavori condominiali?", a: "Documentando le referenze condominiali per intero: quanti condomini, di che dimensione, con quali tempi, come sono stati gestiti ponteggio, sicurezza e comunicazione con i residenti. L'amministratore deve difendere la scelta in assemblea e non rischia su un'impresa di cui non sa nulla." },
+  ],
 },
 ];
 
