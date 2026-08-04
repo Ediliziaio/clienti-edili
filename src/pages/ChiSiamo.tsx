@@ -42,7 +42,7 @@ const timeline = [
   { year: "2020", title: "Primi 20 Clienti", desc: "Nonostante la pandemia, aiutiamo 20 imprese edili a mantenere il flusso di lavoro grazie alla presenza online." },
   { year: "2022", title: "100 Progetti Completati", desc: "Raggiungiamo il traguardo dei 100 siti web e campagne completate, con clienti in tutta Italia." },
   { year: "2024", title: "Espansione Nazionale", desc: "Il team cresce a 12 professionisti. Lanciamo servizi SEO avanzati e gestione social media." },
-  { year: "2026", title: "Leader di Settore", desc: "Oltre 200 imprese edili si affidano a noi. Valutazione media di 4.9 su Google Reviews." },
+  { year: "2026", title: "Leader di Settore", desc: "Oltre 127 imprese edili in tutta Italia si affidano a ClientiEdili per la loro presenza online." },
 ];
 
 const values = [
@@ -53,7 +53,7 @@ const values = [
 ];
 
 const team = [
-  { initials: "FA", name: "Florin Andriciuc", role: "Fondatore & CEO", bio: "15 anni di esperienza nel marketing digitale. Ha lavorato con oltre 200 imprese edili in tutta Italia." },
+  { initials: "FA", name: "Florin Andriciuc", role: "Fondatore & CEO", bio: "15 anni di esperienza nel marketing digitale. Ha lavorato con oltre 127 imprese edili in tutta Italia." },
   { initials: "EV", name: "Elena Venturi", role: "Head of Design", bio: "Specializzata in UI/UX per il settore costruzioni. Crea siti che convertono visitatori in clienti." },
   { initials: "SP", name: "Simone Parisi", role: "SEO Specialist", bio: "Esperto di posizionamento locale. Ha portato decine di imprese in prima pagina su Google." },
   { initials: "CM", name: "Chiara Magnani", role: "Social Media Manager", bio: "Crea contenuti che raccontano il valore delle imprese edili su Facebook e Instagram." },

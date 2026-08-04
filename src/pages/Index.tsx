@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import ClientLogo, { clientLogos } from "@/components/ClientLogos";
 import { Link } from "react-router-dom";
 import SeoHead from "@/components/SeoHead";
+import Footer from "@/components/Footer";
 import ContactFormEmbed from "@/components/ContactFormEmbed";
 import clientiEdiliLogo from "@/assets/clientiedili_dark.png";
 import { motion, useScroll, useSpring, useInView, useMotionValue, useTransform, animate, AnimatePresence } from "framer-motion";
@@ -10,7 +11,7 @@ import {
   Shield, Clock, Zap, Menu, X, Send, User, Briefcase,
   MessageSquare, Globe, Search, Share2, BarChart3, FileText,
   Plus, Minus, Quote, Users, Award, Headphones, Calendar,
-  TrendingUp, ThumbsDown, ThumbsUp, Instagram, Facebook, MessageCircle,
+  TrendingUp, ThumbsDown, ThumbsUp, MessageCircle,
   Gift
 } from "lucide-react";
 
@@ -971,6 +972,77 @@ function PricingSection() {
   );
 }
 
+// ─── Gestione Social + GMB (497€/mese) ────────────────────────
+
+const gestioneFeatures = [
+  "Profilo Google My Business ottimizzato e tenuto aggiornato",
+  "Post settimanali su Google My Business",
+  "12 pubblicazioni al mese tra Facebook e Instagram",
+  "Testi e grafiche fatti a partire dalle tue foto di cantiere",
+  "Strategia recensioni e risposta a quelle che arrivano",
+  "Report mensile su chiamate e contatti generati",
+];
+
+function GestioneSection() {
+  return (
+    <section id="gestione" className="py-24 sm:py-32 border-y border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <FadeIn>
+            <SectionLabel>Dopo il sito</SectionLabel>
+            <h2 className="font-display text-4xl sm:text-5xl leading-[1.1] font-bold mb-6 mt-4">
+              Il sito è online. Ma chi lo{" "}
+              <span className="text-gradient-lime">tiene vivo</span>?
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+              Tra un cantiere e l'altro nessuno ha tempo di pubblicare foto, rispondere alle
+              recensioni e tenere aggiornato il profilo Google. Così l'unica cosa che il cliente
+              trova di te è una pagina ferma a due anni fa — e passa al preventivo successivo.
+            </p>
+            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+              Tu ci mandi le foto dal cantiere su WhatsApp. Al resto pensiamo noi.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/servizi/gestione-social-gmb" className="btn-carino">
+                Come funziona
+                <span className="arrow-circle"><ArrowUpRight size={18} /></span>
+              </Link>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={0.2}>
+            <div className="bg-card border-2 border-primary/40 rounded-3xl overflow-hidden">
+              <div className="bg-primary/10 p-8 text-center">
+                <span className="font-ui text-xs tracking-wider uppercase text-primary">
+                  Gestione Social + Google My Business
+                </span>
+                <div className="mt-4 flex items-baseline justify-center gap-2">
+                  <span className="font-display text-6xl sm:text-7xl text-primary font-bold">497€</span>
+                  <span className="text-muted-foreground text-xl">/mese</span>
+                </div>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  Nessun vincolo di durata · Disdici quando vuoi
+                </p>
+              </div>
+              <div className="p-8 space-y-4">
+                {gestioneFeatures.map((f, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <Check size={18} className="text-primary shrink-0 mt-0.5" />
+                    <span className="text-foreground/90">{f}</span>
+                  </div>
+                ))}
+                <div className="pt-6 flex justify-center">
+                  <CarinoButton href="#contatti">Attivalo Ora</CarinoButton>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Guarantee Section ────────────────────────────────────────
 
 function GuaranteeSection() {
@@ -1237,115 +1309,6 @@ function FinalCTA() {
   );
 }
 
-// ─── Footer ───────────────────────────────────────────────────
-
-function Footer() {
-  const [email, setEmail] = useState("");
-  return (
-    <footer className="border-t border-border py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-2">
-            <div className="flex items-center mb-4">
-              <img src={clientiEdiliLogo} alt="ClientiEdili" className="h-10" />
-            </div>
-            <p className="text-muted-foreground max-w-sm leading-relaxed mb-6">
-              Siti web professionali per imprese edili italiane. Più clienti, più lavoro, più crescita.
-            </p>
-
-            {/* Google Reviews badge */}
-            <div className="inline-flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 mb-6">
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map(i => (
-                  <Star key={i} size={14} className="text-primary fill-primary" />
-                ))}
-              </div>
-              <span className="text-sm text-foreground font-semibold">4.9/5</span>
-              <span className="text-xs text-muted-foreground">su Google Reviews</span>
-            </div>
-
-            {/* Newsletter */}
-            <div>
-              <p className="font-ui text-xs uppercase tracking-wider text-muted-foreground mb-3">Newsletter</p>
-              <form onSubmit={(e) => { e.preventDefault(); setEmail(""); }} className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="La tua email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
-                />
-                <button type="submit" className="bg-primary text-primary-foreground rounded-lg px-4 py-2.5 font-ui text-sm font-semibold hover:bg-primary/90 transition-colors">
-                  Iscriviti
-                </button>
-              </form>
-            </div>
-          </div>
-
-          <div>
-            <h4 className="font-ui font-semibold mb-4 text-sm">Link Utili</h4>
-            <ul className="space-y-2 text-muted-foreground text-sm">
-              <li><Link to="/servizi" className="hover:text-foreground transition-colors">Servizi</Link></li>
-              <li><Link to="/progetti" className="hover:text-foreground transition-colors">Progetti</Link></li>
-              <li><a href="#recensioni" className="hover:text-foreground transition-colors">Recensioni</a></li>
-              <li><Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link></li>
-              <li><a href="#faq" className="hover:text-foreground transition-colors">FAQ</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-ui font-semibold mb-4 text-sm">Contatti</h4>
-            <ul className="space-y-2 text-muted-foreground text-sm">
-              <li><a href="mailto:info@clientiedili.com" className="hover:text-foreground transition-colors">info@clientiedili.com</a></li>
-              <li><a href="mailto:domusgroupsrl@legalmail.it" className="hover:text-foreground transition-colors">PEC: domusgroupsrl@legalmail.it</a></li>
-              <li>Via Aurelio Saffi 29, 20123 Milano</li>
-            </ul>
-
-            {/* Social icons */}
-            <div className="flex gap-3 mt-6">
-              {[
-                { icon: Facebook, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: MessageCircle, href: "https://api.whatsapp.com/send/?phone=393501782744&text&type=phone_number&app_absent=0" },
-              ].map((s, i) => (
-                <a key={i} href={s.href} className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300">
-                  <s.icon size={14} />
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Siti web per città — SEO locale */}
-        <div className="border-t border-border pt-8 mb-8">
-          <h4 className="font-ui font-semibold mb-4 text-sm">Siti web per imprese edili per città</h4>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-muted-foreground text-sm">
-            <Link to="/siti-web-edili-milano" className="hover:text-foreground transition-colors">Imprese Edili Milano</Link>
-            <Link to="/siti-web-edili-roma" className="hover:text-foreground transition-colors">Imprese Edili Roma</Link>
-            <Link to="/siti-web-edili-torino" className="hover:text-foreground transition-colors">Imprese Edili Torino</Link>
-            <Link to="/siti-web-edili-napoli" className="hover:text-foreground transition-colors">Imprese Edili Napoli</Link>
-            <Link to="/siti-web-edili-bologna" className="hover:text-foreground transition-colors">Imprese Edili Bologna</Link>
-          </div>
-        </div>
-
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-4">
-            <p className="text-muted-foreground text-sm">© 2026 ClientiEdili. Tutti i diritti riservati.</p>
-            <div className="flex gap-6 text-muted-foreground text-sm">
-              <a href="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</a>
-              <a href="/cookie-policy" className="hover:text-foreground transition-colors">Cookie Policy</a>
-            </div>
-          </div>
-          <div className="text-muted-foreground/60 text-xs text-center leading-relaxed">
-            <p>Domus Group S.r.l. — Sede Legale: Via Aurelio Saffi 29, CAP 20123 Milano — P.IVA: 13132010961</p>
-            <p>Capitale Sociale: 20.000,00€ — SDI: USAL8PV — PEC: domusgroupsrl@legalmail.it</p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 // ─── Floating WhatsApp Button ─────────────────────────────────
 
 function FloatingWhatsApp() {
@@ -1400,6 +1363,20 @@ export default function Index() {
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Locale per Imprese Edili", "description": "Posizionamento su Google per le ricerche nella tua zona. Analisi keyword, ottimizzazione on-page, link building e monitoraggio mensile." } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google My Business per Edilizia", "description": "Profilo Google ottimizzato per apparire nel Local Pack. Creazione, verifica, strategia recensioni e post settimanali." } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Marketing per Imprese Edili", "description": "Gestione pagine Facebook e Instagram, piano editoriale, contenuti foto e video, campagne pubblicitarie mirate." } },
+          {
+            "@type": "Offer",
+            "price": "497",
+            "priceCurrency": "EUR",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "497",
+              "priceCurrency": "EUR",
+              "billingDuration": 1,
+              "billingIncrement": 1,
+              "unitCode": "MON",
+            },
+            "itemOffered": { "@type": "Service", "name": "Gestione Social e Google My Business per Imprese Edili", "description": "Gestione continuativa del profilo Google My Business e delle pagine Facebook e Instagram: piano editoriale, 12 post al mese, strategia recensioni e report mensile. 497€ al mese, senza vincolo di durata." },
+          },
         ],
       },
     },
@@ -1440,6 +1417,7 @@ export default function Index() {
       <TestimonialsSection />
       <CTABanner />
       <PricingSection />
+      <GestioneSection />
       <GuaranteeSection />
       <BlogSection />
       <FAQSection />

@@ -12,10 +12,11 @@ ClientiEdili crea siti web professionali per imprese edili italiane con consegna
 - **SEO Locale**: posizionamento su Google per ricerche geolocalizzate (es. "impresa edile Milano"). Include analisi keyword, ottimizzazione on-page, contenuti SEO, link building e monitoraggio mensile.
 - **Google My Business**: creazione e ottimizzazione profilo Google per apparire nel Local Pack (i 3 risultati con mappa). Include strategia recensioni, post settimanali e gestione completa.
 - **Social Media Marketing**: gestione pagine Facebook e Instagram con piano editoriale, contenuti foto/video, campagne pubblicitarie mirate al settore edile.
+- **Gestione Social + Google My Business**: servizio continuativo che comprende profilo Google My Business ottimizzato, post settimanali su Google, 12 pubblicazioni al mese tra Facebook e Instagram, strategia recensioni e report mensile. Prezzo: 497€ al mese, senza vincolo di durata.
 
 ## Target clienti
 
-Imprese edili italiane: imprese di costruzione, ristrutturazioni, carpenterie, serramentisti, impiantisti, pavimentisti e tutte le PMI del settore edile che vogliono acquisire clienti online.
+Tutta la filiera italiana delle costruzioni: imprese edili e di costruzione, aziende di ristrutturazione, serramentisti, installatori di impianti fotovoltaici, impiantisti termoidraulici ed elettrici, carpenterie, pavimentisti e le PMI del settore edile che vogliono acquisire clienti online.
 
 ## Numeri chiave
 
@@ -50,6 +51,11 @@ ClientiEdili opera in tutta Italia, con focus su:
 - Napoli e Campania (20+ imprese edili servite)
 - Torino e Piemonte (15+ imprese edili servite)
 - Bologna e Emilia-Romagna (12+ imprese edili servite)
+- Firenze e Toscana
+- Verona e Veneto
+- Genova e Liguria
+- Bari e Puglia
+- Palermo e Sicilia
 
 ## Pagine servizi dedicati
 
@@ -57,6 +63,15 @@ ClientiEdili opera in tutta Italia, con focus su:
 - SEO Locale per Imprese Edili: https://clientiedili.com/servizi/seo-locale
 - Google My Business per Edilizia: https://clientiedili.com/servizi/google-my-business
 - Social Media Marketing per Imprese Edili: https://clientiedili.com/servizi/social-media
+- Gestione Social e Google My Business (497€/mese): https://clientiedili.com/servizi/gestione-social-gmb
+
+## Pagine per settore e intento di ricerca
+
+- Marketing per l'edilizia: https://clientiedili.com/marketing-edilizia
+- Lead generation per l'edilizia: https://clientiedili.com/lead-generation-edilizia
+- Marketing per serramentisti: https://clientiedili.com/marketing-serramentisti
+- Marketing per il fotovoltaico: https://clientiedili.com/marketing-fotovoltaico
+- Marketing per impiantisti: https://clientiedili.com/marketing-impiantisti
 
 ## Contatti e risorse
 
@@ -71,3 +86,10 @@ ClientiEdili opera in tutta Italia, con focus su:
 - Siti web edili Torino: https://clientiedili.com/siti-web-edili-torino
 - Siti web edili Napoli: https://clientiedili.com/siti-web-edili-napoli
 - Siti web edili Bologna: https://clientiedili.com/siti-web-edili-bologna
+- Siti web edili Firenze: https://clientiedili.com/siti-web-edili-firenze
+- Siti web edili Verona: https://clientiedili.com/siti-web-edili-verona
+- Siti web edili Genova: https://clientiedili.com/siti-web-edili-genova
+- Siti web edili Bari: https://clientiedili.com/siti-web-edili-bari
+- Siti web edili Palermo: https://clientiedili.com/siti-web-edili-palermo
+- Privacy Policy: https://clientiedili.com/privacy-policy
+- Cookie Policy: https://clientiedili.com/cookie-policy

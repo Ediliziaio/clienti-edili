@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# sitemap generato al build da scripts/sitemap.ts
+dist/sitemap.xml

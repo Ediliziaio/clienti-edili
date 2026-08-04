@@ -1,6 +1,41 @@
 <!doctype html>
 <html lang="it">
   <head>
+    <!-- Google Consent Mode v2 — DEVE stare prima di GTM, gtag e del pixel.
+         Default: tutto negato tranne le finalità tecniche. Il banner
+         (src/components/CookieBanner.tsx) chiama gtag('consent','update') quando
+         l'utente sceglie. Con il consenso negato Google non scrive cookie ma
+         continua a inviare ping senza identificatori, da cui modella le
+         conversioni: senza questo blocco i rifiuti diventerebbero dati persi. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        functionality_storage: 'granted',
+        security_storage: 'granted',
+        wait_for_update: 500
+      });
+      gtag('set', 'ads_data_redaction', true);
+      gtag('set', 'url_passthrough', true);
+      try {
+        var stored = localStorage.getItem('ce_consent');
+        if (stored) {
+          var c = JSON.parse(stored);
+          gtag('consent', 'update', {
+            ad_storage: c.marketing ? 'granted' : 'denied',
+            ad_user_data: c.marketing ? 'granted' : 'denied',
+            ad_personalization: c.marketing ? 'granted' : 'denied',
+            analytics_storage: c.statistics ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) { /* localStorage non disponibile: restano i default negati */ }
+    </script>
+    <!-- End Google Consent Mode v2 -->
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -8,6 +43,23 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-5BH98VJL');</script>
     <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) — GA4.
+         Caricato qui e NON dentro il container GTM: il container non contiene
+         un tag GA4, quindi senza questo snippet Analytics non riceve nulla.
+         I page_view li gestisce gtag.js da solo, anche sulle navigazioni della
+         SPA (enhanced measurement -> "modifiche pagina basate su eventi
+         cronologia del browser"). Non inviarli anche a mano da
+         src/lib/analytics.ts: verrebbero contati due volte.
+         Se un giorno GA4 viene configurato dentro GTM, rimuovere questo blocco. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZLE1Q7TKR"></script>
+    <script>
+      /* gtag() e dataLayer sono già definiti dal blocco Consent Mode qui sopra. */
+      gtag('js', new Date());
+      gtag('config', 'G-3ZLE1Q7TKR');
+    </script>
+    <!-- End Google tag (gtag.js) -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="ClientiEdili" />
@@ -67,14 +119,30 @@
             "SEO locale per imprese di costruzione",
             "Google My Business per edilizia",
             "Marketing digitale settore edile",
-            "Lead generation imprese edili"
+            "Lead generation imprese edili",
+            "Marketing per serramentisti",
+            "Marketing per installatori fotovoltaici",
+            "Marketing per impiantisti termoidraulici ed elettrici",
+            "Marketing per imprese di cappotto termico ed efficientamento energetico",
+            "Marketing per imprese di coperture e rifacimento tetti",
+            "Marketing per imprese di ristrutturazione",
+            "Marketing per l'edilizia industriale",
+            "Google Ads per il settore edile"
           ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.9",
-            "reviewCount": "127",
-            "bestRating": "5",
-            "worstRating": "1"
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Via Aurelio Saffi 29",
+            "postalCode": "20123",
+            "addressLocality": "Milano",
+            "addressRegion": "MI",
+            "addressCountry": "IT"
+          },
+          "telephone": "+39-350-178-2744",
+          "vatID": "IT13132010961",
+          "legalName": "Domus Group S.r.l.",
+          "parentOrganization": {
+            "@type": "Organization",
+            "name": "Domus Group S.r.l."
           }
         }
       ]
@@ -95,6 +163,14 @@
       t.src=v;s=b.getElementsByTagName(e)[0];
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
+      /* Consenso revocato di default: il pixel resta in attesa e non scrive
+         cookie né invia eventi finché il banner non concede il marketing.
+         Gli eventi chiamati nel frattempo vengono accodati da fbq e inviati
+         subito dopo il grant, quindi non si perde la prima visita. */
+      try {
+        var fbConsent = JSON.parse(localStorage.getItem('ce_consent') || 'null');
+        fbq('consent', fbConsent && fbConsent.marketing ? 'grant' : 'revoke');
+      } catch (e) { fbq('consent', 'revoke'); }
       fbq('init', '912028060826443');
       fbq('track', 'PageView');
       fbq('trackCustom', 'PV_Clientiedili');

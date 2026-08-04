@@ -118,7 +118,7 @@ export default function Contatti() {
                 <h2 className="font-display text-2xl font-bold mb-2">Richiedi Consulenza Gratuita</h2>
                 <p className="text-muted-foreground text-sm mb-8">Compila il form e ti ricontatteremo nelle prossime ore.</p>
 
-                <ContactFormEmbed />
+                <ContactFormEmbed eager />
 
                 <p className="text-xs text-muted-foreground text-center mt-4">Nessun impegno. Consulenza gratuita.</p>
               </div>
