@@ -72,10 +72,10 @@ const companies = [
 ];
 
 const services = [
-  { icon: Globe, title: "Sito Web Professionale", desc: "Design moderno e responsive, ottimizzato per convertire visitatori in clienti.", image: serviceConstruction },
-  { icon: Search, title: "SEO Locale", desc: "Posizionamento su Google per le ricerche nella tua zona. Più visibilità, più clienti.", image: serviceSeo },
-  { icon: Share2, title: "Google My Business", desc: "Profilo ottimizzato per apparire nelle ricerche locali e su Google Maps.", image: serviceGmb },
-  { icon: BarChart3, title: "Social Media", desc: "Pagine Facebook e Instagram configurate e collegate al tuo sito web.", image: serviceSocial },
+  { icon: Globe, slug: "sito-web-edile", title: "Sito Web Professionale", desc: "Design moderno e responsive, ottimizzato per convertire visitatori in clienti.", image: serviceConstruction },
+  { icon: Search, slug: "seo-locale", title: "SEO Locale", desc: "Posizionamento su Google per le ricerche nella tua zona. Più visibilità, più clienti.", image: serviceSeo },
+  { icon: Share2, slug: "google-my-business", title: "Google My Business", desc: "Profilo ottimizzato per apparire nelle ricerche locali e su Google Maps.", image: serviceGmb },
+  { icon: BarChart3, slug: "social-media", title: "Social Media", desc: "Pagine Facebook e Instagram configurate e collegate al tuo sito web.", image: serviceSocial },
 ];
 
 const projects = [
@@ -540,7 +540,7 @@ function ServicesSection() {
         <div className="grid md:grid-cols-2 gap-6">
           {services.map((s, i) => (
             <ClipReveal key={i} delay={i * 0.12}>
-              <div className="img-card group cursor-pointer h-[400px]">
+              <Link to={`/servizi/${s.slug}`} className="img-card group cursor-pointer h-[400px] block">
                 <img src={s.image} alt={s.title} loading="lazy" />
                 <div className="img-overlay" />
                 <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -558,7 +558,7 @@ function ServicesSection() {
                 <div className="absolute top-6 right-6 w-12 h-12 rounded-full border border-foreground/20 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:rotate-0 rotate-45 transition-all duration-500">
                   <ArrowUpRight size={20} className="text-foreground" />
                 </div>
-              </div>
+              </Link>
             </ClipReveal>
           ))}
         </div>

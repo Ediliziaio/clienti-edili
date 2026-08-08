@@ -46,9 +46,9 @@ export const services: ServiceData[] = [
   {
     slug: "sito-web-edile",
     title: "Sito Web Professionale",
-    h1: "Siti Web Professionali per Imprese Edili",
-    metaTitle: "Siti Web per Imprese Edili | Consegna 48 Ore | ClientiEdili",
-    metaDescription: "ClientiEdili crea siti web professionali per imprese edili. Consegna in 48 ore, zero anticipo, design responsive. 127+ imprese servite.",
+    h1: "Realizzazione Sito Web per Imprese Edili: Cosa Include",
+    metaTitle: "Realizzazione Sito Web Impresa Edile: Cosa Include",
+    metaDescription: "Come ClientiEdili realizza il sito web di un'impresa edile: cosa include il pacchetto, come funziona e quanto costa. Consegna in 48 ore, zero anticipo.",
     icon: "globe",
     image: "construction",
     intro: "ClientiEdili crea siti web professionali su misura per imprese edili italiane. Ogni sito è progettato per trasmettere professionalità, mostrare i tuoi lavori migliori e convertire i visitatori in richieste di preventivo. Consegna garantita in 48 ore lavorative, zero anticipo richiesto, garanzia soddisfatti o rimborsati. Oltre 127 imprese edili in tutta Italia si affidano già a ClientiEdili per la loro presenza online.",
