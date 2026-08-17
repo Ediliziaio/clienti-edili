@@ -79,8 +79,10 @@ export default function CittaGeo() {
   return (
     <Layout>
       <SeoHead
-        title={`Imprese Edili ${city.name}: ${city.focus} | ClientiEdili`}
-        description={`${city.h1Angle}. Siti web e SEO locale per imprese edili a ${city.name}: ${city.focus}. Consegna in 48 ore, zero anticipo.`}
+        /* Senza suffisso di brand: con " | ClientiEdili" i title città superavano
+           tutti i 60 caratteri e Google li troncava. */
+        title={`Imprese Edili ${city.name}: ${city.focus}`}
+        description={`${city.h1Angle}. Siti web e SEO locale per imprese edili a ${city.name}. Consegna in 48 ore, zero anticipo.`}
         canonical={`https://clientiedili.com/siti-web-edili-${city.slug}`}
         jsonLd={jsonLd}
       />

@@ -239,7 +239,7 @@ export const settori: SettoreData[] = [
     slug: "marketing-impiantisti",
     label: "Impiantisti",
     h1: "Marketing per Impiantisti: farsi trovare quando serve",
-    metaTitle: "Marketing per Impiantisti Termoidraulici ed Elettrici | ClientiEdili",
+    metaTitle: "Marketing per Impiantisti Termoidraulici ed Elettrici",
     metaDescription:
       "Siti web e SEO locale per impiantisti termoidraulici ed elettrici: farsi trovare da chi cerca un intervento nella tua zona. Consegna in 48 ore.",
     mainKeyword: "marketing per impiantisti",

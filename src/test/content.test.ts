@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { blogPosts, blogPostsSorted, parseItalianDate, toISODate } from "@/data/blogPosts";
+import { blogContent } from "@/data/blogContent";
 import { cities, citySlugs } from "@/data/cities";
 import { SERVICE_SLUGS } from "@/data/services";
 
@@ -52,9 +53,26 @@ describe("articoli del blog", () => {
 
   it("hanno tutti i campi editoriali compilati", () => {
     for (const post of blogPosts) {
-      for (const field of ["title", "category", "readTime", "excerpt", "content"] as const) {
+      for (const field of ["title", "category", "readTime", "excerpt"] as const) {
         expect(post[field]?.trim(), `${field} vuoto in ${post.slug}`).toBeTruthy();
       }
+    }
+  });
+
+  // Il corpo degli articoli vive in un modulo separato (vedi blogContent.ts):
+  // un articolo senza corpo renderizzerebbe una pagina vuota, quindi va sorvegliato.
+  it("hanno tutti un corpo in blogContent", () => {
+    for (const post of blogPosts) {
+      const corpo = blogContent[post.slug];
+      expect(corpo?.trim(), `corpo mancante per ${post.slug}`).toBeTruthy();
+      expect(corpo.split(/\s+/).length, `corpo troppo corto: ${post.slug}`).toBeGreaterThan(500);
+    }
+  });
+
+  it("non ha corpi orfani senza articolo", () => {
+    const slugs = new Set(blogPosts.map((p) => p.slug));
+    for (const slug of Object.keys(blogContent)) {
+      expect(slugs.has(slug), `blogContent ha "${slug}" ma non esiste l'articolo`).toBe(true);
     }
   });
 });

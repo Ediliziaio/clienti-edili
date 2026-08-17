@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, User, List, ChevronDown } from 
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
 import { blogPosts, relatedPosts, toISODate } from "@/data/blogPosts";
+import { blogContent } from "@/data/blogContent";
 import HubDiRiferimento from "@/components/HubDiRiferimento";
 import { coverSrc, onCoverError } from "@/lib/blogCover";
 import ContactFormEmbed from "@/components/ContactFormEmbed";
@@ -255,7 +256,8 @@ export default function BlogPost() {
   const postIndex = blogPosts.findIndex((p) => p.slug === slug);
   const post = blogPosts[postIndex];
 
-  const tocItems = post ? extractToc(post.content) : [];
+  const content = post ? blogContent[post.slug] ?? "" : "";
+  const tocItems = extractToc(content);
   const activeId = useActiveHeading(tocItems.map((t) => t.id));
 
   useEffect(() => {
@@ -359,7 +361,7 @@ export default function BlogPost() {
 
             <FadeIn delay={0.2}>
               <div className="prose-custom">
-                {renderMarkdown(post.content)}
+                {renderMarkdown(content)}
               </div>
             </FadeIn>
 

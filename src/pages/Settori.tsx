@@ -55,8 +55,8 @@ export default function Settori() {
   return (
     <Layout>
       <SeoHead
-        title="Settori e Zone | Marketing per la Filiera Edile | ClientiEdili"
-        description="Marketing per ogni mestiere delle costruzioni: imprese edili, serramentisti, fotovoltaico, impiantisti, cappotto termico, coperture. E per ogni città in cui operi."
+        title="Marketing per Settore e per Città | ClientiEdili"
+        description="Marketing per ogni mestiere delle costruzioni — edili, serramentisti, fotovoltaico, impiantisti, cappotto, coperture — e per ogni città in cui lavori."
         canonical="https://clientiedili.com/settori"
         jsonLd={jsonLd}
       />

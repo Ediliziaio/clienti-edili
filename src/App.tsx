@@ -11,7 +11,6 @@ import Index from "./pages/Index.tsx";
 import Servizi from "./pages/Servizi.tsx";
 import Progetti from "./pages/Progetti.tsx";
 import Blog from "./pages/Blog.tsx";
-import BlogPost from "./pages/BlogPost.tsx";
 import ChiSiamo from "./pages/ChiSiamo.tsx";
 import Contatti from "./pages/Contatti.tsx";
 import CittaGeo from "./pages/CittaGeo.tsx";
@@ -55,7 +54,7 @@ export const routes: RouteRecord[] = [
       { path: "blog", element: <Blog /> },
       {
         path: "blog/:slug",
-        element: <BlogPost />,
+        lazy: async () => ({ Component: (await import("./pages/BlogPost.tsx")).default }),
         getStaticPaths: () => blogPosts.map((p) => `/blog/${p.slug}`),
       },
       { path: "chi-siamo", element: <ChiSiamo /> },
