@@ -79,8 +79,8 @@ export default function CittaGeo() {
   return (
     <Layout>
       <SeoHead
-        title={`Siti Web per Imprese Edili a ${city.name} | ClientiEdili`}
-        description={`ClientiEdili crea siti web per imprese edili a ${city.name}. Consegna in 48 ore, zero anticipo. Primi su Google per "${city.localKeyword}".`}
+        title={`Imprese Edili ${city.name}: ${city.focus} | ClientiEdili`}
+        description={`${city.h1Angle}. Siti web e SEO locale per imprese edili a ${city.name}: ${city.focus}. Consegna in 48 ore, zero anticipo.`}
         canonical={`https://clientiedili.com/siti-web-edili-${city.slug}`}
         jsonLd={jsonLd}
       />
@@ -102,10 +102,25 @@ export default function CittaGeo() {
             </div>
           </FadeIn>
           <FadeIn delay={0.1}>
-            <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] font-bold mb-8">
-              Siti Web per Imprese Edili a{" "}
-              <span className="text-gradient-lime">{city.name}</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] font-bold mb-4">
+              {/* h1Angle è già una frase compiuta: evidenziamo il nome della città
+                  dove compare, senza spostarlo (alcuni angle usano l'aggettivo,
+                  es. "cantieri genovesi", e lì non c'è nulla da evidenziare). */}
+              {(() => {
+                const i = city.h1Angle.indexOf(city.name);
+                if (i === -1) return city.h1Angle;
+                return (
+                  <>
+                    {city.h1Angle.slice(0, i)}
+                    <span className="text-gradient-lime">{city.name}</span>
+                    {city.h1Angle.slice(i + city.name.length)}
+                  </>
+                );
+              })()}
             </h1>
+            <p className="font-ui text-muted-foreground text-lg mb-8">
+              Siti web e SEO locale per imprese edili a {city.name}: {city.focus}.
+            </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">

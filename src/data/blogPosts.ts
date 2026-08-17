@@ -14,18 +14,29 @@ export interface BlogPost {
    * nei risultati di Google.
    */
   faqs?: { q: string; a: string }[];
+  /**
+   * Slug di settori (src/data/settori.ts) e servizi (src/data/services.ts) a cui
+   * l'articolo appartiene: costruiscono il topic cluster, cioè la hub linka gli
+   * articoli e gli articoli linkano la hub.
+   *
+   * Senza questi collegamenti gli articoli restano quasi orfani, ed è il motivo
+   * per cui diversi erano "scansionati ma non indicizzati" su Search Console:
+   * ricevevano uno o due link interni contro i 26 delle pagine città.
+   */
+  tags?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
   {
     slug: "sito-web-professionale-impresa-edile",
-    title: "Come un Sito Web Professionale Può Raddoppiare i Clienti della Tua Impresa Edile",
-    metaTitle: "Sito Web Impresa Edile: Come Raddoppiare i Clienti | ClientiEdili",
-    metaDescription: "Scopri come un sito web professionale può raddoppiare i clienti della tua impresa edile. Guida completa con strategie, esempi e consigli pratici.",
+    title: "Cosa Guarda un Cliente sul Sito di un'Impresa Edile",
+    metaTitle: "Cosa Guarda il Cliente sul Sito di un'Impresa Edile",
+    metaDescription: "Cosa guarda davvero un cliente quando apre il sito di un'impresa edile, in che ordine, e cosa lo fa chiudere la pagina senza chiamare.",
     date: "15 Mar 2026",
     category: "Marketing Digitale",
     readTime: "12 min",
     excerpt: "Scopri come un sito web professionale può trasformare la tua impresa edile, attirando nuovi clienti ogni giorno e aumentando il fatturato.",
+    tags: ["sito-web-edile", "marketing-edilizia"],
     content: `
 ## Perché Ogni Impresa Edile Ha Bisogno di un Sito Web nel 2026
 
@@ -122,13 +133,14 @@ Non aspettare che la concorrenza ti superi. Ogni giorno senza un sito web profes
   },
   {
     slug: "seo-locale-imprese-edili-guida-completa",
-    title: "SEO Locale per Imprese Edili: La Guida Completa per Dominare Google nella Tua Zona",
-    metaTitle: "SEO Locale Imprese Edili: Guida Completa 2026 | ClientiEdili",
-    metaDescription: "Guida completa alla SEO locale per imprese edili. Scopri come posizionarti primo su Google nella tua zona e ottenere più clienti.",
+    title: "Come Funziona la SEO Locale: Guida per Chi Lavora in Cantiere",
+    metaTitle: "Come Funziona la SEO Locale nell'Edilizia",
+    metaDescription: "Come funziona la SEO locale spiegata a chi lavora in cantiere: cosa guarda Google per le ricerche di zona e in quanto tempo cambia qualcosa.",
     date: "10 Mar 2026",
     category: "SEO",
     readTime: "15 min",
     excerpt: "La guida definitiva per posizionare la tua impresa edile in cima ai risultati di Google nella tua zona. Strategie pratiche e risultati concreti.",
+    tags: ["seo-locale", "marketing-edilizia"],
     content: `
 ## Cos'è la SEO Locale e Perché è Fondamentale per le Imprese Edili
 
@@ -250,13 +262,14 @@ Se vuoi che la tua impresa edile domini Google nella tua zona, contattaci per un
   },
   {
     slug: "google-my-business-imprese-costruzione",
-    title: "Google My Business per Imprese di Costruzione: Come Ottenere Più Chiamate e Preventivi",
-    metaTitle: "Google My Business Imprese Costruzione: Guida Completa | ClientiEdili",
-    metaDescription: "Come ottimizzare Google My Business per la tua impresa di costruzione. Più chiamate, più preventivi, più clienti dalla tua zona.",
+    title: "Scheda Google: gli Errori che Tengono Fuori dal Local Pack",
+    metaTitle: "Scheda Google: gli Errori più Comuni nell'Edilizia",
+    metaDescription: "Gli errori più comuni nella scheda Google di un'impresa di costruzioni e come correggerli: categorie, servizi, foto, orari e coerenza dei dati.",
     date: "5 Mar 2026",
     category: "Google",
     readTime: "13 min",
     excerpt: "Impara a ottimizzare il tuo profilo Google My Business per ricevere più chiamate e richieste di preventivo dalla tua zona.",
+    tags: ["google-my-business", "gestione-social-gmb"],
     content: `
 ## Il Potere Nascosto di Google My Business per le Imprese Edili
 
@@ -353,13 +366,14 @@ Google My Business è lo strumento di marketing più potente, efficace e sottova
   },
   {
     slug: "errori-fatali-imprese-edili-online",
-    title: "5 Errori Fatali che le Imprese Edili Fanno Online (e Come Evitarli)",
-    metaTitle: "5 Errori Marketing Imprese Edili: Come Evitarli | ClientiEdili",
-    metaDescription: "Scopri i 5 errori fatali che le imprese edili fanno online e come evitarli. Smetti di perdere clienti e inizia a crescere con il marketing digitale.",
+    title: "5 Errori che Fanno Perdere Clienti alle Imprese Edili Online",
+    metaTitle: "5 Errori che Fanno Perdere Clienti Online",
+    metaDescription: "I cinque errori che fanno perdere clienti alle imprese edili online, dal profilo abbandonato al preventivo che non arriva mai. Come correggerli.",
     date: "28 Feb 2026",
     category: "Strategia",
     readTime: "11 min",
     excerpt: "I 5 errori più comuni che le imprese edili fanno con la loro presenza online. Scopri come evitarli e iniziare a generare clienti.",
+    tags: ["marketing-edilizia"],
     content: `
 ## Gli Errori Che Ti Costano Migliaia di Euro Ogni Mese
 
@@ -436,13 +450,14 @@ La buona notizia è che questi errori sono facilmente correggibili. Non servono 
   },
   {
     slug: "social-media-marketing-imprese-edili",
-    title: "Social Media Marketing per Imprese Edili: Guida Pratica per Facebook e Instagram",
-    metaTitle: "Social Media Imprese Edili: Guida Facebook e Instagram | ClientiEdili",
-    metaDescription: "Guida pratica al social media marketing per imprese edili. Come usare Facebook e Instagram per trovare nuovi clienti nell'edilizia.",
+    title: "Cosa Pubblicare sui Social con un'Impresa Edile",
+    metaTitle: "Cosa Pubblicare sui Social: Impresa Edile",
+    metaDescription: "Cosa pubblicare su Facebook e Instagram quando hai un'impresa edile: idee di contenuto dai cantieri, frequenza e cosa evitare. Esempi pratici.",
     date: "20 Feb 2026",
     category: "Social Media",
     readTime: "14 min",
     excerpt: "Guida pratica all'uso di Facebook e Instagram per imprese edili. Strategie, contenuti e consigli per trovare nuovi clienti sui social.",
+    tags: ["social-media", "gestione-social-gmb"],
     content: `
 ## Perché i Social Media Sono Importanti per le Imprese Edili
 
@@ -568,6 +583,7 @@ Inizia oggi: crea o ottimizza le tue pagine Facebook e Instagram, pubblica il tu
   category: "Lead Generation",
   readTime: "12 min",
   excerpt: "Basta aspettare che squilli il telefono. Ecco il sistema pratico per far arrivare richieste di preventivo alla tua impresa edile ogni settimana, anche in bassa stagione.",
+  tags: ["lead-generation-edilizia", "marketing-edilizia"],
   content: `Come trovare clienti per un'impresa edile è la domanda che ogni titolare si fa quando il passaparola rallenta e il telefono resta muto per giorni. La verità è che il passaparola non basta più: funziona quando c'è lavoro, sparisce quando ne hai più bisogno. Se vuoi una pipeline di richieste costante, devi costruire un sistema che porta clienti anche mentre sei in cantiere con la cazzuola in mano.
 
 In questa guida trovi il metodo concreto che usiamo con oltre 127 imprese edili dal 2019. Niente teoria da salotto: solo leve pratiche che generano preventivi veri, misurabili, con nome e numero di telefono di persone che vogliono ristrutturare o costruire adesso.
@@ -679,6 +695,7 @@ Vai su clientiedili.com/contatti e richiedi la tua analisi gratuita: il primo pa
   category: "Sito Web",
   readTime: "11 min",
   excerpt: "Prezzi veri, senza sorprese: quanto costa davvero un sito web per un'impresa edile, cosa deve includere e come capire se stai pagando il giusto o buttando soldi.",
+  tags: ["sito-web-edile"],
   content: `Quanto costa un sito web per impresa edile è una delle prime domande che ti fai quando decidi di portare la tua attività online. La risposta onesta è: dipende da cosa ti serve, ma i prezzi reali per un sito professionale che porta clienti vanno dai 1.000 ai 3.000 euro. Sopra o sotto questa fascia, di solito c'è qualcosa che non torna, e in questa guida ti spiego esattamente cosa.
 
 Molte imprese edili si bloccano proprio qui: hanno paura di spendere male, di pagare un sito che poi non serve a niente. È un timore legittimo, perché il mercato è pieno di offerte confuse. Vediamo insieme cosa determina il prezzo, cosa deve includere un sito che funziona e come evitare le fregature più comuni.
@@ -790,6 +807,7 @@ Dal 2019 abbiamo costruito siti per oltre 127 imprese edili. Vai su clientiedili
   category: "Marketing Digitale",
   readTime: "12 min",
   excerpt: "Una landing page fatta bene trasforma chi clicca in una richiesta di preventivo. Ecco la struttura esatta che fa dire sì ai clienti di un'impresa edile.",
+  tags: ["lead-generation-edilizia", "google-ads-edilizia"],
   content: `Una landing page per impresa edile è la pagina che decide se un clic diventa una richiesta di preventivo o se ne va per sempre. È diversa dal sito completo: ha un solo obiettivo, far compilare il modulo di contatto. Se stai investendo in pubblicità o SEO e mandi le persone su una pagina confusa, stai buttando soldi. In questa guida trovi la struttura esatta che converte i visitatori in clienti veri.
 
 Il problema di molte imprese edili è che spendono in campagne per portare traffico, ma poi lo mandano sulla homepage piena di menu e distrazioni. Il visitatore si perde e se ne va. Una landing page ben costruita elimina le distrazioni e guida la persona a un'unica azione: chiederti un preventivo. Vediamo come.
@@ -901,6 +919,7 @@ Vai su clientiedili.com/contatti e richiedi la tua analisi gratuita: trasformare
   category: "Marketing Digitale",
   readTime: "11 min",
   excerpt: "Google Ads per imprese edili spiegato senza fuffa: come trovare clienti mentre cercano un'impresa, quanto spendere davvero e quali errori bruciano il budget.",
+  tags: ["google-ads-edilizia"],
   content: `Google Ads per imprese edili è lo strumento più veloce che hai per intercettare una persona nell'esatto momento in cui digita "ristrutturazione appartamento" o "impresa edile vicino a me" e sta cercando qualcuno a cui affidare il lavoro. Mentre la SEO costruisce visibilità nel tempo, Google Ads ti mette in cima ai risultati oggi, con richieste di preventivo che possono arrivare già nella prima settimana. Il problema non è lo strumento: è che il 90% delle imprese edili lo usa male e brucia budget su parole sbagliate.
 
 In questa guida ti spiego, da imprenditore a imprenditore, come funziona davvero Google Ads per chi lavora nel cantiere, quanto costa, cosa aspettarti e come evitare di regalare soldi a Google senza portare a casa una singola richiesta.
@@ -996,13 +1015,14 @@ Vai su clientiedili.com/contatti e raccontaci la tua impresa. Ti prepariamo una 
 },
 {
   slug: "parole-chiave-seo-impresa-edile",
-  title: "Parole Chiave SEO per Impresa Edile: Come Trovare i Termini che Portano Clienti",
-  metaTitle: "Parole Chiave SEO per Impresa Edile: Guida",
-  metaDescription: "Parole chiave SEO per impresa edile: come trovarle, quali scegliere e come usarle per farti trovare su Google dai clienti della tua zona. Guida pratica.",
+  title: "Come Scegliere le Parole Chiave per un'Impresa Edile",
+  metaTitle: "Come Scegliere le Parole Chiave: Impresa Edile",
+  metaDescription: "Come si scelgono le parole chiave per un'impresa edile: volume, intenzione e concorrenza, e perché le ricerche di comune battono quelle generiche.",
   date: "28 Mag 2026",
   category: "SEO & Google",
   readTime: "10 min",
   excerpt: "Parole chiave SEO per impresa edile spiegate senza fuffa: quali termini cercano davvero i tuoi clienti, come sceglierli e dove metterli per finire in cima a Google.",
+  tags: ["seo-locale"],
   content: `Le parole chiave SEO per impresa edile sono le esatte frasi che i tuoi potenziali clienti digitano su Google quando cercano chi può ristrutturare casa, rifare un tetto o costruire una nuova unità. Scegliere le parole giuste è la differenza tra un sito che riceve richieste di preventivo ogni settimana e uno che resta invisibile in fondo ai risultati. Non serve essere esperti di marketing: serve capire come ragiona il cliente quando ha un problema edilizio.
 
 In questa guida ti spiego, da imprenditore a imprenditore, come trovare le parole chiave che portano davvero clienti, quali evitare perché fanno perdere tempo e dove inserirle nel tuo sito per farti trovare su Google dalla gente della tua zona.
@@ -1113,6 +1133,7 @@ Vai su clientiedili.com/contatti e raccontaci in che zona lavori e cosa costruis
   category: "SEO & Google",
   readTime: "10 min",
   excerpt: "Come ottenere recensioni Google per impresa edile: metodi concreti per chiedere feedback ai clienti, salire nelle stelle e battere i concorrenti in zona.",
+  tags: ["google-my-business", "gestione-social-gmb"],
   content: `Come ottenere recensioni Google per impresa edile è una delle domande più importanti che un imprenditore del settore possa farsi, perché oggi il cliente si fida più delle stelle sotto il tuo nome che di qualsiasi cosa tu dica di te stesso. Prima di chiamarti, la persona apre Google, legge i commenti degli altri clienti e in pochi secondi decide se sei affidabile o no. Le recensioni non sono un dettaglio: sono la tua reputazione digitale che vende o affonda al posto tuo.
 
 In questa guida ti spiego, da imprenditore a imprenditore, come raccogliere recensioni Google in modo sistematico, come chiederle senza risultare pesante, come gestire quelle negative e come trasformare i clienti soddisfatti nel tuo miglior reparto vendite.
@@ -1223,6 +1244,7 @@ Vai su clientiedili.com/contatti e raccontaci la tua impresa. Ti aiutiamo a tras
   category: "Sito & Contenuti",
   readTime: "9 min",
   excerpt: "Scrivere i testi del sito di un'impresa edile non è raccontare la tua storia: è togliere i dubbi al cliente e portarlo a chiamarti. Ecco come si fa.",
+  tags: ["sito-web-edile"],
   content: `Scrivere i testi del sito di un'impresa edile è la differenza tra un sito che raccoglie polvere e uno che ti riempie l'agenda di sopralluoghi. La maggior parte dei siti delle imprese edili parla di sé, della propria storia, della propria passione. Al cliente non interessa. Al cliente interessa risolvere il suo problema: rifare il bagno senza sorprese, ristrutturare casa nei tempi, avere un preventivo chiaro. Se i testi del tuo sito non rispondono a queste domande, il visitatore chiude la pagina e chiama il tuo concorrente.
 
 In questa guida vediamo come scrivere i testi del sito di un'impresa edile con la logica del cantiere: concreta, diretta, senza fuffa. Niente frasi da brochure anni Novanta, niente elenchi di aggettivi. Solo parole che spostano il cliente dal dubbio alla chiamata.
@@ -1319,6 +1341,7 @@ Consegniamo il sito in 48 ore, senza chiederti un anticipo, con garanzia soddisf
   category: "Sito & Contenuti",
   readTime: "8 min",
   excerpt: "Il tuo cliente ti cerca da cellulare, in pausa pranzo o la sera sul divano. Se il sito è illeggibile da smartphone, hai già perso il preventivo.",
+  tags: ["sito-web-edile"],
   content: `Un sito web mobile per impresa edile non è un lusso, è la porta d'ingresso principale dei tuoi clienti. Oggi la maggior parte delle persone cerca "impresa edile" o "ristrutturazione casa" dallo smartphone, non dal computer. Se il tuo sito da cellulare è lento, con i testi piccoli e i pulsanti che non si toccano, il cliente chiude e passa a un concorrente il cui sito si apre bene. Non è una questione estetica: è fatturato che se ne va.
 
 In questa guida vediamo perché un sito web mobile per impresa edile è oggi la scelta obbligata, cosa succede se lo trascuri, e cosa deve avere per trasformare chi ti trova da telefono in una richiesta di preventivo concreta.
@@ -1405,6 +1428,7 @@ Il nostro pacchetto sito a 1.000 euro invece di 1.400 include design responsive,
   category: "Social & Contenuti",
   readTime: "9 min",
   excerpt: "Ogni cantiere che chiudi è materiale di marketing. Le foto prima e dopo sono la prova più potente che hai. Peccato che quasi nessuno le usi bene.",
+  tags: ["social-media", "gestione-social-gmb"],
   content: `Le foto dei lavori in cantiere sono lo strumento di marketing edile più potente e più sprecato che hai a disposizione. Ogni impresa edile, ogni giorno, produce senza saperlo un tesoro di contenuti: muri che nascono, bagni che rinascono, tetti rifatti, facciate trasformate. Eppure la maggior parte di questo materiale resta sepolta nel telefono del titolare o del capocantiere, senza mai diventare quella prova concreta che convince un nuovo cliente a scegliere proprio te.
 
 In questa guida vediamo perché le foto dei lavori in cantiere sono la leva di marketing edile numero uno, come scattarle bene anche solo con lo smartphone, e come usarle su sito e social per trasformare il lavoro che già fai in nuovi preventivi.
@@ -1491,6 +1515,7 @@ Il nostro pacchetto sito a 1.000 euro invece di 1.400 include design, copywritin
   category: "Marketing Digitale",
   readTime: "9 min",
   excerpt: "WhatsApp Business per impresa edile: rispondi in minuti, invia preventivi con foto, automatizza le risposte e trasforma i contatti in cantieri veri.",
+  tags: ["lead-generation-edilizia"],
   content: `WhatsApp Business per impresa edile non e un giocattolo da smanettoni: e lo strumento piu potente che hai gia in tasca per rispondere veloce, mandare preventivi e chiudere lavori mentre il tuo concorrente fa ancora squillare il telefono a vuoto. Se hai un'impresa di costruzioni, ristrutturazioni, una carpenteria o fai serramenti, il cliente non ti scrive piu per posta: ti manda un messaggio su WhatsApp con la foto del muro sbriciolato e vuole una risposta oggi, non fra tre giorni.
 
 Il problema e che quasi tutti gli edili usano WhatsApp normale, quello personale, e finiscono per rispondere male, tardi e senza un metodo. In questa guida ti spieghiamo come installare e usare WhatsApp Business in modo che diventi una macchina da preventivi, non l'ennesima chat che ti fa perdere tempo. Parliamo la lingua del cantiere: dolore, soluzione, risultato.
@@ -1584,6 +1609,7 @@ Vuoi approfondire? Leggi anche clientiedili.com/blog/google-my-business-imprese-
   category: "Lead Generation",
   readTime: "10 min",
   excerpt: "Email marketing per imprese edili: come raccogliere contatti, riattivare i vecchi clienti e far ripartire i preventivi con messaggi che vendono davvero.",
+  tags: ["lead-generation-edilizia"],
   content: `Email marketing per imprese edili e l'arma silenziosa che quasi nessun costruttore usa e che invece riempie il cantiere senza bruciare soldi in pubblicita ogni mese. Se hai un'impresa di ristrutturazioni, una carpenteria o installi serramenti, hai gia un tesoro che non stai sfruttando: i contatti dei clienti passati, dei preventivi non chiusi e delle persone che ti hanno chiesto informazioni. Quel database vale oro, ma se non lo coltivi con le email giuste, resta sepolto in un cassetto.
 
 Il dolore e sempre lo stesso: quando il lavoro cala, corri a fare pubblicita e paghi per contatti freddi che non ti conoscono. La soluzione e ribaltare la logica: parla a chi gia ti conosce, ricordagli che esisti e fatti richiamare quando ha bisogno. In questa guida ti spieghiamo, da imprenditore a imprenditore, come costruire un sistema di email marketing che porta preventivi anche nei mesi morti.
@@ -1676,6 +1702,7 @@ Per approfondire leggi anche clientiedili.com/blog/whatsapp-business-impresa-edi
   category: "Social & Contenuti",
   readTime: "10 min",
   excerpt: "Video marketing per impresa edile: quali video girare col telefono, dove pubblicarli e come trasformare i tuoi cantieri in nuovi clienti e preventivi.",
+  tags: ["social-media", "gestione-social-gmb"],
   content: `Video marketing per impresa edile e il modo piu veloce per far vedere quello che sai fare invece di raccontarlo a parole, e nel tuo mestiere vedere e credere. Un cliente che deve affidarti la ristrutturazione di casa o il rifacimento del tetto non compra promesse: compra prove. E niente prova il tuo valore come un video del cantiere prima, durante e dopo, girato col telefono che hai gia in tasca.
 
 Il dolore di tante imprese edili e questo: fanno lavori eccellenti ma nessuno li vede, mentre online vince chi si racconta meglio, anche se lavora peggio. La soluzione non e diventare uno youtuber, ma girare video semplici e onesti che mostrano cantieri veri, operai al lavoro e clienti soddisfatti. In questa guida, da imprenditore a imprenditore, ti spieghiamo quali video fare, come girarli e dove pubblicarli per trasformare le riprese in preventivi.
@@ -1767,6 +1794,7 @@ Approfondisci con clientiedili.com/blog/whatsapp-business-impresa-edile e client
   category: "Marketing Digitale",
   readTime: "9 min",
   excerpt: "La reputazione online decide se un cliente ti chiama o chiama il concorrente. Ecco come costruirla, alimentarla e proteggerla senza perdere tempo in cantiere.",
+  tags: ["google-my-business", "gestione-social-gmb"],
   content: `La reputazione online per impresa edile oggi vale più di qualsiasi cartellone in cantiere. Prima di firmare un preventivo da 40.000 euro per una ristrutturazione, il 9 cliente su 10 apre Google, digita il tuo nome e legge cosa dicono gli altri. Se trova il vuoto, o peggio due recensioni negative senza risposta, passa al concorrente. Non perché tu lavori male, ma perché non ha prove che tu lavori bene.
 
 Questo articolo ti spiega, da imprenditore a imprenditore, come si costruisce una reputazione online solida per una carpenteria, un'impresa di costruzioni, uno studio di ristrutturazioni o un serramentista. Niente teoria da guru del marketing: solo azioni concrete che puoi mettere in pratica mentre gestisci il cantiere.
@@ -1874,6 +1902,7 @@ Consegniamo il sito in 48 ore, senza chiederti alcun anticipo, con garanzia sodd
   category: "Marketing Digitale",
   readTime: "10 min",
   excerpt: "Sito web o social per la tua impresa edile? La risposta non è quella che ti aspetti. Ecco dove conviene mettere i soldi per trovare clienti veri.",
+  tags: ["marketing-edilizia", "social-media"],
   content: `Sito web o social per impresa edile: è la domanda che ci fa quasi ogni titolare al primo incontro. Ho aperto la pagina Facebook, pubblico le foto dei cantieri, ma i clienti non arrivano. Mi serve davvero un sito? Oppure: ho il sito ma è fermo lì da tre anni, meglio buttarsi solo sui social? La verità, da imprenditore a imprenditore, è che stai facendo la domanda sbagliata.
 
 In questo articolo ti spiego con parole del cantiere la differenza vera tra sito web e social per un'impresa edile, quando conviene l'uno, quando l'altro, e perché i due strumenti fanno lavori diversi. Alla fine saprai esattamente dove mettere i tuoi soldi e il tuo tempo per far squillare il telefono.
@@ -1966,13 +1995,14 @@ Il pacchetto sito completo costa 1.000 euro invece di 1.400, tutto incluso, con 
 },
 {
   slug: "preventivi-online-impresa-edile",
-  title: "Fare Preventivi Online per Impresa Edile: Chiudi Più Lavori in Meno Tempo",
-  metaTitle: "Preventivi Online Impresa Edile: Guida Pratica",
-  metaDescription: "Come fare preventivi online per la tua impresa edile: più veloci, più professionali, più chiusi. Metodo pratico per non perdere clienti per lentezza.",
+  title: "Preventivi Online: Quante Richieste Perdi Rispondendo Tardi",
+  metaTitle: "Preventivi Online: Quanto Conta Rispondere Subito",
+  metaDescription: "Perché nell'edilizia chi risponde per primo prende il lavoro, come organizzare le risposte alle richieste di preventivo e cosa scrivere.",
   date: "02 Feb 2026",
   category: "Lead Generation",
   readTime: "10 min",
   excerpt: "Fare preventivi online per la tua impresa edile significa rispondere prima dei concorrenti e chiudere più lavori. Ecco il metodo per non perdere più clienti.",
+  tags: ["lead-generation-edilizia"],
   content: `Fare preventivi online per impresa edile non è una moda da smanettoni: è la differenza tra chiudere il lavoro e vederlo scappare dal concorrente più veloce. Quanti clienti hai perso perché il preventivo lo hai mandato dieci giorni dopo, scritto a mano su un foglio o dettato al volo per telefono? Nel frattempo un altro ha risposto in 24 ore con un documento pulito e professionale, e il cliente ha firmato con lui.
 
 In questo articolo, da imprenditore a imprenditore, ti spiego cosa significa fare preventivi online per un'impresa edile, perché la velocità e la forma contano quanto il prezzo, e come impostare un metodo che ti fa chiudere più lavori senza rubarti ore la sera. Linguaggio del cantiere, zero fuffa.
@@ -2075,6 +2105,7 @@ Il pacchetto sito completo costa 1.000 euro invece di 1.400, tutto incluso, con 
   category: "Digitalizzazione",
   readTime: "13 min",
   excerpt: "Fatturazione, cantieri, DDT e preventivi in un unico posto: la guida per scegliere il gestionale cloud giusto per la tua impresa edile.",
+  tags: ["marketing-edilizia"],
   content: `Un gestionale per imprese edili è il software che riunisce in un unico posto fatturazione elettronica, preventivi, gestione dei cantieri, DDT, magazzino e prima nota, così l'imprenditore smette di rincorrere fogli Excel, blocchi di carta e commercialista. Nel 2026 scegliere il gestionale giusto non è un vezzo tecnologico: è ciò che separa le imprese edili che marginano e crescono da quelle che lavorano tanto e non sanno mai quanto guadagnano davvero.
 
 In questa guida vediamo cosa deve fare un buon gestionale per un'impresa edile, come riconoscere il software cloud giusto e perché sempre più imprese di costruzione italiane scelgono **EdiliziaInCloud** come loro centrale operativa.
@@ -2188,6 +2219,7 @@ Per i clienti, ci siamo noi. Vai su clientiedili.com/contatti e richiedi la tua 
   category: "Digitalizzazione",
   readTime: "12 min",
   excerpt: "I passi concreti per digitalizzare un'impresa edile: fatturazione elettronica, preventivi, DDT e cantieri in cloud, senza complicazioni.",
+  tags: ["marketing-edilizia"],
   content: `Digitalizzare un'impresa edile significa sostituire carta, Excel e passaggi manuali con strumenti cloud che gestiscono in automatico fatturazione elettronica, preventivi, DDT e cantieri, facendo risparmiare tempo e riducendo gli errori. Non è una moda per grandi aziende: è la mossa che oggi permette anche alla piccola impresa edile di lavorare come una struttura organizzata, marginando di più e stressandosi di meno.
 
 In questa guida vediamo, passo dopo passo, come digitalizzare concretamente un'impresa edile, quali processi affrontare per primi e quali strumenti scegliere, a partire da un gestionale cloud dedicato al settore come **EdiliziaInCloud**.
@@ -2281,6 +2313,7 @@ E quando vuoi che a quell'impresa più organizzata arrivino anche più clienti, 
   category: "Lead Generation",
   readTime: "13 min",
   excerpt: "Chi cambia gli infissi decide molto prima di chiamarti. Ecco come farti trovare in quella fase, e arrivare al preventivo con un vantaggio che il prezzo non può togliere.",
+  tags: ["marketing-serramentisti", "lead-generation-edilizia"],
   content: `Come trovare clienti come serramentista è una domanda che si fa più urgente ogni anno, perché il modo in cui le persone comprano infissi è cambiato completamente e il settore se ne è accorto tardi. Fino a dieci anni fa il cliente entrava in showroom, guardava i campioni e chiedeva un preventivo. Oggi arriva in showroom — o al telefono — dopo aver già passato settimane a informarsi da solo, con idee precise e tre preventivi in mano.
 
 Questo cambia tutto. Se non sei presente nella fase in cui il cliente si informa, arrivi alla fine, quando l'unica cosa che ti distingue dagli altri due preventivi è la cifra in fondo. In questa guida vediamo come intercettare quella fase e come arrivare al confronto con un vantaggio che il prezzo non può cancellare.
@@ -2456,6 +2489,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante 
   category: "Lead Generation",
   readTime: "12 min",
   excerpt: "I lead comprati ti mettono in gara con altri quattro installatori sullo stesso cliente. Ecco come costruire un canale che porta richieste solo tue.",
+  tags: ["marketing-fotovoltaico", "lead-generation-edilizia"],
   content: `Come trovare clienti per il fotovoltaico è il problema che ogni installatore affronta appena finisce la fase in cui il telefono squillava da solo. Il settore è cresciuto tanto e in fretta, poi si è riempito: oggi in ogni provincia ci sono decine di aziende che offrono lo stesso impianto, e la domanda si è spostata da "chi me lo fa" a "chi me lo fa meglio e a quanto".
 
 In questo scenario la maggior parte degli installatori sceglie la scorciatoia: comprare lead. È la strada più rapida ed è anche la più cara, per un motivo che vediamo subito.
@@ -2617,6 +2651,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante 
   category: "SEO Locale",
   readTime: "12 min",
   excerpt: "I tre risultati con la mappa raccolgono la maggior parte delle chiamate da smartphone. Ecco cosa determina chi ci finisce dentro e cosa puoi controllare davvero.",
+  tags: ["gestione-social-gmb", "google-my-business", "seo-locale"],
   content: `Il Local Pack è il blocco con la mappa e tre aziende che Google mostra in cima ai risultati quando qualcuno cerca un servizio nella sua zona. Per un'impresa edile, un impiantista o un serramentista è la posizione più preziosa che esista: sta sopra ai risultati organici, occupa quasi tutto lo schermo di uno smartphone e ha il pulsante per chiamare direttamente.
 
 Chi è dentro quei tre riquadri riceve la maggior parte delle chiamate. Chi è quarto, per la maggior parte delle persone, non esiste — perché nessuno scorre oltre quando ha già tre opzioni con recensioni e numero di telefono davanti.
@@ -2779,6 +2814,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita del tuo profilo: ti
   category: "Lead Generation",
   readTime: "11 min",
   excerpt: "Chi è cresciuto con i bonus ha visto il telefono spegnersi da un giorno all'altro. La domanda però è rimasta: cambia solo chi la intercetta.",
+  tags: ["marketing-cappotto-termico"],
   content: `Trovare clienti per il cappotto termico è diventato un problema serio per molte imprese che negli anni dei grandi incentivi non avevano mai dovuto cercarli. Il lavoro arrivava da general contractor, da segnalazioni, da un'onda che sembrava non finire mai. Poi la misura è cambiata, l'onda si è ritirata, e chi non aveva costruito un canale proprio si è ritrovato con squadre attrezzate e nessuna commessa.
 
 La parte che quasi nessuno dice è che la domanda non è sparita. È cambiato chi la intercetta.
@@ -2946,6 +2982,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante 
   category: "Marketing Digitale",
   readTime: "11 min",
   excerpt: "Le campagne portano clic dal primo giorno, anche a chi ha una pagina che non converte. Ecco i numeri reali e come capire se nel tuo caso conviene.",
+  tags: ["google-ads-edilizia"],
   content: `Quanto costa Google Ads per un'impresa edile è una domanda a cui nessuno risponde volentieri con numeri, perché la risposta onesta è "dipende" — e dipende da variabili che si possono però misurare prima di spendere. Vediamole, con l'obiettivo di capire se nel tuo caso le campagne convengono o se i tuoi soldi rendono di più altrove.
 
 ## Come funziona il costo su Google Ads
@@ -3100,6 +3137,7 @@ Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diamo i volumi 
   category: "SEO Locale",
   readTime: "12 min",
   excerpt: "Il tetto non si rifà per scelta: si rifà quando compare una macchia sul soffitto. In quel momento il cliente cerca su Google e chiama due numeri.",
+  tags: ["marketing-coperture-tetti"],
   content: `Trovare clienti per il rifacimento tetti funziona in modo diverso rispetto a quasi tutti gli altri lavori edili, e capire questa differenza è metà del lavoro. Nessuno si sveglia con il desiderio di rifare la copertura: la si rifà quando compare una macchia sul soffitto, dopo una grandinata, o quando il tecnico dice che la guaina è arrivata a fine vita.
 
 Il lavoro nasce quindi da un evento, spesso spiacevole, e la ricerca del professionista avviene in un momento preciso e breve. Chi è visibile in quella finestra prende il lavoro; chi non c'è non lo saprà mai.
@@ -3282,3 +3320,41 @@ export function toISODate(d: string): string {
 export const blogPostsSorted: BlogPost[] = [...blogPosts].sort(
   (a, b) => parseItalianDate(b.date) - parseItalianDate(a.date),
 );
+
+/**
+ * Articoli correlati a uno dato.
+ *
+ * Prima questa scelta era "i tre più recenti", identici per ogni articolo: i tre
+ * in testa ricevevano un link da tutti gli altri e i restanti venticinque
+ * nessuno. È una delle ragioni per cui diversi articoli risultavano scansionati
+ * ma non indicizzati.
+ *
+ * Ora la selezione privilegia chi condivide un tag (stesso topic cluster), poi
+ * chi condivide la categoria, e completa con i più recenti. La rotazione parte
+ * da una posizione derivata dallo slug, così i link si distribuiscono su tutto
+ * l'archivio invece di concentrarsi sempre sugli stessi.
+ */
+export function relatedPosts(slug: string, quanti = 4): BlogPost[] {
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return blogPostsSorted.slice(0, quanti);
+
+  const tags = new Set(post.tags ?? []);
+  const altri = blogPostsSorted.filter((p) => p.slug !== slug);
+
+  const punteggio = (p: BlogPost) => {
+    const comuni = (p.tags ?? []).filter((t) => tags.has(t)).length;
+    return comuni * 10 + (p.category === post.category ? 3 : 0);
+  };
+
+  const offset = [...slug].reduce((a, c) => a + c.charCodeAt(0), 0);
+  const ordinati = altri
+    .map((p, i) => ({ p, s: punteggio(p), i }))
+    .sort((a, b) => b.s - a.s || ((a.i + offset) % altri.length) - ((b.i + offset) % altri.length));
+
+  return ordinati.slice(0, quanti).map((x) => x.p);
+}
+
+/** Articoli appartenenti a un settore o servizio, dal più recente. */
+export function postsByTag(tag: string, quanti = 6): BlogPost[] {
+  return blogPostsSorted.filter((p) => p.tags?.includes(tag)).slice(0, quanti);
+}

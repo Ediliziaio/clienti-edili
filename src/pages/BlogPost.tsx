@@ -4,7 +4,8 @@ import { motion, useInView } from "framer-motion";
 import { ArrowLeft, ArrowRight, Clock, Calendar, User, List, ChevronDown } from "lucide-react";
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
-import { blogPosts, blogPostsSorted, toISODate } from "@/data/blogPosts";
+import { blogPosts, relatedPosts, toISODate } from "@/data/blogPosts";
+import HubDiRiferimento from "@/components/HubDiRiferimento";
 import { coverSrc, onCoverError } from "@/lib/blogCover";
 import ContactFormEmbed from "@/components/ContactFormEmbed";
 
@@ -304,7 +305,7 @@ export default function BlogPost() {
       : []),
   ];
 
-  const relatedPosts = blogPostsSorted.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = relatedPosts(slug ?? post.slug);
 
   return (
     <Layout>
@@ -361,6 +362,8 @@ export default function BlogPost() {
                 {renderMarkdown(post.content)}
               </div>
             </FadeIn>
+
+            <HubDiRiferimento tags={post.tags} />
 
             {/* Domande frequenti — alimentano anche il FAQPage JSON-LD */}
             {post.faqs && post.faqs.length > 0 && (
@@ -426,8 +429,8 @@ export default function BlogPost() {
           <FadeIn>
             <h2 className="font-display text-3xl font-bold mb-12 text-center">Articoli Correlati</h2>
           </FadeIn>
-          <div className="grid md:grid-cols-3 gap-8">
-            {relatedPosts.map((rp, i) => {
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {related.map((rp, i) => {
               return (
                 <FadeIn key={rp.slug} delay={i * 0.1}>
                   <Link to={`/blog/${rp.slug}`} className="group block">

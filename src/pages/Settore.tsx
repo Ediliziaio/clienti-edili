@@ -6,6 +6,7 @@ import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ContactFormEmbed from "@/components/ContactFormEmbed";
+import ArticoliCorrelati from "@/components/ArticoliCorrelati";
 import { settori } from "@/data/settori";
 import { cities } from "@/data/cities";
 
@@ -187,6 +188,8 @@ export default function Settore() {
           </div>
         </div>
       </section>
+
+      <ArticoliCorrelati tag={settore.slug} />
 
       {/* Form */}
       <section className="py-20 border-t border-border">

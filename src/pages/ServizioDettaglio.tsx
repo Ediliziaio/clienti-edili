@@ -8,6 +8,7 @@ import {
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
 import { services, type ServiceIcon, type ServiceImage } from "@/data/services";
+import ArticoliCorrelati from "@/components/ArticoliCorrelati";
 import serviceConstruction from "@/assets/service-construction.jpg";
 import serviceSeo from "@/assets/service-seo.jpg";
 import serviceGmb from "@/assets/service-gmb.jpg";
@@ -269,6 +270,8 @@ export default function ServizioDettaglio() {
           </div>
         </div>
       </section>
+
+      <ArticoliCorrelati tag={service.slug} />
 
       {/* CTA */}
       <section className="py-24 border-t border-border">

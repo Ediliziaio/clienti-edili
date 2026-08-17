@@ -288,8 +288,8 @@ export const settori: SettoreData[] = [
   {
     slug: "marketing-cappotto-termico",
     label: "Cappotto termico",
-    h1: "Marketing per chi fa cappotto termico ed efficientamento",
-    metaTitle: "Marketing Cappotto Termico: Trovare Clienti | ClientiEdili",
+    h1: "Farsi Scegliere da Privati e Amministratori di Condominio",
+    metaTitle: "Cappotto Termico: Farsi Scegliere dai Committenti",
     metaDescription:
       "Marketing e siti web per imprese di cappotto termico ed efficientamento energetico: intercettare chi cerca un preventivo nella tua zona. Analisi gratuita.",
     mainKeyword: "marketing cappotto termico",
@@ -488,8 +488,8 @@ export const settori: SettoreData[] = [
   {
     slug: "google-ads-edilizia",
     label: "Google Ads edilizia",
-    h1: "Google Ads per l'edilizia: quando conviene e quando no",
-    metaTitle: "Google Ads per Edilizia: Conviene? | ClientiEdili",
+    h1: "Campagne a Pagamento per l'Edilizia: come le impostiamo",
+    metaTitle: "Campagne a Pagamento per Imprese Edili | ClientiEdili",
     metaDescription:
       "Google Ads per imprese edili: quando ha senso, quanto costa un contatto e perché senza una pagina che converte è denaro buttato. Analisi gratuita.",
     mainKeyword: "Google Ads per edilizia",
