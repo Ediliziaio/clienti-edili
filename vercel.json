@@ -21,22 +21,23 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), payment=()"
-        },
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains"
         }
       ]
     },
     {
-      "comment": "Gli asset con hash nel nome sono immutabili: si possono mettere in cache per sempre.",
       "source": "/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
     },
     {
-      "comment": "Immagini in public/: nome stabile, quindi cache piu' breve con revalidate.",
-      "source": "/(blog-covers|favicon-16x16.png|favicon-32x32.png|apple-touch-icon.png)(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }]
+      "source": "/blog-covers/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=86400"
+        }
+      ]
     }
   ]
 }
