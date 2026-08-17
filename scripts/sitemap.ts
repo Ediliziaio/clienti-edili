@@ -37,7 +37,7 @@ function lastCommitDate(file: string, fallback: string): string {
  * rotte (blogPosts, cities, services): finché le rotte si generano da lì, il
  * sitemap non può andare fuori sincrono.
  *
- * /grazie è volutamente esclusa: è noindex.
+ * /grazie e /404 sono volutamente escluse: sono noindex.
  */
 export function buildSitemapEntries(today: string): SitemapEntry[] {
   const pages: Array<[string, string, ChangeFreq, string]> = [

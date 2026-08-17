@@ -40,7 +40,7 @@ const progettiJsonLd = [
   {
     "@type": "CollectionPage",
     "name": "Progetti e Siti Web Realizzati per Imprese Edili",
-    "description": "Portfolio di siti web e progetti di marketing digitale realizzati per imprese edili italiane. Risultati misurabili: +200% richieste di preventivo.",
+    "description": "Portfolio di siti web e progetti di marketing digitale realizzati per imprese edili italiane. Ogni sito consegnato in 48 ore, con zero anticipo.",
     "url": "https://clientiedili.com/progetti",
   },
 ];
@@ -58,7 +58,7 @@ export default function Progetti() {
     <Layout>
       <SeoHead
         title="Progetti Siti Web per Imprese Edili | ClientiEdili"
-        description="Portfolio siti web e campagne marketing per imprese edili. 127+ progetti completati con risultati misurabili: +200% richieste di preventivo."
+        description="Portfolio siti web e campagne marketing per imprese edili. Guarda i siti realizzati per imprese edili italiane, settore per settore."
         canonical="https://clientiedili.com/progetti"
         jsonLd={progettiJsonLd}
       />
@@ -109,6 +109,10 @@ export default function Progetti() {
       {/* Projects Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Titolo di sezione: senza questo si passava da h1 a h3 */}
+          <h2 className="font-display text-3xl sm:text-4xl font-bold mb-10">
+            Siti web realizzati per imprese edili
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filtered.map((project, i) => (
               <FadeIn key={project.title} delay={i * 0.1}>

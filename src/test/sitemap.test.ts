@@ -9,7 +9,7 @@ import { buildSitemapEntries } from "../../scripts/sitemap";
  */
 
 // Rotte escluse dal sitemap perché non devono finire nell'indice di Google.
-const NOINDEX = new Set(["/grazie"]);
+const NOINDEX = new Set(["/grazie", "/404"]);
 
 function routePaths(): string[] {
   const children = routes[0].children ?? [];

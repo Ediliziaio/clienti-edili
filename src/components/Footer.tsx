@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-ui font-semibold mb-4 text-sm">Link Utili</h4>
+            <h2 className="font-ui font-semibold mb-4 text-sm">Link Utili</h2>
             <ul className="space-y-2 text-muted-foreground text-sm">
               <li><Link to="/servizi" className="hover:text-foreground transition-colors">Servizi</Link></li>
               <li><Link to="/settori" className="hover:text-foreground transition-colors">Settori e zone</Link></li>
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-ui font-semibold mb-4 text-sm">Contatti</h4>
+            <h2 className="font-ui font-semibold mb-4 text-sm">Contatti</h2>
             <ul className="space-y-2 text-muted-foreground text-sm">
               <li>
                 <a href={`tel:${TITOLARE.telefono.replace(/\s/g, "")}`} className="hover:text-foreground transition-colors">
@@ -89,7 +89,7 @@ export default function Footer() {
 
         {/* Settori e intenti di ricerca */}
         <div className="border-t border-border pt-8 mb-8">
-          <h4 className="font-ui font-semibold mb-4 text-sm">Marketing per settore</h4>
+          <h2 className="font-ui font-semibold mb-4 text-sm">Marketing per settore</h2>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-muted-foreground text-sm">
             {settori.map((s) => (
               <Link key={s.slug} to={`/${s.slug}`} className="hover:text-foreground transition-colors">
@@ -101,7 +101,7 @@ export default function Footer() {
 
         {/* Siti web per città — SEO locale */}
         <div className="border-t border-border pt-8 mb-8">
-          <h4 className="font-ui font-semibold mb-4 text-sm">Siti web per imprese edili per città</h4>
+          <h2 className="font-ui font-semibold mb-4 text-sm">Siti web per imprese edili per città</h2>
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-muted-foreground text-sm">
             {cities.map((city) => (
               <Link

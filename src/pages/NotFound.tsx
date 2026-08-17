@@ -9,6 +9,7 @@ const NotFound = () => {
         title="Pagina Non Trovata — ClientiEdili"
         description="La pagina che cerchi non esiste. Torna alla homepage di ClientiEdili per scoprire i nostri servizi di marketing digitale per imprese edili."
         canonical="https://clientiedili.com/404"
+        noindex
       />
       <section className="py-24 sm:py-32">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

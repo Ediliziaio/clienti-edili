@@ -374,7 +374,7 @@ function Hero() {
           <FadeIn delay={0.2}>
             <div className="border-l-2 border-primary pl-5">
               <p className="text-muted-foreground text-lg leading-relaxed max-w-lg">
-                ClientiEdili crea siti web professionali per imprese edili italiane. Zero anticipo, consegna in 48 ore, garanzia soddisfatti o rimborsati. Oltre 127 imprese servite con un tasso di soddisfazione del 98%.
+                ClientiEdili crea siti web professionali per imprese edili italiane. Zero anticipo, consegna in 48 ore, garanzia soddisfatti o rimborsati. Oltre 127 imprese edili servite in tutta Italia.
               </p>
             </div>
           </FadeIn>

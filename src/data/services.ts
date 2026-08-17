@@ -53,7 +53,7 @@ export const services: ServiceData[] = [
     image: "construction",
     intro: "ClientiEdili crea siti web professionali su misura per imprese edili italiane. Ogni sito è progettato per trasmettere professionalità, mostrare i tuoi lavori migliori e convertire i visitatori in richieste di preventivo. Consegna garantita in 48 ore lavorative, zero anticipo richiesto, garanzia soddisfatti o rimborsati. Oltre 127 imprese edili in tutta Italia si affidano già a ClientiEdili per la loro presenza online.",
     whyTitle: "Perché la tua impresa edile ha bisogno di un sito web professionale",
-    whyText: "Il 92% dei potenziali clienti cerca online prima di contattare un'impresa edile. Senza un sito web professionale, la tua impresa è invisibile a questi clienti. Un sito web ben progettato lavora per te 24 ore al giorno, 7 giorni alla settimana: genera richieste di preventivo, mostra i tuoi lavori e costruisce fiducia con i potenziali clienti ancora prima del primo contatto telefonico. Le imprese edili che hanno un sito web professionale ricevono in media 10-15 richieste di preventivo al mese in più rispetto a chi non ce l'ha.",
+    whyText: "Oggi chi deve ristrutturare cerca online prima di chiamare qualcuno: apre Google, guarda i primi risultati e decide chi merita una telefonata. Senza un sito, per quel cliente la tua impresa non esiste — non importa quanto lavori bene. Un sito ben fatto lavora anche di notte e nei weekend: raccoglie richieste di preventivo, mostra i lavori conclusi e costruisce fiducia prima del primo contatto. Non promettiamo un numero di richieste, perché dipende dalla tua zona e dalla concorrenza: nell'analisi gratuita ti diciamo quante persone cercano i tuoi servizi nella tua provincia, così i conti li fai su dati reali.",
     howItWorks: [
       { step: "01", title: "Chiamata Conoscitiva", desc: "15 minuti per capire la tua impresa, i servizi che offri e i tuoi obiettivi. ClientiEdili analizza il tuo mercato locale e i tuoi competitor." },
       { step: "02", title: "Anteprima in 24 Ore", desc: "Ricevi la prima bozza del tuo sito web entro 24 ore. Puoi richiedere modifiche illimitate fino a quando il risultato non ti soddisfa al 100%." },
@@ -72,8 +72,8 @@ export const services: ServiceData[] = [
     stats: [
       { value: "127+", label: "Siti web realizzati per imprese edili" },
       { value: "48h", label: "Tempo medio di consegna" },
-      { value: "+200%", label: "Aumento medio richieste preventivo" },
-      { value: "98%", label: "Clienti soddisfatti" },
+      { value: "24h", label: "Prima anteprima del sito" },
+      { value: "0€", label: "Anticipo: paghi a sito approvato" },
     ],
     faqs: [
       { q: "Quanto costa un sito web per impresa edile?", a: "Il prezzo del pacchetto completo ClientiEdili è di €1.000 (invece di €1.400), tutto incluso: realizzazione sito completa, design personalizzato, copywriting, ottimizzazione SEO e 30 giorni di assistenza. Nessun costo nascosto." },
@@ -112,9 +112,9 @@ export const services: ServiceData[] = [
       "Analisi competitor locali",
     ],
     stats: [
-      { value: "+340%", label: "Aumento medio traffico organico" },
-      { value: "Top 5", label: "Posizionamento medio keyword target" },
-      { value: "12", label: "Preventivi medi al mese generati" },
+      { value: "Mensile", label: "Report su posizionamento e richieste" },
+      { value: "Locale", label: "Ottimizzazione su comuni e province" },
+      { value: "0", label: "Vincoli di durata" },
       { value: "3 mesi", label: "Tempo medio per primi risultati" },
     ],
     faqs: [

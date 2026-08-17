@@ -5,6 +5,7 @@ import { ArrowUpRight, Check, Star, MapPin, Phone, Clock, Shield } from "lucide-
 import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ContactFormEmbed from "@/components/ContactFormEmbed";
 import { settori } from "@/data/settori";
 import { cities } from "@/data/cities";
 import project1 from "@/assets/project-1.jpg";
@@ -131,10 +132,10 @@ export default function CittaGeo() {
           </FadeIn>
           <FadeIn delay={0.3}>
             <div className="flex flex-wrap gap-4 mt-8">
-              <Link to="/#contatti" className="btn-carino">
+              <a href="#richiedi-preventivo" className="btn-carino">
                 Richiedi Preventivo Gratuito
                 <span className="arrow-circle"><ArrowUpRight size={18} /></span>
-              </Link>
+              </a>
             </div>
           </FadeIn>
         </div>
@@ -361,8 +362,8 @@ export default function CittaGeo() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 border-t border-border">
+      {/* CTA con il form: prima rimandava alla home e l'utente doveva ricominciare */}
+      <section id="richiedi-preventivo" className="py-24 border-t border-border scroll-mt-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="font-display text-4xl sm:text-5xl font-bold mb-6">
@@ -375,10 +376,12 @@ export default function CittaGeo() {
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <Link to="/#contatti" className="btn-carino">
-              Parliamone Subito
-              <span className="arrow-circle"><ArrowUpRight size={18} /></span>
-            </Link>
+            <div className="max-w-2xl mx-auto bg-card border border-border rounded-2xl p-6 sm:p-8 text-left">
+              <ContactFormEmbed />
+            </div>
+            <p className="text-muted-foreground text-sm mt-4">
+              Nessun impegno · Zero anticipo · Soddisfatti o rimborsati
+            </p>
           </FadeIn>
         </div>
       </section>

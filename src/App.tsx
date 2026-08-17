@@ -75,6 +75,9 @@ export const routes: RouteRecord[] = [
         path: slug,
         element: <Settore />,
       })),
+      // Prerenderizzata come dist/404.html: Vercel la serve automaticamente
+      // sugli URL inesistenti, con status 404 corretto.
+      { path: "404", element: <NotFound /> },
       { path: "*", element: <NotFound /> },
     ],
   },
