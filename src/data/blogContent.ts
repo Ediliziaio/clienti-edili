@@ -2928,4 +2928,228 @@ Rivendica e completa il profilo Google, con categoria corretta, servizi, zone e 
 In ClientiEdili costruiamo questo per le imprese di coperture: sito professionale in 48 ore a 1.000 euro invece di 1.400, zero anticipo — paghi solo a lavoro approvato — con garanzia soddisfatti o rimborsati. La gestione continuativa del profilo Google e dei social, con post e recensioni curati ogni mese, costa 497 euro al mese senza vincolo di durata.
 
 Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante persone cercano interventi sul tetto nella tua zona e quanto è forte la concorrenza, che in questo settore è più bassa di quanto immagini.`,
+  "trovare-clienti-idraulico-elettricista": `Come trovare clienti come idraulico o elettricista è una domanda che fino a dieci anni fa non aveva senso: il lavoro arrivava dal passaparola, dagli amministratori di condominio e dai cantieri delle imprese. Quei canali esistono ancora, ma si è aggiunto un fatto nuovo che cambia tutto: oggi chi ha la caldaia guasta o un impianto da rifare apre Google prima di chiedere a chiunque. E in quel momento, o ci sei, o il lavoro lo prende un altro.
+
+In questa guida vediamo come funziona davvero la ricerca di un impiantista, quali lavori arrivano da quali canali, e cosa serve — in ordine di priorità — per intercettarli.
+
+## Come cerca chi ha bisogno di un impiantista?
+
+Cerca in due modi completamente diversi a seconda del problema, ed è la prima cosa da capire: l'urgenza e il lavoro programmato sono due mercati distinti, con regole diverse.
+
+### L'urgenza: si decide in cinque minuti
+
+La caldaia si spegne a dicembre. Salta la corrente. Perde una tubazione. In questi casi il cliente non confronta preventivi e non chiede consiglio: apre il telefono, cerca "idraulico" o "elettricista" più il nome del comune, guarda i primi tre risultati con la mappa e chiama il primo numero credibile.
+
+La decisione si prende sul profilo Google, non sul sito: recensioni recenti, orari giusti, numero cliccabile. Chi risponde al telefono prende il lavoro — e spesso si tiene il cliente per tutte le manutenzioni successive. È il motivo per cui, nell'impiantistica, il Local Pack di Google vale più che in qualsiasi altro mestiere edile.
+
+### Il lavoro programmato: si decide in settimane
+
+Rifacimento del bagno, nuovo impianto di riscaldamento, pompa di calore, adeguamento elettrico. Qui il cliente ha tempo, si informa, confronta due o tre preventivi. Legge cosa comporta passare alla pompa di calore, quanto costa rifare l'impianto elettrico, se conviene l'ibrido.
+
+In questa fase vince chi risponde alle sue domande online prima ancora del sopralluogo: chi spiega viene percepito come il tecnico competente, e arriva al preventivo con un vantaggio che il prezzo difficilmente ribalta.
+
+## Quali canali portano lavoro a un impiantista?
+
+Mettiamoli in fila per resa, perché non sono tutti uguali.
+
+| Canale | Tipo di lavoro | Costo | Quando rende |
+|---|---|---|---|
+| Profilo Google curato | Urgenze e locale | Quasi zero | Da subito, cresce con le recensioni |
+| Sito con pagine per intervento | Lavori programmati | Basso | Dopo 3-6 mesi |
+| Passaparola e amministratori | Tutto | Zero | Sempre, ma non scala |
+| Lead comprati da portali | Misto, condiviso | Alto | Mai bene: contatti rivenduti a più tecnici |
+| Campagne a pagamento | Programmato | Medio | Solo con una pagina che converte |
+
+La combinazione con la resa migliore per un impiantista è profilo Google più sito con pagine per singolo intervento. Il primo porta le chiamate immediate, il secondo intercetta chi sta valutando un lavoro grosso.
+
+## Cosa deve avere il profilo Google di un impiantista?
+
+Cinque cose, in quest'ordine di importanza.
+
+La categoria giusta: "idraulico", "elettricista", "installatore di caldaie" — la più specifica possibile, con le secondarie a coprire gli altri servizi. Un profilo generico non compare per le ricerche di mestiere.
+
+Le recensioni recenti e continue: due o tre al mese, chieste sistematicamente a fine intervento con un messaggio WhatsApp e il link diretto. Nell'urgenza il cliente sceglie chi ha recensioni fresche, perché sono la prova che l'attività è viva e che la gente si è trovata bene.
+
+Gli orari veri, comprese reperibilità e chiusure: una chiamata a vuoto in un orario dichiarato aperto diventa una recensione negativa.
+
+Le zone di intervento realistiche: definire mezz'Italia diluisce la visibilità e porta chiamate da cantieri che non prenderai mai.
+
+Le foto dei lavori: quadri elettrici ordinati, centrali termiche finite, bagni completati. Il cliente non sa giudicare un impianto, ma riconosce benissimo un lavoro pulito da uno raffazzonato.
+
+## Come si intercettano i lavori grossi: pompe di calore, bagni, adeguamenti
+
+Con una pagina dedicata per ogni tipo di intervento, scritta per rispondere alle domande che il cliente si fa davvero.
+
+### La pagina sulla pompa di calore
+
+È l'opportunità più grande del momento. La transizione dalle caldaie a gas sposta una quantità enorme di lavoro, e il cliente ne sa pochissimo: si chiede se conviene davvero, se funziona con i suoi termosifoni, quanto consuma, cosa succede quando fa molto freddo. Sono tutte ricerche reali, in crescita, con pochissime risposte fatte da tecnici veri. Chi le scrive si prende quel traffico e i sopralluoghi che ne derivano.
+
+### La pagina sul rifacimento bagno
+
+Il bagno è il lavoro programmato più cercato in assoluto. La pagina deve mostrare bagni finiti (le foto contano più di tutto), spiegare quanto dura il cantiere, se si può usare l'altro bagno nel frattempo, e dare un ordine di grandezza dei costi con quello che comprende. Chi dichiara i tempi si distingue immediatamente, perché nessuno lo fa.
+
+### La pagina sull'adeguamento elettrico
+
+I carichi domestici aumentano — induzione, climatizzatori, ricarica dell'auto — e gli impianti vecchi non reggono. Anche qui: il cliente non sa nemmeno come si chiama quello che gli serve. Una pagina che parte dai sintomi ("salta il contatore quando accendi il forno e il condizionatore insieme") intercetta ricerche che i concorrenti ignorano.
+
+## Il cliente condominiale: il moltiplicatore
+
+Un amministratore di condominio soddisfatto vale decine di clienti privati: porta le manutenzioni programmate delle centrali termiche, gli interventi sulle parti comuni e le segnalazioni ai singoli condòmini.
+
+Gli amministratori scelgono online come tutti gli altri, ma guardano cose diverse: rapidità di intervento documentata, ordine nella fatturazione, capacità di gestire più unità immobiliari. Una sezione del sito dedicata a loro — con le manutenzioni gestite e i tempi di intervento medi — è tra gli investimenti con la resa più alta del mestiere.
+
+## Quanto tempo serve per vedere risultati?
+
+Il profilo Google, se sistemato bene, si muove nel Local Pack in poche settimane: è la leva più rapida che esista in questo settore. Il sito con le pagine per intervento richiede i soliti tre-sei mesi per posizionarsi sulle ricerche di zona, meno nei comuni piccoli.
+
+L'ordine giusto è quindi: prima il profilo e le recensioni, poi il sito con le pagine dei lavori programmati, e i contenuti su pompe di calore e adeguamenti come investimento sul mercato che cresce.
+
+## Da dove partire concretamente
+
+Sistema il profilo Google con categoria specifica, zone vere, orari veri e foto dei lavori. Prendi l'abitudine di chiedere una recensione a fine intervento, con il link diretto su WhatsApp. Poi metti online un sito con una pagina per ciascun intervento che vuoi vendere di più — bagno, pompa di calore, impianto elettrico — scritta partendo dalle domande del cliente.
+
+In ClientiEdili costruiamo questo per gli impiantisti: sito professionale in 48 ore a 1.000 euro invece di 1.400, zero anticipo — paghi solo a lavoro approvato — con garanzia soddisfatti o rimborsati. Se vuoi che il profilo Google e i social se li curi qualcuno ogni mese, la gestione completa costa 497 euro al mese senza vincolo di durata.
+
+Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante persone cercano un impiantista nella tua zona ogni mese, e quanto è forte la concorrenza.`,
+  "trovare-clienti-ristrutturazioni": `Come trovare clienti per le ristrutturazioni è la domanda più affollata dell'intera edilizia italiana: la ristrutturazione residenziale è il mercato più grande del settore, e anche quello con più imprese che si contendono gli stessi committenti. Proprio per questo va affrontata con metodo — chi si presenta come "l'ennesima impresa di ristrutturazioni" finisce inevitabilmente confrontato solo sul prezzo.
+
+In questa guida vediamo come ragiona chi deve ristrutturare, perché la maggior parte dei preventivi si perde prima ancora del sopralluogo, e come costruire un flusso di richieste che non dipenda dal ribasso.
+
+## Come ragiona chi deve ristrutturare casa?
+
+Con più ansia che in qualunque altro acquisto della sua vita, ed è il punto da cui partire. Sta per affidare a degli sconosciuti decine di migliaia di euro e la casa in cui vive. Ha sentito storie di cantieri infiniti, di costi lievitati in corsa, di imprese sparite a metà lavoro.
+
+La conseguenza pratica: non sceglie il preventivo più basso, sceglie quello che gli fa meno paura. Un prezzo stracciato spesso insospettisce invece di attirare. Chi vince è chi, prima ancora del sopralluogo, ha già dimostrato tre cose: che i suoi cantieri finiscono, che i tempi dichiarati vengono rispettati, e che dietro il numero di telefono c'è un'azienda vera.
+
+Tutto questo si dimostra online, perché è online che il committente fa le sue verifiche — nei giorni esatti in cui decide chi chiamare.
+
+## Perché i preventivi si perdono prima del sopralluogo?
+
+Perché il cliente chiede tre preventivi ma arriva al primo contatto con una classifica già in testa, costruita su quello che ha trovato (o non trovato) online.
+
+### La verifica che fa sempre
+
+Riceve il tuo nome da un conoscente o ti trova su Google, e prima di chiamare ti cerca: sito, recensioni, foto dei lavori. Se non trova nulla, o trova una pagina Facebook ferma da due anni, la segnalazione perde metà del suo valore. Se trova cantieri finiti, tempi dichiarati e recensioni recenti, arrivi al sopralluogo già in vantaggio.
+
+### I tre segnali che spostano la scelta
+
+I lavori conclusi, raccontati per intero: non solo la foto del dopo, ma il percorso — com'era, cosa è stato fatto, quanto è durato. Il committente sta cercando di immaginare casa sua, e ogni dettaglio concreto riduce la sua ansia.
+
+I tempi, dichiarati: "bagno completo in 15 giorni lavorativi", "appartamento di 90 mq in 8 settimane". Nessun concorrente li scrive, tutti i clienti li cercano. Dichiararli è un rischio solo se non li rispetti.
+
+Le risposte alle domande scomode: cosa succede se emergono imprevisti, come si gestiscono le varianti, chi paga cosa, come funzionano i pagamenti a stato avanzamento. Chi le affronta per iscritto toglie al cliente la paura di firmarsi una fregatura.
+
+## Meglio generalisti o specializzati?
+
+Specializzati, almeno nella comunicazione — ed è la scelta strategica più importante di questo mercato.
+
+| | Impresa generalista | Impresa specializzata |
+|---|---|---|
+| Ricerca intercettata | "impresa ristrutturazioni" (contesa da tutti) | "rifacimento bagno", "chiavi in mano" (meno concorrenza) |
+| Confronto col cliente | Sul prezzo | Sulla competenza specifica |
+| Riconoscibilità | Nessuna: uguale alle altre | Immediata |
+| Margine | Compresso dal ribasso | Difendibile |
+
+Specializzarsi nella comunicazione non significa rifiutare i lavori fuori nicchia: significa presidiare le ricerche specifiche — bagno, cucina, appartamento chiavi in mano, uffici — con pagine dedicate, invece di sperare di emergere sulla ricerca generica dove competono tutti. Le ricerche specifiche hanno meno volume ma intenzione più alta, meno concorrenza e clienti che cercano esattamente quella competenza.
+
+## Quali contenuti portano richieste di ristrutturazione?
+
+Quattro tipi, in ordine di resa.
+
+### I prima-e-dopo raccontati
+
+Sono il contenuto più potente del settore. Un prima-e-dopo con la storia del cantiere — durata, lavorazioni, problemi risolti — vale più di qualsiasi pagina di presentazione. È anche il contenuto che i social premiano di più, quindi lavora due volte.
+
+### Le pagine per tipo di intervento
+
+Una per il bagno, una per la cucina, una per il chiavi in mano, una per gli uffici se li fai. Ognuna con foto, tempi, ordine di grandezza dei costi e cosa comprende. Sono le pagine che intercettano le ricerche specifiche e che ricevono il traffico delle campagne, se ne farai.
+
+### Le guide sui costi
+
+"Quanto costa ristrutturare un bagno", "quanto costa rifare un appartamento di 80 mq": sono tra le ricerche più fatte in assoluto. Il cliente non pretende un listino: vuole un ordine di grandezza onesto e capire cosa fa variare il prezzo. Chi lo spiega si prende il traffico e la fiducia insieme.
+
+### Le risposte sui bonus e le pratiche
+
+Detrazioni, CILA, permessi, comunicazioni ENEA: il committente ci capisce poco e cerca molto. Contenuti chiari su questi temi portano traffico costante e posizionano l'impresa come quella che sa gestire anche la burocrazia — un argomento di vendita concreto.
+
+## Il sopralluogo si vince prima: la velocità di risposta
+
+C'è un dato che nell'edilizia sposta più di qualunque ottimizzazione: chi manda una richiesta di preventivo ne manda in genere tre, e la prima impresa che risponde parte con un vantaggio enorme.
+
+Richiamare entro un'ora comunica esattamente l'affidabilità che il cliente sta cercando; richiamare dopo due giorni significa trovare uno che ha già fissato due sopralluoghi. Organizzarsi per rispondere in fretta — anche solo con un messaggio che fissa la chiamata — rende più di qualsiasi altra singola modifica.
+
+## Quanto tempo serve per costruire il canale?
+
+Il sito è online in 48 ore e converte da subito chi ti cerca per nome. Le pagine specifiche — bagno, cucina, chiavi in mano — si posizionano sulle ricerche di zona in tre-sei mesi nei comuni, di più nei capoluoghi. Le guide sui costi si muovono in fretta perché la concorrenza di qualità è poca.
+
+Il profilo Google, con recensioni chieste sistematicamente a fine cantiere, si muove nel Local Pack in poche settimane ed è il canale più rapido per le prime chiamate.
+
+## Da dove partire
+
+Metti online i tuoi ultimi cinque cantieri raccontati per intero, con tempi veri. Crea le pagine per i tipi di intervento che vuoi vendere di più. Scrivi una guida onesta sui costi del tuo intervento principale. Chiedi una recensione alla fine di ogni cantiere. E organizzati per richiamare entro un'ora.
+
+In ClientiEdili costruiamo tutto questo per le imprese di ristrutturazione: sito professionale in 48 ore a 1.000 euro invece di 1.400, zero anticipo — paghi solo a lavoro approvato — con garanzia soddisfatti o rimborsati. La gestione continuativa di Google My Business e social costa 497 euro al mese, senza vincolo di durata.
+
+Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: ti diciamo quante persone cercano ristrutturazioni nella tua zona, quali interventi cercano di più, e quanto è forte la concorrenza.`,
+  "come-aziende-scelgono-impresa-capannone": `Come le aziende scelgono l'impresa per costruire o ristrutturare un capannone è un processo che quasi nessun costruttore conosce dall'altra parte del tavolo — ed è un peccato, perché capire quel processo è il modo più diretto per entrare nelle gare giuste. Nel residenziale decide una famiglia con l'emotività di chi ristruttura casa propria; nell'industriale decide un'azienda con un metodo, dei criteri e una lista corta. Questa guida racconta come si forma quella lista, e cosa serve per starci dentro.
+
+## Chi decide davvero, e come?
+
+Dipende dalla dimensione del committente, e la differenza cambia tutto il percorso di vendita.
+
+Nella piccola azienda decide il titolare. Ragiona come un imprenditore: vuole vedere capannoni già costruiti, sapere i tempi e avere la sensazione che l'impresa non lo lascerà a metà. Le referenze contano più di tutto, e le verifica online.
+
+Nella media e grande azienda decide un responsabile tecnico o un ufficio acquisti, spesso con più preventivi obbligatori per policy. Qui contano i requisiti formali — certificazioni, attestazioni SOA, capacità produttiva documentata — e la lista corta si costruisce cercando: chi ha già fatto opere simili, di quella dimensione, in quel settore.
+
+In entrambi i casi c'è un punto in comune: la prima scrematura avviene online, prima di qualsiasi contatto. L'impresa che non mostra nulla viene esclusa senza saperlo — nessuno la chiama per dirle che è stata scartata.
+
+## Cosa guarda un committente industriale sul sito di un'impresa?
+
+Cose concrete e verificabili, nell'ordine.
+
+| Cosa cerca | Perché | Come mostrarlo |
+|---|---|---|
+| Opere simili già realizzate | Riduce il rischio di sbagliare impresa | Schede con metrature, tempi, settore del committente |
+| Dimensione delle commesse gestite | Vuole capire se reggi il suo cantiere | Importi in ordine di grandezza, superfici, squadre |
+| Certificazioni e SOA | Requisito formale, spesso obbligatorio | Pagina dedicata, aggiornata |
+| Tempi rispettati | Un ritardo ferma la sua produzione | Tempi dichiarati nelle schede opera |
+| Solidità dell'azienda | Teme il fallimento a metà opera | Anni di attività, struttura, mezzi |
+
+Il linguaggio giusto è tecnico e asciutto: il responsabile che valuta si fida dei numeri, non degli slogan. "Capannone logistico da 4.200 mq consegnato in 7 mesi, committente settore automotive" dice tutto quello che serve.
+
+## Le ricerche da presidiare nell'edilizia industriale
+
+Sono meno di quelle residenziali, ma ogni singola ricerca vale una commessa potenzialmente enorme — e la concorrenza online è quasi inesistente, perché la maggior parte delle imprese industriali vive di relazioni e non ha mai investito sulla presenza digitale.
+
+Le ricerche dirette: "costruzione capannoni industriali" più la provincia, "impresa costruzioni industriali", "ampliamento capannone". Chi le fa ha un progetto e un budget.
+
+Le ricerche di intervento: "rifacimento copertura capannone", "bonifica amianto capannone", "adeguamento sismico capannone", "pavimentazione industriale". Sono interventi specifici su edifici esistenti — il mercato più costante, perché i capannoni italiani invecchiano tutti insieme.
+
+Le ricerche di transizione: "fotovoltaico su capannone", "efficientamento capannone industriale", "rimozione amianto con fotovoltaico". La combinazione bonifica più impianto è tra le commesse più ricche del momento, e quasi nessuno la presidia.
+
+## Amianto e fotovoltaico: la commessa doppia che nessuno intercetta
+
+Merita un discorso a parte, perché è l'opportunità più concreta del segmento. Migliaia di capannoni italiani hanno ancora coperture in cemento-amianto da sostituire — un obbligo che prima o poi arriva per tutti — e la sostituzione è il momento naturale per installare il fotovoltaico sulla nuova copertura.
+
+Il committente che cerca "rimozione amianto capannone" ha un problema normativo da risolvere e un tetto nuovo da pagare: proporgli la combinazione con l'impianto trasforma un costo in un investimento che si ripaga, ed è un argomento di vendita che si spiega da solo. Un'impresa che presidia queste ricerche con una pagina dedicata — normativa, procedura, tempi, casi già realizzati — si trova praticamente sola su commesse a sei cifre.
+
+## Le relazioni non bastano più (ma restano il canale principale)
+
+La maggior parte delle imprese industriali lavora su relazioni consolidate: general contractor, studi tecnici, committenti storici. È un canale eccellente, con due fragilità: concentra il rischio su pochi nomi, e non porta i committenti nuovi che non conoscono nessuno.
+
+Il punto che sfugge è che la presenza online rafforza anche le relazioni esistenti. Il responsabile tecnico che riceve il tuo nome da uno studio di progettazione ti cerca comunque, e quello che trova decide quanto peso dare alla segnalazione. Un sito che documenta le opere fatte lavora anche quando il contatto arriva dal canale tradizionale.
+
+## Quanto vale una posizione in questo mercato?
+
+Facciamo il conto che conta. Nel residenziale servono decine di richieste al mese per fare fatturato; nell'industriale una singola commessa intercettata — un capannone, una copertura, una bonifica — vale quanto un anno di lavori residenziali.
+
+Questo ribalta la logica dell'investimento: anche se le ricerche mensili sono poche decine nella tua provincia, il valore per ricerca è tale che presidiare quelle ricerche si ripaga con una sola commessa ogni tanto. E la concorrenza quasi assente rende il posizionamento più rapido e più stabile che in qualsiasi altro segmento edile.
+
+## Da dove partire
+
+Documenta le ultime cinque opere con schede tecniche vere: metratura, durata, tipo di struttura, settore del committente. Crea le pagine per gli interventi che vuoi vendere — coperture, bonifiche, ampliamenti, adeguamenti — con il linguaggio asciutto che il committente tecnico si aspetta. Metti in evidenza certificazioni e attestazioni. E assicurati che chi ti cerca per nome trovi un'azienda solida, perché quella verifica la fanno tutti.
+
+In ClientiEdili costruiamo siti per imprese di edilizia industriale con questo taglio: schede opera, certificazioni, linguaggio da committente tecnico. Consegna in 48 ore a 1.000 euro invece di 1.400, zero anticipo, garanzia soddisfatti o rimborsati.
+
+Vai su clientiedili.com/contatti e chiedi l'analisi gratuita: guardiamo quante ricerche industriali ci sono nella tua provincia e quali interventi vale la pena presidiare per primi.`,
 };

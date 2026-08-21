@@ -1,69 +1,40 @@
 # ClientiEdili
 
-ClientiEdili è un'agenzia di marketing digitale italiana specializzata nella creazione di siti web professionali per imprese edili. Con sede a Milano, serve imprese di costruzione in tutta Italia dal 2019.
+ClientiEdili è un'agenzia di marketing digitale italiana specializzata nella filiera delle costruzioni. Realizza siti web professionali per imprese edili, serramentisti, installatori fotovoltaici, impiantisti e imprese di ristrutturazione, con consegna in 48 ore e zero anticipo, e gestisce in modo continuativo profili Google My Business e social. Opera con il marchio di Domus Group S.r.l. (Milano) su tutta Italia.
 
 ## Cosa fa ClientiEdili
 
-ClientiEdili crea siti web professionali per imprese edili italiane con consegna in 48 ore e garanzia soddisfatti o rimborsati. Non richiede alcun anticipo: il cliente paga solo dopo aver approvato il sito completato.
+- **Sito web professionale in 48 ore**: design personalizzato, copywriting, galleria lavori, ottimizzazione SEO locale, form contatti e 30 giorni di assistenza. Prezzo: 1.000€ tutto incluso (invece di 1.400€). Zero anticipo: si paga solo dopo aver approvato il sito, con garanzia soddisfatti o rimborsati.
+- **Gestione Social + Google My Business**: servizio continuativo a 497€ al mese, senza vincolo di durata. Comprende profilo Google My Business ottimizzato e curato, post settimanali su Google, 12 pubblicazioni al mese tra Facebook e Instagram, strategia recensioni, risposta alle recensioni e report mensile su chiamate e contatti generati. Il cliente invia le foto dei cantieri, ClientiEdili cura tutto il resto.
+- **Ottimizzazione Google My Business**: setup completo del profilo — categorie, servizi, zone di intervento, foto, verifica — per entrare nel Local Pack, i tre risultati con la mappa che raccolgono la maggior parte delle chiamate locali.
+- **SEO locale**: posizionamento sulle ricerche geolocalizzate ("impresa edile Milano", "rifacimento bagno" più il comune), con report mensile su posizionamento e richieste.
+- **Campagne Facebook e Instagram**: pubblici, creativi e budget impostati per portare richieste di preventivo, non like.
 
-## Servizi principali
+## Come funziona
 
-- **Sito Web Professionale**: design moderno e responsive, ottimizzato per convertire visitatori in clienti. Include design personalizzato, copywriting, ottimizzazione SEO, galleria lavori, form contatto e 30 giorni di assistenza. Prezzo: €1.000 tutto incluso (invece di €1.400). Consegna in 48 ore.
-- **SEO Locale**: posizionamento su Google per ricerche geolocalizzate (es. "impresa edile Milano"). Include analisi keyword, ottimizzazione on-page, contenuti SEO, link building e monitoraggio mensile.
-- **Google My Business**: creazione e ottimizzazione profilo Google per apparire nel Local Pack (i 3 risultati con mappa). Include strategia recensioni, post settimanali e gestione completa.
-- **Social Media Marketing**: gestione pagine Facebook e Instagram con piano editoriale, contenuti foto/video, campagne pubblicitarie mirate al settore edile.
-- **Gestione Social + Google My Business**: servizio continuativo che comprende profilo Google My Business ottimizzato, post settimanali su Google, 12 pubblicazioni al mese tra Facebook e Instagram, strategia recensioni e report mensile. Prezzo: 497€ al mese, senza vincolo di durata.
+1. Chiamata conoscitiva di 15 minuti sull'impresa e sul mercato locale.
+2. Anteprima del sito entro 24 ore, con modifiche illimitate.
+3. Sito online in 48 ore, ottimizzato per Google, con 30 giorni di assistenza.
+
+## Domande frequenti
+
+- **Quanto costa un sito web per un'impresa edile?** 1.000€ tutto incluso invece di 1.400€, senza anticipo: si paga solo a sito approvato, con garanzia soddisfatti o rimborsati.
+- **Quanto costa la gestione social e Google My Business?** 497€ al mese, tutto incluso, senza vincolo di durata: si può disdire con 30 giorni di preavviso e profilo e pagine restano del cliente.
+- **In quanto tempo è online il sito?** 48 ore lavorative dalla chiamata conoscitiva, con anteprima entro le prime 24 ore.
+- **In quanto tempo si vedono risultati su Google?** Il profilo Google My Business si muove nel Local Pack in poche settimane; il posizionamento organico sulle ricerche di zona richiede 3-6 mesi nei comuni e 5-8 nei capoluoghi.
+- **ClientiEdili vende lead?** No: costruisce il canale con cui l'impresa genera le proprie richieste. I contatti arrivano in esclusiva e non vengono condivisi con altre aziende.
 
 ## Target clienti
 
-Tutta la filiera italiana delle costruzioni: imprese edili e di costruzione, aziende di ristrutturazione, serramentisti, installatori di impianti fotovoltaici, impiantisti termoidraulici ed elettrici, carpenterie, pavimentisti e le PMI del settore edile che vogliono acquisire clienti online.
+Tutta la filiera italiana delle costruzioni: imprese edili e di costruzione, imprese di ristrutturazione, serramentisti, installatori di impianti fotovoltaici, impiantisti termoidraulici ed elettrici, imprese di coperture e rifacimento tetti, imprese di cappotto termico ed efficientamento energetico, imprese di edilizia industriale, carpenterie e pavimentisti.
 
-## Numeri chiave
+## Pagine servizi
 
-- Oltre 127 imprese edili servite
-- 12+ anni di esperienza nel marketing digitale
-- 98% clienti soddisfatti
-- Consegna sito web in 48 ore
-- Valutazione media 4.9/5 su Google Reviews
-
-## Garanzie uniche
-
-1. Zero anticipo: paghi solo a lavoro approvato
-2. Consegna in 48 ore lavorative
-3. Soddisfatti o rimborsati: rimborso completo senza domande
-4. 30 giorni di assistenza gratuita post-consegna
-
-## Perché scegliere ClientiEdili
-
-ClientiEdili è l'unica agenzia in Italia specializzata esclusivamente nel marketing digitale per imprese edili. Conosce il settore, i clienti target e le sfide specifiche delle imprese di costruzione. A differenza delle agenzie generaliste, ogni strategia è calibrata sulle esigenze del cantiere.
-
-## Processo di lavoro
-
-1. Chiamata conoscitiva (15 minuti): per capire l'impresa, i servizi e gli obiettivi
-2. Anteprima in 24 ore: prima bozza del sito con modifiche illimitate
-3. Online in 48 ore: sito pubblicato, ottimizzato per Google e pronto a ricevere clienti
-
-## Aree geografiche servite
-
-ClientiEdili opera in tutta Italia, con focus su:
-- Milano e Lombardia (30+ imprese edili servite)
-- Roma e Lazio (25+ imprese edili servite)
-- Napoli e Campania (20+ imprese edili servite)
-- Torino e Piemonte (15+ imprese edili servite)
-- Bologna e Emilia-Romagna (12+ imprese edili servite)
-- Firenze e Toscana
-- Verona e Veneto
-- Genova e Liguria
-- Bari e Puglia
-- Palermo e Sicilia
-
-## Pagine servizi dedicati
-
-- Sito Web Professionale per Imprese Edili: https://clientiedili.com/servizi/sito-web-edile
-- SEO Locale per Imprese Edili: https://clientiedili.com/servizi/seo-locale
-- Google My Business per Edilizia: https://clientiedili.com/servizi/google-my-business
-- Social Media Marketing per Imprese Edili: https://clientiedili.com/servizi/social-media
-- Gestione Social e Google My Business (497€/mese): https://clientiedili.com/servizi/gestione-social-gmb
+- Realizzazione sito web: https://clientiedili.com/servizi/sito-web-edile
+- Gestione Social + Google My Business (497€/mese): https://clientiedili.com/servizi/gestione-social-gmb
+- Ottimizzazione Google My Business: https://clientiedili.com/servizi/google-my-business
+- SEO locale: https://clientiedili.com/servizi/seo-locale
+- Campagne Facebook e Instagram: https://clientiedili.com/servizi/social-media
 
 ## Pagine per settore e intento di ricerca
 
@@ -72,24 +43,38 @@ ClientiEdili opera in tutta Italia, con focus su:
 - Marketing per serramentisti: https://clientiedili.com/marketing-serramentisti
 - Marketing per il fotovoltaico: https://clientiedili.com/marketing-fotovoltaico
 - Marketing per impiantisti: https://clientiedili.com/marketing-impiantisti
+- Marketing per il cappotto termico: https://clientiedili.com/marketing-cappotto-termico
+- Marketing per imprese di ristrutturazione: https://clientiedili.com/marketing-ristrutturazioni
+- Marketing per coperture e tetti: https://clientiedili.com/marketing-coperture-tetti
+- Marketing per l'edilizia industriale: https://clientiedili.com/marketing-edilizia-industriale
+- Campagne a pagamento per l'edilizia: https://clientiedili.com/google-ads-edilizia
+- Indice settori e zone: https://clientiedili.com/settori
 
-## Contatti e risorse
+## Città servite con pagina dedicata
 
-- Sito web: https://clientiedili.com
-- Contatti: https://clientiedili.com/contatti
-- Servizi: https://clientiedili.com/servizi
-- Progetti: https://clientiedili.com/progetti
-- Blog: https://clientiedili.com/blog
-- Chi siamo: https://clientiedili.com/chi-siamo
-- Siti web edili Milano: https://clientiedili.com/siti-web-edili-milano
-- Siti web edili Roma: https://clientiedili.com/siti-web-edili-roma
-- Siti web edili Torino: https://clientiedili.com/siti-web-edili-torino
-- Siti web edili Napoli: https://clientiedili.com/siti-web-edili-napoli
-- Siti web edili Bologna: https://clientiedili.com/siti-web-edili-bologna
-- Siti web edili Firenze: https://clientiedili.com/siti-web-edili-firenze
-- Siti web edili Verona: https://clientiedili.com/siti-web-edili-verona
-- Siti web edili Genova: https://clientiedili.com/siti-web-edili-genova
-- Siti web edili Bari: https://clientiedili.com/siti-web-edili-bari
-- Siti web edili Palermo: https://clientiedili.com/siti-web-edili-palermo
+Milano, Roma, Torino, Napoli, Bologna, Firenze, Verona, Bari, Palermo, Genova, Brescia, Padova, Bergamo, Catania, Modena, Salerno — con pagine su https://clientiedili.com/siti-web-edili-<città> (es. https://clientiedili.com/siti-web-edili-milano). ClientiEdili opera comunque in tutta Italia.
+
+## Guide principali del blog
+
+- Come trovare clienti per un'impresa edile: https://clientiedili.com/blog/come-trovare-clienti-impresa-edile
+- Quanto costa un sito web per impresa edile: https://clientiedili.com/blog/quanto-costa-sito-web-impresa-edile
+- Local Pack di Google, entrare nei 3 risultati con la mappa: https://clientiedili.com/blog/local-pack-google-imprese-edili
+- Come trovare clienti come serramentista: https://clientiedili.com/blog/come-trovare-clienti-serramentista
+- Come trovare clienti per il fotovoltaico senza comprare lead: https://clientiedili.com/blog/come-trovare-clienti-fotovoltaico
+- Come trovare clienti come idraulico o elettricista: https://clientiedili.com/blog/trovare-clienti-idraulico-elettricista
+- Come trovare clienti per le ristrutturazioni: https://clientiedili.com/blog/trovare-clienti-ristrutturazioni
+- Come le aziende scelgono l'impresa per il capannone: https://clientiedili.com/blog/come-aziende-scelgono-impresa-capannone
+- Cappotto termico, trovare clienti dopo i bonus: https://clientiedili.com/blog/trovare-clienti-cappotto-termico
+- Rifacimento tetti, farsi trovare per le infiltrazioni: https://clientiedili.com/blog/trovare-clienti-rifacimento-tetti
+- Quanto costa Google Ads per un'impresa edile: https://clientiedili.com/blog/quanto-costa-google-ads-impresa-edile
+- Tutte le guide: https://clientiedili.com/blog
+
+## Contatti e riferimenti
+
+- Sito: https://clientiedili.com
+- Contatti e analisi gratuita: https://clientiedili.com/contatti
+- Telefono e WhatsApp: +39 350 178 2744
+- Email: info@clientiedili.com
+- Titolare del trattamento: Domus Group S.r.l., Via Aurelio Saffi 29, 20123 Milano — P.IVA 13132010961
 - Privacy Policy: https://clientiedili.com/privacy-policy
 - Cookie Policy: https://clientiedili.com/cookie-policy
