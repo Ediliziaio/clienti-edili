@@ -1,3 +1,5 @@
+import { EicLeadForm } from "@/components/EicLeadForm";
+
 interface ContactFormEmbedProps {
   className?: string;
   height?: number;
@@ -11,22 +13,13 @@ interface ContactFormEmbedProps {
 
 /**
  * Form di richiesta contatto (embed EdiliziaInCloud Form Builder).
- * I lead inviati dal form arrivano direttamente nel CRM di EdiliziaInCloud.
+ * I lead inviati dal form arrivano direttamente nel CRM di EdiliziaInCloud,
+ * con la campagna di provenienza (UTM, gclid, fbclid).
  */
 export default function ContactFormEmbed({
   className = "",
   height = 640,
   eager = false,
 }: ContactFormEmbedProps) {
-  return (
-    <iframe
-      src="https://app.ediliziaincloud.com/f?slug=clienti-edili&company_id=00000000-0000-0000-0000-000000000001"
-      width="100%"
-      height={height}
-      style={{ border: 0, maxWidth: 640, margin: "0 auto", display: "block" }}
-      loading={eager ? "eager" : "lazy"}
-      title="Richiedi informazioni"
-      className={className}
-    />
-  );
+  return <EicLeadForm slug="clienti-edili" height={height} eager={eager} className={className} />;
 }
