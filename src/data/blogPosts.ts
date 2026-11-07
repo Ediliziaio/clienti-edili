@@ -27,6 +27,20 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
 {
+  "slug": "scheda-lavoro-realizzato-sito-impresa-edile",
+  "title": "Come raccontare un lavoro realizzato sul sito dell’impresa edile",
+  "metaTitle": "Lavori realizzati sul sito edile: scheda pratica",
+  "metaDescription": "Prepara una scheda di lavoro realizzato: esigenza iniziale, intervento, foto e risultato documentato. Un metodo per il sito della tua impresa edile.",
+  "date": "7 Nov 2026",
+  "category": "Marketing Digitale",
+  "readTime": "7 min",
+  "excerpt": "Prepara una scheda di lavoro realizzato: esigenza iniziale, intervento, foto e risultato documentato. Un metodo per il sito della tua impresa edile.",
+  "tags": [
+    "sito-web-edile",
+    "marketing-edilizia"
+  ]
+},
+{
   "slug": "brief-sito-web-impresa-edile",
   "title": "Brief del sito web per un’impresa edile: cosa preparare prima del progetto",
   "metaTitle": "Brief sito web impresa edile: guida pratica",
