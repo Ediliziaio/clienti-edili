@@ -154,6 +154,21 @@ export default function ServizioDettaglio() {
         </div>
       </section>
 
+      {service.slug === "sito-web-edile" && <section className="py-14 bg-card/50" aria-labelledby="materiali-sito">
+        <div className="container max-w-4xl">
+          <h2 id="materiali-sito" className="font-display text-3xl font-bold">Cosa preparare per il sito della tua impresa edile</h2>
+          <p className="mt-5 text-muted-foreground leading-relaxed">Foto pubblicabili, servizi effettivi, zone coperte e un referente che controlli i testi: sono i materiali che permettono al sito di raccontare la tua impresa con precisione. La checklist ti aiuta a raccoglierli prima di iniziare.</p>
+          <ul className="mt-6 grid sm:grid-cols-2 gap-4 text-muted-foreground">
+            <li><strong className="text-foreground">Informazioni commerciali:</strong> lavori inclusi ed esclusi, territorio e prossimo passaggio per il cliente.</li>
+            <li><strong className="text-foreground">Prove reali:</strong> foto di interventi, descrizioni verificabili e referenze utilizzabili.</li>
+            <li><strong className="text-foreground">Richieste e gestione:</strong> chi riceve i contatti, quali informazioni servono e come risponde.</li>
+            <li><strong className="text-foreground">Consegna:</strong> accessi, istruzioni e attività di aggiornamento da concordare.</li>
+          </ul>
+          <a href="/risorse/checklist-materiali-sito-impresa-edile.csv" download className="inline-flex items-center gap-3 mt-7 rounded-xl bg-primary px-6 py-4 font-bold text-primary-foreground">Scarica la checklist CSV, senza registrazione <FileText size={18} /></a>
+          <p className="mt-3 text-sm text-muted-foreground">Apribile con Excel, Google Fogli e LibreOffice. Non inserire credenziali o dati dei clienti nel file.</p>
+        </div>
+      </section>}
+
       {/* Stats */}
       <section className="py-16 border-y border-border bg-card/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
