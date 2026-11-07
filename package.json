@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite-react-ssg dev",
-    "build": "vite-react-ssg build",
+    "build": "node scripts/check-blog-covers.mjs && vite-react-ssg build",
     "build:spa": "vite build",
     "build:dev": "vite-react-ssg build --mode development",
     "lint": "eslint .",
