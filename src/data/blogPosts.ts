@@ -26,6 +26,20 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+{
+  "slug": "brief-sito-web-impresa-edile",
+  "title": "Brief del sito web per un’impresa edile: cosa preparare prima del progetto",
+  "metaTitle": "Brief sito web impresa edile: guida pratica",
+  "metaDescription": "Prepara il brief del sito della tua impresa edile: servizi, zone, foto, contatti e consegna. Esempi pratici e checklist per evitare rifacimenti.",
+  "date": "7 Nov 2026",
+  "category": "Marketing Digitale",
+  "readTime": "8 min",
+  "excerpt": "Prepara il brief del sito della tua impresa edile: servizi, zone, foto, contatti e consegna. Esempi pratici e checklist per evitare rifacimenti.",
+  "tags": [
+    "sito-web-edile",
+    "marketing-edilizia"
+  ]
+},
   {
     slug: "sito-web-professionale-impresa-edile",
     title: "Cosa Guarda un Cliente sul Sito di un'Impresa Edile",
