@@ -4,6 +4,7 @@ export interface BlogPost {
   metaTitle: string;
   metaDescription: string;
   date: string;
+  updatedDate?: string;
   category: string;
   readTime: string;
   excerpt: string;
@@ -33,12 +34,13 @@ export const blogPosts: BlogPost[] = [
   "metaDescription": "Prepara una scheda di lavoro realizzato: esigenza iniziale, intervento, foto e risultato documentato. Un metodo per il sito della tua impresa edile.",
   "date": "7 Nov 2026",
   "category": "Marketing Digitale",
-  "readTime": "7 min",
+  "readTime": "12 min",
   "excerpt": "Prepara una scheda di lavoro realizzato: esigenza iniziale, intervento, foto e risultato documentato. Un metodo per il sito della tua impresa edile.",
   "tags": [
     "sito-web-edile",
     "marketing-edilizia"
-  ]
+  ],
+  "updatedDate": "8 Nov 2026"
 },
 {
   "slug": "brief-sito-web-impresa-edile",
@@ -47,12 +49,13 @@ export const blogPosts: BlogPost[] = [
   "metaDescription": "Prepara il brief del sito della tua impresa edile: servizi, zone, foto, contatti e consegna. Esempi pratici e checklist per evitare rifacimenti.",
   "date": "7 Nov 2026",
   "category": "Marketing Digitale",
-  "readTime": "8 min",
+  "readTime": "12 min",
   "excerpt": "Prepara il brief del sito della tua impresa edile: servizi, zone, foto, contatti e consegna. Esempi pratici e checklist per evitare rifacimenti.",
   "tags": [
     "sito-web-edile",
     "marketing-edilizia"
-  ]
+  ],
+  "updatedDate": "8 Nov 2026"
 },
   {
     slug: "sito-web-professionale-impresa-edile",

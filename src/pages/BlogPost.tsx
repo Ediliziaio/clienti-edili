@@ -282,7 +282,7 @@ export default function BlogPost() {
       "url": `https://clientiedili.com/blog/${post.slug}`,
       "image": "https://clientiedili.com/og-image.jpg",
       "datePublished": toISODate(post.date),
-      "dateModified": toISODate(post.date),
+      "dateModified": toISODate(post.updatedDate ?? post.date),
       "author": {
         "@type": "Organization",
         "name": "ClientiEdili",
@@ -360,7 +360,7 @@ export default function BlogPost() {
             <MobileToc items={tocItems} />
 
             <FadeIn delay={0.2}>
-              <div className="prose-custom">
+              <div data-editorial-body className="prose-custom">
                 {renderMarkdown(content)}
               </div>
             </FadeIn>

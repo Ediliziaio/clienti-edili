@@ -94,7 +94,7 @@ export function buildSitemapEntries(today: string): SitemapEntry[] {
   for (const post of blogPosts) {
     entries.push({
       path: `/blog/${post.slug}`,
-      lastmod: toISODate(post.date),
+      lastmod: toISODate(post.updatedDate ?? post.date),
       changefreq: "monthly",
       priority: "0.7",
     });

@@ -25,3 +25,4 @@ dist-ssr
 
 # sitemap generato al build da scripts/sitemap.ts
 dist/sitemap.xml
+.editorial-length-report.json
