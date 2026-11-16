@@ -20,7 +20,7 @@
     --secondary-foreground: 60 10% 95%;
 
     --muted: 0 0% 18%;
-    --muted-foreground: 0 0% 50%;
+    --muted-foreground: 0 0% 68%;
 
     --accent: 72 89% 60%;
     --accent-foreground: 0 0% 4%;
@@ -234,3 +234,64 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ClientiEdili: one editorial system for services, guides and contact. */
+.ce-home { --ce-muted: #b9bcb2; }
+.ce-wrap { width: min(1280px, calc(100% - 64px)); margin-inline: auto; }
+.ce-hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; padding-block: 64px; }
+.ce-eyebrow { font-size: .8rem; color: hsl(var(--primary)); font-weight: 600; margin-bottom: 18px; }
+.ce-hero h1 { font-size: clamp(2.5rem,4.7vw,4.6rem); line-height: 1.06; letter-spacing: -.05em; text-wrap: balance; }
+.ce-lead { font-size: 1.15rem; line-height: 1.8; color: var(--ce-muted); margin-top: 28px; max-width: 54ch; }
+.ce-actions { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; margin-top: 32px; }
+.ce-text-link { display: inline-flex; align-items: center; gap: 10px; padding-block: 12px; font-size: .95rem; text-decoration: underline; text-underline-offset: 5px; }
+.ce-note { font-size: .8rem; color: var(--ce-muted); margin-top: 28px; line-height: 1.7; }
+.ce-hero-image { overflow: hidden; border-radius: 12px; }
+.ce-hero-image img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+.ce-service-rail { display: grid; grid-template-columns: repeat(4,1fr); border-block: 1px solid #34372e; }
+.ce-service-rail a { display: flex; align-items: center; gap: 12px; padding: 24px; }
+.ce-service-rail a + a { border-left: 1px solid #34372e; }
+.ce-service-rail a svg:last-child { margin-left: auto; }
+.ce-section { padding-block: 80px; }
+.ce-home h2 { font-size: clamp(1.8rem,3vw,2.8rem); line-height: 1.15; letter-spacing: -.035em; text-wrap: balance; }
+.ce-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 48px; margin-bottom: 40px; }
+.ce-section-heading > p { max-width: 40ch; color: var(--ce-muted); line-height: 1.7; }
+.ce-service-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 40px 32px; }
+.ce-card-image { overflow: hidden; border-radius: 8px; margin-bottom: 24px; }
+.ce-card-image img { width: 100%; aspect-ratio: 16/9; object-fit: cover; transition: transform 220ms ease; }
+.ce-home h3 { font-size: 1.3rem; line-height: 1.4; letter-spacing: -.02em; }
+.ce-service-card p, .ce-process p, .ce-guide-grid article > p:not(.ce-eyebrow), .ce-contact p:not(.ce-eyebrow) { color: var(--ce-muted); line-height: 1.75; margin-block: 14px; }
+.ce-card-action { display: flex; align-items: center; gap: 10px; font-size: .9rem; margin-top: 20px; color: hsl(var(--primary)); }
+.ce-process-band { background: #171a13; }
+.ce-process { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-block: 40px 20px; }
+.ce-step { display: block; color: hsl(var(--primary)); border-top: 1px solid #44493c; padding-top: 24px; margin-bottom: 24px; }
+.ce-guide-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; }
+.ce-guide-grid article { border-top: 1px solid #34372e; padding-top: 24px; }
+.ce-faq, .ce-contact { display: grid; grid-template-columns: 1fr 1.3fr; gap: 64px; border-top: 1px solid #34372e; }
+.ce-faq details { border-bottom: 1px solid #34372e; padding-block: 20px; }
+.ce-faq summary { cursor: pointer; font-size: 1.05rem; line-height: 1.6; }
+.ce-faq details p { color: var(--ce-muted); line-height: 1.8; margin-top: 16px; }
+.ce-skip { position: fixed; top: -100px; left: 16px; z-index: 100; padding: 12px 20px; background: hsl(var(--primary)); color: #111; }
+.ce-skip:focus { top: 10px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 5px; }
+@media (hover:hover) { .ce-service-card a:hover img { transform: scale(1.025); } .ce-text-link:hover { color: hsl(var(--primary)); } }
+@media (max-width: 1023px) { .ce-hero { gap: 32px; } .ce-section-heading { align-items: start; flex-direction: column; gap: 20px; } .ce-service-rail a { padding-inline: 12px; } }
+@media (max-width: 767px) {
+ .ce-wrap { width: calc(100% - 32px); } .ce-hero { grid-template-columns: 1fr; padding-block: 32px; gap: 32px; } .ce-hero-image img { aspect-ratio: 16/10; }
+ .ce-actions { align-items: stretch; flex-direction: column; gap: 8px; } .ce-actions .btn-carino { justify-content: center; }
+ .ce-service-rail { grid-template-columns: repeat(2,minmax(0,1fr)); } .ce-service-rail a:nth-child(3) { border-left: 0; } .ce-service-rail a:nth-child(n+3) { border-top: 1px solid #34372e; }
+ .ce-service-rail a { font-size: .85rem; padding-block: 20px; gap: 8px; }
+ .ce-section { padding-block: 48px; } .ce-service-grid, .ce-process, .ce-guide-grid, .ce-faq, .ce-contact { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+.ce-journey { background: #171a13; border: 1px solid #3c4331; border-radius: 12px; padding: 32px; }
+.ce-journey-bar { display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid #3c4331; margin-bottom: 28px; font-size: .9rem; color: #ced4c5; }
+.ce-journey h2 { font-size: clamp(1.5rem,2.5vw,2.2rem); margin-bottom: 28px; }
+.ce-journey ol { display: grid; gap: 8px; }
+.ce-journey li a { display: flex; gap: 16px; align-items: center; padding-block: 18px; border-top: 1px solid #3c4331; }
+.ce-journey-number { color: hsl(var(--primary)); font-size: .8rem; }
+.ce-journey strong { display: block; font-size: .95rem; font-weight: 600; }
+.ce-journey small { display: block; margin-top: 5px; color: var(--ce-muted); font-size: .8rem; line-height: 1.6; }
+.ce-journey li svg { flex-shrink: 0; margin-left: auto; }
+.ce-service-icon { display: inline-flex; padding: 18px; border: 1px solid #3c4331; border-radius: 8px; color: hsl(var(--primary)); margin-bottom: 24px; }
+.ce-service-card { padding: 32px; border: 1px solid #34372e; border-radius: 8px; }
+@media (max-width:767px) { .ce-journey, .ce-service-card { padding: 24px; } }

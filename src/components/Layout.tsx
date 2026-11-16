@@ -66,7 +66,7 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
           <img src={clientiEdiliLogo} alt="ClientiEdili" className="h-10" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {links.map((l) =>
             l.href.startsWith("/#") ? (
               <a key={l.href} href={l.href} onClick={() => handleClick(l.href)} className="text-muted-foreground hover:text-foreground transition-colors text-sm font-ui">
@@ -80,14 +80,14 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
           )}
         </div>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Link to="/contatti" className="btn-carino">
             Contattaci
             <span className="arrow-circle"><ArrowUpRight size={18} /></span>
           </Link>
         </div>
 
-        <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button aria-label={mobileOpen ? "Chiudi il menu" : "Apri il menu"} aria-expanded={mobileOpen} aria-controls="mobile-navigation" className="lg:hidden text-foreground min-h-11 min-w-11 flex items-center justify-center" onClick={() => setMobileOpen(!mobileOpen)}>
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -96,7 +96,7 @@ function Navbar({ bannerVisible }: { bannerVisible: boolean }) {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="md:hidden fixed inset-0 top-[calc(var(--nav-top,0px)+5rem)] bg-[#0a0a0a] px-6 pt-8 pb-6 flex flex-col gap-6 z-40"
+          id="mobile-navigation" style={{ top: bannerVisible ? 120 : 80 }} className="lg:hidden fixed inset-0 bg-[#0a0a0a] px-6 pt-8 pb-6 flex flex-col gap-6 z-40"
         >
           {links.map((l) =>
             l.href.startsWith("/#") ? (
@@ -137,10 +137,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <a className="ce-skip" href="#contenuto">Vai al contenuto</a>
       <TopBanner visible={bannerVisible} onClose={() => setBannerVisible(false)} />
       <ScrollProgress />
       <Navbar bannerVisible={bannerVisible} />
-      <main className="pt-32">
+      <main id="contenuto" className="pt-32">
         {children}
       </main>
       <Footer />
