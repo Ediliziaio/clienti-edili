@@ -6,14 +6,8 @@ import Layout from "@/components/Layout";
 import SeoHead from "@/components/SeoHead";
 import ContactFormEmbed from "@/components/ContactFormEmbed";
 
-function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-  return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay, ease: "easeOut" }} className={className}>
-      {children}
-    </motion.div>
-  );
+function FadeIn({ children, className = "" }: { children: React.ReactNode; className?: string; delay?: number }) {
+  return <div className={className}>{children}</div>;
 }
 
 const contattiJsonLd = [
@@ -106,8 +100,8 @@ export default function Contatti() {
                 </div>
 
                 <div className="bg-card border border-border rounded-xl p-6 mt-8">
-                  <h3 className="font-display text-lg font-bold mb-2">Risposta garantita in 2 ore</h3>
-                  <p className="text-muted-foreground text-sm">Ogni richiesta riceve una risposta personale entro 2 ore lavorative. Niente risposte automatiche, solo persone reali.</p>
+                  <h3 className="font-display text-lg font-bold mb-2">Cosa preparare per il confronto</h3>
+                  <p className="text-muted-foreground text-sm">Indica servizi, zone in cui lavori e collegamento al sito esistente. Se vuoi partire da zero, descrivi quali informazioni hai già disponibili.</p>
                 </div>
               </div>
             </FadeIn>
@@ -118,6 +112,7 @@ export default function Contatti() {
                 <h2 className="font-display text-2xl font-bold mb-2">Richiedi Consulenza Gratuita</h2>
                 <p className="text-muted-foreground text-sm mb-8">Compila il form e ti ricontatteremo nelle prossime ore.</p>
 
+                <ul className="ce-contact-checklist"><li>Di che cosa si occupa la tua impresa</li><li>Le zone e i clienti a cui ti rivolgi</li><li>Che cosa vorresti migliorare online</li></ul>
                 <ContactFormEmbed eager />
 
                 <p className="text-xs text-muted-foreground text-center mt-4">Nessun impegno. Consulenza gratuita.</p>

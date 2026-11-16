@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Clock } from "lucide-react";
@@ -7,14 +7,8 @@ import SeoHead from "@/components/SeoHead";
 import { blogPostsSorted } from "@/data/blogPosts";
 import { coverSrc, onCoverError } from "@/lib/blogCover";
 
-function FadeIn({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
-  return (
-    <motion.div ref={ref} initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay, ease: "easeOut" }} className={className}>
-      {children}
-    </motion.div>
-  );
+function FadeIn({ children, className = "" }: { children: React.ReactNode; className?: string; delay?: number }) {
+  return <div className={className}>{children}</div>;
 }
 
 const blogJsonLd = [
@@ -34,6 +28,11 @@ const blogJsonLd = [
 ];
 
 export default function Blog() {
+  const [query, setQuery] = useState("");
+  const [category, setCategory] = useState("");
+  const categories = [...new Set(blogPostsSorted.map(post => post.category))];
+  const visiblePosts = blogPostsSorted.filter(post => (!category || post.category === category) && `${post.title} ${post.excerpt}`.toLocaleLowerCase("it").includes(query.trim().toLocaleLowerCase("it")));
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -70,8 +69,14 @@ export default function Blog() {
       {/* Articles Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="ce-blog-tools">
+            <div><label htmlFor="guide-search">Cerca nelle guide</label><input id="guide-search" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="Ad esempio: sito web, recensioni, preventivi" /></div>
+            <div><label htmlFor="guide-category">Argomento</label><select id="guide-category" value={category} onChange={event => setCategory(event.target.value)}><option value="">Tutti gli argomenti</option>{categories.map(c => <option key={c} value={c}>{c}</option>)}</select></div>
+          </div>
+          <p role="status" className="ce-results">{visiblePosts.length} guide disponibili</p>
+          {!visiblePosts.length && <p className="ce-empty">Nessuna guida corrisponde alla ricerca. Prova un altro termine o seleziona tutti gli argomenti.</p>}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPostsSorted.map((post, i) => (
+            {visiblePosts.map((post, i) => (
               <FadeIn key={post.slug} delay={i * 0.1}>
                 <Link to={`/blog/${post.slug}`} className="group block">
                   <div className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 hover:-translate-y-2 transition-all duration-500 h-full flex flex-col">

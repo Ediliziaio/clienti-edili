@@ -134,6 +134,10 @@ function FloatingWhatsApp() {
 // ─── Layout ───────────────────────────────────────────────────
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [bannerVisible, setBannerVisible] = useState(true);
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const parent = pathname.startsWith("/blog/") ? {href:"/blog", label:"Blog"} : pathname.startsWith("/servizi/") ? {href:"/servizi", label:"Servizi"} : null;
+
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -141,7 +145,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <TopBanner visible={bannerVisible} onClose={() => setBannerVisible(false)} />
       <ScrollProgress />
       <Navbar bannerVisible={bannerVisible} />
-      <main id="contenuto" className="pt-32">
+      <main id="contenuto" className={`pt-32 ${isHome ? "" : "ce-inner"}`}>
+        {!isHome && <nav className="ce-breadcrumb" aria-label="Percorso"><Link to="/">Home</Link>{parent && <><span aria-hidden="true">/</span><Link to={parent.href}>{parent.label}</Link></>}</nav>}
         {children}
       </main>
       <Footer />
