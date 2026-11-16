@@ -60,9 +60,13 @@ export default function SeoHead({
       <meta property="og:site_name" content="ClientiEdili" />
       <meta property="og:locale" content="it_IT" />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={OG_IMAGE_ALT} />
+      {ogImage === "https://clientiedili.com/og-image.jpg" && (
+        <>
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+        </>
+      )}
+      <meta property="og:image:alt" content={ogType === "article" ? title : OG_IMAGE_ALT} />
 
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />

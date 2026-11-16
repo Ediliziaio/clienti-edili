@@ -22,7 +22,9 @@ export default function ArticoliCorrelati({
   titolo?: string;
   quanti?: number;
 }) {
-  const posts = postsByTag(tag, quanti);
+  const allPosts = postsByTag(tag, Number.POSITIVE_INFINITY);
+  const posts = allPosts.slice(0, quanti);
+  const additionalPosts = allPosts.slice(quanti);
   if (posts.length === 0) return null;
 
   return (
@@ -66,6 +68,10 @@ export default function ArticoliCorrelati({
             </Link>
           ))}
         </div>
+        {additionalPosts.length > 0 && <nav aria-label="Altre guide sullo stesso argomento" className="mt-8 border-t border-border pt-6">
+          <h3 className="font-display text-xl font-semibold mb-4">Altre guide su questo servizio</h3>
+          <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">{additionalPosts.map(post => <li key={post.slug}><Link to={`/blog/${post.slug}`} className="text-muted-foreground hover:text-primary underline underline-offset-4 leading-relaxed">{post.title}</Link></li>)}</ul>
+        </nav>}
       </div>
     </section>
   );

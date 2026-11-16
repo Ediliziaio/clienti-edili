@@ -274,7 +274,7 @@ export default function BlogPost() {
       "headline": post.title,
       "description": post.metaDescription,
       "url": `https://clientiedili.com/blog/${post.slug}`,
-      "image": "https://clientiedili.com/og-image.jpg",
+      "image": `https://clientiedili.com${coverSrc(post.slug)}`,
       "datePublished": toISODate(post.date),
       "dateModified": toISODate(post.updatedDate ?? post.date),
       "author": {
@@ -310,6 +310,7 @@ export default function BlogPost() {
         description={post.metaDescription}
         canonical={`https://clientiedili.com/blog/${post.slug}`}
         ogType="article"
+        ogImage={`https://clientiedili.com${coverSrc(post.slug)}`}
         jsonLd={articleJsonLd}
       />
       {/* Back link */}
@@ -340,7 +341,7 @@ export default function BlogPost() {
       <FadeIn delay={0.1}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
           <div className="aspect-[21/9] rounded-2xl overflow-hidden relative">
-            <img src={coverSrc(post.slug)} onError={(e) => onCoverError(e, post.slug)} alt={post.title} className="w-full h-full object-cover" />
+            <img src={coverSrc(post.slug)} onError={(e) => onCoverError(e, post.slug)} alt={post.title} fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
           </div>
         </div>
