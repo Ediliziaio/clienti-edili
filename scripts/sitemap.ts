@@ -59,7 +59,7 @@ export function buildSitemapEntries(today: string): SitemapEntry[] {
     priority,
   }));
 
-  const servicesLastmod = lastCommitDate("src/pages/ServizioDettaglio.tsx", today);
+  const servicesLastmod = [lastCommitDate("src/pages/ServizioDettaglio.tsx", today), lastCommitDate("src/data/services.ts", today)].sort().at(-1)!;
   for (const slug of SERVICE_SLUGS) {
     entries.push({
       path: `/servizi/${slug}`,
@@ -69,7 +69,7 @@ export function buildSitemapEntries(today: string): SitemapEntry[] {
     });
   }
 
-  const citiesLastmod = lastCommitDate("src/data/cities.ts", today);
+  const citiesLastmod = [lastCommitDate("src/data/cities.ts", today), lastCommitDate("src/pages/CittaGeo.tsx", today)].sort().at(-1)!;
   for (const slug of citySlugs) {
     entries.push({
       path: `/siti-web-edili-${slug}`,

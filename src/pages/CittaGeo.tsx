@@ -74,10 +74,8 @@ export default function CittaGeo() {
   return (
     <Layout>
       <SeoHead
-        /* Senza suffisso di brand: con " | ClientiEdili" i title città superavano
-           tutti i 60 caratteri e Google li troncava. */
-        title={`Imprese Edili ${city.name}: ${city.focus}`}
-        description={`${city.h1Angle}. Siti web e SEO locale per imprese edili a ${city.name}. Consegna in 48 ore, zero anticipo.`}
+        title={`Siti web per imprese edili a ${city.name}`}
+        description={`Realizzazione siti web per imprese edili a ${city.name}: servizi, lavori e zone coperte presentati con chiarezza. Scopri materiali, processo e richiesta di preventivo.`}
         canonical={`https://clientiedili.com/siti-web-edili-${city.slug}`}
         jsonLd={jsonLd}
       />
@@ -100,28 +98,18 @@ export default function CittaGeo() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl leading-[1.08] font-bold mb-4">
-              {/* h1Angle è già una frase compiuta: evidenziamo il nome della città
-                  dove compare, senza spostarlo (alcuni angle usano l'aggettivo,
-                  es. "cantieri genovesi", e lì non c'è nulla da evidenziare). */}
-              {(() => {
-                const i = city.h1Angle.indexOf(city.name);
-                if (i === -1) return city.h1Angle;
-                return (
-                  <>
-                    {city.h1Angle.slice(0, i)}
-                    <span className="text-gradient-lime">{city.name}</span>
-                    {city.h1Angle.slice(i + city.name.length)}
-                  </>
-                );
-              })()}
+              Siti web per imprese edili a <span className="text-gradient-lime">{city.name}</span>
             </h1>
             <p className="font-ui text-muted-foreground text-lg mb-8">
-              Siti web e SEO locale per imprese edili a {city.name}: {city.focus}.
+              Un servizio per la tua impresa: pagine dei servizi, lavori descritti e un percorso chiaro verso il contatto.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
               {city.intro}
+            </p>
+            <p className="mt-5 text-muted-foreground max-w-3xl leading-relaxed">
+              Per preparare il progetto, consulta il servizio di <Link to="/servizi/sito-web-edile" className="text-primary underline underline-offset-4">realizzazione del sito web edile</Link> e il <Link to="/blog/brief-sito-web-impresa-edile" className="text-primary underline underline-offset-4">brief dei materiali da raccogliere</Link>. Le zone da presentare sul sito saranno quelle effettivamente coperte dalla tua impresa.
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
@@ -255,7 +243,7 @@ export default function CittaGeo() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <h2 className="font-display text-3xl sm:text-4xl font-bold mb-12 text-center">
-              Progetti realizzati per imprese edili a {city.name}
+              Come presentare i lavori sul sito della tua impresa
             </h2>
           </FadeIn>
           <div className="grid md:grid-cols-3 gap-6">
@@ -263,7 +251,7 @@ export default function CittaGeo() {
               <FadeIn key={i} delay={i * 0.1}>
                 <div className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/30 transition-all">
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img src={img} alt={`Sito web per impresa edile a ${city.name} - progetto ${i + 1}`} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={img} alt={`Esempio visivo per la presentazione dei lavori su un sito edile: immagine ${i + 1}`} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </div>
               </FadeIn>
@@ -303,7 +291,7 @@ export default function CittaGeo() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <h2 className="font-display text-3xl sm:text-4xl font-bold mb-10 text-center">
-              Domande frequenti — Imprese edili a {city.name}
+              Domande sui siti web per imprese edili a {city.name}
             </h2>
           </FadeIn>
           <div className="space-y-4">
@@ -328,7 +316,7 @@ export default function CittaGeo() {
           <div className="flex flex-wrap gap-3">
             {cities.filter((c) => c.slug !== city.slug).map((c) => (
               <Link key={c.slug} to={`/siti-web-edili-${c.slug}`} className="bg-card border border-border rounded-full px-5 py-2.5 text-sm font-ui hover:border-primary/30 hover:text-primary transition-all">
-                Imprese Edili {c.name}
+                Siti web per imprese edili a {c.name}
               </Link>
             ))}
           </div>
@@ -366,7 +354,7 @@ export default function CittaGeo() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-10">
-              Contatta ClientiEdili per una consulenza gratuita. Ti mostreremo come posizionarti in prima pagina su Google per "{city.localKeyword}".
+              Descrivi i servizi della tua impresa e le zone in cui lavori. Valutiamo come organizzarli sul sito e quali materiali servono per presentare la tua attività a {city.name}.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>

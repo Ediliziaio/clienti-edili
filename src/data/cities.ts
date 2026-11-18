@@ -13,13 +13,8 @@ export interface CityData {
   intro: string;
   whyDigital: string;
   /**
-   * Tratto distintivo del mercato locale, in poche parole: entra nel title e
-   * nella description.
-   *
-   * Serve a rendere ogni pagina città diversa dalle altre. Quando title e H1
-   * erano identici a meno del nome della città, Google indicizzava alcune città
-   * e scartava le altre come ridondanti ("scansionata, ma attualmente non
-   * indicizzata" su Search Console).
+   * Contesto locale per i contenuti. Title e H1 devono identificare prima
+   * il servizio web rivolto alle imprese, senza sembrare un elenco di imprese.
    */
   focus: string;
   /** Taglio dell'H1: deve raccontare qualcosa di questo mercato, non del format. */

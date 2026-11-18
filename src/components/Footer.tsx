@@ -109,7 +109,7 @@ export default function Footer() {
                 to={`/siti-web-edili-${city.slug}`}
                 className="hover:text-foreground transition-colors"
               >
-                Imprese Edili {city.name}
+                Siti web edili a {city.name}
               </Link>
             ))}
           </div>
