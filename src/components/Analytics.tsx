@@ -1,19 +1,10 @@
 import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { trackContact, trackLead, trackPageView } from "@/lib/analytics";
+import { trackContact, trackPageView } from "@/lib/analytics";
 
-/**
- * Aggancia gli eventi di analytics al routing della SPA.
- *
- * In una Single Page App il browser non ricarica la pagina, quindi né GTM né il
- * pixel di Meta si accorgono dei cambi di rotta: senza questo componente
- * verrebbe contata solo la prima schermata.
- *
- * - page_view: a ogni navigazione (GTM + GA4; Meta solo dopo il primo render,
- *   perché il PageView iniziale lo manda già lo snippet base in index.html)
- * - generate_lead / Lead: all'atterraggio su /grazie. Perché scatti, l'URL di
- *   ringraziamento del form EdiliziaInCloud deve puntare a /grazie.
- * - contact / Contact: al click su un link telefono o WhatsApp.
+/** Existing Meta SPA events and phone/WhatsApp intent hooks.
+ * Google page views are managed exclusively by GTM, never by this component.
+ * The /grazie callback does not emit a Google generate_lead event.
  */
 export default function Analytics() {
   const location = useLocation();
@@ -26,7 +17,6 @@ export default function Analytics() {
     // timeout 0 per leggere il <title> dopo l'aggiornamento di react-helmet
     const id = window.setTimeout(() => {
       trackPageView({ isFirstLoad });
-      if (location.pathname === "/grazie") trackLead();
     }, 0);
     return () => window.clearTimeout(id);
   }, [location.pathname, location.search]);

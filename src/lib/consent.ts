@@ -1,11 +1,6 @@
-/**
- * Stato del consenso ai cookie, condiviso tra il banner e gli strumenti di
- * misurazione.
- *
- * Il default (tutto negato tranne il tecnico) è impostato in index.html, prima
- * che GTM, gtag e il pixel vengano caricati: deve stare lì, perché un default
- * applicato dopo il caricamento arriverebbe troppo tardi. Qui c'è solo la parte
- * che serve a leggere, salvare e aggiornare la scelta dell'utente.
+/** Shared persisted preferences for the existing cookie banner.
+ * public/analytics-consent.js is the only bridge to GTM and the existing Meta
+ * pixel; each category remains denied until its explicit consent.
  */
 
 export const CONSENT_STORAGE_KEY = "ce_consent";
@@ -55,21 +50,7 @@ export function writeConsent(choice: { statistics: boolean; marketing: boolean }
     // Se non possiamo salvare, la scelta vale comunque per questa sessione.
   }
 
-  window.gtag?.("consent", "update", {
-    ad_storage: choice.marketing ? "granted" : "denied",
-    ad_user_data: choice.marketing ? "granted" : "denied",
-    ad_personalization: choice.marketing ? "granted" : "denied",
-    analytics_storage: choice.statistics ? "granted" : "denied",
-  });
-
-  window.fbq?.("consent", choice.marketing ? "grant" : "revoke");
-
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    event: "consent_update",
-    consent_statistics: choice.statistics,
-    consent_marketing: choice.marketing,
-  });
-
+  // Google and the existing Meta pixel read this same saved preference through
+  // public/analytics-consent.js. No direct gtag/config or duplicate consent push.
   window.dispatchEvent(new CustomEvent(CONSENT_CHANGED_EVENT, { detail: state }));
 }

@@ -15,16 +15,29 @@ import { readConsent, writeConsent } from "@/lib/consent";
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
-  const [statistics, setStatistics] = useState(true);
-  const [marketing, setMarketing] = useState(true);
+  const [statistics, setStatistics] = useState(false);
+  const [marketing, setMarketing] = useState(false);
 
   useEffect(() => {
     // Il primo render lato client decide: durante il prerender il banner non
     // esiste, così l'HTML statico che legge Google resta pulito.
     if (!readConsent()) setVisible(true);
+    const reopen = () => {
+      const current = readConsent();
+      setStatistics(current?.statistics ?? false);
+      setMarketing(current?.marketing ?? false);
+      setShowDetails(true);
+      setVisible(true);
+    };
+    window.addEventListener('ce:open-cookie-preferences', reopen);
+    return () => window.removeEventListener('ce:open-cookie-preferences', reopen);
   }, []);
 
-  if (!visible) return null;
+  if (!visible) return (
+    <button type="button" onClick={() => window.dispatchEvent(new Event('ce:open-cookie-preferences'))} className="fixed bottom-3 left-3 z-[60] rounded-lg border border-border bg-card px-3 py-2 text-xs text-foreground shadow-sm">
+      Preferenze cookie
+    </button>
+  );
 
   const decide = (choice: { statistics: boolean; marketing: boolean }) => {
     writeConsent(choice);
